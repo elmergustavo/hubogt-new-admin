@@ -4,7 +4,7 @@ return [
 
     'title' => 'Acceso',
 
-    'heading' => 'Iniciar sesión',
+    'heading' => 'Bienvenido',
 
     'actions' => [
 
@@ -36,7 +36,7 @@ return [
         'actions' => [
 
             'authenticate' => [
-                'label' => 'Entrar',
+                'label' => 'Iniciar sesión',
             ],
 
         ],

@@ -158,7 +158,13 @@ class OrderResource extends Resource
                     }),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make()->label('Ver'),
+                // Tables\Actions\ViewAction::make(),
+
+                // Tables\Actions\EditAction::make(),
+
+                // Tables\Actions\DeleteAction::make(),
+                // Tables\Actions\EditAction::make(),
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()
@@ -196,6 +202,7 @@ class OrderResource extends Resource
         return [
             'index' => Pages\ListOrders::route('/'),
             'create' => Pages\CreateOrder::route('/create'),
+            'view' => Pages\ViewOrder::route('/{record}'),
             'edit' => Pages\EditOrder::route('/{record}/edit'),
         ];
     }
