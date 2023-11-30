@@ -34,11 +34,16 @@ class ProductResource extends Resource
 
     protected static ?string $navigationGroup = 'Shop';
 
-    protected static ?string $navigationIcon = 'heroicon-o-bolt';
+    protected static ?string $navigationIcon = 'bx-store';
 
-    protected static ?string $navigationLabel = 'Products';
+    // protected static ?string $navigationLabel = 'Productos';
 
     protected static ?int $navigationSort = 0;
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Productos';
+    }
 
     public static function form(Form $form): Form
     {
