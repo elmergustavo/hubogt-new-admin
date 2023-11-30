@@ -28,12 +28,12 @@ class ListOrders extends ListRecords
     public function getTabs(): array
     {
         return [
-            null => ListRecords\Tab::make('All'),
-            'new' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'new')),
-            'processing' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'processing')),
-            'shipped' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'shipped')),
-            'delivered' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'delivered')),
-            'cancelled' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'cancelled')),
+            null => ListRecords\Tab::make('All')->label('Todas'),
+            'Nuevas' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'new')),
+            'Procesando' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'processing')),
+            // 'shipped' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'shipped')),
+            // 'delivered' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'delivered')),
+            'Cancelado' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'cancelled')),
         ];
     }
 }

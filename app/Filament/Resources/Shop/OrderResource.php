@@ -38,6 +38,12 @@ class OrderResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Ordenes';
+    }
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -92,11 +98,11 @@ class OrderResource extends Resource
                     ->toggleable(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge(),
-                Tables\Columns\TextColumn::make('currency')
-                    ->getStateUsing(fn ($record): ?string => Currency::find($record->currency)?->name ?? null)
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
+                // Tables\Columns\TextColumn::make('currency')
+                //     ->getStateUsing(fn ($record): ?string => Currency::find($record->currency)?->name ?? null)
+                //     ->searchable()
+                //     ->sortable()
+                //     ->toggleable(),
                 Tables\Columns\TextColumn::make('total_price')
                     ->searchable()
                     ->sortable()
