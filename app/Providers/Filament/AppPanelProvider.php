@@ -26,7 +26,7 @@ class AppPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            // ->default()
+            ->default()
             ->id('app')
             // ->path('vendedor')
             ->login(Login::class)
