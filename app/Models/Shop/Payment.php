@@ -14,6 +14,15 @@ class Payment extends Model
 
     protected $guarded = [];
 
+    protected $fillable = [
+        'order_id',
+        'reference',
+        'provider',
+        'method',
+        'amount',
+        'currency',
+    ];
+
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);

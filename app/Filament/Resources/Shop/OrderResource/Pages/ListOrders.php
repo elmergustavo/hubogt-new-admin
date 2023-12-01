@@ -16,7 +16,7 @@ class ListOrders extends ListRecords
     protected function getActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            // Actions\CreateAction::make(),
         ];
     }
 
@@ -31,9 +31,9 @@ class ListOrders extends ListRecords
             null => ListRecords\Tab::make('All')->label('Todas'),
             'Nuevas' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'new')),
             'Procesando' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'processing')),
-            // 'shipped' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'shipped')),
+            'Confirmados' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'shipped')),
             // 'delivered' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'delivered')),
-            'Cancelado' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'cancelled')),
+            'Cancelados' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'cancelled')),
         ];
     }
 }

@@ -20,11 +20,11 @@ enum OrderStatus: string implements HasColor, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::New => 'New',
-            self::Processing => 'Processing',
-            self::Shipped => 'Shipped',
+            self::New => 'Nuevo',
+            self::Processing => 'Procesando',
+            self::Shipped => 'Confirmado',
             self::Delivered => 'Delivered',
-            self::Cancelled => 'Cancelled',
+            self::Cancelled => 'Cancelado',
         };
     }
 
@@ -33,7 +33,8 @@ enum OrderStatus: string implements HasColor, HasLabel
         return match ($this) {
             self::New => 'gray',
             self::Processing => 'warning',
-            self::Shipped, self::Delivered => 'success',
+            self::Shipped => 'success',
+            self::Delivered => 'success',
             self::Cancelled => 'danger',
         };
     }
