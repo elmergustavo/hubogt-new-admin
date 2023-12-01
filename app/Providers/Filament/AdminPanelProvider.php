@@ -32,7 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
-                'gray' => Color::Gray,
+                // 'gray' => Color::Gray,
 
             ])
             ->font('Nunito')
@@ -52,8 +52,12 @@ class AdminPanelProvider extends PanelProvider
                 'Shop',
                 'Blog',
             ])
+            ->plugin(
+                \Hasnayeen\Themes\ThemesPlugin::make()
+            )
             ->databaseNotifications()
             ->middleware([
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -63,6 +67,9 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+            ])
+            ->tenantMiddleware([
+                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
