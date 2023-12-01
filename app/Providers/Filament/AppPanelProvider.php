@@ -26,10 +26,11 @@ class AppPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
+            ->default()
             ->id('app')
-            ->path('vendedor')
+            // ->path('vendedor')
             ->login(Login::class)
-            ->registration()
+            // ->registration()
             ->passwordReset()
             ->emailVerification()
             ->brandLogo(asset('images/logo_horizontal.svg'))
@@ -58,8 +59,8 @@ class AppPanelProvider extends PanelProvider
                 'Blog',
             ])
             ->databaseNotifications()
-            ->tenant(Team::class)
-            ->tenantRegistration(RegisterTeam::class)
+            // ->tenant(Team::class)
+            // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

@@ -12,6 +12,8 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Widgets;
+use App\Models\Team;
+use App\Filament\App\Pages\RegisterTeam;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -25,14 +27,18 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
+            // ->default()
             ->id('admin')
+            ->path('vendedor')
             ->login(Login::class)
+            ->registration()
+            ->passwordReset()
+            ->emailVerification()
             ->brandLogo(asset('images/logo_horizontal.svg'))
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
-                // 'gray' => Color::Gray,
+                'gray' => Color::Gray,
 
             ])
             ->font('Nunito')
@@ -56,8 +62,10 @@ class AdminPanelProvider extends PanelProvider
                 \Hasnayeen\Themes\ThemesPlugin::make()
             )
             ->databaseNotifications()
+            // ->tenant(Team::class)
+            // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
-                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
+                // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -68,9 +76,9 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->tenantMiddleware([
-                \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
-            ])
+            // ->tenantMiddleware([
+            //     \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
+            // ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
