@@ -190,18 +190,20 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('product-image')
-                    ->label('Image')
+                    ->label('Imagen')
                     ->collection('product-images'),
 
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Name')
+                    ->label('Nombre del producto')
                     ->searchable()
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('brand.name')
+                    ->label('Marca')
                     ->searchable()
                     ->sortable()
-                    ->toggleable(),
+                    ->toggleable()
+                    ->toggledHiddenByDefault(),
 
                 // Tables\Columns\IconColumn::make('is_visible')
                 //     ->label('Visibility')
@@ -209,11 +211,16 @@ class ProductResource extends Resource
                 //     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('price')
-                    ->label('Price')
+                    ->label('Precio')
                     ->searchable()
                     ->sortable(),
 
                 TextInputColumn::make('discount')
+                    // ->numeric()
+                    // ->inputMode('decimal')
+                    ->rules(['min:0', 'numeric'])
+                    ->type('number')
+                    ->toggleable()
                     ->label('Descuento'),
 
                 Tables\Columns\TextColumn::make('sku')
@@ -223,12 +230,13 @@ class ProductResource extends Resource
                     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('qty')
-                    ->label('Quantity')
+                    ->label('Cantidad')
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('security_stock')
+                    ->label('Seguridad de Stock')
                     ->searchable()
                     ->sortable()
                     ->toggleable()
@@ -238,7 +246,7 @@ class ProductResource extends Resource
                     ->label('Estado'),
 
                 Tables\Columns\TextColumn::make('published_at')
-                    ->label('Publish Date')
+                    ->label('Fecha de publicación')
                     ->date()
                     ->sortable()
                     ->toggleable()
