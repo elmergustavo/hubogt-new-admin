@@ -2,18 +2,15 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\Auth\Login;
-use App\Filament\Pages\Dashboard;
-use App\Http\Middleware\Authenticate;
+use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Support\Colors\Color;
 use Filament\Pages;
+use App\Filament\Pages\Auth\Login;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Colors\Color;
 use Filament\Widgets;
-use App\Models\Team;
-use App\Filament\App\Pages\RegisterTeam;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -22,33 +19,28 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class AdminPanelProvider extends PanelProvider
+class SellerPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
-            ->id('admin')
-            ->path('')
+            ->id('seller')
+            ->path('vendedor')
             ->login(Login::class)
-            // ->registration()
+            ->registration()
             ->passwordReset()
             ->emailVerification()
             ->brandLogo(asset('images/logo_horizontal.svg'))
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
-                'gray' => Color::Gray,
-
             ])
-            ->font('Nunito')
-            // ->topNavigation();
-            ->favicon(asset('images/favicon.ico'))
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->discoverResources(in: app_path('Filament/Seller/Resources'), for: 'App\\Filament\\Seller\\Resources')
+            ->discoverPages(in: app_path('Filament/Seller/Pages'), for: 'App\\Filament\\Seller\\Pages')
             ->pages([
-                Dashboard::class,
+                Pages\Dashboard::class,
             ])
+            // ->discoverWidgets(in: app_path('Filament/Seller/Widgets'), for: 'App\\Filament\\Seller\\Widgets')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
@@ -58,14 +50,11 @@ class AdminPanelProvider extends PanelProvider
                 'Shop',
                 'Blog',
             ])
-            ->plugin(
-                \Hasnayeen\Themes\ThemesPlugin::make()
-            )
+            // ->plugin(
+            //     \Hasnayeen\Themes\ThemesPlugin::make()
+            // )
             ->databaseNotifications()
-            // ->tenant(Team::class)
-            // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
-                // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -76,9 +65,6 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            // ->tenantMiddleware([
-            //     \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
-            // ])
             ->authMiddleware([
                 Authenticate::class,
             ]);

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\Shop;
+namespace App\Filament\Seller\Resources\Shop;
 
-use App\Filament\Resources\Shop\PaymentResource\Pages;
-use App\Filament\Resources\Shop\PaymentResource\RelationManagers;
+use App\Filament\Seller\Resources\Shop\PaymentResource\Pages;
+use App\Filament\Seller\Resources\Shop\PaymentResource\RelationManagers;
 use App\Models\Shop\Payment;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -18,8 +18,6 @@ class PaymentResource extends Resource
     protected static ?string $model = Payment::class;
 
     protected static ?string $navigationIcon = 'fluentui-payment-24-o';
-
-    protected static bool $shouldRegisterNavigation = false;
 
     protected static ?string $navigationGroup = 'Shop';
 

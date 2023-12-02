@@ -28,7 +28,7 @@ class AppPanelProvider extends PanelProvider
         return $panel
             // ->default()
             ->id('app')
-            // ->path('vendedor')
+            ->path('app')
             ->login(Login::class)
             // ->registration()
             ->passwordReset()

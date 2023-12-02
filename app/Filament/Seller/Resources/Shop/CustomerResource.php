@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\Shop;
+namespace App\Filament\Seller\Resources\Shop;
 
-use App\Filament\Resources\Shop\CustomerResource\Pages;
-use App\Filament\Resources\Shop\CustomerResource\RelationManagers;
+use App\Filament\Seller\Resources\Shop\CustomerResource\Pages;
+use App\Filament\Seller\Resources\Shop\CustomerResource\RelationManagers;
 use App\Models\Shop\Customer;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -26,8 +26,6 @@ class CustomerResource extends Resource
     protected static ?string $navigationGroup = 'Shop';
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-
-    protected static bool $shouldRegisterNavigation = false;
 
     protected static ?int $navigationSort = 1;
 

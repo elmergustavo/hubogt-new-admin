@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\Shop;
+namespace App\Filament\Seller\Resources\Shop;
 
-use App\Filament\Resources\Shop\BrandResource\RelationManagers\ProductsRelationManager;
-use App\Filament\Resources\Shop\ProductResource\Pages;
-use App\Filament\Resources\Shop\ProductResource\RelationManagers;
-use App\Filament\Resources\Shop\ProductResource\Widgets\ProductStats;
+use App\Filament\Seller\Resources\Shop\BrandResource\RelationManagers\ProductsRelationManager;
+use App\Filament\Seller\Resources\Shop\ProductResource\Pages;
+use App\Filament\Seller\Resources\Shop\ProductResource\RelationManagers;
+use App\Filament\Seller\Resources\Shop\ProductResource\Widgets\ProductStats;
 use App\Models\Shop\Product;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -36,7 +36,6 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'bx-store';
 
-    protected static bool $shouldRegisterNavigation = false;
     // protected static ?string $navigationLabel = 'Productos';
 
     protected static ?int $navigationSort = 0;

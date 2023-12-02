@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\Shop;
+namespace App\Filament\Seller\Resources\Shop;
 
-use App\Filament\Resources\Shop\CategoryResource\Pages;
-use App\Filament\Resources\Shop\CategoryResource\RelationManagers;
+use App\Filament\Seller\Resources\Shop\CategoryResource\Pages;
+use App\Filament\Seller\Resources\Shop\CategoryResource\RelationManagers;
 use App\Models\Shop\Category;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -25,8 +25,6 @@ class CategoryResource extends Resource
     protected static ?string $navigationGroup = 'Shop';
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
-
-    protected static bool $shouldRegisterNavigation = false;
 
     protected static ?string $navigationParentItem = 'Productos';
 

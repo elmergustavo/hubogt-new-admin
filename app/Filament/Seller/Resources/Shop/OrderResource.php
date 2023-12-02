@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Filament\Resources\Shop;
+namespace App\Filament\Seller\Resources\Shop;
 
 use App\Enums\OrderStatus;
-use App\Filament\Resources\Shop\OrderResource\Pages;
-use App\Filament\Resources\Shop\OrderResource\RelationManagers;
-use App\Filament\Resources\Shop\OrderResource\Widgets\OrderStats;
+use App\Filament\Seller\Resources\Shop\OrderResource\Pages;
+use App\Filament\Seller\Resources\Shop\OrderResource\RelationManagers;
+use App\Filament\Seller\Resources\Shop\OrderResource\Widgets\OrderStats;
 use App\Forms\Components\AddressForm;
 use App\Models\Blog\Category;
 use App\Models\Shop\Order;
@@ -35,8 +35,6 @@ class OrderResource extends Resource
     protected static ?string $navigationGroup = 'Shop';
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
-
-    protected static bool $shouldRegisterNavigation = false;
 
     protected static ?int $navigationSort = 2;
 
@@ -160,7 +158,7 @@ class OrderResource extends Resource
                     }),
             ])
             ->actions([
-                Tables\Actions\ViewAction::make()->label('Ver'),
+                Tables\Actions\ViewAction::make()->label('Ver detalle'),
                 // Tables\Actions\ViewAction::make(),
 
                 // Tables\Actions\EditAction::make(),
