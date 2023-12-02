@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import laravel, { refreshPaths } from 'laravel-vite-plugin'
+import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
     plugins: [
@@ -11,13 +12,23 @@ export default defineConfig({
                 'app/Filament/**',
                 'app/Forms/Components/**',
                 'app/Tables/Columns/**',
+                'resources/views/**',
+                './resources/**/*.blade.php',
             ],
         }),
     ],
 
-    server: {
-        hmr: {
-            host: 'localhost',
+    css: {
+        postcss: {
+            plugins: [tailwindcss],
         },
+    },
+    server: {
+        host: '0.0.0.0',
+        port: 5173,
+        hmr: {
+            host: 'localhost'
+        },
+
     }
 })

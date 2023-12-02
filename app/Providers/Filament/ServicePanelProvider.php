@@ -6,7 +6,6 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
-use App\Filament\Pages\Auth\Login;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
@@ -19,44 +18,26 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class SellerPanelProvider extends PanelProvider
+class ServicePanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('seller')
-            ->path('vendedor')
-            ->login(Login::class)
-            ->registration()
-            ->passwordReset()
-            ->emailVerification()
-            ->brandLogo(asset('images/logo_horizontal.svg'))
-            ->brandLogoHeight('3rem')
+            ->id('service')
+            ->path('servicio')
             ->colors([
-                'primary' => '#252a61',
+                'primary' => Color::Amber,
             ])
-            ->font('Nunito')
-            ->favicon(asset('images/favicon.ico'))
-            ->discoverResources(in: app_path('Filament/Seller/Resources'), for: 'App\\Filament\\Seller\\Resources')
-            ->discoverPages(in: app_path('Filament/Seller/Pages'), for: 'App\\Filament\\Seller\\Pages')
+            ->discoverResources(in: app_path('Filament/Service/Resources'), for: 'App\\Filament\\Service\\Resources')
+            ->discoverPages(in: app_path('Filament/Service/Pages'), for: 'App\\Filament\\Service\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            // ->discoverWidgets(in: app_path('Filament/Seller/Widgets'), for: 'App\\Filament\\Seller\\Widgets')
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Service/Widgets'), for: 'App\\Filament\\Service\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                // Widgets\FilamentInfoWidget::class,
+                Widgets\FilamentInfoWidget::class,
             ])
-            ->navigationGroups([
-                'Shop',
-                'Marketing'
-                // 'Blog',
-            ])
-            // ->plugin(
-            //     \Hasnayeen\Themes\ThemesPlugin::make()
-            // )
-            ->databaseNotifications()
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

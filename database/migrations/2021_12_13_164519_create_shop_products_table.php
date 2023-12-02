@@ -27,6 +27,7 @@ return new class() extends Migration
             $table->boolean('is_visible')->default(false);
             $table->decimal('old_price', 10, 2)->nullable();
             $table->decimal('price', 10, 2)->nullable();
+            $table->decimal('discount', 10, 2)->nullable();
             $table->decimal('cost', 10, 2)->nullable();
             $table->enum('type', ['deliverable', 'downloadable'])->nullable();
             $table->boolean('backorder')->default(false);

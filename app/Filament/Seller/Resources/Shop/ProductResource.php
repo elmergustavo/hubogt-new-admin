@@ -15,12 +15,16 @@ use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\QueryBuilder;
+use Filament\Tables\Columns\ToggleColumn;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Columns\TextInputColumn;
+use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\QueryBuilder\Constraints\BooleanConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\DateConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\NumberConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\TextConstraint;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
+// use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -199,15 +203,18 @@ class ProductResource extends Resource
                     ->sortable()
                     ->toggleable(),
 
-                Tables\Columns\IconColumn::make('is_visible')
-                    ->label('Visibility')
-                    ->sortable()
-                    ->toggleable(),
+                // Tables\Columns\IconColumn::make('is_visible')
+                //     ->label('Visibility')
+                //     ->sortable()
+                //     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('price')
                     ->label('Price')
                     ->searchable()
                     ->sortable(),
+
+                TextInputColumn::make('discount')
+                    ->label('Descuento'),
 
                 Tables\Columns\TextColumn::make('sku')
                     ->label('SKU')
@@ -227,6 +234,9 @@ class ProductResource extends Resource
                     ->toggleable()
                     ->toggledHiddenByDefault(),
 
+                ToggleColumn::make('is_visible')
+                    ->label('Estado'),
+
                 Tables\Columns\TextColumn::make('published_at')
                     ->label('Publish Date')
                     ->date()
@@ -235,36 +245,41 @@ class ProductResource extends Resource
                     ->toggledHiddenByDefault(),
             ])
             ->filters([
-                QueryBuilder::make()
-                    ->constraints([
-                        TextConstraint::make('name'),
-                        TextConstraint::make('slug'),
-                        TextConstraint::make('sku')
-                            ->label('SKU (Stock Keeping Unit)'),
-                        TextConstraint::make('barcode')
-                            ->label('Barcode (ISBN, UPC, GTIN, etc.)'),
-                        TextConstraint::make('description'),
-                        NumberConstraint::make('old_price')
-                            ->label('Compare at price')
-                            ->icon('heroicon-m-currency-dollar'),
-                        NumberConstraint::make('price')
-                            ->icon('heroicon-m-currency-dollar'),
-                        NumberConstraint::make('cost')
-                            ->label('Cost per item')
-                            ->icon('heroicon-m-currency-dollar'),
-                        NumberConstraint::make('qty')
-                            ->label('Quantity'),
-                        NumberConstraint::make('security_stock'),
-                        BooleanConstraint::make('is_visible')
-                            ->label('Visibility'),
-                        BooleanConstraint::make('featured'),
-                        BooleanConstraint::make('backorder'),
-                        BooleanConstraint::make('requires_shipping')
-                            ->icon('heroicon-m-truck'),
-                        DateConstraint::make('published_at'),
-                    ])
-                    ->constraintPickerColumns(2),
-            ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
+                // Tables\Filters\TrashedFilter::make(),
+                Filter::make('is_visible')
+                    ->query(fn (Builder $query): Builder => $query->where('is_visible', true))
+            ])
+            // ->filters([
+            //     QueryBuilder::make()
+            //         ->constraints([
+            //             TextConstraint::make('name'),
+            //             TextConstraint::make('slug'),
+            //             TextConstraint::make('sku')
+            //                 ->label('SKU (Stock Keeping Unit)'),
+            //             TextConstraint::make('barcode')
+            //                 ->label('Barcode (ISBN, UPC, GTIN, etc.)'),
+            //             TextConstraint::make('description'),
+            //             NumberConstraint::make('old_price')
+            //                 ->label('Compare at price')
+            //                 ->icon('heroicon-m-currency-dollar'),
+            //             NumberConstraint::make('price')
+            //                 ->icon('heroicon-m-currency-dollar'),
+            //             NumberConstraint::make('cost')
+            //                 ->label('Cost per item')
+            //                 ->icon('heroicon-m-currency-dollar'),
+            //             NumberConstraint::make('qty')
+            //                 ->label('Quantity'),
+            //             NumberConstraint::make('security_stock'),
+            //             BooleanConstraint::make('is_visible')
+            //                 ->label('Visibility'),
+            //             BooleanConstraint::make('featured'),
+            //             BooleanConstraint::make('backorder'),
+            //             BooleanConstraint::make('requires_shipping')
+            //                 ->icon('heroicon-m-truck'),
+            //             DateConstraint::make('published_at'),
+            //         ])
+            //         ->constraintPickerColumns(2),
+            // ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
