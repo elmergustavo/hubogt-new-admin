@@ -10,7 +10,9 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Support\Colors\Color;
 use Filament\Pages;
 use Filament\Panel;
+use Filament\Support\Facades\FilamentView;
 use Filament\PanelProvider;
+use Illuminate\Support\Facades\Blade;
 use Filament\Widgets;
 use App\Models\Team;
 use App\Filament\App\Pages\RegisterTeam;
@@ -82,5 +84,12 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+    }
+
+    public function register(): void
+    {
+        parent::register();
+        FilamentView::registerRenderHook('panels::body.end', fn(): string => Blade::render("@vite('resources/js/app.js')"));
+        FilamentView::registerRenderHook('panels::body.end', fn(): string => Blade::render("@vite('resources/css/app.css')"));
     }
 }

@@ -13,7 +13,7 @@ export default defineConfig({
                 'app/Forms/Components/**',
                 'app/Tables/Columns/**',
                 'resources/views/**',
-                './resources/**/*.blade.php',
+                'resources/**/*.blade.php',
             ],
         }),
     ],

@@ -1,11 +1,11 @@
-@vite('resources/css/app.css')
+
 <x-filament-panels::page>
     <div class="bg-gray-100 font-sans">
 
         <!-- Encabezado -->
         <header class="bg-blue-500 text-white p-4">
             <div class="container mx-auto">
-                <h1 class="text-3xl font-semibold">Tu Tienda Online</h1>
+                <h1 class="text-3xl font-semibold">Tu Tienda Online xd</h1>
                 <p class="mt-2">Descubre nuestras increíbles ofertas</p>
             </div>
         </header>
