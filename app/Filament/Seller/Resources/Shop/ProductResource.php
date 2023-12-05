@@ -59,7 +59,8 @@ class ProductResource extends Resource
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->required()
-                                    ->maxLength(255)
+                                    ->label('Nombre')
+                                    ->maxLength(60)
                                     ->live(onBlur: true)
                                     ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
                                         if ($operation !== 'create') {
@@ -77,16 +78,27 @@ class ProductResource extends Resource
                                     ->unique(Product::class, 'slug', ignoreRecord: true),
 
                                 Forms\Components\MarkdownEditor::make('description')
+                                    ->label('Descripción')
                                     ->columnSpan('full'),
                             ])
                             ->columns(2),
 
-                        Forms\Components\Section::make('Images')
+                        Forms\Components\Section::make('Imagenes del producto')
+                            ->description('Prevent abuse by limiting the number of requests per period')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('media')
+
                                     ->collection('product-images')
                                     ->multiple()
+                                    ->preserveFilenames()
                                     ->maxFiles(5)
+                                    ->image()
+                                    ->imageEditor()
+                                    ->imageEditorViewportWidth('1920')
+                                    ->imageEditorViewportHeight('1080')
+                                    ->openable()
+                                    ->moveFiles()
+                                    ->downloadable()
                                     ->hiddenLabel(),
                             ])
                             ->collapsible(),

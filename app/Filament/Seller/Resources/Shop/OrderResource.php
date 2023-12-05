@@ -55,14 +55,21 @@ class OrderResource extends Resource
                             ->columns(2),
 
                         Forms\Components\Section::make('Order items')
-                            ->headerActions([
-                                Action::make('reset')
-                                    ->modalHeading('Are you sure?')
-                                    ->modalDescription('All existing items will be removed from the order.')
-                                    ->requiresConfirmation()
-                                    ->color('danger')
-                                    ->action(fn (Forms\Set $set) => $set('items', [])),
-                            ])
+                            ->description('Los artículos que ha seleccionado el cliente para comprar')
+                            ->icon('heroicon-m-shopping-bag')
+                            ->collapsed()
+                            ->compact()
+
+
+                            ->persistCollapsed()
+                            // ->headerActions([
+                            //     Action::make('reset')
+                            //         ->modalHeading('Are you sure?')
+                            //         ->modalDescription('All existing items will be removed from the order.')
+                            //         ->requiresConfirmation()
+                            //         ->color('danger')
+                            //         ->action(fn (Forms\Set $set) => $set('items', [])),
+                            // ])
                             ->schema([
                                 static::getItemsRepeater(),
                             ]),
@@ -347,7 +354,7 @@ class OrderResource extends Resource
 
                         $product = Product::find($itemData['shop_product_id']);
 
-                        if (! $product) {
+                        if (!$product) {
                             return null;
                         }
 

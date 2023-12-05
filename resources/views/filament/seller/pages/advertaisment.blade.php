@@ -1,7 +1,9 @@
-
+{{-- @vite('resources/css/app.css') --}}
+{{-- <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head> --}}
 <x-filament-panels::page>
     <div class="bg-gray-100 font-sans">
-
         <!-- Encabezado -->
         <header class="bg-blue-500 text-white p-4">
             <div class="container mx-auto">
