@@ -31,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('')
+            ->path('/admin')
             ->login(Login::class)
             // ->registration()
             ->passwordReset()
@@ -89,7 +89,7 @@ class AdminPanelProvider extends PanelProvider
     public function register(): void
     {
         parent::register();
-        FilamentView::registerRenderHook('panels::body.end', fn(): string => Blade::render("@vite('resources/js/app.js')"));
+        FilamentView::registerRenderHook('panels::body.end', fn (): string => Blade::render("@vite('resources/js/app.js')"));
         // FilamentView::registerRenderHook('panels::body.end', fn(): string => Blade::render("@vite('resources/css/app.css')"));
     }
 }

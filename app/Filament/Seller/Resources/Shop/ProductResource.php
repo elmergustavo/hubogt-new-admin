@@ -87,7 +87,6 @@ class ProductResource extends Resource
                             ->description('Prevent abuse by limiting the number of requests per period')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('media')
-
                                     ->collection('product-images')
                                     ->multiple()
                                     ->preserveFilenames()
@@ -108,11 +107,13 @@ class ProductResource extends Resource
                                 Forms\Components\TextInput::make('price')
                                     ->numeric()
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                    ->prefix('Q.')
                                     ->required(),
 
                                 Forms\Components\TextInput::make('old_price')
                                     ->label('Compare at price')
                                     ->numeric()
+                                    ->prefix('Q.')
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
 
@@ -120,6 +121,7 @@ class ProductResource extends Resource
                                     ->label('Cost per item')
                                     ->helperText('Customers won\'t see this price.')
                                     ->numeric()
+                                    ->prefix('Q.')
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
                             ])
@@ -223,6 +225,7 @@ class ProductResource extends Resource
                 //     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('price')
+                    ->prefix('Q.')
                     ->label('Precio')
                     ->searchable()
                     ->sortable(),
