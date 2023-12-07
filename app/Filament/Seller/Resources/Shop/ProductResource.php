@@ -99,7 +99,11 @@ class ProductResource extends Resource
                                     ->openable()
                                     ->moveFiles()
                                     ->downloadable()
-                                    ->hiddenLabel(),
+                                    ->hiddenLabel()
+                                    ->validationMessages([
+                                        'min' => 'Faltan imágenes. Añade al menos 4.',
+                                        'max' => 'Has superado el límite de 8 imágenes.',
+                                    ]),
                             ])
                             ->collapsible(),
 
