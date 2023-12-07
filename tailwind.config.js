@@ -9,7 +9,9 @@ module.exports = {
         './vendor/filament/**/*.blade.php',
 
     ],
-    darkMode: 'class',
+    // darkMode: 'class',
+    darkMode: ['class', '[data-mode="dark"]'],
+
     theme: {
         extend: {
             fontFamily: {

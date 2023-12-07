@@ -90,11 +90,12 @@ class ProductResource extends Resource
                                     ->collection('product-images')
                                     ->multiple()
                                     ->preserveFilenames()
-                                    ->maxFiles(5)
+                                    ->minFiles(4)
+                                    ->maxFiles(8)
                                     ->image()
                                     ->imageEditor()
-                                    ->imageEditorViewportWidth('1920')
-                                    ->imageEditorViewportHeight('1080')
+                                    // ->imageEditorViewportWidth('1920')
+                                    // ->imageEditorViewportHeight('1080')
                                     ->openable()
                                     ->moveFiles()
                                     ->downloadable()
@@ -205,6 +206,14 @@ class ProductResource extends Resource
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('product-image')
                     ->label('Imagen')
+                    ->stacked()
+                    ->size(70)
+                    ->square()
+
+
+                    // ->circular()
+                    ->limit(3)
+                    ->limitedRemainingText(isSeparate: true)
                     ->collection('product-images'),
 
                 Tables\Columns\TextColumn::make('name')

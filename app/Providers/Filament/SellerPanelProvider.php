@@ -36,6 +36,7 @@ class SellerPanelProvider extends PanelProvider
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
+                // 'gray' => Color::Gray,
             ])
             ->font('Nunito')
             ->favicon(asset('images/favicon.ico'))
