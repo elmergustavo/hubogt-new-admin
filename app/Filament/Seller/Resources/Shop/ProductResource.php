@@ -49,6 +49,16 @@ class ProductResource extends Resource
         return 'Productos';
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Productos');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Producto');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

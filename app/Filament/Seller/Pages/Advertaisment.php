@@ -19,6 +19,16 @@ class Advertaisment extends Page
         return 'Publicidad';
     }
 
+    public static function getModelLabel(): string
+    {
+        return __('Publicidad');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Publicidad');
+    }
+
     // public function register(): void
     // {
     //     parent::register();

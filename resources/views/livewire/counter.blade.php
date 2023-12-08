@@ -1,9 +1,12 @@
-{{-- <head>
+<head>
 
     @vite('resources/css/app.css')
-</head> --}}
+</head>
 
 <div class="">
+
+
+
 
 
     <div class="flex justify-center items-center mt-8">

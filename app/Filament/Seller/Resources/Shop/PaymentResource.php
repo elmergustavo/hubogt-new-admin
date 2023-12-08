@@ -23,6 +23,21 @@ class PaymentResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
+    public static function getNavigationLabel(): string
+    {
+        return 'Transacciones';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Transacciones');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Transacción');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

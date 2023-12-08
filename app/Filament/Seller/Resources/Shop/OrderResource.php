@@ -43,6 +43,16 @@ class OrderResource extends Resource
         return 'Ordenes';
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Ordenes');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Orden');
+    }
+
 
     public static function form(Form $form): Form
     {

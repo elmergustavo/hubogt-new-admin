@@ -34,6 +34,16 @@ class CustomerResource extends Resource
         return 'Clientes';
     }
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Clientes');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Cliente');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

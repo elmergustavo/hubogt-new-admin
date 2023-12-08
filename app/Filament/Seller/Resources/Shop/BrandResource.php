@@ -29,6 +29,16 @@ class BrandResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
+    public static function getPluralModelLabel(): string
+    {
+        return __('Marcas');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Marca');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
