@@ -34,7 +34,8 @@ class SellerPanelProvider extends PanelProvider
             ->registration()
             ->passwordReset()
             ->emailVerification()
-            ->brandLogo(asset('images/logo_horizontal.svg'))
+            // ->brandLogo(asset('images/logo_horizontal.svg'))
+            ->brandLogo(fn () => view('filament.admin.logo'))
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
@@ -68,7 +69,7 @@ class SellerPanelProvider extends PanelProvider
             ->profile()
             ->authPasswordBroker('users')
             ->maxContentWidth(MaxWidth::ScreenTwoExtraLarge)
-            ->spa()
+            // ->spa()
 
             // ->userMenuItems([
             //     'profile' => MenuItem::make()->label('Edit profile'),
@@ -95,6 +96,6 @@ class SellerPanelProvider extends PanelProvider
     {
         parent::register();
         FilamentView::registerRenderHook('panels::body.end', fn (): string => Blade::render("@vite('resources/js/app.js')"));
-        // FilamentView::registerRenderHook('panels::body.end', fn (): string => Blade::render("@vite('resources/css/app.css')"));
+        FilamentView::registerRenderHook('panels::body.end', fn (): string => Blade::render("@vite('resources/css/app.css')"));
     }
 }

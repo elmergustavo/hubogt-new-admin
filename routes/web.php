@@ -9,3 +9,4 @@ use App\Http\Controllers\RoutingController;
 
 
 Route::get('/', fn () => view('index'))->name('home');
+Route::get('/login', fn () => view('login'))->name('login');

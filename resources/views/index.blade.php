@@ -53,4 +53,11 @@
             </ul>
         </nav>
     </div>
+
+    <div class="flex justify-center items-center mt-8">
+        <div class="max-w-3xl text-center">
+            <img src="assets/mantenimiento.svg" alt="En Mantenimiento" />
+            <p>Aún estamos contruyendo este modulo ¡Vuelve pronto!</p>
+        </div>
+    </div>
 @endsection
