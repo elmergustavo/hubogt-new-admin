@@ -11,7 +11,9 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentView;
+use Filament\Navigation\MenuItem;
 use Filament\Widgets;
+use Filament\Support\Enums\MaxWidth;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -38,7 +40,7 @@ class SellerPanelProvider extends PanelProvider
                 'primary' => '#252a61',
                 // 'gray' => Color::Gray,
             ])
-            ->font('Nunito')
+            // ->font('Nunito')
             ->favicon(asset('images/favicon.ico'))
             ->discoverResources(in: app_path('Filament/Seller/Resources'), for: 'App\\Filament\\Seller\\Resources')
             ->discoverPages(in: app_path('Filament/Seller/Pages'), for: 'App\\Filament\\Seller\\Pages')
@@ -59,7 +61,20 @@ class SellerPanelProvider extends PanelProvider
             // ->plugin(
             //     \Hasnayeen\Themes\ThemesPlugin::make()
             // )
+            // ->collapsibleNavigationGroups(false)
+
             ->databaseNotifications()
+            ->sidebarCollapsibleOnDesktop()
+            ->profile()
+            ->authPasswordBroker('users')
+            ->maxContentWidth(MaxWidth::ScreenTwoExtraLarge)
+            ->spa()
+
+            // ->userMenuItems([
+            //     'profile' => MenuItem::make()->label('Edit profile'),
+            //     // ...
+            // ])
+            // ->sidebarFullyCollapsibleOnDesktop()
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
