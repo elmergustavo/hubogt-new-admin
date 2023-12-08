@@ -1,63 +1,27 @@
-@extends('components.layouts.app')
+@extends('layouts.home', ['title' => 'Tienda en Linea', 'sub_title' => 'Elements', 'mode' => $mode ?? '', 'demo' => $demo ?? ''])
 
 @section('content')
-    <div class="w-full bg-[#EBAF01]">
-        <p class="text-center font-semibold text-white py-4">
-            -20% de descuento con el código: BTR20
-        </p>
-    </div>
-
-    @php
-        $navIcons = [['src' => '/assets/icons/search.svg', 'alt' => 'search', 'href' => '/'], ['src' => '/assets/icons/like.svg', 'alt' => 'heart', 'href' => '/'], ['src' => '/assets/icons/user.svg', 'alt' => 'user', 'href' => '/login'], ['src' => '/assets/icons/card.svg', 'alt' => 'card', 'href' => '/login']];
-    @endphp
-
-    <header class="max-w-10xl mx-auto">
-        <nav class="flex justify-between items-center px-6 md:px-20 py-4">
-            <a href="/" class="flex items-center gap-1">
-                <img src="/assets/logo/logo_horizontal.svg" alt="logo" width="180" height="180">
-
-            </a>
-
-            <div class="flex items-center gap-5 font-semibold">
-                @foreach ($navIcons as $icon)
-                    <a href="{{ $icon['href'] }}">
-                        <img src="{{ $icon['src'] }}" alt="{{ $icon['alt'] }}" width="25" height="25"
-                            class="object-contain">
-                    </a>
-                @endforeach
-            </div>
-        </nav>
-    </header>
-
-
-
-
-    @php
-        $navLinks = [['href' => '/', 'key' => 'Inspiration', 'text' => 'Moda Mujer'], ['href' => '/', 'key' => 'Find Projects', 'text' => 'Moda Hombre'], ['href' => '/', 'key' => 'Learn Development', 'text' => 'Hogar & Jardín'], ['href' => '/', 'key' => 'Career Advancement', 'text' => 'Salud y Belleza'], ['href' => '/', 'key' => 'Hire Developers', 'text' => 'Coleccionables y Arte'], ['href' => '/', 'key' => 'Hire Developers', 'text' => 'Zapatos'], ['href' => '/', 'key' => 'Hire Developers', 'text' => 'Joyería'], ['href' => '/', 'key' => 'Hire Developers', 'text' => 'Cupones'], ['href' => '/', 'key' => 'Hire Developers', 'text' => 'Más']];
-    @endphp
-
-    <div class="bg-[#F5F5F5] w-full text-sm font-semibold text-center flex justify-center items-center">
-        <nav class="p-4">
-            <ul class="flex justify-between items-center space-x-10">
-                @foreach ($navLinks as $link)
-                    <li class="">
-                        <a href="{{ $link['href'] }}" class="flex gap-1">
-                            {{ $link['text'] }}
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-4 h-4">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </nav>
-    </div>
-
     <div class="flex justify-center items-center mt-8">
         <div class="max-w-3xl text-center">
             <img src="assets/mantenimiento.svg" alt="En Mantenimiento" />
             <p>Aún estamos contruyendo este modulo ¡Vuelve pronto!</p>
+        </div>
+    </div>
+
+    <div class="border-[16px] border-[#84CDE4] border-opacity-25">
+        <div class="bg-white px-8 py-10 flex flex-col justify-center items-center">
+            <h1 class="font-bold text-2xl">Buho Vendedores</h1>
+
+            <p class="max-w-xl text-center">
+                Buho es un marketplace que ha estado potenciando a los pequeños
+                negocios ¿Quieres vender en Buhogt? Abre un puesto y y empieza a
+                vender.
+            </p>
+
+            <div class="flex gap-3 text-sm font-semibold mt-6">
+                <button class="px-4 py-2 text-white bg-[#272B60]">Comenzar a vender</button>
+                <button class="px-4 py-2 border-2 border-black">Requisitos para vender</button>
+            </div>
         </div>
     </div>
 @endsection

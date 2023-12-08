@@ -77,14 +77,14 @@ class CommentsRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make()
-                    ->after(function ($record) {
-                        Notification::make()
-                            ->title('New comment')
-                            ->icon('heroicon-o-chat-bubble-bottom-center-text')
-                            ->body("**{$record->customer->name} commented on product ({$record->commentable->name}).**")
-                            ->sendToDatabase(auth()->user());
-                    }),
+                // Tables\Actions\CreateAction::make()
+                //     ->after(function ($record) {
+                //         Notification::make()
+                //             ->title('New comment')
+                //             ->icon('heroicon-o-chat-bubble-bottom-center-text')
+                //             ->body("**{$record->customer->name} commented on product ({$record->commentable->name}).**")
+                //             ->sendToDatabase(auth()->user());
+                //     }),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

@@ -19,6 +19,8 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
     use HasFactory;
     use Notifiable;
 
+
+
     /**
      * @var array<int, string>
      */
@@ -36,6 +38,23 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
 
     public function canAccessPanel(Panel $panel): bool
     {
+        if ($panel->getId() === 'admin') {
+
+            return $this->role === 'admin' && $this->status === 'active';
+        }
+        if ($panel->getId() === 'seller') {
+
+            return $this->role === 'vendor' && $this->status === 'active';
+        }
+        if ($panel->getId() === 'service') {
+
+            return $this->role === 'service' && $this->status === 'active';
+        }
+
+        if ($panel->getId() === 'app') {
+
+            return $this->role === 'admin' && $this->status === 'active';
+        }
         return true;
     }
 

@@ -29,9 +29,9 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
-            ->id('admin')
-            ->path('/admin')
+            // ->default()
+            ->id('administrador')
+            ->path('administrador')
             ->login(Login::class)
             // ->registration()
             ->passwordReset()
@@ -43,9 +43,11 @@ class AdminPanelProvider extends PanelProvider
                 'gray' => Color::Gray,
 
             ])
-            ->font('Nunito')
+            // ->font('Nunito')
             // ->topNavigation();
+            ->authGuard('web')
             ->favicon(asset('images/favicon.ico'))
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([

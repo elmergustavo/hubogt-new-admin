@@ -12,6 +12,7 @@ use Filament\Panel;
 use Filament\Pages;
 use App\Filament\Pages\Dashboard;
 use Filament\PanelProvider;
+use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -27,8 +28,9 @@ class AppPanelProvider extends PanelProvider
     {
         return $panel
             // ->default()
+            ->default()
             ->id('app')
-            ->path('app')
+            ->path('admin')
             ->login(Login::class)
             // ->registration()
             ->passwordReset()
@@ -37,19 +39,20 @@ class AppPanelProvider extends PanelProvider
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
+                'gray' => Color::Gray,
+
             ])
-            ->font('Nunito')
+            // ->font('Nunito')
+            // ->topNavigation();
+            ->authGuard('web')
             ->favicon(asset('images/favicon.ico'))
-            ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')
-            // ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            // ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\\Filament\\App\\Pages')
+            ->viteTheme('resources/css/filament/admin/theme.css')
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
+            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                // Dashboard::class,
-                Pages\Dashboard::class,
+                Dashboard::class,
             ])
-            // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->discoverWidgets(in: app_path('Filament/App/Widgets'), for: 'App\\Filament\\App\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 // Widgets\FilamentInfoWidget::class,
@@ -58,10 +61,14 @@ class AppPanelProvider extends PanelProvider
                 'Shop',
                 'Blog',
             ])
+            ->plugin(
+                \Hasnayeen\Themes\ThemesPlugin::make()
+            )
             ->databaseNotifications()
             // ->tenant(Team::class)
             // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
+                // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -72,6 +79,9 @@ class AppPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            // ->tenantMiddleware([
+            //     \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
+            // ])
             ->authMiddleware([
                 Authenticate::class,
             ]);

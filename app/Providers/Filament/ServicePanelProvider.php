@@ -9,6 +9,7 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use App\Filament\Pages\Auth\Login;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -25,6 +26,8 @@ class ServicePanelProvider extends PanelProvider
         return $panel
             ->id('service')
             ->path('servicio')
+            ->login(Login::class)
+            ->authGuard('web')
             ->colors([
                 'primary' => Color::Amber,
             ])

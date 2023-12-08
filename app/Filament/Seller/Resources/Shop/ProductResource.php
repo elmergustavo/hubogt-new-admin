@@ -7,6 +7,7 @@ use App\Filament\Seller\Resources\Shop\ProductResource\Pages;
 use App\Filament\Seller\Resources\Shop\ProductResource\RelationManagers;
 use App\Filament\Seller\Resources\Shop\ProductResource\Widgets\ProductStats;
 use App\Models\Shop\Product;
+use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
@@ -24,6 +25,7 @@ use Filament\Tables\Filters\QueryBuilder\Constraints\DateConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\NumberConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\TextConstraint;
 use Filament\Tables\Table;
+
 // use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -259,7 +261,41 @@ class ProductResource extends Resource
                     ->rules(['min:0', 'numeric'])
                     ->type('number')
                     ->toggleable()
-                    ->label('Descuento'),
+                    ->label('Precio con descuento')
+                    ->afterStateUpdated(function ($record, $state) {
+                        // Runs before the state is saved to the database.
+                        // \Log::info("message");
+                        if ($state > $record->price) {
+
+
+                            Notification::make()
+                                ->title('El valor de descuento no puede ser menor al precio')
+                                ->danger()
+                                ->send();
+
+                            \Log::info($record->discount);
+                            \Log::info($state);
+                            $record->discount = null;
+                            $record->save();
+                        } else {
+                            Notification::make()
+                                ->title('Se actualizón el precio de descuento correctamente')
+                                ->success()
+                                ->send();
+                        }
+                    }),
+
+                Tables\Columns\TextColumn::make('amount_including_vat')
+                    ->label('Porcentaje(%)')
+                    ->state(function (Model $record): string {
+
+                        if ($record->discount == null) {
+                            return '0 %';
+                        } else {
+
+                            return number_format((($record->price - $record->discount) / $record->price) * 100, 2) . ' %';
+                        }
+                    }),
 
                 Tables\Columns\TextColumn::make('sku')
                     ->label('SKU')
