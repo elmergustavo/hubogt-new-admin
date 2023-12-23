@@ -11,6 +11,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
 use Filament\Pages;
 use App\Filament\Pages\Dashboard;
+use App\Http\Middleware\RoleMiddleware;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
@@ -69,6 +70,7 @@ class AppPanelProvider extends PanelProvider
             // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
                 // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
+                // RoleMiddleware::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,

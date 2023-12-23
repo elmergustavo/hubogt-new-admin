@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\Shop;
 
-use App\Filament\Resources\FaqResource\Pages;
-use App\Filament\Resources\FaqResource\RelationManagers;
+use App\Filament\Resources\Shop\FaqResource\Pages;
+use App\Filament\Resources\Shop\FaqResource\RelationManagers;
 use App\Models\Faq;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Tables\Columns\IconColumn;
-
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Toggle;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Components\Toggle;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 
 class FaqResource extends Resource
 {
@@ -24,31 +24,37 @@ class FaqResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
 
-    // protected static ?string $navigationParentItem = 'Notifications';
+    protected static ?string $navigationParentItem = 'Preguntas frecuentes';
 
-
-    // protected static ?string $recordTitleAttribute = 'name';
     protected static ?string $navigationGroup = 'Preguntas frecuentes';
 
     public static function getNavigationLabel(): string
     {
-        return 'Preguntas frecuentes';
+        return 'vendedores';
     }
 
     public static function getPluralModelLabel(): string
     {
-        return __('Preguntas frecuentes Compradores');
+        return __('Preguntas frecuentes Vendedores');
     }
 
     public static function getModelLabel(): string
     {
-        return __('pregunta frecuente');
+        return __('pregunta');
     }
+
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('question_type', 'Buyer');
+        return parent::getEloquentQuery()->where('question_type', 'Seller');
     }
+
+    // protected function mutateFormDataBeforeCreate(array $data): array
+    // {
+    //     $data['question_type'] = 'Seller';
+
+    //     return $data;
+    // }
 
     public static function form(Form $form): Form
     {
@@ -61,12 +67,23 @@ class FaqResource extends Resource
                     ->label('Activo'),
 
 
-                // Forms\Components\TextInput::make('answer')
-                //     ->label('Descripción')
-                //     ->columnSpan('full'),
+
+                Select::make('question_type')
+                    ->options([
+                        'Buyer' => 'Compradores',
+                        'Seller' => 'Vendedores',
+                        'Service' => 'Servicios',
+                    ])
+                    // ->visible(false)
+                    ->disabled()
+                    ->default('Seller')
+                    ->selectablePlaceholder(false)
+                    ->label('Tipo de pregunta'),
+
+
                 Forms\Components\RichEditor::make('answer')
-                    ->label('Contenido')
                     ->columnSpan('full')
+                    ->label('Contenido')
                     ->disableToolbarButtons([
                         // 'attachFiles',
                         // 'blockquote',
@@ -130,7 +147,7 @@ class FaqResource extends Resource
         return [
             'index' => Pages\ListFaqs::route('/'),
             // 'create' => Pages\CreateFaq::route('/create'),
-            // 'edit' => Pages\EditFaq::route('/{record}/edit'),
+            'edit' => Pages\EditFaq::route('/{record}/edit'),
         ];
     }
 }

@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('chats', function (Blueprint $table) {
             $table->id();
-            $table->string('question', 2048);
-            $table->longText('answer');
-            $table->boolean('active')->default(false);
-            $table->enum('question_type', ['Buyer', 'Seller', 'Service'])->default('Buyer');
-            $table->datetime('published_at')->nullable();
+
+            $table->string('name')->nullable();
+            $table->string('image_url')->nullable();
+            $table->boolean('is_group')->default(false);
+
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('chats');
     }
 };
