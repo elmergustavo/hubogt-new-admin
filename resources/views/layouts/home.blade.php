@@ -7,6 +7,12 @@
     @include('layouts.shared/title-meta', ['title' => $title])
     @yield('css')
     @include('layouts.shared/head-css')
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,6 +24,8 @@
         <div class="page-content">
 
             @include('layouts.shared/topbar')
+
+
 
             <main class="">
 
@@ -40,6 +48,8 @@
 
     @include('layouts.shared/footer-scripts')
 
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite(['resources/js/app.js'])
 
 </body>

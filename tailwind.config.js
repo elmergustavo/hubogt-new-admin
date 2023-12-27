@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors')
+import preset from './vendor/filament/support/tailwind.config.preset'
 
 module.exports = {
+    presets: [preset],
     content: [
+        './app/Filament/**/*.php',
+        './resources/views/**/*.blade.php',
+        './vendor/filament/**/*.blade.php',
         "./resources/**/*.{html,js}",
         './resources/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
