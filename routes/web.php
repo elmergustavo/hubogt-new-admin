@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\HomeController;
 use App\Livewire\Form;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
@@ -8,7 +9,8 @@ use App\Http\Controllers\RoutingController;
 
 
 
-Route::get('/', fn () => view('index'))->name('home');
+// Route::get('/', fn () => view('index'))->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', fn () => view('home'))->name('ecommerce');
 // Route::get('/login', fn () => view('login'))->name('login');
 Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
