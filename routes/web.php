@@ -12,6 +12,7 @@ use App\Http\Controllers\RoutingController;
 // Route::get('/', fn () => view('index'))->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', fn () => view('home'))->name('ecommerce');
+Route::get('/vededor', fn () => view('frontend.home.vendor'))->name('vendor');
 // Route::get('/login', fn () => view('login'))->name('login');
 Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
 // Route::get('/login', fn () => view('login'))->name('cookie-settings');

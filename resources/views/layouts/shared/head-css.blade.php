@@ -10,7 +10,7 @@
 <!--Swiper slider css-->
 {{-- <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css"> --}}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> --}}
 
 <link rel="stylesheet" href="css/all.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="css/home.css">
 <link rel="stylesheet" href="css/responsive_home.css">
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}
 
 @filamentStyles
 @vite('resources/css/app.css')
