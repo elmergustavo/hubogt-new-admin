@@ -42,7 +42,7 @@
  <script src="js/jquery.classycountdown.js"></script>
 
  <!--main/custom js-->
- <script src="js/main.js"></script>
+ {{-- <script src="js/main.js"></script> --}}
 
  <!-- Frost Plugin Js -->
  {{-- <script src="assets/libs/@frostui/tailwindcss/frostui.js"></script> --}}
