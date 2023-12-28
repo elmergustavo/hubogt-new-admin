@@ -58,6 +58,88 @@ p {
     line-height: 27px;
 }
 
+
+
+/*======================
+	discounts CSS START
+========================*/
+
+.discounts {
+    width: 100%;
+    background-color: #EBAF01;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/*======================
+	BUHO VENDEDORES CSS START
+========================*/
+.buho-container {
+    border-width: 16px;
+    border-color: rgba(132, 205, 228, 0.25);
+    /* Agregar 25% de opacidad */
+    border-style: solid;
+}
+
+.buho-content {
+    background-color: #ffffff;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buho-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.buho-description {
+    max-width: 28rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.buho-buttons {
+    display: flex;
+    gap: 0.75rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    margin-top: 1.5rem;
+}
+
+.buho-buttons button:nth-child(1) {
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    background-color: #272B60;
+}
+
+.buho-buttons button:nth-child(2) {
+    padding: 0.5rem 1rem;
+    border: 2px solid #000000;
+    background-color: white;
+}
+
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .buho-buttons {
+        flex-direction: column;
+        /* Cambiar a columna en dispositivos móviles */
+    }
+
+    .buho-buttons button {
+        width: auto;
+        /* Permitir que los botones se expandan según su contenido */
+        margin-bottom: 0.5rem;
+        /* Agregar espacio entre los botones */
+    }
+}
+
 /*======================
 	COMMON CSS START
 ========================*/
@@ -2826,7 +2908,7 @@ SCROLL BUTTON START
     cursor: pointer;
     z-index: 99;
     display: none;
-    background: #353535;
+    background: #57C2EF;
     border-radius: 50%;
     animation: move linear 0.8s infinite alternate;
     transition: all linear 0.3s;
@@ -9002,7 +9084,7 @@ header .wsus__call_text a:hover {
 
 .footer_2 {
     margin-top: 70px;
-    background: #0b2c3d;
+    background: #272B60;
 }
 
 .footer_2 form {

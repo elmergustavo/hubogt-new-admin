@@ -20,6 +20,14 @@
     <!--============================
         HEADER START
     ==============================-->
+    @include('frontend.home.discounts')
+    <!--============================
+        HEADER END
+    ==============================-->
+
+    <!--============================
+        HEADER START
+    ==============================-->
     @include('frontend.layouts.header')
     <!--============================
         HEADER END
@@ -49,8 +57,8 @@
 
 
 
-    @vite(['resources/js/app.js'])
-    @vite(['resources/css/app.css'])
+    {{-- @vite(['resources/js/app.js'])
+    @vite(['resources/css/app.css']) --}}
 
 </body>
 

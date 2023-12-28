@@ -1,9 +1,3 @@
-<div class="w-full bg-[#EBAF01]">
-    <p class="text-center font-semibold text-white py-2">
-        -20% de descuento con el código: BTR20
-    </p>
-</div>
-
 <header>
     <div class="container">
         <div class="row">

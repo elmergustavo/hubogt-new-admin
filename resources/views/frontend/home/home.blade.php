@@ -1,12 +1,10 @@
-
 @extends('frontend.layouts.master', ['title' => 'Tienda en Linea', 'sub_title' => 'Elements', 'mode' => $mode ?? '', 'demo' => $demo ?? ''])
 
 
 @section('content')
-
-  <!--==========================
-        PRODUCT MODAL VIEW START
-    ===========================-->
+    <!--==========================
+            PRODUCT MODAL VIEW START
+        ===========================-->
     <section class="product_popup_modal">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
@@ -150,13 +148,13 @@
         </div>
     </section>
     <!--==========================
-        PRODUCT MODAL VIEW END
-    ===========================-->
+            PRODUCT MODAL VIEW END
+        ===========================-->
 
 
     <!--============================
-        BANNER PART 2 START
-    ==============================-->
+            BANNER PART 2 START
+        ==============================-->
     <section id="wsus__banner">
         <div class="container">
             <div class="row">
@@ -211,13 +209,13 @@
     </section>
 
     <!--============================
-        BANNER PART 2 END
-    ==============================-->
+            BANNER PART 2 END
+        ==============================-->
 
 
     <!--============================
-        FLASH SELL START
-    ==============================-->
+            FLASH SELL START
+        ==============================-->
     <section id="wsus__flash_sell" class="wsus__flash_sell_2">
         <div class=" container">
             <div class="row">
@@ -384,13 +382,13 @@
         </div>
     </section>
     <!--============================
-        FLASH SELL END
-    ==============================-->
+            FLASH SELL END
+        ==============================-->
 
 
     <!--============================
-        MONTHLY TOP PRODUCT START
-    ==============================-->
+            MONTHLY TOP PRODUCT START
+        ==============================-->
     <section id="wsus__monthly_top" class="wsus__monthly_top_2">
         <div class="container">
             <div class="row">
@@ -649,13 +647,13 @@
         </div>
     </section>
     <!--============================
-        MONTHLY TOP PRODUCT END
-    ==============================-->
+            MONTHLY TOP PRODUCT END
+        ==============================-->
 
 
     <!--============================
-        BRAND SLIDER START
-    ==============================-->
+            BRAND SLIDER START
+        ==============================-->
     <section id="wsus__brand_sleder" class="brand_slider_2">
         <div class="container">
             <div class="brand_border">
@@ -700,13 +698,13 @@
         </div>
     </section>
     <!--============================
-        BRAND SLIDER END
-    ==============================-->
+            BRAND SLIDER END
+        ==============================-->
 
 
     <!--============================
-        SINGLE BANNER START
-    ==============================-->
+            SINGLE BANNER START
+        ==============================-->
     <section id="wsus__single_banner" class="wsus__single_banner_2">
         <div class="container">
             <div class="row">
@@ -738,13 +736,13 @@
         </div>
     </section>
     <!--============================
-        SINGLE BANNER END
-    ==============================-->
+            SINGLE BANNER END
+        ==============================-->
 
 
     <!--============================
-        HOT DEALS START
-    ==============================-->
+            HOT DEALS START
+        ==============================-->
     <section id="wsus__hot_deals" class="wsus__hot_deals_2">
         <div class="container">
             <div class="row">
@@ -1398,13 +1396,13 @@
         </div>
     </section>
     <!--============================
-        HOT DEALS END
-    ==============================-->
+            HOT DEALS END
+        ==============================-->
 
 
     <!--============================
-        ELECTRONIC PART START
-    ==============================-->
+            ELECTRONIC PART START
+        ==============================-->
     <section id="wsus__electronic">
         <div class="container">
             <div class="row">
@@ -1564,13 +1562,13 @@
         </div>
     </section>
     <!--============================
-        ELECTRONIC PART END
-    ==============================-->
+            ELECTRONIC PART END
+        ==============================-->
 
 
     <!--============================
-        ELECTRONIC PART START
-    ==============================-->
+            ELECTRONIC PART START
+        ==============================-->
     <section id="wsus__electronic2">
         <div class="container">
             <div class="row">
@@ -1733,13 +1731,13 @@
         </div>
     </section>
     <!--============================
-        ELECTRONIC PART END
-    ==============================-->
+            ELECTRONIC PART END
+        ==============================-->
 
 
     <!--============================
-        LARGE BANNER  START
-    ==============================-->
+            LARGE BANNER  START
+        ==============================-->
     <section id="wsus__large_banner">
         <div class="container">
             <div class="row">
@@ -1772,13 +1770,13 @@
         </div>
     </section>
     <!--============================
-        LARGE BANNER  END
-    ==============================-->
+            LARGE BANNER  END
+        ==============================-->
 
 
     <!--============================
-        WEEKLY BEST ITEM START
-    ==============================-->
+            WEEKLY BEST ITEM START
+        ==============================-->
     <section id="wsus__weekly_best" class="home2_wsus__weekly_best_2 ">
         <div class="container">
             <div class="row">
@@ -2016,13 +2014,13 @@
         </div>
     </section>
     <!--============================
-        WEEKLY BEST ITEM END
-    ==============================-->
+            WEEKLY BEST ITEM END
+        ==============================-->
 
 
     <!--============================
-        HOME SERVICES START
-    ==============================-->
+            HOME SERVICES START
+        ==============================-->
     <section id="wsus__home_services" class="home_service_2">
         <div class="container">
             <div class="row">
@@ -2058,13 +2056,13 @@
         </div>
     </section>
     <!--============================
-        HOME SERVICES END
-    ==============================-->
+            HOME SERVICES END
+        ==============================-->
 
 
     <!--============================
-        HOME BLOGS START
-    ==============================-->
+            HOME BLOGS START
+        ==============================-->
     <section id="wsus__blogs" class="home_blogs">
         <div class="container">
             <div class="row">
@@ -2150,27 +2148,24 @@
         </div>
     </section>
     <!--============================
-        HOME BLOGS END
-    ==============================-->
+            HOME BLOGS END
+        ==============================-->
 
 
 
 
-    <div class="border-[16px] border-[#84CDE4] border-opacity-25">
-        <div class="bg-white px-8 py-10 flex flex-col justify-center items-center">
-            <h1 class="font-bold text-2xl">Buho Vendedores</h1>
-
-            <p class="max-w-xl text-center">
+    <div class="buho-container">
+        <div class="buho-content">
+            <h1 class="buho-title">Buho Vendedores</h1>
+            <p class="buho-description">
                 Buho es un marketplace que ha estado potenciando a los pequeños
-                negocios ¿Quieres vender en Buhogt? Abre un puesto y y empieza a
+                negocios ¿Quieres vender en Buhogt? Abre un puesto y empieza a
                 vender.
             </p>
-
-            <div class="flex gap-3 text-sm font-semibold mt-6">
-                <button class="px-4 py-2 text-white bg-[#272B60]">Comenzar a vender</button>
-                <button class="px-4 py-2 border-2 border-black">Requisitos para vender</button>
+            <div class="buho-buttons">
+                <button>Comenzar a vender</button>
+                <button>Requisitos para vender</button>
             </div>
         </div>
     </div>
-
 @endsection
