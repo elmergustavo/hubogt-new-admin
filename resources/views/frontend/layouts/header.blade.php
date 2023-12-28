@@ -410,7 +410,7 @@
                         <li class="wsus__relative_li"><a href="#">pages <i class="fas fa-caret-down"></i></a>
                             <ul class="wsus__menu_droapdown">
                                 <li><a href="404.html">404</a></li>
-                                <li><a href="faqs.html">faq</a></li>
+                                <li><a href="{{ route('faqs') }}">faq</a></li>
                                 <li><a href="invoice.html">invoice</a></li>
                                 <li><a href="about_us.html">about</a></li>
                                 <li><a href="product_grid_view.html">product</a></li>

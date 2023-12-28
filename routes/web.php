@@ -14,8 +14,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', fn () => view('home'))->name('ecommerce');
 Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
 Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
+Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
 // Route::get('/login', fn () => view('login'))->name('login');
-Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
+// Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
 // Route::get('/login', fn () => view('login'))->name('cookie-settings');
 // Route::get('/login', fn () => view('login'))->name('sell-on-buhogt');
 
