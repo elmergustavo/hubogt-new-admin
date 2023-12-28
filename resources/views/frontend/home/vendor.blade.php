@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master', ['title' => 'Tienda en Linea', 'sub_title' => 'Elements', 'mode' => $mode ?? '', 'demo' => $demo ?? ''])
+@extends('frontend.layouts.master', ['title' => 'Tiendas BuhoGT', 'sub_title' => 'Elements', 'mode' => $mode ?? '', 'demo' => $demo ?? ''])
 
 
 @section('content')
@@ -7,9 +7,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h4>Tiendas</h4>
+                        <h4>Tiendas BUHOGT</h4>
+                        <p class="text-white">Encuentra los mejores articulos </p>
                         <ul>
-                            <li><a href="#">home xdxd</a></li>
+                            <li><a href="#">home</a></li>
                             <li><a href="#">Tiendas</a></li>
                         </ul>
                     </div>

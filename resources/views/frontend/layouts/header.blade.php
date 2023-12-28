@@ -14,7 +14,7 @@
             </div>
             <div class="col-xl-2 col-7 col-md-8 col-lg-2">
                 <div class="wsus_logo_area">
-                    <a class="wsus__header_logo" href="index.html">
+                    <a class="wsus__header_logo" href="{{ route('home') }}">
                         <img src="/assets/logo/logo_horizontal.svg" alt="logo" class="img-fluid w-100">
                         {{-- <img src="images/logo_horizontal_dark.svg" alt="logo" class="img-fluid w-100"> --}}
                     </a>
@@ -404,8 +404,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="{{ route('vendor') }}">vendor</a></li>
-                        <li><a href="blog.html">blog</a></li>
+                        <li><a href="{{ route('vendor') }}">Tiendas</a></li>
+                        <li><a href="{{ route('blog') }}">blog</a></li>
                         <li><a href="daily_deals.html">campain</a></li>
                         <li class="wsus__relative_li"><a href="#">pages <i class="fas fa-caret-down"></i></a>
                             <ul class="wsus__menu_droapdown">
