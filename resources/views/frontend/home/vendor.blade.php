@@ -20,9 +20,9 @@
     </section>
 
     <section id="wsus__product_page" class="wsus__vendors">
-        <div class="container">
+        <div class="container-vendor">
             <div class="row">
-                <div class="col-xl-3 col-lg-4">
+                <div class="col-xl-3 col-lg-3">
                     <div class="wsus__sidebar_filter">
                         <p>filter</p>
                         <span class="wsus__filter_icon">
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-6">
+                        <div class="col-xl-4 col-md-6">
                             <div class="wsus__vendor_single">
                                 <img src="images/vendor_1.jpg" alt="vendor" class="img-fluid w-100">
                                 <div class="wsus__vendor_text">
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-6">
+                        <div class="col-xl-4 col-md-6">
                             <div class="wsus__vendor_single">
                                 <img src="images/vendor_2.jpg" alt="vendor" class="img-fluid w-100">
                                 <div class="wsus__vendor_text">
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-6">
+                        <div class="col-xl-4 col-md-6">
                             <div class="wsus__vendor_single">
                                 <img src="images/vendor_3.jpg" alt="vendor" class="img-fluid w-100">
                                 <div class="wsus__vendor_text">
@@ -167,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-6">
+                        <div class="col-xl-4 col-md-6">
                             <div class="wsus__vendor_single">
                                 <img src="images/vendor_4.jpg" alt="vendor" class="img-fluid w-100">
                                 <div class="wsus__vendor_text">
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-6">
+                        <div class="col-xl-4 col-md-6">
                             <div class="wsus__vendor_single">
                                 <img src="images/vendor_5.jpg" alt="vendor" class="img-fluid w-100">
                                 <div class="wsus__vendor_text">
@@ -211,7 +211,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-md-6">
+                        <div class="col-xl-4 col-md-6">
                             <div class="wsus__vendor_single">
                                 <img src="images/vendor_6.jpg" alt="vendor" class="img-fluid w-100">
                                 <div class="wsus__vendor_text">

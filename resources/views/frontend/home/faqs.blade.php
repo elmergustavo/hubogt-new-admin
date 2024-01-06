@@ -3,8 +3,8 @@
 
 @section('content')
     <!--============================
-                BREADCRUMB START
-            ==============================-->
+                        BREADCRUMB START
+                    ==============================-->
     <section id="wsus__breadcrumb">
         <div class="wsus_breadcrumb_overlay">
             <div class="container">
@@ -21,13 +21,13 @@
         </div>
     </section>
     <!--============================
-                BREADCRUMB END
-            ==============================-->
+                        BREADCRUMB END
+                    ==============================-->
 
 
     <!--============================
-                FAQ START
-            ==============================-->
+                        FAQ START
+                    ==============================-->
     <section id="wsus__faq">
         <div class="container">
             <div class="accordion" id="accordionExample">
@@ -289,6 +289,6 @@
         </div>
     </section>
     <!--============================
-                FAQ END
-            ==============================-->
+                        FAQ END
+                    ==============================-->
 @endsection

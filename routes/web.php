@@ -13,6 +13,7 @@ use App\Http\Controllers\RoutingController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', fn () => view('home'))->name('ecommerce');
 Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
+Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare');
 Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
 Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
 // Route::get('/login', fn () => view('login'))->name('login');
