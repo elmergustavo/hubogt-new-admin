@@ -115,16 +115,23 @@ p {
     margin-top: 1.5rem;
 }
 
-.buho-buttons button:nth-child(1) {
+.button-link {
+    text-decoration: none;
+    display: inline-block;
     padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+}
+
+.buho-buttons a:nth-child(1) {
     color: #ffffff;
     background-color: #272B60;
 }
 
-.buho-buttons button:nth-child(2) {
-    padding: 0.5rem 1rem;
-    border: 2px solid #000000;
+.buho-buttons a:nth-child(2) {
+    color: #000000;
     background-color: white;
+    border: 2px solid #000000;
 }
 
 
