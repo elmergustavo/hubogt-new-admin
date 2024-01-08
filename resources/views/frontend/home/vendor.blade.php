@@ -2,8 +2,8 @@
 
 
 @section('content')
-    <section id="wsus__breadcrumb">
-        <div class="wsus_breadcrumb_overlay">
+    <section id="wsus__breadcrumb_shop" style="background: url(assets/shop.png);">
+        <div class="wsus_breadcrumb_overlay_shop">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
