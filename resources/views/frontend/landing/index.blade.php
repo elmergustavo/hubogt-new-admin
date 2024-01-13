@@ -54,8 +54,8 @@
             <rect width="100%" height="100%" stroke-width="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" />
         </svg>
         <div class="container mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-                <div class="mt-24 sm:mt-32 lg:mt-16">
+            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-0">
+                <div class="mt-24 sm:mt-32 lg:mt-0">
                     <a href="#" class="inline-flex space-x-6">
                         <span
                             class="rounded-full bg-gray-900/90 px-5 py-1 text-sm font-semibold leading-6 text-white ring-1 ring-inset ring-indigo-600/10">
@@ -70,10 +70,13 @@
                         </span>
                     </a>
                 </div>
-                <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">Unete al marketplace donde
-                    miles de emprendedore venden</h1>
-                <p class="mt-6 text-lg leading-8 text-white">Comeinza ahora e impulsa las ventas de tu negocio en menos
-                    tiempo con <span class="underline decoration-solid">Buhogt</span> </p>
+                <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">Descubre el Marketplace
+                    exclusivo donde los Emprendedores Triunfan </h1>
+                <p class="mt-6 text-lg leading-8 text-white">Inicia tu éxito Comercial hoy y acelera las ventas de Tu
+                    Negocio con
+                    <span class="underline decoration-solid">Buhogt</span> ¡Registrate Ahora y forma parte del futuro
+                    del Comercio Online!
+                </p> <br>
                 <div class="mt-10 flex items-center w-full px-12 md:px-0">
                     <a href="#"
                         class="mt-8 max-w-[20rem] md:w-1/2 w-full flex justify-center  shadow-xl rounded-full border border-indigo-9500 bg-null px-12 py-3 text-[1.1rem] font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-indigo-500 transition duration-300 ease-in-out">
@@ -106,9 +109,11 @@
                         eficiente </h2>
                     <p class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Tu mejor socio en el
                         sector de comercio electronico.</p>
-                    <p class="mt-6 leading-7 text-gray-600 text-md">Explora tesoros únicos, conecta con vendedores
-                        apasionados y encuentra productos exclusivos. Navega de forma intuitiva y convierte tus compras
-                        en momentos auténticos.</p>
+                    <p class="mt-6 leading-7 text-gray-600 text-md">Bienvenido a Buhogt, el lugar donde los sueños
+                        empresariales se hacen realidad. En
+                        nuestro exclusivo marketplace, conectamos a emprendedores visionarios con
+                        compradores exigentes. ¿Te apasiona vender productos únicos y de calidad? Únete
+                        a nuestra comunidad y lleva tu negocio al siguiente nivel.</p>
                 </div>
                 <dl
                     class="col-span-2 grid grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:gap-y-16">
@@ -122,8 +127,9 @@
                             </svg>
                             Crea tu tienda
                         </dt>
-                        <dd class="mt-2 text-base">Rerum repellat labore necessitatibus reprehenderit molestiae
-                            praesentium.</dd>
+                        <dd class="mt-2 text-base">Olvídate de la complejidad. Con Buhogt,
+                            establecer tu tienda en línea es tan fácil como un par de clics. Personaliza tu
+                            espacio virtual y muestra tus productos de manera atractiva</dd>
                     </div>
                     <div class="relative pl-9">
                         <dt class="font-semibold text-gray-900 text-xl">
@@ -133,10 +139,12 @@
                                     d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
                                     clip-rule="evenodd" />
                             </svg>
-                            Lleva tu inventario
+                            Gestiona tu Inventario sin Estrés
                         </dt>
-                        <dd class="mt-2 text-base">Corporis asperiores ea nulla temporibus asperiores non tempore
-                            assumenda aut.</dd>
+                        <dd class="mt-2 text-base">Nunca te quedes sin stock. La plataforma
+                            intuitiva de Buhogt te permite llevar un control preciso de tu inventario. Recibe
+                            alertas de reabastecimiento y mantén tu tienda siempre lista para satisfacer
+                            la demanda</dd>
                     </div>
                     <div class="relative pl-9">
                         <dt class="font-semibold text-gray-900 text-xl">
@@ -148,8 +156,10 @@
                             </svg>
                             Posiciona tu marca
                         </dt>
-                        <dd class="mt-2">In sit qui aliquid deleniti et. Ad nobis sunt omnis. Quo sapiente dicta
-                            laboriosam.</dd>
+                        <dd class="mt-2">Destaca entre la multitud. Con nuestras
+                            herramientas de marketing integradas, puedes potenciar la visibilidad de tu
+                            marca y atraer a tu audiencia objetivo. ¡Haz que tu marca sea inolvidable!
+                        </dd>
                     </div>
                     <div class="relative pl-9">
                         <dt class="font-semibold text-gray-900 text-xl">
@@ -159,10 +169,13 @@
                                     d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
                                     clip-rule="evenodd" />
                             </svg>
-                            Pagos en automatico
+                            Pagos Automáticos , Sin Preocupaciones
                         </dt>
-                        <dd class="mt-2">Sed rerum sunt dignissimos ullam. Iusto iure occaecati voluptate eligendi
-                            fugiat sequi.</dd>
+                        <dd class="mt-2">Simplifica tu vida financiera. Con
+                            Buhogt, los pagos se procesan automáticamente, proporcionándote
+                            tranquilidad y permitiéndote concentrarte en lo que realmente importa: hacer
+                            crecer tu negocio.
+                        </dd>
                     </div>
                     <div class="relative pl-9">
                         <dt class="font-semibold text-gray-900 text-xl">
@@ -174,7 +187,11 @@
                             </svg>
                             Notificaciones instantaneas
                         </dt>
-                        <dd class="mt-2">Quos inventore harum enim nesciunt. Aut repellat rerum omnis adipisci.</dd>
+                        <dd class="mt-2"> Mantente conectado con
+                            tus clientes en tiempo real. Recibe notificaciones instantáneas de cada venta,
+                            consulta comentarios y mantén el pulso de tu negocio desde la palma de tu
+                            mano.
+                        </dd>
                     </div>
                     <div class="relative pl-9">
                         <dt class="font-semibold text-gray-900 text-xl">
@@ -184,9 +201,12 @@
                                     d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
                                     clip-rule="evenodd" />
                             </svg>
-                            Obteción de datos
+                            Obtén Datos Estratégicos para el Éxito
                         </dt>
-                        <dd class="mt-2">Quae sit sunt excepturi fugit veniam voluptatem ipsum commodi.</dd>
+                        <dd class="mt-2">Conoce a tu audiencia y toma
+                            decisiones informadas. Buhogt te proporciona datos valiosos sobre el
+                            comportamiento de tus clientes, tendencias de compra y más. Utiliza esta
+                            información para optimizar tu estrategia y maximizar tus ventas.</dd>
                     </div>
 
 
@@ -199,10 +219,10 @@
     <!-- inicio de beneficios -->
     <div class="bg-amber-50 px-6 py-24 sm:py-32 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
-            <p class="text-base font-semibold leading-7 text-indigo-950">Obten la ayuda que necesitas</p>
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Beneficios de Buhogt</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui
-                irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+            <p class="text-base font-semibold leading-7 text-indigo-950">Tu Aliado para el Éxito Empresarial</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Descubre los Inigualables
+                Beneficios de Buhogt</h2>
+            <p class="mt-6 text-lg leading-8 text-gray-600"></p>
         </div>
 
         <section>
@@ -214,12 +234,13 @@
                     </div>
 
                     <div class="lg:py-24">
-                        <h2 class="text-3xl font-bold sm:text-4xl">Crece tus ventas</h2>
+                        <h2 class="text-3xl font-bold sm:text-4xl">Más Visibilidad, Más Ventas</h2>
 
                         <p class="mt-4 text-gray-600">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis
-                            eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius
-                            quidem quam repellat.
+                            Amplifica la exposición de tus productos en
+                            nuestro exclusivo marketplace. Con Buhogt, alcanzarás a miles de
+                            compradores ansiosos por descubrir propuestas únicas. ¡Haz que tu marca
+                            destaque y aumenta tus oportunidades de venta!
                         </p>
                     </div>
                 </div>
@@ -235,12 +256,15 @@
                     </div>
 
                     <div class="lg:py-24">
-                        <h2 class="text-3xl font-bold sm:text-4xl">Añade tus productos en linea</h2>
+                        <h2 class="text-3xl font-bold sm:text-4xl">Acelera el Crecimiento de Tus Ventas</h2>
 
                         <p class="mt-4 text-gray-600">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui hic atque tenetur quis
-                            eius quos ea neque sunt, accusantium soluta minus veniam tempora deserunt? Molestiae eius
-                            quidem quam repellat.
+                            ¿Quieres llevar tus ventas al siguiente
+                            nivel? Con Buhogt, no solo vendes productos, sino que construyes una
+                            presencia fuerte en línea. Aprovecha nuestras herramientas de marketing
+                            integradas para atraer a tu público objetivo y convertir visitantes en clientes
+                            leales.
+
                         </p>
                     </div>
                 </div>
@@ -256,11 +280,9 @@
                 <div class="px-6 md:px-0 lg:pr-4 lg:pt-4">
                     <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
                         <h2 class="text-base font-semibold leading-7 text-indigo-600"></h2>
-                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Una forma facil de
-                            vender</p>
-                        <p class="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
-                            blanditiis ratione.</p>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Vende sin
+                            Complicaciones, Crece con Confianza</p>
+                        <!-- <p class="mt-6 text-lg leading-8 text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p> -->
                         <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                             <div class="relative pl-9">
                                 <dt class="inline font-semibold text-gray-900">
@@ -270,10 +292,12 @@
                                             d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                    Facil de gestionar
+                                    Gestión simplificada, resultados potenciados
                                 </dt>
-                                <dd class="inline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-                                    impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+                                <dd class="inline"> ¿Quieres una experiencia de
+                                    venta sin estrés? Buhogt hace la gestión de tu tienda en línea fácil y eficiente.
+                                    Desde la carga de productos hasta la actualización de inventarios, todo está
+                                    diseñado para que puedas enfocarte en lo que amas: tu negocio.</dd>
                             </div>
                             <div class="relative pl-9">
                                 <dt class="inline font-semibold text-gray-900">
@@ -283,10 +307,13 @@
                                             d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                    Seguridad
+                                    Seguridad en cada Transacción
                                 </dt>
-                                <dd class="inline">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                                    lorem cupidatat commodo.</dd>
+                                <dd class="inline">Tu tranquilidad es nuestra prioridad. Con
+                                    Buhogt, cada transacción está protegida con las últimas medidas de
+                                    seguridad. Puedes confiar en nosotros para salvaguardar tus datos y los de
+                                    tus clientes, brindándote la tranquilidad que necesitas para crecer.
+                                </dd>
                             </div>
                             <div class="relative pl-9">
                                 <dt class="inline font-semibold text-gray-900">
@@ -298,10 +325,14 @@
                                             d="M4 13a2 2 0 100 4h12a2 2 0 100-4H4zm11.24 2a.75.75 0 01.75-.75H16a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V15zm-2.25-.75a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75h-.01z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                    Publicidad
+                                    Amplifica Tu Alcance con Publicidad Integrada
                                 </dt>
-                                <dd class="inline">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
-                                    magna sit morbi lobortis.</dd>
+                                <dd class="inline"> Dile adiós a las
+                                    complicaciones de la publicidad. Buhogt te ofrece herramientas publicitarias
+                                    integradas para impulsar la visibilidad de tus productos. Alcanza a tu
+                                    audiencia objetivo de manera efectiva y aumenta tus oportunidades de venta
+                                    sin esfuerzo.
+                                </dd>
                             </div>
                         </dl>
                     </div>
@@ -337,10 +368,11 @@
     <section class="bg-blue-100/40 px-6 py-24 sm:py-32 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
             <p class="text-base font-semibold leading-7 text-indigo-950">Obten la ayuda que necesitas</p>
-            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Beneficios de Buhogt</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">Se parte de esta comunidad
-                y da el salto que deseas
-                para tu negocio.</p>
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Únete a Buhogt y Eleva Tu
+                Negocio a Nuevos Horizontes</h2>
+            <p class="mt-6 text-lg leading-8 text-gray-600"> Forma parte de esta vibrante comunidad y da el salto que
+                tu negocio
+                merece.</p>
         </div>
 
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
@@ -352,13 +384,16 @@
                 </div>
 
                 <div class="lg:py-24">
-                    <h2 class="text-3xl font-bold sm:text-4xl">Registrate en buhogt <br>
-                        y comienza a vender <br>
+                    <h2 class="text-3xl font-bold sm:text-4xl">Registrate en Buhogt <br>
+                        y Comienza a Vender <br>
                         linea</h2>
 
                     <p class="mt-4 text-gray-600 text-[1.2rem]">
-                        Haste parte de la Platafoma de comercio electronico, <br> donde los emprededores
-                        venden sus productos.
+                        Hazte miembro de la
+                        plataforma de comercio electrónico donde los sueños empresariales se
+                        hacen realidad. Con Buhogt, los emprendedores como tú encuentran un
+                        espacio para destacar y vender sus productos de manera efectiva. ¡El primer
+                        paso hacia el éxito está a solo un clic de distancia!
                     </p>
 
                     <a href="#"
@@ -380,14 +415,15 @@
                 </div>
 
                 <div class="lg:py-24">
-                    <h2 class="text-3xl font-bold sm:text-4xl ">Crece tu negocio con <br>
-                        Buhogt</h2>
+                    <h2 class="text-3xl font-bold sm:text-4xl ">Haz Crecer Tu Negocio con Buhogt</h2>
 
                     <p class="mt-4 text-gray-600 text-[1.2rem]">
-                        Emprendedores y pequeñas empresas
-                        se asocian con Buhogt para llegar nuevos
-                        clientes, aumentar volumen de pedidos e
-                        impulsar más ventas.
+                        La asociación con Buhogt no es solo una
+                        conexión, es un impulso estratégico para tu crecimiento. Emprendedores y
+                        pequeñas empresas confían en Buhogt para llegar a nuevos clientes,
+                        aumentar el volumen de pedidos y, lo más importante, impulsar más ventas.
+                        ¿Estás listo para llevar tu negocio al siguiente nivel?
+
                     </p>
 
                     <a href="#"
@@ -408,9 +444,14 @@
         <div class="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
             <div class="px-6 lg:px-8">
                 <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Se parte de Buhogt</h2>
-                    <p class="mt-2 text-lg leading-8 text-gray-600">Proin volutpat consequat porttitor cras nullam
-                        gravida at orci molestie a eu arcu sed ut tincidunt magna.</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900">Únete a la Revolución Empresarial con
+                        Buhogt</h2>
+                    <p class="mt-2 text-lg leading-8 text-gray-600">¡Estás a punto de dar el primer paso hacia el
+                        éxito! Completa el formulario a
+                        continuación para unirte a Buhogt y comenzar tu viaje hacia nuevas oportunidades
+                        de venta en línea. Únete a la comunidad de emprendedores exitosos y descubre
+                        cómo Buhogt puede impulsar tu negocio.
+                    </p>
                     <form action="#" method="POST" class="mt-16">
                         <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                             <div>
@@ -506,7 +547,7 @@
         </div>
     </section>
 
-    
+
     <footer class="bg-gray-900">
         <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
             <div class="flex justify-center space-x-6 md:order-2">
@@ -551,8 +592,9 @@
                 </a>
             </div>
             <div class="mt-8 md:order-1 md:mt-0">
-                <p class="text-center text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights
-                    reserved.</p>
+                <p class="text-center text-xs leading-5 text-gray-500">&copy; 2024 BuhoGT, Todos los derechos
+                    reservados
+                </p>
             </div>
         </div>
     </footer>
