@@ -196,13 +196,13 @@
                 <div class="wsus__footer_content">
                     <h5>Tienda</h5>
                     <ul class="wsus__footer_menu">
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Unete a buhogt</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Nuestro blog</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Optimiza tu tienda</a></li>
-                        {{-- <li><a href="#"><i class="fas fa-caret-right"></i> Contact Us</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Affilate</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Order History</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Team Member</a></li> --}}
+                        <li><a href="#"> Unete a buhogt</a></li>
+                        <li><a href="#"> Nuestro blog</a></li>
+                        <li><a href="#"> Optimiza tu tienda</a></li>
+                        {{-- <li><a href="#"> Contact Us</a></li>
+                        <li><a href="#"> Affilate</a></li>
+                        <li><a href="#"> Order History</a></li>
+                        <li><a href="#"> Team Member</a></li> --}}
                     </ul>
                 </div>
             </div>
@@ -210,13 +210,13 @@
                 <div class="wsus__footer_content">
                     <h5>Ayuda</h5>
                     <ul class="wsus__footer_menu">
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Preguntas frecuentes</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Configuración de cookies</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Como vender en Buhogt</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Manual de venta en Buhogt</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Affilate</a></li>
-                        {{-- <li><a href="#"><i class="fas fa-caret-right"></i> Order History</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Team Member</a></li> --}}
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Configuración de cookies</a></li>
+                        <li><a href="#">Como vender en Buhogt</a></li>
+                        <li><a href="#">Manual de venta en Buhogt</a></li>
+                        <li><a href="#"> Affilate</a></li>
+                        {{-- <li><a href="#"> Order History</a></li>
+                        <li><a href="#"> Team Member</a></li> --}}
                     </ul>
                 </div>
             </div>
@@ -224,13 +224,13 @@
                 <div class="wsus__footer_content">
                     <h5>Sobre nosotros</h5>
                     <ul class="wsus__footer_menu">
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Quiénes somos</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Politica de privacidad</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Politica de garantia</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i>Empleo</a></li>
-                        {{-- <li><a href="#"><i class="fas fa-caret-right"></i> Affilate</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Order History</a></li>
-                        <li><a href="#"><i class="fas fa-caret-right"></i> Team Member</a></li> --}}
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Politica de privacidad</a></li>
+                        <li><a href="#">Politica de garantia</a></li>
+                        <li><a href="#">Empleo</a></li>
+                        {{-- <li><a href="#"> Affilate</a></li>
+                        <li><a href="#"> Order History</a></li>
+                        <li><a href="#"> Team Member</a></li> --}}
                     </ul>
                 </div>
             </div>
