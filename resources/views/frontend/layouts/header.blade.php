@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <div class="row">
+        <div class="row" style="display: flex; align-items: center;">
             <div class="col-2 col-md-1 d-lg-none">
                 <div class="wsus__mobile_menu_area">
                     <span class="wsus__mobile_menu_icon"><i class="fal fa-bars"></i></span>
@@ -10,39 +10,101 @@
                 <div class="wsus_logo_area">
                     <a class="wsus__header_logo" href="{{ route('home') }}">
                         <img src="/assets/logo/logo_horizontal.svg" alt="logo" class="img-fluid w-100">
-                        {{-- <img src="images/logo_horizontal_dark.svg" alt="logo" class="img-fluid w-100"> --}}
                     </a>
                 </div>
             </div>
-            <div class="col-xl-5 col-md-6 col-lg-4 d-none d-lg-block">
-                <div class="wsus__search">
-                    <form>
-                        <input type="text" placeholder="Search...">
-                        <button type="submit"><i class="far fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-xl-5 col-3 col-md-3 col-lg-6">
-                <div class="wsus__call_icon_area">
-                    <div class="wsus__call_area">
-                        <div class="wsus__call">
-                            <i class="fas fa-user-headset"></i>
-                        </div>
-                        <div class="wsus__call_text">
-                            <p>example@gmail.com</p>
-                            <p>+569875544220</p>
-                        </div>
+
+            <div style="display: flex; flex: 1; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; flex: 1; width: 100%">
+
+                    <div style="margin-right: 10px; text-align: center; display: flex; align-items: center;">
+                        Productos&nbsp;
+                        <i>
+                            <svg width="12" height="12" viewBox="0 0 6 4" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.38737 0.64624L2.89779 2.72089L0.408203 0.64624" stroke="#001E00"
+                                    stroke-width="0.622396" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+
+                        </i>
+
                     </div>
+
+
+                    <div style="position: relative; width: 100%;">
+                        <form>
+                            <div style="position: relative; display: flex; flex: 1; width: 100%;">
+                                <input type="text" placeholder="Busca tus productos en Buhogt"
+                                    style="padding: 10px; border: 1px solid #000; border-radius: 20px; width: 100%">
+                                <button type="submit"
+                                    style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); border: none; background: none;">
+                                    <i class="far fa-search" style="border: none;"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="px-4 d-none d-lg-flex align-items-center">
+                    <!-- La clase d-none oculta el elemento en tamaños de pantalla más pequeños que lg -->
+                    <a style="margin-right: 15px;">
+                        Iniciar sesión
+                    </a>
+                    <a style="margin-right: 15px;">
+                        Registrarse
+                    </a>
+                    <a>
+                        Tienda
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="w-12 col-md-3 d-none d-lg-block" style="width: 12%;">
+                <!-- La clase d-none d-lg-block oculta el elemento en tamaños de pantalla lg o más pequeños -->
+                <div>
                     <ul class="wsus__icon_area">
-                        <li><a href="wishlist.html"><i class="fal fa-heart"></i><span>05</span></a></li>
+                        <li><a href="wishlist.html"><i>
+                                    <svg width="25" height="25" viewBox="0 0 18 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.81643 15.2766C7.44633 15.2766 0.517822 10.0385 0.517822 5.31828C0.517822 2.47932 2.47961 0.339111 5.08206 0.339111C6.49416 0.426497 7.82415 1.03268 8.81643 2.04116C9.81058 1.03534 11.1395 0.429647 12.5508 0.339111C15.1533 0.339111 17.115 2.47932 17.115 5.31828C17.115 10.0385 10.1865 15.2766 8.81643 15.2766ZM5.08206 1.99883C3.3991 1.99883 2.17754 3.39549 2.17754 5.31828C2.17754 8.72735 7.51521 13.0567 8.81643 13.6169C10.1143 13.0717 15.4553 8.77714 15.4553 5.31828C15.4553 3.39549 14.2338 1.99883 12.5508 1.99883C10.9085 1.99883 9.48032 3.74569 9.46289 3.76395L8.80896 4.5714L8.16582 3.75814C8.14093 3.72743 6.74178 1.99883 5.08206 1.99883Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </i><span>05</span></a></li>
                         <li><a href="{{ route('compare') }}"><i class="fal fa-random"></i><span>03</span></a></li>
-                        <li><a class="wsus__cart_icon" href="#"><i
-                                    class="fal fa-shopping-bag"></i><span>04</span></a></li>
+                        <li><a class="wsus__cart_icon" href="#">
+                                <i>
+                                    <svg width="25" height="25" viewBox="0 0 21 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_488_39222)">
+                                            <path
+                                                d="M8.1604 19.1065C8.60059 19.1065 9.02274 18.9317 9.334 18.6204C9.64526 18.3091 9.82012 17.887 9.82012 17.4468C9.82012 17.0066 9.64526 16.5845 9.334 16.2732C9.02274 15.9619 8.60059 15.7871 8.1604 15.7871C7.72021 15.7871 7.29806 15.9619 6.9868 16.2732C6.67554 16.5845 6.50068 17.0066 6.50068 17.4468C6.50068 17.887 6.67554 18.3091 6.9868 18.6204C7.29806 18.9317 7.72021 19.1065 8.1604 19.1065ZM13.9694 19.1065C14.4096 19.1065 14.8318 18.9317 15.143 18.6204C15.4543 18.3091 15.6292 17.887 15.6292 17.4468C15.6292 17.0066 15.4543 16.5845 15.143 16.2732C14.8318 15.9619 14.4096 15.7871 13.9694 15.7871C13.5292 15.7871 13.1071 15.9619 12.7958 16.2732C12.4846 16.5845 12.3097 17.0066 12.3097 17.4468C12.3097 17.887 12.4846 18.3091 12.7958 18.6204C13.1071 18.9317 13.5292 19.1065 13.9694 19.1065ZM18.1187 4.99889H5.39281L4.8227 2.33503C4.78283 2.1494 4.68051 1.98305 4.53281 1.86375C4.38511 1.74444 4.20096 1.67939 4.01109 1.67944H1.52151C1.30142 1.67944 1.09034 1.76687 0.934711 1.9225C0.779082 2.07813 0.69165 2.28921 0.69165 2.5093C0.69165 2.7294 0.779082 2.94048 0.934711 3.0961C1.09034 3.25173 1.30142 3.33917 1.52151 3.33917H3.33974L5.68907 14.3016C5.70282 14.3471 5.72059 14.3913 5.74219 14.4336C5.75629 14.4776 5.77372 14.5207 5.79447 14.5622C5.82676 14.6082 5.86375 14.6508 5.90484 14.6892C5.92716 14.7186 5.95156 14.7463 5.97787 14.7722C6.026 14.8062 6.07745 14.8361 6.13139 14.8593C6.15961 14.8776 6.18948 14.8942 6.22019 14.9091C6.31018 14.9413 6.4051 14.9576 6.50068 14.9572H15.6292C15.8077 14.9572 15.9815 14.8997 16.1247 14.7931C16.2679 14.6865 16.3729 14.5366 16.4242 14.3655L18.9137 6.06692C18.9507 5.94302 18.9582 5.81221 18.9357 5.68489C18.9132 5.55758 18.8612 5.43728 18.784 5.33357C18.7068 5.22986 18.6065 5.1456 18.491 5.0875C18.3755 5.02939 18.248 4.99905 18.1187 4.99889ZM16.2565 9.14819H13.9694V6.65861H17.0034L16.2565 9.14819ZM7.18033 13.2975L6.68242 10.8079H8.1604V13.2975H7.18033ZM9.82012 10.8079H12.3097V13.2975H9.82012V10.8079ZM9.82012 9.14819V6.65861H12.3097V9.14819H9.82012ZM8.1604 6.65861V9.14819H6.3513L5.85339 6.65861H8.1604ZM15.0117 13.2975H13.9694V10.8079H15.7586L15.0117 13.2975Z"
+                                                fill="#222222" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_488_39222">
+                                                <rect width="19.9167" height="19.9167" fill="white"
+                                                    transform="translate(0.69165 0.849609)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+
+                                </i>
+                                <span>04</span></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+
+
     <div class="wsus__mini_cart">
         <h4>shopping cart <span class="wsus_close_mini_cart"><i class="far fa-times"></i></span></h4>
         <ul>
@@ -422,11 +484,11 @@
                         <li><a href="daily_deals.html">daily deals</a></li>
                         <li><a href="{{ route('landing') }}">Información</a></li>
                     </ul>
-                    <ul class="wsus__menu_item wsus__menu_item_right">
+                    {{-- <ul class="wsus__menu_item wsus__menu_item_right">
                         <li><a href="contact.html">contact</a></li>
                         <li><a href="dsahboard.html">my account</a></li>
                         <li><a href="login.html">login</a></li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </div>

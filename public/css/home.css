@@ -454,6 +454,13 @@ header {
     font-weight: 400;
 }
 
+.svg_header {
+
+    border: 2px solid #000;
+    /* Puedes ajustar el tamaño y color del borde según tus preferencias */
+
+}
+
 .wsus__search button {
     line-height: 0;
     background: none;
@@ -518,8 +525,8 @@ header {
 .wsus__icon_area {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: auto;
+    justify-content: end;
+    /* width: auto; */
 }
 
 .wsus__icon_area li {
