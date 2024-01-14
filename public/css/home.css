@@ -1607,8 +1607,8 @@ PRODUCT MODAL VIEW END
 }
 
 .wsus__section_header {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     border-bottom: 1px solid #eee;
     align-items: center;
     border-bottom-right-radius: 5px;

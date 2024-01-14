@@ -2,9 +2,7 @@
 
 
 @section('content')
-    <!--==========================
-                PRODUCT MODAL VIEW START
-            ===========================-->
+    <!--==================PRODUCT MODAL VIEW ===========================-->
     <section class="product_popup_modal">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
@@ -148,13 +146,13 @@
         </div>
     </section>
     <!--==========================
-                PRODUCT MODAL VIEW END
-            ===========================-->
+                                                                                                                                                                                                                        PRODUCT MODAL VIEW END
+                                                                                                                                                                                                                    ===========================-->
 
 
     <!--============================
-                BANNER PART 2 START
-            ==============================-->
+                                                                                                                                                                                                                        BANNER PART 2 START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__banner">
         <div class="container">
             <div class="row">
@@ -208,17 +206,302 @@
         </div>
     </section>
 
-    <!--============================
-                BANNER PART 2 END
-            ==============================-->
+    <!--============BANNER PART 2 END==============================-->
 
 
+
+    <section id="wsus__blogs" class="home_blogs">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="">
+                        <h3 style="text-decoration: underline;">Tiendas BUHOGT</h3>
+
+                        <p>Encuentra los mejores artículos </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row home_blog_slider">
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda Levis
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="assets/images/levis.png" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda Nike
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="assets/images/nike.png" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda New Balance
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="assets/images/balance.png" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda Shoes
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="assets/images/shoes.png" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda Adidas
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="assets/images/adidas.png" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda Levis
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="images/blog_1.jpg" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-3">
+
+                    <div class="px-2">
+                        <p>
+                            Tienda Levis
+                        </p>
+                        <a class="wsus__blog_img" href="#">
+                            <img src="images/blog_1.jpg" alt="blog" class="img-fluid w-100">
+                        </a>
+
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <a href="#" class="text-dark text-decoration-underline">
+                                visitar tienda
+                                <svg width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1925_211)">
+                                        <path
+                                            d="M13.1764 8.43047H1.22639C0.854611 8.43047 0.5625 8.06534 0.5625 7.60061C0.5625 7.13589 0.854611 6.77075 1.22639 6.77075H13.1764C13.5482 6.77075 13.8403 7.13589 13.8403 7.60061C13.8403 8.06534 13.5482 8.43047 13.1764 8.43047Z"
+                                            fill="black" />
+                                        <path
+                                            d="M9.5971 14.2394C9.50057 14.2407 9.40487 14.2193 9.31613 14.1765C9.2274 14.1338 9.14761 14.0706 9.08189 13.9911C8.78748 13.6599 8.78748 13.1467 9.08189 12.8156L13.7188 7.60053L9.08189 2.38547C8.78748 2.05435 8.78748 1.54112 9.08189 1.21001C9.3763 0.878891 9.83263 0.878891 10.127 1.21001L15.2792 7.00452C15.5736 7.33564 15.5736 7.84887 15.2792 8.17998L10.127 13.9745C9.97983 14.1401 9.78847 14.2228 9.61182 14.2228L9.5971 14.2394Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1925_211">
+                                            <rect width="16.5972" height="14.9375" fill="white"
+                                                transform="translate(0.5625 0.181641)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
     <!--============================
-                FLASH SELL START
-            ==============================-->
+                                                                                                                                                                                                                        FLASH SELL START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__flash_sell" class="wsus__flash_sell_2">
         <div class=" container">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-xl-12">
                     <div class="offer_time" style="background: url(images/flash_sell_bg.jpg)">
                         <div class="wsus__flash_coundown">
@@ -228,7 +511,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="row flash_sell_slider">
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
@@ -382,13 +665,13 @@
         </div>
     </section>
     <!--============================
-                FLASH SELL END
-            ==============================-->
+                                                                                                                                                                                                                        FLASH SELL END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                MONTHLY TOP PRODUCT START
-            ==============================-->
+                                                                                                                                                                                                                        MONTHLY TOP PRODUCT START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__monthly_top" class="wsus__monthly_top_2">
         <div class="container">
             <div class="row">
@@ -647,13 +930,13 @@
         </div>
     </section>
     <!--============================
-                MONTHLY TOP PRODUCT END
-            ==============================-->
+                                                                                                                                                                                                                        MONTHLY TOP PRODUCT END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                BRAND SLIDER START
-            ==============================-->
+                                                                                                                                                                                                                        BRAND SLIDER START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__brand_sleder" class="brand_slider_2">
         <div class="container">
             <div class="brand_border">
@@ -698,13 +981,13 @@
         </div>
     </section>
     <!--============================
-                BRAND SLIDER END
-            ==============================-->
+                                                                                                                                                                                                                        BRAND SLIDER END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                SINGLE BANNER START
-            ==============================-->
+                                                                                                                                                                                                                        SINGLE BANNER START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__single_banner" class="wsus__single_banner_2">
         <div class="container">
             <div class="row">
@@ -736,13 +1019,13 @@
         </div>
     </section>
     <!--============================
-                SINGLE BANNER END
-            ==============================-->
+                                                                                                                                                                                                                        SINGLE BANNER END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                HOT DEALS START
-            ==============================-->
+                                                                                                                                                                                                                        HOT DEALS START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__hot_deals" class="wsus__hot_deals_2">
         <div class="container">
             <div class="row">
@@ -1396,13 +1679,13 @@
         </div>
     </section>
     <!--============================
-                HOT DEALS END
-            ==============================-->
+                                                                                                                                                                                                                        HOT DEALS END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                ELECTRONIC PART START
-            ==============================-->
+                                                                                                                                                                                                                        ELECTRONIC PART START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__electronic">
         <div class="container">
             <div class="row">
@@ -1562,13 +1845,13 @@
         </div>
     </section>
     <!--============================
-                ELECTRONIC PART END
-            ==============================-->
+                                                                                                                                                                                                                        ELECTRONIC PART END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                ELECTRONIC PART START
-            ==============================-->
+                                                                                                                                                                                                                        ELECTRONIC PART START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__electronic2">
         <div class="container">
             <div class="row">
@@ -1731,13 +2014,13 @@
         </div>
     </section>
     <!--============================
-                ELECTRONIC PART END
-            ==============================-->
+                                                                                                                                                                                                                        ELECTRONIC PART END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                LARGE BANNER  START
-            ==============================-->
+                                                                                                                                                                                                                        LARGE BANNER  START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__large_banner">
         <div class="container">
             <div class="row">
@@ -1770,13 +2053,13 @@
         </div>
     </section>
     <!--============================
-                LARGE BANNER  END
-            ==============================-->
+                                                                                                                                                                                                                        LARGE BANNER  END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                WEEKLY BEST ITEM START
-            ==============================-->
+                                                                                                                                                                                                                        WEEKLY BEST ITEM START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__weekly_best" class="home2_wsus__weekly_best_2 ">
         <div class="container">
             <div class="row">
@@ -2014,13 +2297,13 @@
         </div>
     </section>
     <!--============================
-                WEEKLY BEST ITEM END
-            ==============================-->
+                                                                                                                                                                                                                        WEEKLY BEST ITEM END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                HOME SERVICES START
-            ==============================-->
+                                                                                                                                                                                                                        HOME SERVICES START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__home_services" class="home_service_2">
         <div class="container">
             <div class="row">
@@ -2056,13 +2339,13 @@
         </div>
     </section>
     <!--============================
-                HOME SERVICES END
-            ==============================-->
+                                                                                                                                                                                                                        HOME SERVICES END
+                                                                                                                                                                                                                    ==============================-->
 
 
     <!--============================
-                HOME BLOGS START
-            ==============================-->
+                                                                                                                                                                                                                        HOME BLOGS START
+                                                                                                                                                                                                                    ==============================-->
     <section id="wsus__blogs" class="home_blogs">
         <div class="container">
             <div class="row">
@@ -2148,8 +2431,8 @@
         </div>
     </section>
     <!--============================
-                HOME BLOGS END
-            ==============================-->
+                                                                                                                                                                                                                        HOME BLOGS END
+                                                                                                                                                                                                                    ==============================-->
 
 
 
@@ -2163,8 +2446,8 @@
                 vender.
             </p>
             <div class="buho-buttons">
-                <a href="{{route('landing')}}" class="button-link">Comenzar a vender</a>
-                <a href="{{route('landing')}}" class="button-link">Requisitos para vender</a>
+                <a href="{{ route('landing') }}" class="button-link">Comenzar a vender</a>
+                <a href="{{ route('landing') }}" class="button-link">Requisitos para vender</a>
             </div>
         </div>
     </div>

@@ -247,7 +247,7 @@ $(function () {
 
     //*==========TEAM SLIDER=========
     $('.home_blog_slider').slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
