@@ -15,6 +15,7 @@ use App\Http\Middleware\RoleMiddleware;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
+use Filament\Support\Enums\MaxWidth;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -36,16 +37,17 @@ class AppPanelProvider extends PanelProvider
             // ->registration()
             ->passwordReset()
             ->emailVerification()
-            ->brandLogo(asset('images/logo_horizontal.svg'))
+            ->brandLogo(fn () => view('filament.admin.logo'))
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',
-                'gray' => Color::Gray,
+                // 'gray' => Color::Gray,
 
             ])
             // ->font('Nunito')
             // ->topNavigation();
             ->authGuard('web')
+            ->maxContentWidth(MaxWidth::ScreenTwoExtraLarge)
             ->favicon(asset('images/favicon.ico'))
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

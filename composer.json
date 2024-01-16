@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "bezhansalleh/filament-shield": "^3.1",
         "codeat3/blade-fluentui-system-icons": "^1.32",
         "filament/filament": "^3.0",
         "filament/spatie-laravel-media-library-plugin": "^3.0",
@@ -25,6 +26,7 @@
         "livewire/volt": "^1.0",
         "mallardduck/blade-boxicons": "^2.4",
         "mckenziearts/blade-untitledui-icons": "^1.2",
+        "owenvoke/blade-entypo": "^2.1",
         "spatie/laravel-settings": "^3.2",
         "squirephp/countries-en": "^3.3",
         "squirephp/currencies-en": "^3.3"

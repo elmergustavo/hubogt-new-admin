@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Blade;
 use Filament\Widgets;
 use App\Models\Team;
 use App\Filament\App\Pages\RegisterTeam;
+use Filament\Support\Enums\MaxWidth;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -46,6 +47,7 @@ class AdminPanelProvider extends PanelProvider
             // ->font('Nunito')
             // ->topNavigation();
             ->authGuard('web')
+            ->maxContentWidth(MaxWidth::ScreenTwoExtraLarge)
             ->favicon(asset('images/favicon.ico'))
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
