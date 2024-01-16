@@ -4,7 +4,7 @@ use App\Http\Controllers\frontend\HomeController;
 use App\Livewire\Form;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
-
+use App\Livewire\FormRequests;
 \Illuminate\Support\Facades\Route::get('form', Form::class);
 
 
@@ -17,6 +17,7 @@ Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare')
 Route::get('/landing', fn () => view('frontend.landing.index'))->name('landing');
 Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
 Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
+Route::post('/', [FormRequests::class,'sendMail'])->name('form.send');
 // Route::get('/login', fn () => view('login'))->name('login');
 // Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
 // Route::get('/login', fn () => view('login'))->name('cookie-settings');
