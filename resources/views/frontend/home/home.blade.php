@@ -146,13 +146,13 @@
         </div>
     </section>
     <!--==========================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            PRODUCT MODAL VIEW END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ===========================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                PRODUCT MODAL VIEW END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ===========================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BANNER PART 2 START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BANNER PART 2 START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__banner">
         <div class="container">
             <div class="row">
@@ -539,8 +539,8 @@
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            FLASH SELL START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                FLASH SELL START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__flash_sell" class="wsus__flash_sell_2">
         <div class=" container">
             {{-- <div class="row">
@@ -559,7 +559,7 @@
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/pro3.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/pro3_3.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -588,7 +588,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/pro4.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/pro4_4.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -617,7 +617,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/pro9.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/pro9_9.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -647,7 +647,7 @@
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/pro2.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/pro2_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -676,7 +676,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/pro4.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/pro4_4.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -707,13 +707,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            FLASH SELL END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                FLASH SELL END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            MONTHLY TOP PRODUCT START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                MONTHLY TOP PRODUCT START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__monthly_top" class="wsus__monthly_top_2">
         <div class="container">
             <div class="row">
@@ -972,13 +972,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            MONTHLY TOP PRODUCT END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                MONTHLY TOP PRODUCT END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BRAND SLIDER START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BRAND SLIDER START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__brand_sleder" class="brand_slider_2">
         <div class="container">
             <div class="brand_border">
@@ -1023,13 +1023,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BRAND SLIDER END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BRAND SLIDER END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            SINGLE BANNER START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                SINGLE BANNER START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__single_banner" class="wsus__single_banner_2">
         <div class="container">
             <div class="row">
@@ -1061,13 +1061,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            SINGLE BANNER END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                SINGLE BANNER END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HOT DEALS START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HOT DEALS START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__hot_deals" class="wsus__hot_deals_2">
         <div class="container">
             <div class="row">
@@ -1084,7 +1084,7 @@
                             <img src="images/pro0010.jpg" alt="mobile" class="img-fluid w-100">
                         </div>
                         <div class="wsus__hot_deals_text">
-                            <a class="wsus__hot_title" href="product_details.html">apple smart watch</a>
+                            <a class="wsus__hot_title" href="{{ route('producto_detalle') }}">apple smart watch</a>
                             <p class="wsus__rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1114,7 +1114,7 @@
                             <img src="images/pro0011.jpg" alt="mobile" class="img-fluid w-100">
                         </div>
                         <div class="wsus__hot_deals_text">
-                            <a class="wsus__hot_title" href="product_details.html">portable mobile Speaker</a>
+                            <a class="wsus__hot_title" href="{{ route('producto_detalle') }}">portable mobile Speaker</a>
                             <p class="wsus__rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1144,7 +1144,7 @@
                             <img src="images/pro0012.jpg" alt="mobile" class="img-fluid w-100">
                         </div>
                         <div class="wsus__hot_deals_text">
-                            <a class="wsus__hot_title" href="product_details.html">apple smart watch</a>
+                            <a class="wsus__hot_title" href="{{ route('producto_detalle') }}">apple smart watch</a>
                             <p class="wsus__rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1174,7 +1174,7 @@
                             <img src="images/pro0013.jpg" alt="mobile" class="img-fluid w-100">
                         </div>
                         <div class="wsus__hot_deals_text">
-                            <a class="wsus__hot_title" href="product_details.html">portable mobile Speaker</a>
+                            <a class="wsus__hot_title" href="{{ route('producto_detalle') }}">portable mobile Speaker</a>
                             <p class="wsus__rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1219,7 +1219,7 @@
                     <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 clotha spka wata">
                         <div class="wsus__product_item">
                             <span class="wsus__minus">-20%</span>
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/charger_2.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/charger_1.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1247,7 +1247,7 @@
                     </div>
                     <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 eleca cama">
                         <div class="wsus__product_item">
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/headphone_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/headphone_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1275,7 +1275,7 @@
                     </div>
                     <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 clotha spka cama wata">
                         <div class="wsus__product_item">
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/tab_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/tab_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1304,7 +1304,7 @@
                     <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 clotha eleca cama">
                         <div class="wsus__product_item">
                             <span class="wsus__minus">-20%</span>
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/mobile_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/mobile_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1334,7 +1334,7 @@
                         <div class="wsus__product_item">
                             <span class="wsus__new">New</span>
                             <span class="wsus__minus">-20%</span>
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/charger_2.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/charger_1.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1362,7 +1362,7 @@
                     </div>
                     <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 eleca cama">
                         <div class="wsus__product_item">
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/headphone_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/headphone_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1390,7 +1390,7 @@
                     </div>
                     <div class="col-xl-3 col-sm-6 col-md-4 col-lg-4 clotha spka cama wata">
                         <div class="wsus__product_item">
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/tab_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/tab_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1420,7 +1420,7 @@
                         <div class="wsus__product_item">
                             <span class="wsus__new">New</span>
                             <span class="wsus__minus">-20%</span>
-                            <a class="wsus__pro_link" href="product_details.html">
+                            <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                                 <img src="images/mobile_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                                 <img src="images/mobile_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                             </a>
@@ -1721,13 +1721,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HOT DEALS END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HOT DEALS END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ELECTRONIC PART START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ELECTRONIC PART START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__electronic">
         <div class="container">
             <div class="row">
@@ -1742,7 +1742,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/charger_2.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/charger_1.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1771,7 +1771,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/headphone_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/headphone_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1799,7 +1799,7 @@
                 </div>
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/tab_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/tab_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1827,7 +1827,7 @@
                 </div>
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item ">
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/mobile_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/mobile_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1857,7 +1857,7 @@
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/mobile_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/mobile_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1887,13 +1887,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ELECTRONIC PART END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ELECTRONIC PART END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ELECTRONIC PART START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ELECTRONIC PART START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__electronic2">
         <div class="container">
             <div class="row">
@@ -1909,7 +1909,7 @@
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/pro8.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/pro8_8.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1938,7 +1938,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/kids_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/kids_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1967,7 +1967,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/blazer_1.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/blazer_2.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -1996,7 +1996,7 @@
                 <div class="col-xl-3 col-sm-6 col-lg-4">
                     <div class="wsus__product_item">
                         <span class="wsus__minus">-20%</span>
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/wemans_2.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/wemans_1.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -2026,7 +2026,7 @@
                     <div class="wsus__product_item">
                         <span class="wsus__new">New</span>
 
-                        <a class="wsus__pro_link" href="product_details.html">
+                        <a class="wsus__pro_link" href="{{ route('producto_detalle') }}">
                             <img src="images/wemans_2.jpg" alt="product" class="img-fluid w-100 img_1" />
                             <img src="images/wemans_1.jpg" alt="product" class="img-fluid w-100 img_2" />
                         </a>
@@ -2056,13 +2056,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ELECTRONIC PART END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ELECTRONIC PART END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            LARGE BANNER  START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                LARGE BANNER  START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__large_banner">
         <div class="container">
             <div class="row">
@@ -2095,13 +2095,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            LARGE BANNER  END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                LARGE BANNER  END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            WEEKLY BEST ITEM START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                WEEKLY BEST ITEM START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__weekly_best" class="home2_wsus__weekly_best_2 ">
         <div class="container">
             <div class="row">
@@ -2339,13 +2339,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            WEEKLY BEST ITEM END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                WEEKLY BEST ITEM END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HOME SERVICES START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HOME SERVICES START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__home_services" class="home_service_2">
         <div class="container">
             <div class="row">
@@ -2381,13 +2381,13 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HOME SERVICES END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HOME SERVICES END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HOME BLOGS START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HOME BLOGS START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section id="wsus__blogs" class="home_blogs">
         <div class="container">
             <div class="row">
@@ -2473,8 +2473,8 @@
         </div>
     </section>
     <!--============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HOME BLOGS END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                HOME BLOGS END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
 
