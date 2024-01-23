@@ -78,7 +78,7 @@
                     del Comercio Online!
                 </p> <br>
                 <div class="mt-10 flex items-center w-full px-12 md:px-0">
-                    <a href="#"
+                    <a href="{{ route('seller_register') }}"
                         class="mt-8 max-w-[20rem] md:w-1/2 w-full flex justify-center  shadow-xl rounded-full border border-indigo-9500 bg-null px-12 py-3 text-[1.1rem] font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-indigo-500 transition duration-300 ease-in-out">
                         Registrate ahora
                     </a>
@@ -396,7 +396,7 @@
                         paso hacia el éxito está a solo un clic de distancia!
                     </p>
 
-                    <a href="#"
+                    <a href="{{ route('seller_register') }}"
                         class="mt-8 shadow-2xl inline-block rounded-full bg-indigo-950 px-12 py-3 text-md font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
                         Registrate ahora
                     </a>
@@ -426,7 +426,7 @@
 
                     </p>
 
-                    <a href="#"
+                    <a href="{{ route('seller_register') }}"
                         class="mt-8 shadow-2xl inline-block rounded-full bg-indigo-950 px-12 py-3 text-md font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
                         Registrate ahora
                     </a>
