@@ -178,6 +178,9 @@ return [
         App\Providers\Filament\SellerPanelProvider::class,
         App\Providers\Filament\ServicePanelProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
+        App\Providers\JetstreamServiceProvider::class,
+        App\Providers\SocialstreamServiceProvider::class,
         App\Providers\VoltServiceProvider::class,
 
     ],

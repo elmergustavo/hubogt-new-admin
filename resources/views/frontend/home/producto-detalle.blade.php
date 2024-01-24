@@ -30,28 +30,28 @@
                         <div class="flex-wrap hidden md:flex ">
                             <div class="w-1/2 p-2 sm:w-1/4">
                                 <a href="#"
-                                    class="block border border-blue-300 dark:border-transparent dark:hover:border-blue-300 hover:border-blue-300">
+                                    class="block border border-blue-300 hover:border-blue-300">
                                     <img src="https://i.postimg.cc/PqYpFTfy/pexels-melvin-buezo-2529148.jpg"
                                         alt="" class="object-cover w-full lg:h-20">
                                 </a>
                             </div>
                             <div class="w-1/2 p-2 sm:w-1/4">
                                 <a href="#"
-                                    class="block border border-transparent dark:border-transparent dark:hover:border-blue-300 hover:border-blue-300">
+                                    class="block border border-transparent hover:border-blue-300">
                                     <img src="https://i.postimg.cc/PqYpFTfy/pexels-melvin-buezo-2529148.jpg"
                                         alt="" class="object-cover w-full lg:h-20">
                                 </a>
                             </div>
                             <div class="w-1/2 p-2 sm:w-1/4">
                                 <a href="#"
-                                    class="block border border-transparent dark:border-transparent dark:hover:border-blue-300 hover:border-blue-300">
+                                    class="block border border-transparent hover:border-blue-300">
                                     <img src="https://i.postimg.cc/PqYpFTfy/pexels-melvin-buezo-2529148.jpg"
                                         alt="" class="object-cover w-full lg:h-20">
                                 </a>
                             </div>
                             <div class="w-1/2 p-2 sm:w-1/4">
                                 <a href="#"
-                                    class="block border border-transparent dark:border-transparent dark:hover:border-blue-300 hover:border-blue-300">
+                                    class="block border border-transparent hover:border-blue-300">
                                     <img src="https://i.postimg.cc/PqYpFTfy/pexels-melvin-buezo-2529148.jpg"
                                         alt="" class="object-cover w-full lg:h-20">
                                 </a>
@@ -121,7 +121,7 @@
                             <p class="inline-block mb-2 text-4xl font-bold text-gray-900  ">
                                 <span>Q1000.99</span>
                                 <span
-                                    class="text-base font-normal text-gray-500 line-through dark:text-gray-400">Q1500.99</span>
+                                    class="text-base font-normal text-gray-500 line-through">Q1500.99</span>
                             <p class="text-green-600 font-medium mb-4">7 en stock</p>
                             </p>
                             <p class="max-w-md mb-8 text-gray-700 ">
@@ -137,15 +137,15 @@
                                 Descubre otros estilos:</h2>
                             <div class="flex flex-wrap -mb-2">
                                 <button
-                                    class="p-4 mb-2 mr-2 border border-transparent hover:border-blue-400 dark:border-gray-800 dark:hover:border-gray-400 ">
+                                    class="p-4 mb-2 mr-2 border border-transparent hover:border-blue-400 ">
                                     <div class="w-12 h-12 bg-cyan-300"></div>
                                 </button>
                                 <button
-                                    class="p-4 mb-2 mr-2 border border-transparent hover:border-blue-400 dark:border-gray-800 dark:hover:border-gray-400">
+                                    class="p-4 mb-2 mr-2 border border-transparent hover:border-blue-400">
                                     <div class="w-12 h-12 bg-green-300 "></div>
                                 </button>
                                 <button
-                                    class="p-4 mb-2 border border-transparent hover:border-blue-400 dark:border-gray-800 dark:hover:border-gray-400">
+                                    class="p-4 mb-2 border border-transparent hover:border-blue-400">
                                     <div class="w-12 h-12 bg-red-200 "></div>
                                 </button>
                             </div>
@@ -157,14 +157,14 @@
                             <label for="" class="w-full text-xl font-semibold text-gray-700 ">Cantidad:</label>
                             <div class="relative flex flex-row w-full h-10 mt-4 bg-transparent rounded-lg">
                                 <button
-                                    class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
+                                    class="w-20 h-full text-gray-600 bg-gray-300 rounded-l outline-none cursor-pointer hover:text-gray-700 hover:bg-gray-400">
                                     <span class="m-auto text-2xl font-thin">-</span>
                                 </button>
                                 <input type="number"
-                                    class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-300 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
+                                    class="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-300 outline-none focus:outline-none text-md hover:text-black"
                                     placeholder="1">
                                 <button
-                                    class="w-20 h-full text-gray-600 bg-gray-300 rounded-r outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-400">
+                                    class="w-20 h-full text-gray-600 bg-gray-300 rounded-r outline-none cursor-pointer hover:text-gray-700 hover:bg-gray-400">
                                     <span class="m-auto text-2xl font-thin">+</span>
                                 </button>
                             </div>
@@ -258,15 +258,15 @@
                                         <button
                                             class="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded"
                                             role="button" aria-label="show or hide">
-                                            <img class="transform dark:hidden"
+                                            <img class="transform"
                                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg4.svg"
                                                 alt="dropdown">
-                                            <img class="transform hidden dark:block h-6"
+                                            <img class="transform hidden h-6"
                                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg4dark.svg"
                                                 alt="dropdown">
                                         </button>
                                     </div>
-                                    <div class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-900 dark:text-gray-900"
+                                    <div class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-900"
                                         id="sect">You will be responsible for paying for your own shipping costs
                                         for returning your item. Shipping costs are nonrefundable</div>
                                 </div>
@@ -278,15 +278,15 @@
                                         <button
                                             class="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded"
                                             role="button" aria-label="show or hide">
-                                            <img class="transform dark:hidden "
+                                            <img class="transform "
                                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg4.svg"
                                                 alt="dropdown">
-                                            <img class="transform hidden dark:block h-6"
+                                            <img class="transform hidden h-6"
                                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg4dark.svg"
                                                 alt="dropdown">
                                         </button>
                                     </div>
-                                    <div class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-900 dark:text-gray-900"
+                                    <div class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-900"
                                         id="sect">You will be responsible for paying for your own shipping costs
                                         for returning your item. Shipping costs are nonrefundable</div>
                                 </div>
@@ -298,15 +298,15 @@
                                         <button
                                             class="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded"
                                             role="button" aria-label="show or hide">
-                                            <img class="transform dark:hidden "
+                                            <img class="transform "
                                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg4.svg"
                                                 alt="dropdown">
-                                            <img class="transform hidden dark:block h-6"
+                                            <img class="transform hidden h-6"
                                                 src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg4dark.svg"
                                                 alt="dropdown">
                                         </button>
                                     </div>
-                                    <div class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-900 dark:text-gray-900"
+                                    <div class="hidden pt-4 text-base leading-normal pr-12 mt-4 text-gray-900"
                                         id="sect">You will be responsible for paying for your own shipping costs
                                         for returning your item. Shipping costs are nonrefundable</div>
                                 </div>

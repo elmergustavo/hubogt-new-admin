@@ -5,6 +5,8 @@ use App\Livewire\Form;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Livewire\FormRequests;
+use Laravel\Socialite\Facades\Socialite;
+
 
 \Illuminate\Support\Facades\Route::get('form', Form::class);
 
@@ -33,6 +35,19 @@ Route::fallback(function () {
 
 
 
+
+Route::get('/auth/redirect', function ()
+{
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/auth/callback', function ()
+{
+    $user = Socialite::driver('google')->user();
+});
+
+
+
 // Route::view('/', 'welcome');
 
 // Route::view('dashboard', 'dashboard')
@@ -43,4 +58,16 @@ Route::fallback(function () {
 //     ->middleware(['auth'])
 //     ->name('profile');
 
-require __DIR__ . '/auth.php';
+// require __DIR__ . '/auth.php';
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function ()
+{
+    Route::get('/dashboard', function ()
+    {
+        return view('dashboard');
+    })->name('dashboard');
+});

@@ -53,7 +53,7 @@
 
                 <div class="px-4 d-none d-lg-flex align-items-center">
                     <!-- La clase d-none oculta el elemento en tamaños de pantalla más pequeños que lg -->
-                    <a style="margin-right: 15px;">
+                    <a href="{{route('login')}}" style="margin-right: 15px;">
                         Iniciar sesión
                     </a>
                     <a style="margin-right: 15px;">

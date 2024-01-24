@@ -1,15 +1,15 @@
 <aside x-data="{}"
     x-bind:class="$store.sidebar.isOpen ?
-        'fi-sidebar-open w-[--sidebar-width] translate-x-0 shadow-xl ring-1 ring-gray-950\/5 rtl:-translate-x-0 dark:ring-white\/10 lg:sticky' :
+        'fi-sidebar-open w-[--sidebar-width] translate-x-0 shadow-xl ring-1 ring-gray-950\/5 rtl:-translate-x-0 lg:sticky' :
         'w-[--sidebar-width] -translate-x-full rtl:translate-x-full lg:sticky'"
-    class="fi-sidebar fixed inset-y-0 start-0 z-30 grid h-screen content-start bg-white transition-all dark:bg-gray-900 lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none dark:lg:bg-transparent lg:translate-x-0 rtl:lg:-translate-x-0 fi-sidebar-open w-[--sidebar-width] translate-x-0 shadow-xl ring-1 ring-gray-950/5 rtl:-translate-x-0 dark:ring-white/10 lg:sticky">
+    class="fi-sidebar fixed inset-y-0 start-0 z-30 grid h-screen content-start bg-white transition-all lg:z-0 lg:bg-transparent lg:shadow-none lg:ring-0 lg:transition-none lg:translate-x-0 rtl:lg:-translate-x-0 fi-sidebar-open w-[--sidebar-width] translate-x-0 shadow-xl ring-1 ring-gray-950/5 rtl:-translate-x-0 lg:sticky">
     <div class="overflow-x-clip">
         <header
-            class="fi-sidebar-header flex h-16 items-center bg-white px-6 ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10 lg:shadow-sm">
+            class="fi-sidebar-header flex h-16 items-center bg-white px-6 ring-1 ring-gray-950/5 lg:shadow-sm">
             <div>
                 <a href="https://demo.filamentphp.com">
                     <!--[if BLOCK]><![endif]-->
-                    <div class="fi-logo text-xl font-bold leading-5 tracking-tight text-gray-950 dark:text-white">
+                    <div class="fi-logo text-xl font-bold leading-5 tracking-tight text-gray-950">
                         Filament Demo
                     </div>
                     <!--[if ENDBLOCK]><![endif]-->
@@ -37,9 +37,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -49,7 +49,7 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Dashboard
                             </span>
 
@@ -63,13 +63,13 @@
                     class="flex items-center gap-x-3 px-2 py-2 cursor-pointer">
 
                     <span
-                        class="fi-sidebar-group-label flex-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        class="fi-sidebar-group-label flex-1 text-sm font-medium leading-6 text-gray-500">
                         Shop
                     </span>
 
                     <!--[if BLOCK]><![endif]--> <button
                         style="--c-300:var(--gray-300);--c-400:var(--gray-400);--c-500:var(--gray-500);--c-600:var(--gray-600);"
-                        class="fi-icon-btn relative flex items-center justify-center rounded-lg outline-none transition duration-75 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-70 -m-2 h-9 w-9 fi-color-gray text-gray-400 hover:text-gray-500 focus-visible:ring-primary-600 dark:text-gray-500 dark:hover:text-gray-400 dark:focus-visible:ring-primary-500 fi-sidebar-group-collapse-button"
+                        class="fi-icon-btn relative flex items-center justify-center rounded-lg outline-none transition duration-75 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-70 -m-2 h-9 w-9 fi-color-gray text-gray-400 hover:text-gray-500 focus-visible:ring-primary-600 fi-sidebar-group-collapse-button"
                         title="Shop" type="button" x-bind:aria-expanded="!$store.sidebar.groupIsCollapsed(label)"
                         x-on:click.stop="$store.sidebar.toggleCollapsedGroup(label)"
                         x-bind:class="{ '-rotate-180': $store.sidebar.groupIsCollapsed(label) }" aria-expanded="true">
@@ -98,9 +98,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com/shop/products"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -109,13 +109,13 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Products
                             </span>
 
                             <span>
                                 <div style="--c-50:var(--primary-50);--c-400:var(--primary-400);--c-600:var(--primary-600);"
-                                    class="fi-badge flex items-center justify-center gap-x-1 rounded-md text-xs font-medium ring-1 ring-inset px-2 min-w-[theme(spacing.6)] py-1 fi-color-custom bg-custom-50 text-custom-600 ring-custom-600/10 dark:bg-custom-400/10 dark:text-custom-400 dark:ring-custom-400/30">
+                                    class="fi-badge flex items-center justify-center gap-x-1 rounded-md text-xs font-medium ring-1 ring-inset px-2 min-w-[theme(spacing.6)] py-1 fi-color-custom bg-custom-50 text-custom-600 ring-custom-600/10">
                                     <!--[if BLOCK]><![endif]--> <!--[if BLOCK]><![endif]-->
                                     <!--[if ENDBLOCK]><![endif]-->
 
@@ -137,9 +137,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com/shop/customers"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -149,7 +149,7 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Customers
                             </span>
 
@@ -159,9 +159,9 @@
                     <li class="fi-sidebar-item fi-active fi-sidebar-item-active flex flex-col gap-y-1">
                         <a href="https://demo.filamentphp.com/shop/orders"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5 bg-gray-100 dark:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-primary-600 dark:text-primary-400"
+                                class="fi-sidebar-item-icon h-6 w-6 text-primary-600"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -171,13 +171,13 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-primary-600 dark:text-primary-400">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-primary-600">
                                 Orders
                             </span>
 
                             <span>
                                 <div style="--c-50:var(--primary-50);--c-400:var(--primary-400);--c-600:var(--primary-600);"
-                                    class="fi-badge flex items-center justify-center gap-x-1 rounded-md text-xs font-medium ring-1 ring-inset px-2 min-w-[theme(spacing.6)] py-1 fi-color-custom bg-custom-50 text-custom-600 ring-custom-600/10 dark:bg-custom-400/10 dark:text-custom-400 dark:ring-custom-400/30">
+                                    class="fi-badge flex items-center justify-center gap-x-1 rounded-md text-xs font-medium ring-1 ring-inset px-2 min-w-[theme(spacing.6)] py-1 fi-color-custom bg-custom-50 text-custom-600 ring-custom-600/10">
                                     <!--[if BLOCK]><![endif]--> <!--[if BLOCK]><![endif]-->
                                     <!--[if ENDBLOCK]><![endif]-->
 
@@ -203,13 +203,13 @@
                     class="flex items-center gap-x-3 px-2 py-2 cursor-pointer">
 
                     <span
-                        class="fi-sidebar-group-label flex-1 text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        class="fi-sidebar-group-label flex-1 text-sm font-medium leading-6 text-gray-500">
                         Blog
                     </span>
 
                     <!--[if BLOCK]><![endif]--> <button
                         style="--c-300:var(--gray-300);--c-400:var(--gray-400);--c-500:var(--gray-500);--c-600:var(--gray-600);"
-                        class="fi-icon-btn relative flex items-center justify-center rounded-lg outline-none transition duration-75 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-70 -m-2 h-9 w-9 fi-color-gray text-gray-400 hover:text-gray-500 focus-visible:ring-primary-600 dark:text-gray-500 dark:hover:text-gray-400 dark:focus-visible:ring-primary-500 fi-sidebar-group-collapse-button"
+                        class="fi-icon-btn relative flex items-center justify-center rounded-lg outline-none transition duration-75 focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-70 -m-2 h-9 w-9 fi-color-gray text-gray-400 hover:text-gray-500 focus-visible:ring-primary-600 fi-sidebar-group-collapse-button"
                         title="Blog" type="button" x-bind:aria-expanded="!$store.sidebar.groupIsCollapsed(label)"
                         x-on:click.stop="$store.sidebar.toggleCollapsedGroup(label)"
                         x-bind:class="{ '-rotate-180': $store.sidebar.groupIsCollapsed(label) }" aria-expanded="true">
@@ -238,9 +238,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com/blog/posts"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -250,7 +250,7 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Posts
                             </span>
 
@@ -260,9 +260,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com/blog/categories"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -272,7 +272,7 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Categories
                             </span>
 
@@ -282,9 +282,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com/blog/authors"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -294,7 +294,7 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Authors
                             </span>
 
@@ -304,9 +304,9 @@
                     <li class="fi-sidebar-item">
                         <a href="https://demo.filamentphp.com/blog/links"
                             x-on:click="window.matchMedia(`(max-width: 1024px)`).matches &amp;&amp; $store.sidebar.close()"
-                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100 dark:hover:bg-white/5 dark:focus-visible:bg-white/5">
+                            class="fi-sidebar-item-button relative flex items-center justify-center gap-x-3 rounded-lg px-2 py-2 text-sm outline-none transition duration-75 hover:bg-gray-100 focus-visible:bg-gray-100">
                             <!--[if BLOCK]><![endif]--> <svg
-                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400 dark:text-gray-500"
+                                class="fi-sidebar-item-icon h-6 w-6 text-gray-400"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -316,7 +316,7 @@
 
 
                             <span
-                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700 dark:text-gray-200">
+                                class="fi-sidebar-item-label flex-1 truncate font-medium text-gray-700">
                                 Links
                             </span>
 
