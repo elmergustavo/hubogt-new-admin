@@ -56,6 +56,11 @@
                     <a href="{{route('login')}}" style="margin-right: 15px;">
                         Iniciar sesión
                     </a>
+                    @auth
+
+                    Hola
+
+                    @endauth
                     <a style="margin-right: 15px;">
                         Registrarse
                     </a>

@@ -36,18 +36,6 @@ Route::fallback(function () {
 
 
 
-Route::get('/auth/redirect', function ()
-{
-    return Socialite::driver('google')->redirect();
-});
-
-Route::get('/auth/callback', function ()
-{
-    $user = Socialite::driver('google')->user();
-});
-
-
-
 // Route::view('/', 'welcome');
 
 // Route::view('dashboard', 'dashboard')
