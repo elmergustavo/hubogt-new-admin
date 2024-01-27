@@ -19,6 +19,7 @@ export default defineConfig({
                 'app/Forms/Components/**',
                 'app/Tables/Columns/**',
                 'resources/views/**',
+                'resources/**/*',
                 'resources/**/*.blade.php',
             ],
             // refresh: true,

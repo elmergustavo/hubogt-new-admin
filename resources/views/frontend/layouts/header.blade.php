@@ -58,17 +58,27 @@
                         <a href="{{route('login')}}" style="margin-right: 15px;">
                             Iniciar sesión
                         </a>
+
+                         <a style="margin-right: 15px; margin-left: 15px;">
+                            Registrarse
+                        </a>
                     @endguest
 
                     @auth
 
                     {{ Auth::user()->name }}
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
 
+                        <x-dropdown-link href="{{ route('logout') }}" class="flex items-center"
+                                    @click.prevent="$root.submit();">
+
+                            {{ __('Cerrar Sesión') }}
+                        </x-dropdown-link>
+                    </form>
 
                     @endauth
-                    <a style="margin-right: 15px; margin-left: 15px;">
-                        Registrarse
-                    </a>
                     <a>
                         Tienda
                     </a>
