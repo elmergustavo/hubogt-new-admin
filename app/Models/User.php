@@ -2,13 +2,19 @@
 
 namespace App\Models;
 
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasTenants;
+use Filament\Panel;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 use JoelButcher\Socialstream\HasConnectedAccounts;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser, HasTenants, MustVerifyEmail
 {
     use HasApiTokens;
     use HasConnectedAccounts;
@@ -46,4 +52,40 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        if ($panel->getId() === 'admin')
+        {
+
+            return $this->role === 'admin' && $this->status === 'active';
+        }
+        if ($panel->getId() === 'seller')
+        {
+
+            return $this->role === 'vendor' && $this->status === 'active';
+        }
+        if ($panel->getId() === 'service')
+        {
+
+            return $this->role === 'service' && $this->status === 'active';
+        }
+
+        if ($panel->getId() === 'app')
+        {
+
+            return $this->role === 'admin' && $this->status === 'active';
+        }
+        return true;
+    }
+
+    public function canAccessTenant(Model $tenant): bool
+    {
+        return true;
+    }
+
+    public function getTenants(Panel $panel): array | Collection
+    {
+        return Team::all();
+    }
 }

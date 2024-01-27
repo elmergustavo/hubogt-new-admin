@@ -53,15 +53,20 @@
 
                 <div class="px-4 d-none d-lg-flex align-items-center">
                     <!-- La clase d-none oculta el elemento en tamaños de pantalla más pequeños que lg -->
-                    <a href="{{route('login')}}" style="margin-right: 15px;">
-                        Iniciar sesión
-                    </a>
+
+                    @guest
+                        <a href="{{route('login')}}" style="margin-right: 15px;">
+                            Iniciar sesión
+                        </a>
+                    @endguest
+
                     @auth
 
-                    Hola
+                    {{ Auth::user()->name }}
+
 
                     @endauth
-                    <a style="margin-right: 15px;">
+                    <a style="margin-right: 15px; margin-left: 15px;">
                         Registrarse
                     </a>
                     <a>
