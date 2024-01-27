@@ -71,8 +71,9 @@ class AppPanelProvider extends PanelProvider
             // ->tenant(Team::class)
             // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
-                // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
-                // RoleMiddleware::class,
+            // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
+            // RoleMiddleware::class,
+            RoleMiddleware::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,

@@ -13,18 +13,28 @@ class RoleMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $role): Response
+    public function handle(Request $request, Closure $next): Response
     {
 
-        if ($request->user()->role !== $role) {
-            if ($request->user()->role == 'vendor') {
+        // Comprobar si hay un usuario autenticado
+        if ($user = $request->user())
+        {
+            // Aquí va tu lógica existente con $user en lugar de $request->user()
+            if ($request->user()->role == 'vendor')
+            {
                 return redirect()->route('filament.vendor');
-            } elseif ($request->user()->role == 'admin') {
+            }
+            elseif ($request->user()->role == 'admin')
+            {
                 return redirect()->route('filament.admin');
-            } else {
-                return redirect()->route('user.dashboard');
+            }
+            else
+            {
+                return redirect()->route('home');
             }
         }
+
+
         return $next($request);
     }
 }

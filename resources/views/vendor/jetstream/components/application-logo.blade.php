@@ -1,1 +1,0 @@
-<img src="https://storage.plex.lat/public/logos/plexapps/color.png" />

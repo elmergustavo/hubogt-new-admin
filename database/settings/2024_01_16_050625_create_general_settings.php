@@ -6,6 +6,14 @@ return new class extends SettingsMigration
 {
     public function up(): void
     {
+        $this->migrator->add('general.name', '');
+        $this->migrator->add('general.location', '');
+        $this->migrator->add('general.email', '');
+        $this->migrator->add('general.phone', '');
+        $this->migrator->add('general.nit', '');
+        $this->migrator->add('general.legal_reason', '');
+
+
         $this->migrator->add('general.title', '');
         $this->migrator->add('general.subtitle', '');
         $this->migrator->add('general.title_column1', '');
