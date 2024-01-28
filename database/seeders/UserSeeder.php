@@ -23,6 +23,16 @@ class UserSeeder extends Seeder
             //     'password' => bcrypt('password')
             // ],
             [
+                'name' => 'Admin user',
+                'username' => 'adminuser',
+                'email' => 'admin@buhogt.com',
+                'role' => 'admin',
+                'status' => 'active',
+                'email_verified_at' => now(),
+                'password' => bcrypt('password')
+
+            ],
+            [
                 'name' => 'Vendor user',
                 'username' => 'vendoruser',
                 'email' => 'vendedor@buhogt.com',

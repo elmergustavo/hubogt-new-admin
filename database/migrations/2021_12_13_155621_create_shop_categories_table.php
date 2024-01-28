@@ -18,6 +18,7 @@ return new class() extends Migration
             $table->foreignId('parent_id')->nullable()->constrained('shop_categories')->cascadeOnDelete();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->string('icon')->nullable();
             $table->longText('description')->nullable();
             $table->unsignedSmallInteger('position')->default(0);
             $table->boolean('is_visible')->default(false);

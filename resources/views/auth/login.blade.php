@@ -94,7 +94,7 @@
 
 
                                     <x-button
-                                        class="my-4 w-full text-2xl hover:bg-blue-900 text-center flex justify-center bg-[#252A61]">
+                                        class="my-4 w-full text-2xl hover:bg-blue-900 text-center flex justify-center">
                                         {{ __('Iniciar Sesión') }}
                                     </x-button>
                                 </div>

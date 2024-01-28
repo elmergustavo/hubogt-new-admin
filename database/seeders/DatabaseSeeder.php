@@ -15,6 +15,8 @@ use App\Models\Shop\Order;
 use App\Models\Shop\OrderItem;
 use App\Models\Shop\Payment;
 use App\Models\Shop\Product;
+use App\Models\Shop\Shop;
+use App\Models\Shop\Vendor;
 use App\Models\User;
 use Closure;
 use Filament\Notifications\Actions\Action;
@@ -35,15 +37,23 @@ class DatabaseSeeder extends Seeder
 
         // Admin
         $this->command->warn(PHP_EOL . 'Creating admin user...');
-        $user = $this->withProgressBar(1, fn () => User::factory(1)->create([
-            'name' => 'Admin user',
-            'username' => 'adminuser',
-            'email' => 'admin@buhogt.com',
-            'role' => 'admin',
-            'status' => 'active',
-            'email_verified_at' => now(),
-            'password' => bcrypt('password')
-        ]));
+        // $user = $this->withProgressBar(1, fn () => User::factory(1)->create([
+        //     'name' => 'Admin user',
+        //     'username' => 'adminuser',
+        //     'email' => 'admin@buhogt.com',
+        //     'role' => 'admin',
+        //     'status' => 'active',
+        //     'email_verified_at' => now(),
+        //     'password' => bcrypt('password')
+        // ]));
+
+
+
+        $user = $this->withProgressBar(20, fn () => User::factory(1)
+            ->create());
+
+
+
         $this->call(UserSeeder::class);
         $this->command->info('Admin user created.');
 
@@ -123,6 +133,18 @@ class DatabaseSeeder extends Seeder
             )
             ->create());
         $this->command->info('Blog authors and posts created.');
+
+        $this->command->warn(PHP_EOL . 'Creating vendors...');
+        $vendors = $this->withProgressBar(10, fn () => Vendor::factory(1)
+        ->sequence(fn ($sequence) => ['user_id' => $user->random()->id])
+        ->create());
+        $this->command->info('Vendors created.');
+
+        $this->command->warn(PHP_EOL . 'Creating shops...');
+        $shops = $this->withProgressBar(20, fn () => Shop::factory(1)
+        ->sequence(fn ($sequence) => ['shop_vendor_id' => $vendors->random()->id])
+        ->create());
+        $this->command->info('Shops created.');
     }
 
     protected function withProgressBar(int $amount, Closure $createCollectionOfOne): Collection

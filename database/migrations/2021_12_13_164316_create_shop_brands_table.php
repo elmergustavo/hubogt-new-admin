@@ -17,8 +17,10 @@ return new class() extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->text('logo')->nullable();
             $table->string('website')->nullable();
             $table->longText('description')->nullable();
+            $table->boolean('status')->default(true);
             $table->unsignedSmallInteger('position')->default(0);
             $table->boolean('is_visible')->default(false);
             $table->string('seo_title', 60)->nullable();
