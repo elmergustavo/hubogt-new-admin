@@ -22,7 +22,10 @@
     <header class="bg-[#161933] py-4">
         <nav class="flex justify-between items-center w-[90%] mx-auto">
             <div>
-                <img class="w-36" src="images/logo_horizontal_dark.svg" class="" alt="">
+                <a href="{{route('home')}}">
+
+                    <img class="w-36" src="images/logo_horizontal_dark.svg" class="" alt="">
+                </a>
             </div>
             <div
                 class="nav-links md:static absolute bg-[#161933] md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
@@ -36,8 +39,8 @@
                 </ul>
             </div>
             <div class="flex items-center gap-6">
-                <button
-                    class="bg-[#FFF] text-black font-medium border-black px-4 md:px-14 py-2 rounded-full hover:bg-[#87acec]">Registrate</button>
+                <a href="{{route('seller_register')}}"
+                    class="bg-[#FFF] text-black font-medium border-black px-4 md:px-14 py-2 rounded-full hover:bg-[#87acec]">Registrate</a>
                 <ion-icon onclick="onToggleMenu(this)" name="menu"
                     class="text-3xl text-white cursor-pointer md:hidden"></ion-icon>
             </div>

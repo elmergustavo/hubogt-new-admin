@@ -29,7 +29,7 @@
                     d="M12.0004 24.0001C15.2404 24.0001 17.9654 22.935 19.9454 21.095L16.0804 18.095C15.0054 18.82 13.6204 19.245 12.0004 19.245C8.8704 19.245 6.21537 17.135 5.2654 14.29L1.27539 17.385C3.25539 21.31 7.3104 24.0001 12.0004 24.0001Z"
                     fill="#34A853" />
             </svg>
-            <span class="text-sm font-semibold leading-6">Google</span>
+            <span class="text-sm font-semibold leading-6">Continuar con Google</span>
 
         </a>
     @endif

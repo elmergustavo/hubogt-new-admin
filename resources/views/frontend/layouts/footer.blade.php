@@ -183,13 +183,16 @@
                     <a class="action" href="mailto:example@gmail.com"><i class="far fa-envelope"></i>
                         suporte@buhogt.com</a>
                     <p><i class="fal fa-map-marker-alt"></i> Guatemala</p>
-                    <ul class="wsus__footer_social">
-                        <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a></li>
-                        <li><a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a class="behance" href="#"><i class="fab fa-behance"></i></a></li>
-                    </ul>
+
+                    <div>
+                        <a href="{{route('seller_register')}}" style="padding: 10px; background: white; font-size: 0.875rem; line-height: 1.25rem; color: #272B60; border: none; font-weight: 600; margin-right: 10px; border-radius: 0.25rem;">
+                            Vende en BuhoGT
+                        </a>
+                        <a href="#" style="padding: 10px; background: white; font-size: 0.875rem; line-height: 1.25rem; color: #272B60; border: none; font-weight: 600; border-radius: 0.25rem;">
+                            Contactanos
+                        </a>
+                    </div>
+
                 </div>
             </div>
             <div class="col-xl-2 col-sm-5 col-md-4 col-lg-2">
@@ -234,29 +237,38 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-4 col-sm-7 col-md-8 col-lg-5">
-                <div class="wsus__footer_content wsus__footer_content_2">
-                    <h3>Subscribe To Our Newsletter</h3>
-                    <p>Get all the latest information on Events, Sales and Offers.
-                        Get all the latest information on Events.</p>
-                    <form>
-                        <input type="text" placeholder="Search...">
-                        <button type="submit" class="common_btn">subscribe</button>
-                    </form>
-                    <div class="footer_payment">
-                        <p>We're using safe payment for :</p>
-                        <img src="images/credit2.png" alt="card" class="img-fluid">
-                    </div>
+
+            <div class="col-xl-1 col-sm-5 col-md-4 col-lg-2">
+                <div class="wsus__footer_content">
+                    <h5>Síguenos</h5>
+                    <ul class="redes-sociales">
+                        <li><a class="instagram" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a class="twitter" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a class="pinterest" href="#"><i class="fab fa-pinterest-p"></i> Pinterest</a></li>
+                        <li><a class="behance" href="#"><i class="fab fa-behance"></i> Behance</a></li>
+                    </ul>
+
                 </div>
             </div>
+
         </div>
     </div>
-    <div class="wsus__footer_bottom bg-[#272B60]">
+    <div class="wsus__footer_bottom">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
+
                     <div class="wsus__copyright d-flex justify-content-center">
-                        <p>Copyright © 2024 BuhoGT. Todos los derechos reservados.</p>
+
+                        <p style="color: #9695A8; padding-right: 20px;">Condiciones de uso</p>
+                        <p style="color: #9695A8; padding-right: 20px;">Política de privacidad</p>
+                        <p style="color: #9695A8; padding-right: 20px;">Política de cookies</p>
+                    </div>
+                    <div class="wsus__copyright d-flex justify-content-center">
+
+                        <p style="color: #9695A8">Copyright © 2024 BuhoGT. Todos los derechos reservados.</p>
                     </div>
                 </div>
             </div>

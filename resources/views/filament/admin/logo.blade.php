@@ -1,7 +1,2 @@
-{{-- <head>
-    @vite('resources/css/app.css')
-</head> --}}
-
-<img src="{{ asset('images/logo_horizontal.svg') }}" class="block " />
-{{-- <img src="{{ asset('assets/logo-dark.svg') }}" class="hidden w-40 " /> --}}
-<img src="{{ asset('images/logo_horizontal_dark.svg') }}" class="hidden" />
+<img src="{{ asset('images/logo_horizontal.svg') }}" class="block dark:hidden h-10 mx-auto" />
+<img src="{{ asset('images/logo_horizontal_dark.svg') }}" class="hidden dark:block h-10 mx-auto" />

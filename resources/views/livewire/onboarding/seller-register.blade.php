@@ -12,7 +12,7 @@
 
             <div class="w-full md:w-1/2 h-full bg-[#18193d] flex items-center justify-center text-white px-6 md:px-10">
                 <div class="md:space-y-12 items-center justify-center space-y-8 text-center md:text-left">
-                    <h1 class="text-3xl md:text-5xl">¡Hola, Diego!</h1>
+                    <h1 class="text-3xl md:text-5xl">¡Hola, {{ auth()->user()->name }}!</h1>
 
                     <p class="text-lg md:text-2xl">Nos encanta poder ayudarte a darle vida a tu tienda. Para
                         empezar, necesitamos saber un poco quién eres y qué haces.</p>
