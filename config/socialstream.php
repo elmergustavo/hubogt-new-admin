@@ -36,7 +36,7 @@ return [
         'google',
         // 'facebook',
         // 'microsoft',
-        'apple'
+        // 'apple'
     ],
 
     /*
