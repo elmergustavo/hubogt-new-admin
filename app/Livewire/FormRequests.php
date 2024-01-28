@@ -18,7 +18,7 @@ class FormRequests extends Component
     }
 
     public function sendMail(Request $request)
-    {  
+    {
         // $request->validate([
         //     'first_name' => 'required',
         //     'last_name'  => 'required',
@@ -29,7 +29,7 @@ class FormRequests extends Component
 
         $email_user = $request['email'];
         $mail       = new FormRequestsMail($request);
-        
+
         Mail::to($email_user)->send($mail);
 
         ModelFormRequest::create([
@@ -41,6 +41,6 @@ class FormRequests extends Component
             'reference'  => $request['reference'],
         ]);
 
-        return redirect()->route('landing')->with('info','enviado');
+        return redirect()->route('landing')->with('info', 'enviado');
     }
 }

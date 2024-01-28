@@ -110,53 +110,53 @@ function init() {
     // }
 
     // Swiper ( One card ) (Plugin)
-    function initswiperOne() {
-        new Swiper("#swiper_one", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            rewind: true,
-            navigation: {
-                nextEl: ".button-next",
-                prevEl: ".button-prev",
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                },
-            },
-        });
-    };
+    // function initswiperOne() {
+    //     new Swiper("#swiper_one", {
+    //         slidesPerView: 1,
+    //         spaceBetween: 30,
+    //         loop: true,
+    //         autoplay: {
+    //             delay: 2500,
+    //             disableOnInteraction: false,
+    //         },
+    //         pagination: {
+    //             el: ".swiper-pagination",
+    //             clickable: true,
+    //         },
+    //         rewind: true,
+    //         navigation: {
+    //             nextEl: ".button-next",
+    //             prevEl: ".button-prev",
+    //         },
+    //         breakpoints: {
+    //             320: {
+    //                 slidesPerView: 1,
+    //             },
+    //         },
+    //     });
+    // };
 
     // Swiper ( Two card ) (Plugin)
-    function initswiperTwo() {
-        new Swiper("#swiper_two", {
-            slidesPerView: 1,
-            loop: true,
-            autoHeight: true,
-            spaceBetween: 30,
-            navigation: {
-                nextEl: ".button-next",
-                prevEl: ".button-prev",
-            },
-            breakpoints: {
-                576: {
-                    slidesPerView: 1,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-            },
-        });
-    };
+    // function initswiperTwo() {
+    //     new Swiper("#swiper_two", {
+    //         slidesPerView: 1,
+    //         loop: true,
+    //         autoHeight: true,
+    //         spaceBetween: 30,
+    //         navigation: {
+    //             nextEl: ".button-next",
+    //             prevEl: ".button-prev",
+    //         },
+    //         breakpoints: {
+    //             576: {
+    //                 slidesPerView: 1,
+    //             },
+    //             768: {
+    //                 slidesPerView: 2,
+    //             },
+    //         },
+    //     });
+    // };
 
     // Text Animation
     // function initTypewrite() {
@@ -211,8 +211,8 @@ function init() {
     // initTopnav();
     // initStickyNav();
     // initBacktoTop();
-    initswiperOne();
-    initswiperTwo();
+    // initswiperOne();
+    // initswiperTwo();
     // window.onload = initTypewrite();
 
 };

@@ -121,8 +121,8 @@ composer i && npm i
 - Ejecutar el siguiente comando para darle permisos al storage (en el bash del contenedor)
   
 ```
-chmod -R 775 ./storage/*
-chmod -R 777 ./storage/*
+    chmod -R 775 ./storage/*
+    chmod -R 777 ./storage/*
 ```
 
 ## migrar la base de datos

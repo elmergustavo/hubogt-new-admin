@@ -34,8 +34,8 @@ return [
 
     'providers' => [
         'google',
-        'facebook',
-        'microsoft',
+        // 'facebook',
+        // 'microsoft',
         'apple'
     ],
 
