@@ -15,6 +15,7 @@ use App\Http\Middleware\RoleMiddleware;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
+use Filament\Forms\Components\FileUpload;
 use Filament\Support\Enums\MaxWidth;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -23,6 +24,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
+
 
 class AppPanelProvider extends PanelProvider
 {
@@ -34,8 +37,11 @@ class AppPanelProvider extends PanelProvider
             ->id('app')
             ->path('admin')
             ->login(Login::class)
+            ->emailVerification()
+            ->profile()
             // ->registration()
             ->passwordReset()
+
             ->emailVerification()
             ->brandLogo(fn () => view('filament.admin.logo'))
             ->brandLogoHeight('3rem')
@@ -47,6 +53,7 @@ class AppPanelProvider extends PanelProvider
             // ->font('Nunito')
             // ->topNavigation();
             ->authGuard('web')
+
             ->maxContentWidth(MaxWidth::ScreenTwoExtraLarge)
             ->favicon(asset('images/favicon.ico'))
             ->viteTheme('resources/css/filament/admin/theme.css')
@@ -65,6 +72,23 @@ class AppPanelProvider extends PanelProvider
                 'Blog',
             ])
             ->plugin(
+                BreezyCore::make()
+                    // ->avatarUploadComponent(
+                    //     fn () => FileUpload::make('profile_photo_path')->disk('public')
+                    // )
+                    ->enableTwoFactorAuthentication(
+                        force: false, // force the user to enable 2FA before they can use the application (default = false)
+                        // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
+                    )
+                    ->myProfile(
+                        shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
+                        shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
+                        navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
+                        hasAvatars: true, // Enables the avatar upload form component (default = false)
+                        slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
+                    )
+            )
+            ->plugin(
                 \Hasnayeen\Themes\ThemesPlugin::make()
             )
             ->databaseNotifications()
@@ -73,7 +97,7 @@ class AppPanelProvider extends PanelProvider
             ->middleware([
             // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             // RoleMiddleware::class,
-            RoleMiddleware::class,
+            // RoleMiddleware::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,

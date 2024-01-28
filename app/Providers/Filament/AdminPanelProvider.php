@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Blade;
 use Filament\Widgets;
 use App\Models\Team;
 use App\Filament\App\Pages\RegisterTeam;
-use App\Http\Middleware\RoleMiddleware;
+// use App\Http\Middleware\RoleMiddleware;
 use Filament\Support\Enums\MaxWidth;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -73,7 +73,7 @@ class AdminPanelProvider extends PanelProvider
             // ->tenantRegistration(RegisterTeam::class)
             ->middleware([
             // \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
-            RoleMiddleware::class,
+            // RoleMiddleware::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,

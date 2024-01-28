@@ -13,16 +13,23 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
 use Laravel\Jetstream\HasProfilePhoto;
 use JoelButcher\Socialstream\HasConnectedAccounts;
-// use JoelButcher\Socialstream\SetsProfilePhotoFromUrl;
+use Filament\Models\Contracts\HasAvatar;
+use JoelButcher\Socialstream\SetsProfilePhotoFromUrl;
 use Laravel\Sanctum\HasApiTokens;
+use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 
-class User extends Authenticatable implements FilamentUser, HasTenants, MustVerifyEmail
+use Illuminate\Support\Facades\Storage;
+// use Spatie\MediaLibrary\InteractsWithMedia;
+
+class User extends Authenticatable implements FilamentUser, HasTenants, MustVerifyEmail, HasAvatar
 {
     use HasApiTokens;
     use HasConnectedAccounts;
-    // use SetsProfilePhotoFromUrl;
+    // use InteractsWithMedia;
+    use SetsProfilePhotoFromUrl;
     use HasFactory;
-    // use HasProfilePhoto
+    use HasProfilePhoto;
+    use TwoFactorAuthenticatable;
     // {
     //     getProfilePhotoUrlAttribute as getPhotoUrl;
     // }
@@ -37,7 +44,8 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
         'name',
         'email',
         'password',
-        'role'
+        'role',
+        'avatar_url'
     ];
 
     /**
@@ -52,7 +60,7 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
         'two_factor_secret',
     ];
     protected $appends = [
-        'avatar_url',
+        // 'avatar_url',
     ];
 
     /**
@@ -63,6 +71,33 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar_url ? Storage::url($this->avatar_url) : null;
+    }
+
+    // public function getFilamentAvatarUrl(): ?string
+    // {
+    //     if ($this->profile_photo_path != null)
+    //     {
+    //         return Storage::url($this->profile_photo_path);
+    //     }
+    //     elseif ($this->avatar_url != null)
+    //     {
+    //         return Storage::url($this->avatar_url);
+    //     }
+
+    //     else
+    //     {
+    //         return null;
+    //     }
+
+
+
+    //     // return $this->avatar_url ? Storage::url($this->avatar_url) : null;
+    // }
 
     public function canAccessPanel(Panel $panel): bool
     {
@@ -99,6 +134,13 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
     {
         return Team::all();
     }
+
+    // public function getAvatarUrlAttribute()
+    // {
+    //     $avatar = $this->avatar_url;
+    //     return is_null($avatar) ? '/images/avatar_default.png' : $avatar->url;
+    // }
+
 
     // public function getAvatarUrlAttribute()
     // {

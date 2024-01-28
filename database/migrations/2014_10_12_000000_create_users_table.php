@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('current_connected_account_id')->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+            $table->text('avatar_url')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
