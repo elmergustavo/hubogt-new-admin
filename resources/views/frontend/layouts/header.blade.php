@@ -1,3 +1,24 @@
+<style>
+    .inline-block {
+        display: inline-block;
+    }
+
+    .h-14 {
+        height: 3rem;
+        /* 14 * 0.25 = 3.5rem */
+    }
+
+    .w-14 {
+        width: 3.2rem;
+        /* 14 * 0.25 = 3.5rem */
+    }
+
+    .rounded-full {
+        border-radius: 9999px;
+        /* Utilizamos un valor grande para asegurarnos de obtener un círculo */
+    }
+</style>
+
 <header>
     <div class="container">
         <div class="row" style="display: flex; align-items: center; font-size: 0.875rem; line-height: 1.25rem;">
@@ -55,28 +76,39 @@
                     <!-- La clase d-none oculta el elemento en tamaños de pantalla más pequeños que lg -->
 
                     @guest
-                        <a href="{{route('login')}}" style="margin-right: 15px;">
+                        <a href="{{ route('login') }}" style="margin-right: 15px;">
                             Iniciar sesión
                         </a>
 
-                         <a style="margin-right: 15px; margin-left: 15px;">
+                        <a style="margin-right: 15px; margin-left: 15px;">
                             Registrarse
                         </a>
                     @endguest
 
                     @auth
+                        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
 
-                    {{ Auth::user()->name }}
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('logout') }}" x-data>
-                        @csrf
+                            <img class="inline-block h-14 w-14 rounded-full"
+                                src="{{ Storage::url(Auth::user()->profile_photo_path )}}"
+                                alt="">
 
-                        <x-dropdown-link href="{{ route('logout') }}" class="flex items-center"
-                                    @click.prevent="$root.submit();">
+                            <span>{{ Auth::user()->name }}</span>
 
-                            {{ __('Cerrar Sesión') }}
-                        </x-dropdown-link>
-                    </form>
+                        </div>
+
+
+
+                        {{-- {{ Auth::user()->name }} --}}
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+
+                            <x-dropdown-link href="{{ route('logout') }}" class="flex items-center"
+                                @click.prevent="$root.submit();">
+
+                                {{ __('Cerrar Sesión') }}
+                            </x-dropdown-link>
+                        </form>
 
                     @endauth
                     <a>
