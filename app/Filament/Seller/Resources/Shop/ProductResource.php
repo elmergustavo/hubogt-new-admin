@@ -438,8 +438,8 @@ class ProductResource extends Resource
         return parent::getGlobalSearchEloquentQuery()->with(['brand']);
     }
 
-    public static function getNavigationBadge(): ?string
-    {
-        return static::$model::whereColumn('qty', '<', 'security_stock')->count();
-    }
+    // public static function getNavigationBadge(): ?string
+    // {
+    //     return static::$model::whereColumn('qty', '<', 'security_stock')->count();
+    // }
 }

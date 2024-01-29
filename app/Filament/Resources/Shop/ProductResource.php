@@ -36,7 +36,7 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'bx-store';
 
-    protected static bool $shouldRegisterNavigation = false;
+    protected static bool $shouldRegisterNavigation = true;
     // protected static ?string $navigationLabel = 'Productos';
 
     protected static ?int $navigationSort = 0;
@@ -58,8 +58,11 @@ class ProductResource extends Resource
                                     ->required()
                                     ->maxLength(255)
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                        if ($operation !== 'create') {
+
+                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set)
+                    {
+                        if ($operation !== 'create')
+                        {
                                             return;
                                         }
 
@@ -177,6 +180,7 @@ class ProductResource extends Resource
                                     ->required(),
                             ]),
                     ])
+
                     ->columnSpan(['lg' => 1]),
             ])
             ->columns(3);
@@ -188,14 +192,17 @@ class ProductResource extends Resource
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('product-image')
                     ->label('Image')
-                    ->collection('product-images'),
+            ->collection('product-images')
+            ->limit(3)
+            ->limitedRemainingText(isSeparate: true),
 
                 Tables\Columns\TextColumn::make('name')
                     ->label('Name')
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('brand.name')
+            Tables\Columns\TextColumn::make('shop.name')
+            ->label('Nombre de la tienda')
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
@@ -235,6 +242,7 @@ class ProductResource extends Resource
                     ->toggleable()
                     ->toggledHiddenByDefault(),
             ])
+            ->defaultSort('created_at', 'desc')
             ->filters([
                 QueryBuilder::make()
                     ->constraints([
@@ -266,12 +274,12 @@ class ProductResource extends Resource
                     ])
                     ->constraintPickerColumns(2),
             ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->actions([Tables\Actions\ViewAction::make(),
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()
-                    ->action(function () {
+            ->action(function ()
+            {
                         Notification::make()
                             ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
                             ->warning()
@@ -298,8 +306,8 @@ class ProductResource extends Resource
     {
         return [
             'index' => Pages\ListProducts::route('/'),
-            'create' => Pages\CreateProduct::route('/create'),
-            'edit' => Pages\EditProduct::route('/{record}/edit'),
+            // 'create' => Pages\CreateProduct::route('/create'),
+            // 'edit' => Pages\EditProduct::route('/{record}/edit'),
         ];
     }
 
