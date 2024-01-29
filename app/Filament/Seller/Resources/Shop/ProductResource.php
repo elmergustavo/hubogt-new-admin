@@ -64,10 +64,20 @@ class ProductResource extends Resource
     public static function getEloquentQuery(): Builder
     {
 
-        $shopId = auth()->user()->shop->id; // Asumiendo que el usuario tiene una tienda
+        $shopId = optional(auth()->user()->shop)->id; // Devuelve null si `shop` es null
 
         \Log::info($shopId);
-        return parent::getEloquentQuery()->where('shop_id', $shopId);
+
+        if ($shopId)
+        {
+            return parent::getEloquentQuery()->where('shop_id', $shopId);
+        }
+        else
+        {
+            // Manejar el caso cuando shopId es null
+            // Por ejemplo, puedes devolver una consulta que no retorne nada
+            return parent::getEloquentQuery()->whereRaw('1 = 0');
+        }
     }
 
 
