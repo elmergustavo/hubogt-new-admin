@@ -15,6 +15,7 @@ return new class extends Migration
         {
             $table->id();
             $table->bigInteger('shop_vendor_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('name');
             $table->text('banner');
             $table->text('description');
@@ -41,6 +42,7 @@ return new class extends Migration
 
 
             $table->foreign('shop_vendor_id')->references('id')->on('shop_vendors')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

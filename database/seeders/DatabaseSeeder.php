@@ -49,13 +49,32 @@ class DatabaseSeeder extends Seeder
 
 
 
-        $user = $this->withProgressBar(20, fn () => User::factory(1)
+        $user = $this->withProgressBar(20, fn () => User::factory(1)->count(20)
             ->create());
 
 
 
         $this->call(UserSeeder::class);
         $this->command->info('Admin user created.');
+
+
+        // vendors and shops
+        $this->command->warn(PHP_EOL . 'Creating vendors...');
+        $vendors = $this->withProgressBar(10, fn () => Vendor::factory(1)->count(20)
+        ->sequence(fn ($sequence) => [
+            'user_id' => $user->random()->id
+        ])
+        ->create());
+        $this->command->info('Vendors created.');
+
+        $this->command->warn(PHP_EOL . 'Creating shops...');
+        $shops = $this->withProgressBar(20, fn () => Shop::factory(1)->count(20)
+        ->sequence(fn ($sequence) => [
+            'shop_vendor_id' => $vendors->random()->id,
+            'user_id' =>  $user->random()->id
+        ])
+        ->create());
+        $this->command->info('Shops created.');
 
         // Shop
         $this->command->warn(PHP_EOL . 'Creating shop brands...');
@@ -79,8 +98,12 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Shop customers created.');
 
         $this->command->warn(PHP_EOL . 'Creating shop products...');
-        $products = $this->withProgressBar(50, fn () => Product::factory(1)
-            ->sequence(fn ($sequence) => ['shop_brand_id' => $brands->random(1)->first()->id])
+        $products = $this->withProgressBar(50, fn () => Product::factory(1)->count(20)
+        ->sequence(fn ($sequence) => [
+            'shop_brand_id' => $brands->random(1)->first()->id,
+            'shop_id' => $shops->random()->id
+        ])
+            // ->sequence(fn ($sequence) => ['shop_id' => $shops->random(1)->id])
             ->hasAttached($categories->random(rand(3, 6)), ['created_at' => now(), 'updated_at' => now()])
             ->has(
                 Comment::factory()->count(rand(10, 20))
@@ -134,17 +157,6 @@ class DatabaseSeeder extends Seeder
             ->create());
         $this->command->info('Blog authors and posts created.');
 
-        $this->command->warn(PHP_EOL . 'Creating vendors...');
-        $vendors = $this->withProgressBar(10, fn () => Vendor::factory(1)
-        ->sequence(fn ($sequence) => ['user_id' => $user->random()->id])
-        ->create());
-        $this->command->info('Vendors created.');
-
-        $this->command->warn(PHP_EOL . 'Creating shops...');
-        $shops = $this->withProgressBar(20, fn () => Shop::factory(1)
-        ->sequence(fn ($sequence) => ['shop_vendor_id' => $vendors->random()->id])
-        ->create());
-        $this->command->info('Shops created.');
     }
 
     protected function withProgressBar(int $amount, Closure $createCollectionOfOne): Collection

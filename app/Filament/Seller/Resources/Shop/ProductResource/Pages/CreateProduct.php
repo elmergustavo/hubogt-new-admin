@@ -13,4 +13,13 @@ class CreateProduct extends CreateRecord
     {
         return $this->previousUrl ?? $this->getResource()::getUrl('index');
     }
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+        $shopId = auth()->user()->shop->id; // Asumiendo que el usuario tiene una tienda;
+        $data['shop_id'] = $shopId;
+
+
+        return $data;
+    }
 }

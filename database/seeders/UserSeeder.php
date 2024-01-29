@@ -23,6 +23,36 @@ class UserSeeder extends Seeder
             //     'password' => bcrypt('password')
             // ],
             [
+                'name' => 'Meli Mombiela',
+                'username' => 'meli',
+                'email' => 'melissamombiela@gmail.com',
+                'role' => 'admin',
+                'status' => 'active',
+                'email_verified_at' => now(),
+                'password' => bcrypt('password')
+
+            ],
+            [
+                'name' => 'Mombiela',
+                'username' => 'mombiela',
+                'email' => 'jmmombielah@gmail.com',
+                'role' => 'admin',
+                'status' => 'active',
+                'email_verified_at' => now(),
+                'password' => bcrypt('password')
+
+            ],
+            [
+                'name' => 'Mombiela',
+                'username' => 'mombiela',
+                'email' => 'rjmombiela@gmail.com',
+                'role' => 'admin',
+                'status' => 'active',
+                'email_verified_at' => now(),
+                'password' => bcrypt('password')
+
+            ],
+            [
                 'name' => 'Admin user',
                 'username' => 'adminuser',
                 'email' => 'admin@buhogt.com',

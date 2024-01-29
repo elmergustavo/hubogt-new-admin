@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Shop\Shop;
+use App\Models\Shop\Vendor;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasTenants;
 use Filament\Panel;
@@ -72,32 +74,21 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
         'email_verified_at' => 'datetime',
     ];
 
+    public function vendor()
+    {
+        return $this->hasOne(Vendor::class);
+    }
+
+    public function shop()
+    {
+        return $this->hasOne(Shop::class);
+    }
 
     public function getFilamentAvatarUrl(): ?string
     {
         return $this->avatar_url ? Storage::url($this->avatar_url) : null;
     }
 
-    // public function getFilamentAvatarUrl(): ?string
-    // {
-    //     if ($this->profile_photo_path != null)
-    //     {
-    //         return Storage::url($this->profile_photo_path);
-    //     }
-    //     elseif ($this->avatar_url != null)
-    //     {
-    //         return Storage::url($this->avatar_url);
-    //     }
-
-    //     else
-    //     {
-    //         return null;
-    //     }
-
-
-
-    //     // return $this->avatar_url ? Storage::url($this->avatar_url) : null;
-    // }
 
     public function canAccessPanel(Panel $panel): bool
     {

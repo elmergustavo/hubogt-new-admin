@@ -61,6 +61,16 @@ class ProductResource extends Resource
         return __('Producto');
     }
 
+    public static function getEloquentQuery(): Builder
+    {
+
+        $shopId = auth()->user()->shop->id; // Asumiendo que el usuario tiene una tienda
+
+        \Log::info($shopId);
+        return parent::getEloquentQuery()->where('shop_id', $shopId);
+    }
+
+
     public static function form(Form $form): Form
     {
         return $form

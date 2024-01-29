@@ -2,6 +2,7 @@
 
 namespace App\Models\Shop;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,8 +19,13 @@ class Vendor extends Model
         'preferred_language', 'time_zone'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function shops()
     {
-        return $this->hasMany(Shop::class);
+        return $this->hasMany(Shop::class, 'shop_vendor_id');
     }
 }
