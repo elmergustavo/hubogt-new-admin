@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Blog\AuthorResource\Pages;
+namespace App\Filament\Seller\Resources\Blog\AuthorResource\Pages;
 
 use App\Filament\Exports\Blog\AuthorExporter;
 use App\Filament\Resources\Blog\AuthorResource;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Blog;
+namespace App\Filament\Seller\Resources\Blog;
 
 use App\Filament\Resources\Blog\CategoryResource\Pages;
 use App\Models\Blog\Category;
@@ -22,8 +22,6 @@ class CategoryResource extends Resource
     protected static ?string $slug = 'blog/categories';
 
     protected static ?string $recordTitleAttribute = 'name';
-
-    protected static bool $shouldRegisterNavigation = true;
 
     protected static ?string $navigationGroup = 'Blog';
 
@@ -83,7 +81,8 @@ class CategoryResource extends Resource
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()
-                    ->action(function () {
+                    ->action(function ()
+                    {
                         Notification::make()
                             ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
                             ->warning()

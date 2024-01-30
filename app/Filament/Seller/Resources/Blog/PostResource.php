@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Blog;
+namespace App\Filament\Seller\Resources\Blog;
 
 use App\Filament\Resources\Blog\PostResource\Pages;
 use App\Models\Blog\Post;
@@ -77,8 +77,8 @@ class PostResource extends Resource
                     ->columns(2),
 
                 Forms\Components\Section::make('Image')
-                ->schema([
-                    Forms\Components\FileUpload::make('image')
+                    ->schema([
+                        Forms\Components\FileUpload::make('image')
                             ->image()
                             ->hiddenLabel(),
                     ])
@@ -107,8 +107,8 @@ class PostResource extends Resource
                     ->sortable()
                     ->toggleable(),
 
-            Tables\Columns\TextColumn::make('status')
-            ->badge()
+                Tables\Columns\TextColumn::make('status')
+                    ->badge()
                     ->getStateUsing(fn (Post $record): string => $record->published_at?->isPast() ? 'Published' : 'Draft')
                     ->colors([
                         'success' => 'Published',
@@ -137,8 +137,8 @@ class PostResource extends Resource
                         Forms\Components\DatePicker::make('published_until')
                             ->placeholder(fn ($state): string => now()->format('M d, Y')),
                     ])
-            ->query(function (Builder $query, array $data): Builder
-            {
+                    ->query(function (Builder $query, array $data): Builder
+                    {
                         return $query
                             ->when(
                                 $data['published_from'] ?? null,
@@ -149,15 +149,15 @@ class PostResource extends Resource
                                 fn (Builder $query, $date): Builder => $query->whereDate('published_at', '<=', $date),
                             );
                     })
-            ->indicateUsing(function (array $data): array
-            {
+                    ->indicateUsing(function (array $data): array
+                    {
                         $indicators = [];
-                if ($data['published_from'] ?? null)
-                {
+                        if ($data['published_from'] ?? null)
+                        {
                             $indicators['published_from'] = 'Published from ' . Carbon::parse($data['published_from'])->toFormattedDateString();
                         }
-                if ($data['published_until'] ?? null)
-                {
+                        if ($data['published_until'] ?? null)
+                        {
                             $indicators['published_until'] = 'Published until ' . Carbon::parse($data['published_until'])->toFormattedDateString();
                         }
 
@@ -173,8 +173,8 @@ class PostResource extends Resource
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()
-            ->action(function ()
-            {
+                    ->action(function ()
+                    {
                         Notification::make()
                             ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
                             ->warning()

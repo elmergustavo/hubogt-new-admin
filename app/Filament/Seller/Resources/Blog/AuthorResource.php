@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Blog;
+namespace App\Filament\Seller\Resources\Blog;
 
 use App\Filament\Resources\Blog\AuthorResource\Pages;
 use App\Models\Blog\Author;
@@ -44,11 +44,11 @@ class AuthorResource extends Resource
                     ->columnSpan('full'),
 
                 Forms\Components\TextInput::make('github_handle')
-            ->label('GitHub handle')
+                    ->label('GitHub handle')
                     ->maxLength(255),
 
                 Forms\Components\TextInput::make('twitter_handle')
-            ->label('Twitter handle')
+                    ->label('Twitter handle')
                     ->maxLength(255),
             ]);
     }
@@ -95,8 +95,8 @@ class AuthorResource extends Resource
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()
-            ->action(function ()
-            {
+                    ->action(function ()
+                    {
                         Notification::make()
                             ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
                             ->warning()

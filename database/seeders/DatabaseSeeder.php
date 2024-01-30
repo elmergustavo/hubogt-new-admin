@@ -6,6 +6,7 @@ use App\Filament\Resources\Shop\OrderResource;
 use App\Models\Address;
 use App\Models\Blog\Author;
 use App\Models\Blog\Category as BlogCategory;
+use App\Models\Blog\Link;
 use App\Models\Blog\Post;
 use App\Models\Comment;
 use App\Models\Shop\Brand;
@@ -92,13 +93,13 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Shop categories created.');
 
         $this->command->warn(PHP_EOL . 'Creating shop customers...');
-        $customers = $this->withProgressBar(1000, fn () => Customer::factory(1)
+        $customers = $this->withProgressBar(10, fn () => Customer::factory(1)
             ->has(Address::factory()->count(rand(1, 3)))
             ->create());
         $this->command->info('Shop customers created.');
 
         $this->command->warn(PHP_EOL . 'Creating shop products...');
-        $products = $this->withProgressBar(50, fn () => Product::factory(1)->count(20)
+        $products = $this->withProgressBar(50, fn () => Product::factory(1)->count(1)
         ->sequence(fn ($sequence) => [
             'shop_brand_id' => $brands->random(1)->first()->id,
             'shop_id' => $shops->random()->id
@@ -156,6 +157,12 @@ class DatabaseSeeder extends Seeder
             )
             ->create());
         $this->command->info('Blog authors and posts created.');
+
+        $this->command->warn(PHP_EOL . 'Creating blog links...');
+        $this->withProgressBar(20, fn () => Link::factory(1)
+            ->count(20)
+            ->create());
+        $this->command->info('Blog links created.');
 
     }
 

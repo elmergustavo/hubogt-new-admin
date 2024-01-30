@@ -11,6 +11,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Facades\FilamentView;
+use Filament\SpatieLaravelTranslatablePlugin;
 use Filament\Navigation\MenuItem;
 use Filament\Widgets;
 use Filament\Support\Enums\MaxWidth;
@@ -102,7 +103,11 @@ class SellerPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->plugin(
+                SpatieLaravelTranslatablePlugin::make()
+                    ->defaultLocales(['en', 'es', 'nl']),
+            );
     }
 
     public function register(): void
