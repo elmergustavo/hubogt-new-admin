@@ -16,6 +16,7 @@
 
     <!-- Styles -->
     @livewireStyles
+    @livewire('database-notifications')
 </head>
 <body>
     <div class="font-nunito text-gray-900 antialiased">
