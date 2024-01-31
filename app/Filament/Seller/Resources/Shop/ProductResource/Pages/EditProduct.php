@@ -15,9 +15,9 @@ class EditProduct extends EditRecord
     {
         return [
             Actions\DeleteAction::make(),
-            Actions\Action::make('updateAuthor')
+            Actions\Action::make('Comentarios')
             ->form([
-                TextInput::make('name')
+                TextInput::make('Descripción')
 
 
             ])
