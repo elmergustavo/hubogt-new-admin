@@ -3,9 +3,9 @@
 @section('content')
 <div x-data="{ current_step: 1, current_page: 'page1', curren_page_step: 1 }">
 
-    <div class="flex flex-col h-screen" >
+    <div class="flex flex-col h-screen">
         {{-- page 1 --}}
-        <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
+        {{-- <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
             <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/unsplash_Pdds9XsWyoM.png)">
@@ -34,10 +34,10 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- page 2 --}}
-        <div class="flex-1 md:flex relative" x-show="current_page === 'page2'">
+        {{-- <div class="flex-1 md:flex relative" x-show="current_page === 'page2'">
             <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/onboarding2.png)">
@@ -90,10 +90,10 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- page 3 --}}
-        <div class="flex-1 md:flex relative" x-show="current_page === 'page3'">
+        {{-- <div class="flex-1 md:flex relative" x-show="current_page === 'page3'">
             <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/onboarding3.png)">
@@ -136,10 +136,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- page 4 --}}
-        <div class=" flex flex-col flex-1" x-show="current_page === 'page4'">
+        <div class=" flex flex-col flex-1">
             {{-- logo --}}
             <div class="flex justify-center p-5 sm:justify-normal sm:pb-10 ">
                 <img src="assets/logo/logo_horizontal.png" alt="logo_buho" class="">
@@ -190,7 +190,7 @@
             </div>
 
             {{-- Step page 1 --}}
-            <div class="flex flex-col flex-1" x-show="curren_page_step === 1">
+            {{-- <div class="flex flex-col flex-1" x-show="curren_page_step === 1">
                 <div class="flex flex-col w-full justify-center items-center pt-4 sm:pt-12 pb-4 sm:pb-12">
                     <label class="font-medium text-xl sm:text-3xl">
                         Preferencias de la tienda
@@ -233,10 +233,10 @@
                         Guardar y continuar
                     </button>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Step page 2 --}}
-            <div class="flex flex-col flex-1" x-show="curren_page_step === 2">
+            {{-- <div class="flex flex-col flex-1" x-show="curren_page_step === 2">
                 <div class="w-full flex flex-1 justify-center pt-4 sm:pt-12 pb-4 sm:pb-12 ">
                     <div class="flex flex-col space-y-6">
                         <label class="font-medium text-xl sm:text-3xl">
@@ -264,18 +264,16 @@
                         Guardar y continuar
                     </button>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Step page 3 --}}
-            <div class="flex flex-col flex-1 p-20" x-show="curren_page_step === 3">
-
+            {{-- <div class="flex flex-col flex-1 p-20" x-show="curren_page_step === 3">
                 <div class="flex flex-col">
                     <label class="font-medium text-4xl">Crea un Producto</label>
                     <label>Añade algunas fotos y detalles sobre el artículo. Rellena lo que puedas por ahora, podrás
                         modificarlo más adelante.</label>
                 </div>
                 <div class="space-y-10">
-                    {{-- div 1--}}
                     <div class="border flex flex-col pt-5 pb-5">
                         <div class="flex flex-col">
                             <label>Fotos</label>
@@ -328,7 +326,6 @@
                             <label class="text-amber-500">Aquí tienes unos ejemplos de fotos creativas</label>
                         </div>
                     </div>
-                    {{-- div 2--}}
                     <div class="border space-y-10 p-5">
                         <div class="flex flex-col">
                             <label class="text-xl">Información del producto</label>
@@ -402,7 +399,6 @@
                             <input class="w-full h-10" type="text">
                         </div>
                     </div>
-                    {{-- div 3--}}
                     <div class="border space-y-10 p-5">
                         <label>Inventario y precios</label>
                         <div class="flex space-x-5 ">
@@ -469,17 +465,18 @@
                         </div>
                     </div>
 
-                    {{-- div 4--}}
                     <div class="border flex flex-col space-y-5 p-5">
                         <div class="flex flex-col">
                             <label class="text-xl">Variantes</label>
-                            <label>Añadir las opciones disponibles, como el color o la talla. Los compradores elegirán entre estas al hacer su
+                            <label>Añadir las opciones disponibles, como el color o la talla. Los compradores elegirán
+                                entre estas al hacer su
                                 compra.</label>
                         </div>
                         <button class="bg-gray-100 w-36 h-8">Añadir variantes</button>
                         <div class="flex justify-between bg-[#d7e5f5] h-16 rounded p-4">
                             <div class="flex items-center space-x-4">
-                                <div class="flex justify-center items-center h-10 w-10 rounded-full bg-white">@svg('bi-stars', 'w-5 h-5 text-black')</div>
+                                <div class="flex justify-center items-center h-10 w-10 rounded-full bg-white">
+                                    @svg('bi-stars', 'w-5 h-5 text-black')</div>
                                 <label>Hemos añadido vinculación de fotos a las variantes, edición por lotes y ordenar
                                     como opciones nuevas.</label>
                             </div>
@@ -490,7 +487,83 @@
                         </div>
                     </div>
                 </div>
-                {{-- button --}}
+                <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
+                    <button x-on:click="{curren_page_step = 4, current_step = 4 }"
+                        class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
+                        Guardar y continuar
+                    </button>
+                </div>
+            </div> --}}
+            {{-- Step page 4 --}}
+            {{-- x-show="current_page === 'page4'" --}}
+            <div class="flex flex-col flex-1 p-20">
+                <div class="flex flex-col justify-center items-center space-y-4 pb-20">
+                    <label class="text-3xl font-medium">Como se te va a pagar</label>
+                    <label class="text-xl">Buhogt le da varias opciones como recibir sus pagos y a sus
+                        compradores</label>
+                    <div class="flex space-x-3">
+                        <img src="assets/logos_mastercard.png" alt="mc" class="w-14 h-10">
+                        <img src="assets/Vector.png" alt="visa" class="w-16 h-10">
+                    </div>
+                </div>
+                <div class="flex flex-col border p-10 space-y-4">
+                    <label>¿Qué tipo de vendedor eres?</label>
+                    <label>En buhogt usamos esto para poder verificar tu información. Esto no va afectar tu tienda en
+                        Buhogt solo queremos
+                        saber más de ti.
+                    </label>
+                    <div class="flex space-x-16">
+                        <div class="flex">
+                            <input type="radio" name="hs-default-radio"
+                                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                id="hs-default-radio">
+                            <label for="hs-default-radio"
+                                class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
+                        </div>
+                        <div class="flex">
+                            <input type="radio" name="hs-default-radio"
+                                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                id="hs-checked-radio" checked>
+                            <label for="hs-checked-radio"
+                                class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
+                        </div>
+                    </div>
+                    <label>Si tienes alguna duda puedes contactarnos a buhogt equipo</label>
+                </div>
+                <div class="flex flex-col border p-10 space-y-4">
+                    <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
+                    <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
+                    <label>Esta información no sera pública en Buhogt.</label>
+                    
+                    <div class="flex space-x-5 ">                       
+                            <label class="w-64">Primer Nombre *</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">                       
+                            <label class="w-64">Apellidos:*</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">                       
+                            <label class="w-64">Correo electronico:*</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">                       
+                            <label class="w-64">Telefono: *</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">                       
+                            <label class="w-64">Fecha de nacimiento: *</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">                       
+                            <label class="w-64">Nit:</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                </div>
+
+                <div class="flex flex-col border p-10 space-y-4">
+                </div>
+
                 <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
                     <button x-on:click="{curren_page_step = 4, current_step = 4 }"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
