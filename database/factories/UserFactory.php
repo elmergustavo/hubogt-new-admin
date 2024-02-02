@@ -27,6 +27,8 @@ class UserFactory extends Factory
             'role' => $this->faker->randomElement(['admin', 'vendor', 'service', 'user']),
             'password' => '$2y$12$Z/vhVO3e.UXKaG11EWgxc.EL7uej3Pi1M0Pq0orF5cbFGtyVh0V3C', // password
             'remember_token' => Str::random(10),
+            'created_at' => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'updated_at' => now(),
         ];
     }
 

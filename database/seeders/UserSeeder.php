@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
                 'username' => 'meli',
                 'email' => 'melissamombiela@gmail.com',
                 'role' => 'admin',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
 
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
                 'username' => 'mombiela',
                 'email' => 'jmmombielah@gmail.com',
                 'role' => 'admin',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
 
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
                 'username' => 'mombiela',
                 'email' => 'rjmombiela@gmail.com',
                 'role' => 'admin',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
 
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
                 'username' => 'adminuser',
                 'email' => 'admin@buhogt.com',
                 'role' => 'admin',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
 
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
                 'username' => 'vendoruser',
                 'email' => 'vendedor@buhogt.com',
                 'role' => 'vendor',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
             ],
@@ -76,7 +76,7 @@ class UserSeeder extends Seeder
                 'username' => 'user',
                 'email' => 'user@buhogt.com',
                 'role' => 'user',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
             ],
@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
                 'username' => 'user',
                 'email' => 'servicio@buhogt.com',
                 'role' => 'service',
-                'status' => 'active',
+                // 'status' => 'active',
                 'email_verified_at' => now(),
                 'password' => bcrypt('password')
             ]

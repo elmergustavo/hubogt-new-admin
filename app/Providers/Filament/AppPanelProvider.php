@@ -73,9 +73,9 @@ class AppPanelProvider extends PanelProvider
             ])
             ->plugin(
                 BreezyCore::make()
-                    // ->avatarUploadComponent(
-                    //     fn () => FileUpload::make('profile_photo_path')->disk('public')
-                    // )
+            ->avatarUploadComponent(
+                fn () => FileUpload::make('profile_photo_path')->disk('public')->downloadable()
+            )
                     ->enableTwoFactorAuthentication(
                         force: false, // force the user to enable 2FA before they can use the application (default = false)
                         // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page

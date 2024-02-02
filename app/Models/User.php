@@ -86,7 +86,7 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return $this->avatar_url ? Storage::url($this->avatar_url) : null;
+        return $this->profile_photo_path ? Storage::url($this->profile_photo_path) : null;
     }
 
 
@@ -95,23 +95,23 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
         if ($panel->getId() === 'admin')
         {
 
-            return $this->role === 'admin' && $this->status === 'active';
+            return $this->role === 'admin' && $this->status;
         }
         if ($panel->getId() === 'seller')
         {
 
-            return $this->role === 'vendor' && $this->status === 'active';
+            return $this->role === 'vendor' && $this->status;
         }
         if ($panel->getId() === 'service')
         {
 
-            return $this->role === 'service' && $this->status === 'active';
+            return $this->role === 'service' && $this->status;
         }
 
         if ($panel->getId() === 'app')
         {
 
-            return $this->role === 'admin' && $this->status === 'active';
+            return $this->role === 'admin' && $this->status;
         }
         return true;
     }
