@@ -9,12 +9,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Spatie\MediaLibrary\HasMedia;
+use Parallax\FilamentComments\Models\Traits\HasFilamentComments;
+
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Product extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+    use HasFilamentComments;
 
     /**
      * @var string

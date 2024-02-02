@@ -47,7 +47,8 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
         'email',
         'password',
         'role',
-        'avatar_url'
+        'avatar_url',
+        'profile_photo_path'
     ];
 
     /**

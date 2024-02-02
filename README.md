@@ -140,3 +140,11 @@ Comando para limpiar cache
 ```
 sudo chmod -R 777 bootstrap/cache/
 ```
+
+
+Permisos en el Directorio de Almacenamiento:
+Asegúrate de que el directorio storage y sus subdirectorios tengan permisos adecuados para que el servidor web pueda escribir en ellos. Puedes cambiar los permisos usando el siguiente comando:
+
+```
+chmod -R 775 /var/www/html/storage
+```

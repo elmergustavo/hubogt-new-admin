@@ -19,8 +19,10 @@ use Filament\Tables\Filters\QueryBuilder\Constraints\BooleanConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\DateConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\NumberConstraint;
 use Filament\Tables\Filters\QueryBuilder\Constraints\TextConstraint;
+use Parallax\FilamentComments\Tables\Actions\CommentsAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Support\Enums\MaxWidth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -274,7 +276,10 @@ class ProductResource extends Resource
                     ])
                     ->constraintPickerColumns(2),
             ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
-            ->actions([Tables\Actions\ViewAction::make(),
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+                CommentsAction::make()
+                    ->modalWidth(MaxWidth::ThreeExtraLarge),
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()

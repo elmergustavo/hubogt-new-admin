@@ -33,6 +33,7 @@
         "mallardduck/blade-boxicons": "^2.4",
         "mckenziearts/blade-untitledui-icons": "^1.2",
         "owenvoke/blade-entypo": "^2.1",
+        "parallax/filament-comments": "^1.0",
         "spatie/laravel-settings": "^3.2",
         "squirephp/countries-en": "^3.3",
         "squirephp/currencies-en": "^3.3"

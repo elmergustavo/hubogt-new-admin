@@ -24,6 +24,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use Filament\Forms\Components\FileUpload;
 
 class SellerPanelProvider extends PanelProvider
 {
@@ -47,9 +48,16 @@ class SellerPanelProvider extends PanelProvider
             ->authGuard('web')
             ->plugin(
                 BreezyCore::make()
+            ->avatarUploadComponent(
+                fn () => FileUpload::make('profile_photo_path')->disk('public')->downloadable()
+            )
+                ->enableTwoFactorAuthentication(
+                    force: false, // force the user to enable 2FA before they can use the application (default = false)
+                    // action: CustomTwoFactorPage::class // optionally, use a custom 2FA page
+                )
                     ->myProfile(
                         shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
-                        shouldRegisterNavigation: true, // Adds a main navigation item for the My Profile page (default = false)
+                shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
                         navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
                         hasAvatars: true, // Enables the avatar upload form component (default = false)
                         slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
