@@ -28,7 +28,7 @@
         "laravel/jetstream": "^4.2",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.0",
+        "livewire/livewire": "^3.4",
         "livewire/volt": "^1.0",
         "mallardduck/blade-boxicons": "^2.4",
         "mckenziearts/blade-untitledui-icons": "^1.2",
