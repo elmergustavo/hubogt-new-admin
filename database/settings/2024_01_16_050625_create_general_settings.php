@@ -22,5 +22,9 @@ return new class extends SettingsMigration
         $this->migrator->add('general.description_column2', '');
         $this->migrator->add('general.title_column3', '');
         $this->migrator->add('general.description_column3', '');
+
+        $this->migrator->add('general.terms_conditions', '');
+        $this->migrator->add('general.privacy_policies', '');
+        $this->migrator->add('general.sales_polices', '');
     }
 };

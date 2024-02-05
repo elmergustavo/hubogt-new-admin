@@ -22,8 +22,8 @@ enum ProductStatus: string implements HasColor, HasIcon, HasLabel
     {
         return match ($this)
         {
-            self::Approved => 'Aprovados',
-            self::Rejected => 'Rechazados',
+            self::Approved => 'Aprovado',
+            self::Rejected => 'Rechazado',
             self::Needs_review => 'Necesita revisión',
             // self::Service => 'servicio',
             // self::Cancelled => 'Cancelado',

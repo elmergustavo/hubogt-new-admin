@@ -141,31 +141,32 @@ class ProductResource extends Resource
                             ])
                             ->collapsible(),
 
-                        Forms\Components\Section::make('Pricing')
+                Forms\Components\Section::make('Precios')
                             ->schema([
                                 Forms\Components\TextInput::make('price')
+                    ->label('Precio original')
                                     ->numeric()
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->prefix('Q.')
                                     ->required(),
 
                                 Forms\Components\TextInput::make('old_price')
-                                    ->label('Compare at price')
+                    ->label('Precio descuento')
                                     ->numeric()
                                     ->prefix('Q.')
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
 
-                                Forms\Components\TextInput::make('cost')
-                                    ->label('Cost per item')
-                                    ->helperText('Customers won\'t see this price.')
-                                    ->numeric()
-                                    ->prefix('Q.')
-                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
-                                    ->required(),
+                                // Forms\Components\TextInput::make('cost')
+                                //     ->label('Cost per item')
+                                //     ->helperText('Customers won\'t see this price.')
+                                //     ->numeric()
+                                //     ->prefix('Q.')
+                                //     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                //     ->required(),
                             ])
                             ->columns(2),
-                        Forms\Components\Section::make('Inventory')
+                Forms\Components\Section::make('Inventario')
                             ->schema([
                                 Forms\Components\TextInput::make('sku')
                                     ->label('SKU (Stock Keeping Unit)')
