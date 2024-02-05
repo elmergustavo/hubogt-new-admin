@@ -1,12 +1,20 @@
-@extends('components.layouts.onboarding')
+@extends('components.layouts.app')
 
 @section('content')
-<div x-data="{ current_step: 1, current_page: 'page1', curren_page_step: 1 }">
+<div x-data="{ current_step: 1, 
+        current_page: 'page1', 
+        curren_page_step: 1, 
+        selectedOption: 'opcion1',
+        vender_en_linea: null,
+        promocionar_mi_tienda: null,
+        posicionamiento_de_marca: null,
+        pagos_y_envios: null,
+    }">
 
     <div class="flex flex-col h-screen">
         {{-- page 1 --}}
-        {{-- <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
-            <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9">
+        <div class="flex-1 md:flex relative" x-show="current_page === 'page'">
+            <img src="assets/Group.png" alt="logo" class="absolute md:top-9 md:left-9">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/unsplash_Pdds9XsWyoM.png)">
             </div>
@@ -34,40 +42,39 @@
                     </p>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
         {{-- page 2 --}}
-        {{-- <div class="flex-1 md:flex relative" x-show="current_page === 'page2'">
-            <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9">
+        <div class="flex-1 md:flex relative" x-show="current_page === 'page2'">
+            <img src="assets/Group.png" alt="logo" class="absolute md:top-9 md:left-9 hidden md:block">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/onboarding2.png)">
             </div>
 
             <div class="w-full md:w-1/2 h-full bg-white flex items-center justify-center text-black px-6 md:px-10">
-                <div class="md:space-y-12 items-center justify-center space-y-8 text-center md:text-left">
-                    <h1 class="text-3xl md:text-5xl">¿Por qué estás en Buhogt?</h1>
-
-                    <p class="text-lg md:text-2xl">Te guiaremos para que tu tienda vaya sobre ruedas, tanto si tienes
-                        experiencia en esto como si es la primera vez que vendes.</p>
+                <div class="md:space-y-12 items-center justify-center space-y-8 md:text-left">
+                    <div class="text-3xl md:text-5xl">¿Por qué estás en Buhogt?</div>
+                    <div class="text-lg md:text-2xl">Te guiaremos para que tu tienda vaya sobre ruedas, tanto si tienes
+                        experiencia en esto como si es la primera vez que vendes.</div>
                     <div class="mt-4 space-y-4 leading-6">
                         <div class="flex gap-x-2.5">
                             <input id="option_1" name="reference" value="Acabo de empezar" type="radio"
                                 class="mt-1 h-4 w-4 border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-600">
                             <label for="option_1">Acabo de empezar</label>
                         </div>
-                        <div class="flex gap-x-2.5">
+                        <div class="flex gap-x-2">
                             <input id="option_2" name="reference"
                                 value="Tengo un negocio y quiero vender en Internet por primera vez" type="radio"
                                 class="mt-1 h-4 w-4 border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-600">
                             <label for="option_2">Tengo un negocio y quiero vender en Internet por primera vez</label>
                         </div>
-                        <div class="flex gap-x-2.5">
+                        <div class="flex gap-x-2">
                             <input id="option_3" name="reference"
                                 value="Quiero ampliar mi negocio digital vendiendo en Buhogt" type="radio"
                                 class="mt-1 h-4 w-4 border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-600">
                             <label for="option_3">Quiero ampliar mi negocio digital vendiendo en Buhogt</label>
                         </div>
-                        <div class="flex gap-x-2.5">
+                        <div class="flex gap-x-2">
                             <input id="option_4" name="reference" value="Estoy aquí para curiosear" type="radio"
                                 class="mt-1 h-4 w-4 border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-600">
                             <label for="option_4">Estoy aquí para curiosear</label>
@@ -75,81 +82,134 @@
                     </div>
 
 
-                    <div class="flex space-x-8 justify-end">
-                        <a href="#"
-                            class="mt-8 w-52 flex justify-center rounded-full border border-black py-3 font-medium text-xl">
+                    <div class="flex flex-col md:flex-row md:space-x-8 md:justify-end">
+                        <button @click="current_page = 'page3'"
+                            class="md:mt-8 md:w-52 flex justify-center border border-black py-3 font-medium text-xl">
                             Omitir esta prueba
-                        </a>
-
+                        </button>
 
                         <button @click="current_page = 'page3'"
-                            class="mt-8 text-xl shadow-2xl inline-block rounded-full bg-indigo-950 px-12 py-3 font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
+                            class="md:mt-8 mt-2 shadow-2xl inline-block bg-indigo-950 px-12 py-3 font-medium text-xl text-white transition hover:bg-indigo-700">
                             Siguiente
                         </button>
                     </div>
 
                 </div>
             </div>
-        </div> --}}
+        </div>
 
         {{-- page 3 --}}
-        {{-- <div class="flex-1 md:flex relative" x-show="current_page === 'page3'">
-            <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9">
+        <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
+            <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9 hidden md:block">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/onboarding3.png)">
             </div>
 
             <div class="w-full md:w-1/2 h-full bg-white flex items-center justify-center px-6 md:px-10">
                 <div class="md:space-y-12 items-center justify-center space-y-8 text-center md:text-left">
-                    <h1 class="text-3xl md:text-5xl">¿Qué cosas deseas vender en Buhogt?</h1>
+                    <div class="text-lg md:text-5xl">¿Qué cosas deseas vender en Buhogt?</div>
 
-                    <div class="grid grid-cols-2 gap-9 place-items-center">
-                        <div class="w-64 h-52 shadow-2xl rounded-2xl border flex flex-col items-center justify-center">
-                            <img src="assets/tienda.png" alt="logo" class="w-32 h-32">
-                            <h2>Vender en linéa</h2>
-                        </div>
-                        <div class="w-64 h-52 shadow-2xl rounded-2xl border flex flex-col items-center justify-center">
-                            <img src="assets/SVG.png" alt="logo" class="w-32 h-32">
-                            <h2>Promocionar mi tienda</h2>
-                        </div>
-                        <div class="w-64 h-52 shadow-2xl rounded-2xl border flex flex-col items-center justify-center">
-                            <img src="assets/rocket.png" alt="logo" class="w-32 h-32">
-                            <h2>Posicionamiento de marca</h2>
-                        </div>
-                        <div class="w-64 h-52 shadow-2xl rounded-2xl border flex flex-col items-center justify-center">
-                            <img src="assets/money.png" alt="logo" class="w-32 h-32">
-                            <h2>Pagos y envíos</h2>
+                    <div class="md:px-12">
+                        <div class="flex flex-wrap justify-center gap-10">
+                            <label class="cursor-pointer border rounded-md">
+                                <input type="radio" class="peer sr-only" name="vender_en_linea"
+                                    @click="vender_en_linea = null" x-model="vender_en_linea">
+                                <div
+                                    class="w-72 max-w-xl rounded-md bg-white p-5 text-gray-600 ring-2 ring-transparent transition-all hover:shadow peer-checked:text-sky-600 peer-checked:ring-blue-400 peer-checked:ring-offset-2">
+                                    <div class="flex flex-col gap-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="m10.6 13.8l-2.175-2.175q-.275-.275-.675-.275t-.7.3q-.275.275-.275.7q0 .425.275.7L9.9 15.9q.275.275.7.275q.425 0 .7-.275l5.675-5.675q.275-.275.275-.675t-.3-.7q-.275-.275-.7-.275q-.425 0-.7.275ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z" />
+                                        </svg>
+                                        <div class="flex flex-col justify-center items-center">
+                                            <img src="assets/tienda.png" alt="logo" class="w-32 h-32">
+                                            <span class="text-lg font-bold">Vender en linéa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer border rounded-md">
+                                <input type="radio" class="peer sr-only" name="promocionar_mi_tienda"
+                                    @click="promocionar_mi_tienda = null" x-model="promocionar_mi_tienda" />
+                                <div
+                                    class="w-72 max-w-xl rounded-md bg-white p-5 text-gray-600 ring-2 ring-transparent transition-all hover:shadow peer-checked:text-sky-600 peer-checked:ring-blue-400 peer-checked:ring-offset-2">
+                                    <div class="flex flex-col gap-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="m10.6 13.8l-2.175-2.175q-.275-.275-.675-.275t-.7.3q-.275.275-.275.7q0 .425.275.7L9.9 15.9q.275.275.7.275q.425 0 .7-.275l5.675-5.675q.275-.275.275-.675t-.3-.7q-.275-.275-.7-.275q-.425 0-.7.275ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z" />
+                                        </svg>
+                                        <div class="flex flex-col justify-center items-center">
+                                            <img src="assets/SVG.png" alt="logo" class="w-32 h-32">
+                                            <span class="text-lg font-bold">Vender en linéa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer border rounded-md">
+                                <input type="radio" class="peer sr-only" name="posicionamiento_de_marca"
+                                    @click="posicionamiento_de_marca = null" x-model="posicionamiento_de_marca" />
+                                <div
+                                    class="w-72 max-w-xl rounded-md bg-white p-5 text-gray-600 ring-2 ring-transparent transition-all hover:shadow peer-checked:text-sky-600 peer-checked:ring-blue-400 peer-checked:ring-offset-2">
+                                    <div class="flex flex-col gap-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="m10.6 13.8l-2.175-2.175q-.275-.275-.675-.275t-.7.3q-.275.275-.275.7q0 .425.275.7L9.9 15.9q.275.275.7.275q.425 0 .7-.275l5.675-5.675q.275-.275.275-.675t-.3-.7q-.275-.275-.7-.275q-.425 0-.7.275ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z" />
+                                        </svg>
+                                        <div class="flex flex-col justify-center items-center">
+                                            <img src="assets/rocket.png" alt="logo" class="w-32 h-32">
+                                            <span class="text-lg font-bold">Vender en linéa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer border rounded-md">
+                                <input type="radio" class="peer sr-only" name="pagos_y_envios"
+                                    @click="pagos_y_envios = null" x-model="pagos_y_envios" />
+                                <div
+                                    class="w-72 max-w-xl rounded-md bg-white p-5 text-gray-600 ring-2 ring-transparent transition-all hover:shadow peer-checked:text-sky-600 peer-checked:ring-blue-400 peer-checked:ring-offset-2">
+                                    <div class="flex flex-col gap-1">
+                                        <svg width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill="currentColor"
+                                                d="m10.6 13.8l-2.175-2.175q-.275-.275-.675-.275t-.7.3q-.275.275-.275.7q0 .425.275.7L9.9 15.9q.275.275.7.275q.425 0 .7-.275l5.675-5.675q.275-.275.275-.675t-.3-.7q-.275-.275-.7-.275q-.425 0-.7.275ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Z" />
+                                        </svg>
+                                        <div class="flex flex-col justify-center items-center">
+                                            <img src="assets/money.png" alt="logo" class="w-32 h-32">
+                                            <span class="text-lg font-bold">Vender en linéa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                     </div>
 
-                    <div class="flex space-x-8 justify-end">
-                        <a href="#"
-                            class="mt-8 w-52 flex justify-center rounded-full border border-black py-3 font-medium text-xl">
+                    <div class="flex flex-col md:flex-row space-x-8 justify-end">
+                        <button @click="current_page = 'page4'"
+                            class="mt-8 md:w-52 flex justify-center border border-black py-3 font-medium text-xl">
                             Omitir esta prueba
-                        </a>
-
+                        </button>
 
                         <button @click="current_page = 'page4'"
-                            class="mt-8 text-xl shadow-2xl inline-block rounded-full bg-indigo-950 px-12 py-3 font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
+                            class="mt-8 text-xl shadow-2xl inline-block bg-indigo-950 px-12 py-3 font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
                             Siguiente
                         </button>
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
         {{-- page 4 --}}
-        <div class=" flex flex-col flex-1">
+        <div class=" flex flex-col flex-1" x-show="current_page === 'page4'">
             {{-- logo --}}
             <div class="flex justify-center p-5 sm:justify-normal sm:pb-10 ">
                 <img src="assets/logo/logo_horizontal.png" alt="logo_buho" class="">
             </div>
+
             {{-- steps --}}
             <div class="flex justify-center items-center border-y pt-4 pb-4 lg:pt-8 lg:pb-8">
-                <div aria-label="Progress">
+                <div aria-label="Progress" x-show="curren_page_step != 5">
                     <ol role="list" class="flex items-center">
                         @for ($i = 1; $i <= 5; $i++) <li class="relative " :class="{
-                                        'pr-8 sm:pr-32 lg:pr-48': {{ $i }} < '5',
+                                        'pr-8 sm:pr-32 lg:pr-48': {{ $i }} < '4',
                                     }">
                             <div class="absolute" :class="{
                                             'inset-0 flex items-center': {{ $i }} < '5',
@@ -163,7 +223,7 @@
                                 </div>
                             </div>
                             <a href="#" x-on:click.prevent="{current_step = {{ $i }}, curren_page_step = {{ $i }}}"
-                                :class="{
+                                x-show="{{ $i }} != 5" :class="{
                                             'relative flex h-5 w-5 lg:h-8 lg:w-8 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-900': current_step ===
                                                 {{ $i }},
                                             'relative flex h-5 w-5 lg:h-8 lg:w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white hover:border-gray-400': current_step !==
@@ -187,10 +247,15 @@
                             @endfor
                     </ol>
                 </div>
+
+                <div class="flex flex-col items-center" x-show="curren_page_step === 5">
+                    <label class="text-2xl">¡Estamos emocionados que seas parte de Buhogt!</label>
+                    <label class="text-xl">Te estaremos compartiendo más de Buhogt.</label>
+                </div>
             </div>
 
             {{-- Step page 1 --}}
-            {{-- <div class="flex flex-col flex-1" x-show="curren_page_step === 1">
+            <div class="flex flex-col flex-1" x-show="curren_page_step === 1">
                 <div class="flex flex-col w-full justify-center items-center pt-4 sm:pt-12 pb-4 sm:pb-12">
                     <label class="font-medium text-xl sm:text-3xl">
                         Preferencias de la tienda
@@ -233,10 +298,10 @@
                         Guardar y continuar
                     </button>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- Step page 2 --}}
-            {{-- <div class="flex flex-col flex-1" x-show="curren_page_step === 2">
+            <div class="flex flex-col flex-1" x-show="curren_page_step === 2">
                 <div class="w-full flex flex-1 justify-center pt-4 sm:pt-12 pb-4 sm:pb-12 ">
                     <div class="flex flex-col space-y-6">
                         <label class="font-medium text-xl sm:text-3xl">
@@ -258,16 +323,16 @@
                     </div>
                 </div>
 
-                <div x-show="curren_page_step === 2" class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
+                <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
                     <button x-on:click="{curren_page_step = 3, current_step = 3 }"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                         Guardar y continuar
                     </button>
                 </div>
-            </div> --}}
+            </div>
 
             {{-- Step page 3 --}}
-            {{-- <div class="flex flex-col flex-1 p-20" x-show="curren_page_step === 3">
+            <div class="flex flex-col flex-1 p-20" x-show="curren_page_step === 3">
                 <div class="flex flex-col">
                     <label class="font-medium text-4xl">Crea un Producto</label>
                     <label>Añade algunas fotos y detalles sobre el artículo. Rellena lo que puedas por ahora, podrás
@@ -493,11 +558,11 @@
                         Guardar y continuar
                     </button>
                 </div>
-            </div> --}}
+            </div>
+
             {{-- Step page 4 --}}
-            {{-- x-show="current_page === 'page4'" --}}
-            <div class="flex flex-col flex-1 p-20">
-                <div class="flex flex-col justify-center items-center space-y-4 pb-20">
+            <div class="flex flex-col flex-1 p-20 space-y-16" x-show="curren_page_step === 4">
+                <div class="flex flex-col justify-center items-center space-y-4">
                     <label class="text-3xl font-medium">Como se te va a pagar</label>
                     <label class="text-xl">Buhogt le da varias opciones como recibir sus pagos y a sus
                         compradores</label>
@@ -514,60 +579,138 @@
                     </label>
                     <div class="flex space-x-16">
                         <div class="flex">
-                            <input type="radio" name="hs-default-radio"
+                            <input type="radio" name="abcd" value="opcion1" x-model="selectedOption"
                                 class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                id="hs-default-radio">
-                            <label for="hs-default-radio"
-                                class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
+                                id="abcd" checked>
+                            <label for="abcd" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
                         </div>
                         <div class="flex">
-                            <input type="radio" name="hs-default-radio"
+                            <input type="radio" name="abcd" value="opcion2" x-model="selectedOption"
                                 class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                id="hs-checked-radio" checked>
-                            <label for="hs-checked-radio"
-                                class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
+                                id="abcd">
+                            <label for="abcd" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
                         </div>
                     </div>
                     <label>Si tienes alguna duda puedes contactarnos a buhogt equipo</label>
                 </div>
-                <div class="flex flex-col border p-10 space-y-4">
+
+                <div class="flex flex-col border p-10 space-y-4" x-show="selectedOption === 'opcion1'">
                     <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
                     <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
                     <label>Esta información no sera pública en Buhogt.</label>
-                    
-                    <div class="flex space-x-5 ">                       
-                            <label class="w-64">Primer Nombre *</label>
+
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Primer Nombre *</label>
                         <input class="w-60 h-10" type="text">
                     </div>
-                    <div class="flex space-x-5 ">                       
-                            <label class="w-64">Apellidos:*</label>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Apellidos:*</label>
                         <input class="w-60 h-10" type="text">
                     </div>
-                    <div class="flex space-x-5 ">                       
-                            <label class="w-64">Correo electronico:*</label>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Correo electronico:*</label>
                         <input class="w-60 h-10" type="text">
                     </div>
-                    <div class="flex space-x-5 ">                       
-                            <label class="w-64">Telefono: *</label>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Telefono: *</label>
                         <input class="w-60 h-10" type="text">
                     </div>
-                    <div class="flex space-x-5 ">                       
-                            <label class="w-64">Fecha de nacimiento: *</label>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Fecha de nacimiento: *</label>
                         <input class="w-60 h-10" type="text">
                     </div>
-                    <div class="flex space-x-5 ">                       
-                            <label class="w-64">Nit:</label>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Nit:</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                </div>
+
+                <div class="flex flex-col border p-10 space-y-4" x-show="selectedOption === 'opcion2'">
+                    <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
+                    <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
+                    <label>Esta información no sera pública en Buhogt.</label>
+
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Nombre de la empresa:</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Representate legal:</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Correo electronico:*</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Telefono: *</label>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">
+                        <label class="w-64">Nit:</label>
                         <input class="w-60 h-10" type="text">
                     </div>
                 </div>
 
                 <div class="flex flex-col border p-10 space-y-4">
+                    <label>Para comenzar, ¿Qué banco se prefiere que se te deposite?</label>
+                    <select class="bg-[#fbeeec] border border-red-500 w-80">
+                        <option value="volvo">Selecione un banco de preferencia</option>
+                    </select>
+                    <div class="flex space-x-3">
+                        <div class="flex">
+                            <input type="radio" name="abc"
+                                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                id="abc" checked>
+                            <label for="abc" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
+                        </div>
+                        <div class="flex">
+                            <input type="radio" name="abc"
+                                class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                id="abc">
+                            <label for="abc" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
+                        </div>
+                    </div>
+                    <div class="flex space-x-5 ">
+                        <div class="flex flex-col">
+                            <label class="w-56">Nombre de cuenta:*</label>
+                        </div>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <div class="flex space-x-5 ">
+                        <div class="flex flex-col">
+                            <label class="w-56">Numero de cuenta:*</label>
+                        </div>
+                        <input class="w-60 h-10" type="text">
+                    </div>
+                    <label>Se le estara haciendo su deposito cada 15 dias, cualquier cambio se puede contactar con
+                        nuestro equipo.</label>
                 </div>
 
                 <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                    <button x-on:click="{curren_page_step = 4, current_step = 4 }"
+                    <button x-on:click="{curren_page_step = 5, current_step = 5 }"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                         Guardar y continuar
+                    </button>
+                </div>
+            </div>
+
+            {{-- final --}}
+            <div class="flex flex-col justify-center items-center flex-1 p-20 space-y-16"
+                x-show="curren_page_step === 5">
+                <div class="bg-[#b6f4c0] h-52 w-96 flex p-4 space-x-5">
+                    @svg('heroicon-s-check-circle', 'w-24 h-24')
+                    <div class="flex flex-col space-y-4">
+                        <label class="text-xl flex justify-center text-center">Gracias por registrarte como vendedor de
+                            Buhogt.</label>
+                        <label>Estaremos revisando tu solictitud, y te estaremos contactando por medio de correo en las
+                            proximas 48 horas.</label>
+                    </div>
+                </div>
+
+                <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
+                    <button class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
+                        Ir a la tienda
                     </button>
                 </div>
             </div>
