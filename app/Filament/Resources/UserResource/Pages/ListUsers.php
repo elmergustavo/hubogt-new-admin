@@ -16,4 +16,16 @@ class ListUsers extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    public function getTabs(): array
+    {
+        return [
+            null => ListRecords\Tab::make('All')->label('Todas'),
+            'Administradores' => ListRecords\Tab::make()->query(fn ($query) => $query->where('role', 'admin')),
+            'Vendedores' => ListRecords\Tab::make()->query(fn ($query) => $query->where('role', 'vendor')),
+            'Clientes' => ListRecords\Tab::make()->query(fn ($query) => $query->where('role', 'user')),
+            // 'delivered' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'delivered')),
+            'Servicio' => ListRecords\Tab::make()->query(fn ($query) => $query->where('role', 'service')),
+        ];
+    }
 }

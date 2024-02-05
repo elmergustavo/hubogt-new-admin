@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Shop customers created.');
 
         $this->command->warn(PHP_EOL . 'Creating shop products...');
-        $products = $this->withProgressBar(50, fn () => Product::factory(1)->count(50)
+        $products = $this->withProgressBar(50, fn () => Product::factory(1)->count(1)
         ->sequence(fn ($sequence) => [
             'shop_brand_id' => $brands->random(1)->first()->id,
             'shop_id' => $shops->random()->id

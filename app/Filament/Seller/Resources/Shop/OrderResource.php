@@ -113,7 +113,7 @@ class OrderResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-                Tables\Columns\TextColumn::make('status')
+            Tables\Columns\TextColumn::make('status')
                     ->badge(),
                 // Tables\Columns\TextColumn::make('currency')
                 //     ->getStateUsing(fn ($record): ?string => Currency::find($record->currency)?->name ?? null)

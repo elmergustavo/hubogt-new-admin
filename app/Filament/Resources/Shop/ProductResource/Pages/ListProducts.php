@@ -24,4 +24,17 @@ class ListProducts extends ListRecords
     {
         return ProductResource::getWidgets();
     }
+
+
+    public function getTabs(): array
+    {
+        return [
+            null => ListRecords\Tab::make('All')->label('Todas'),
+            'Necesita revisión' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'needs_review')),
+            'Aprovados' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'approved')),
+            'Rechazados' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'rejected')),
+            // 'delivered' => ListRecords\Tab::make()->query(fn ($query) => $query->where('status', 'delivered')),
+            // 'Servicio' => ListRecords\Tab::make()->query(fn ($query) => $query->where('role', 'service')),
+        ];
+    }
 }

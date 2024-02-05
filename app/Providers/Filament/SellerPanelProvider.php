@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Filament\Forms\Components\FileUpload;
+use Filament\Enums\ThemeMode;
 
 class SellerPanelProvider extends PanelProvider
 {
@@ -115,7 +116,8 @@ class SellerPanelProvider extends PanelProvider
             ->plugin(
                 SpatieLaravelTranslatablePlugin::make()
                     ->defaultLocales(['en', 'es', 'nl']),
-            );
+            )
+            ->defaultThemeMode(ThemeMode::Light);
     }
 
     public function register(): void

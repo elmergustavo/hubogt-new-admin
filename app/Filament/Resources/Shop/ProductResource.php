@@ -25,7 +25,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Support\Enums\MaxWidth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-
+use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\ActionGroup;
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
@@ -199,23 +200,35 @@ class ProductResource extends Resource
             ->limitedRemainingText(isSeparate: true),
 
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Name')
+            ->tooltip(fn (Model $record): string => "{$record->name}")
+            ->limit(20)
+            ->wrap()
+            ->label('Nombre producto')
                     ->searchable()
                     ->sortable(),
 
             Tables\Columns\TextColumn::make('shop.name')
-            ->label('Nombre de la tienda')
+                ->label('Nombre de la tienda')
+            ->tooltip(fn (Model $record): string => "{$record->shop->name}")
+            ->wrap()
+            ->limit(20)
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
 
+            Tables\Columns\TextColumn::make('status')
+            ->label('Estado')
+            ->sortable()
+            ->badge(),
+
                 Tables\Columns\IconColumn::make('is_visible')
-                    ->label('Visibility')
+            ->label('Visible')
                     ->sortable()
                     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('price')
-                    ->label('Price')
+            ->prefix('Q.')
+            ->label('Precio')
                     ->searchable()
                     ->sortable(),
 
@@ -223,13 +236,14 @@ class ProductResource extends Resource
                     ->label('SKU')
                     ->searchable()
                     ->sortable()
-                    ->toggleable(),
+            ->toggleable()->toggledHiddenByDefault(),
 
                 Tables\Columns\TextColumn::make('qty')
                     ->label('Quantity')
                     ->searchable()
                     ->sortable()
-                    ->toggleable(),
+            ->toggleable()
+            ->toggledHiddenByDefault(),
 
                 Tables\Columns\TextColumn::make('security_stock')
                     ->searchable()
@@ -276,20 +290,70 @@ class ProductResource extends Resource
                     ])
                     ->constraintPickerColumns(2),
             ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
-            ->actions([
+            ->actions([ActionGroup::make([
                 Tables\Actions\ViewAction::make(),
+
+
                 CommentsAction::make()
-                    ->modalWidth(MaxWidth::ThreeExtraLarge),
+                    ->modalWidth(MaxWidth::ThreeExtraLarge), Action::make('status')
+                    ->label(__('Aprovar producto'))
+                    ->hidden(fn (Product $record): bool => $record->status === 'needs_review')
+                    ->action(function (Product $record, array $data): void
+                    {
+
+                        $record->status = 'approved';
+                        $record->save();
+                        Notification::make()
+                            ->success()
+                            ->body(__('Producto Aprovado correctamente'))
+                            ->send();
+                    })
+                    // ->modalHeading(__('expenses.notification.modal_heading'))
+                    ->color('success')
+                    ->icon('fas-check-circle')
+                    ->requiresConfirmation()
+                    ->modalWidth('md'),
+
+
+
+                Action::make('rejected')
+                    ->label(__('Rechazar producto'))
+                    ->hidden(fn (Product $record): bool => $record->status === 'needs_review')
+
+                    ->action(function (Product $record, array $data): void
+                    {
+                    // $record->reviewed_note = $data['reviewed_note'];
+                    // $record->save();
+                    $record->status = 'rejected';
+                    $record->save();
+
+                        Notification::make()
+                    ->success()
+                    ->body(__('Producto rechazadoo correctamente'))
+                            ->send();
+                        })
+                        // ->form([
+                        //     Forms\Components\Textarea::make('reviewed_note')
+                        //         ->label(__('expenses.actions.form_reviewed_note'))
+                        //         ->required(),
+                        // ])
+                        ->color('danger')
+                        ->requiresConfirmation()
+                        ->modalWidth('xl')
+                        ->icon('heroicon-m-x-circle')
+                    // ->modalHeading('Ingresa el motivo del rechazo'),
+                ])
+
             ])
             ->groupedBulkActions([
-                Tables\Actions\DeleteBulkAction::make()
-            ->action(function ()
-            {
-                        Notification::make()
-                            ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
-                            ->warning()
-                            ->send();
-                    }),
+            //     Tables\Actions\DeleteBulkAction::make()
+            // ->action(function ()
+            // {
+            //             Notification::make()
+            //                 ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+            //                 ->warning()
+            //                 ->send();
+            //         }),
             ]);
     }
 

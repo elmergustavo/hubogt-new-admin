@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\UserRole;
 use App\Models\Shop\Shop;
 use App\Models\Shop\Vendor;
 use Filament\Models\Contracts\FilamentUser;
@@ -73,6 +74,7 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        // 'role' => UserRole::class,
     ];
 
     public function vendor()
@@ -126,6 +128,7 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
     {
         return Team::all();
     }
+
 
     // public function getAvatarUrlAttribute()
     // {

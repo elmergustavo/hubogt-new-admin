@@ -33,6 +33,7 @@ return new class() extends Migration
             $table->decimal('discount', 10, 2)->nullable();
             $table->decimal('cost', 10, 2)->nullable();
             $table->enum('type', ['deliverable', 'downloadable'])->nullable();
+            $table->enum('status', ['approved', 'rejected', 'needs_review'])->default('needs_review');
             $table->boolean('backorder')->default(false);
             $table->boolean('requires_shipping')->default(false);
             $table->date('published_at')->nullable();

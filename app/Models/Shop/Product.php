@@ -2,6 +2,7 @@
 
 namespace App\Models\Shop;
 
+use App\Enums\ProductStatus;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -33,6 +34,7 @@ class Product extends Model implements HasMedia
         'backorder' => 'boolean',
         'requires_shipping' => 'boolean',
         'published_at' => 'date',
+        'status' => ProductStatus::class,
     ];
 
     public function shop()

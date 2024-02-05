@@ -76,6 +76,8 @@ class UserResource extends Resource
                     ->copyMessage('Dirección de correo electrónico copiada')
                     ->copyMessageDuration(1500)
                     ->icon('heroicon-m-envelope'),
+            TextColumn::make('role')
+            ->badge(),
                 ToggleColumn::make('status'),
                 TextColumn::make('created_at')
                     ->toggleable()

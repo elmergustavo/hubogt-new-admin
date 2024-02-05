@@ -31,6 +31,7 @@ class ProductFactory extends Factory
             'price' => $this->faker->randomFloat(2, 80, 400),
             'cost' => $this->faker->randomFloat(2, 50, 200),
             'type' => $this->faker->randomElement(['deliverable', 'downloadable']),
+            'status' => $this->faker->randomElement(['approved', 'rejected', 'needs_review']),
             'published_at' => $this->faker->dateTimeBetween('-1 year', '+1 year'),
             'created_at' => $this->faker->dateTimeBetween('-1 year', '-6 month'),
             'updated_at' => $this->faker->dateTimeBetween('-5 month', 'now'),
