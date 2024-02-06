@@ -68,7 +68,7 @@ class ProductResource extends Resource
 
         $shopId = optional(auth()->user()->shop)->id; // Devuelve null si `shop` es null
 
-        \Log::info($shopId);
+     
 
         if ($shopId)
         {
@@ -300,8 +300,7 @@ class ProductResource extends Resource
                                 ->danger()
                                 ->send();
 
-                            \Log::info($record->discount);
-                            \Log::info($state);
+                           
                             $record->discount = null;
                             $record->save();
                         }
