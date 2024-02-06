@@ -96,8 +96,10 @@ class ProductResource extends Resource
                                     ->label('Nombre')
                                     ->maxLength(60)
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                                        if ($operation !== 'create') {
+                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set)
+                                    {
+                                        if ($operation !== 'create')
+                                        {
                                             return;
                                         }
 
@@ -118,7 +120,7 @@ class ProductResource extends Resource
                             ->columns(2),
 
                         Forms\Components\Section::make('Imagenes del producto')
-                            ->description('Prevent abuse by limiting the number of requests per period')
+                            ->description('Ingresar los productos en orden')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('media')
                                     ->collection('product-images')
@@ -141,17 +143,17 @@ class ProductResource extends Resource
                             ])
                             ->collapsible(),
 
-                Forms\Components\Section::make('Precios')
+                        Forms\Components\Section::make('Precios')
                             ->schema([
                                 Forms\Components\TextInput::make('price')
-                    ->label('Precio original')
+                                    ->label('Precio original')
                                     ->numeric()
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->prefix('Q.')
                                     ->required(),
 
                                 Forms\Components\TextInput::make('old_price')
-                    ->label('Precio descuento')
+                                    ->label('Precio descuento')
                                     ->numeric()
                                     ->prefix('Q.')
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
@@ -166,7 +168,7 @@ class ProductResource extends Resource
                                 //     ->required(),
                             ])
                             ->columns(2),
-                Forms\Components\Section::make('Inventario')
+                        Forms\Components\Section::make('Inventario')
                             ->schema([
                                 Forms\Components\TextInput::make('sku')
                                     ->label('SKU (Stock Keeping Unit)')
@@ -285,10 +287,12 @@ class ProductResource extends Resource
                     ->type('number')
                     ->toggleable()
                     ->label('Precio con descuento')
-                    ->afterStateUpdated(function ($record, $state) {
+                    ->afterStateUpdated(function ($record, $state)
+                    {
                         // Runs before the state is saved to the database.
                         // \Log::info("message");
-                        if ($state > $record->price) {
+                        if ($state > $record->price)
+                        {
 
 
                             Notification::make()
@@ -300,7 +304,9 @@ class ProductResource extends Resource
                             \Log::info($state);
                             $record->discount = null;
                             $record->save();
-                        } else {
+                        }
+                        else
+                        {
                             Notification::make()
                                 ->title('Se actualizón el precio de descuento correctamente')
                                 ->success()
@@ -310,11 +316,15 @@ class ProductResource extends Resource
 
                 Tables\Columns\TextColumn::make('amount_including_vat')
                     ->label('Porcentaje(%)')
-                    ->state(function (Model $record): string {
+                    ->state(function (Model $record): string
+                    {
 
-                        if ($record->discount == null) {
+                        if ($record->discount == null)
+                        {
                             return '0 %';
-                        } else {
+                        }
+                        else
+                        {
 
                             return number_format((($record->price - $record->discount) / $record->price) * 100, 2) . ' %';
                         }
@@ -388,17 +398,17 @@ class ProductResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
-            CommentsAction::make()
-                ->modalWidth(MaxWidth::ThreeExtraLarge),
+                CommentsAction::make()
+                    ->modalWidth(MaxWidth::ThreeExtraLarge),
             ])
             ->groupedBulkActions([
                 Tables\Actions\DeleteBulkAction::make()
-                    // ->action(function () {
-                    //     Notification::make()
-                    //         ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
-                    //         ->warning()
-                    //         ->send();
-                    // }),
+                // ->action(function () {
+                //     Notification::make()
+                //         ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+                //         ->warning()
+                //         ->send();
+                // }),
             ]);
     }
 

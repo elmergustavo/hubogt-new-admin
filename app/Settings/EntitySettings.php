@@ -24,9 +24,9 @@ class EntitySettings extends Settings
     public string|null $title_column3;
     public string|null $description_column3;
 
-    public string $terms_conditions;
-    public string $privacy_policies;
-    public string $sales_polices;
+    public string|null $terms_conditions;
+    public string|null $privacy_policies;
+    public string|null $sales_polices;
 
 
 

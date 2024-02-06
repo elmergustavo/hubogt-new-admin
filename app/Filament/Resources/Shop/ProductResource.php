@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\ActionGroup;
+
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
@@ -62,10 +63,10 @@ class ProductResource extends Resource
                                     ->maxLength(255)
                                     ->live(onBlur: true)
 
-                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set)
-                    {
-                        if ($operation !== 'create')
-                        {
+                                    ->afterStateUpdated(function (string $operation, $state, Forms\Set $set)
+                                    {
+                                        if ($operation !== 'create')
+                                        {
                                             return;
                                         }
 
@@ -84,7 +85,8 @@ class ProductResource extends Resource
                             ])
                             ->columns(2),
 
-                        Forms\Components\Section::make('Images')
+                        Forms\Components\Section::make('Imagenes del producto')
+                            ->description('Ingresar los productos en orden')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('media')
                                     ->collection('product-images')
@@ -94,28 +96,31 @@ class ProductResource extends Resource
                             ])
                             ->collapsible(),
 
-                        Forms\Components\Section::make('Pricing')
+                        Forms\Components\Section::make('Precios')
                             ->schema([
                                 Forms\Components\TextInput::make('price')
+                                    ->label('Precio original')
                                     ->numeric()
+                                    ->prefix('Q.')
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
 
                                 Forms\Components\TextInput::make('old_price')
-                                    ->label('Compare at price')
+                                    ->label('Precio descuento')
                                     ->numeric()
+                                    ->prefix('Q.')
                                     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
                                     ->required(),
 
-                                Forms\Components\TextInput::make('cost')
-                                    ->label('Cost per item')
-                                    ->helperText('Customers won\'t see this price.')
-                                    ->numeric()
-                                    ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
-                                    ->required(),
+                                // Forms\Components\TextInput::make('cost')
+                                //     ->label('Cost per item')
+                                //     ->helperText('Customers won\'t see this price.')
+                                //     ->numeric()
+                                //     ->rules(['regex:/^\d{1,6}(\.\d{0,2})?$/'])
+                                //     ->required(),
                             ])
                             ->columns(2),
-                        Forms\Components\Section::make('Inventory')
+                        Forms\Components\Section::make('Inventario')
                             ->schema([
                                 Forms\Components\TextInput::make('sku')
                                     ->label('SKU (Stock Keeping Unit)')
@@ -195,40 +200,40 @@ class ProductResource extends Resource
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('product-image')
                     ->label('Image')
-            ->collection('product-images')
-            ->limit(3)
-            ->limitedRemainingText(isSeparate: true),
+                    ->collection('product-images')
+                    ->limit(3)
+                    ->limitedRemainingText(isSeparate: true),
 
                 Tables\Columns\TextColumn::make('name')
-            ->tooltip(fn (Model $record): string => "{$record->name}")
-            ->limit(20)
-            ->wrap()
-            ->label('Nombre producto')
+                    ->tooltip(fn (Model $record): string => "{$record->name}")
+                    ->limit(20)
+                    ->wrap()
+                    ->label('Nombre producto')
                     ->searchable()
                     ->sortable(),
 
-            Tables\Columns\TextColumn::make('shop.name')
-                ->label('Nombre de la tienda')
-            ->tooltip(fn (Model $record): string => "{$record->shop->name}")
-            ->wrap()
-            ->limit(20)
+                Tables\Columns\TextColumn::make('shop.name')
+                    ->label('Nombre de la tienda')
+                    ->tooltip(fn (Model $record): string => "{$record->shop->name}")
+                    ->wrap()
+                    ->limit(20)
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
 
-            Tables\Columns\TextColumn::make('status')
-            ->label('Estado')
-            ->sortable()
-            ->badge(),
+                Tables\Columns\TextColumn::make('status')
+                    ->label('Estado')
+                    ->sortable()
+                    ->badge(),
 
                 Tables\Columns\IconColumn::make('is_visible')
-            ->label('Visible')
+                    ->label('Visible')
                     ->sortable()
                     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('price')
-            ->prefix('Q.')
-            ->label('Precio')
+                    ->prefix('Q.')
+                    ->label('Precio')
                     ->searchable()
                     ->sortable(),
 
@@ -236,14 +241,14 @@ class ProductResource extends Resource
                     ->label('SKU')
                     ->searchable()
                     ->sortable()
-            ->toggleable()->toggledHiddenByDefault(),
+                    ->toggleable()->toggledHiddenByDefault(),
 
                 Tables\Columns\TextColumn::make('qty')
                     ->label('Quantity')
                     ->searchable()
                     ->sortable()
-            ->toggleable()
-            ->toggledHiddenByDefault(),
+                    ->toggleable()
+                    ->toggledHiddenByDefault(),
 
                 Tables\Columns\TextColumn::make('security_stock')
                     ->searchable()
@@ -290,47 +295,48 @@ class ProductResource extends Resource
                     ])
                     ->constraintPickerColumns(2),
             ], layout: Tables\Enums\FiltersLayout::AboveContentCollapsible)
-            ->actions([ActionGroup::make([
-                Tables\Actions\ViewAction::make(),
+            ->actions([
+                ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
 
 
-                CommentsAction::make()
-                    ->modalWidth(MaxWidth::ThreeExtraLarge), Action::make('status')
-                    ->label(__('Aprovar producto'))
-                    ->hidden(fn (Product $record): bool => $record->status === 'needs_review')
-                    ->action(function (Product $record, array $data): void
-                    {
+                    CommentsAction::make()
+                        ->modalWidth(MaxWidth::ThreeExtraLarge), Action::make('status')
+                        ->label(__('Aprovar producto'))
+                        ->hidden(fn (Product $record): bool => $record->status === 'needs_review')
+                        ->action(function (Product $record, array $data): void
+                        {
 
-                        $record->status = 'approved';
-                        $record->save();
-                        Notification::make()
-                            ->success()
-                            ->body(__('Producto Aprovado correctamente'))
-                            ->send();
-                    })
-                    // ->modalHeading(__('expenses.notification.modal_heading'))
-                    ->color('success')
-                    ->icon('fas-check-circle')
-                    ->requiresConfirmation()
-                    ->modalWidth('md'),
+                            $record->status = 'approved';
+                            $record->save();
+                            Notification::make()
+                                ->success()
+                                ->body(__('Producto Aprovado correctamente'))
+                                ->send();
+                        })
+                        // ->modalHeading(__('expenses.notification.modal_heading'))
+                        ->color('success')
+                        ->icon('fas-check-circle')
+                        ->requiresConfirmation()
+                        ->modalWidth('md'),
 
 
 
-                Action::make('rejected')
-                    ->label(__('Rechazar producto'))
-                    ->hidden(fn (Product $record): bool => $record->status === 'needs_review')
+                    Action::make('rejected')
+                        ->label(__('Rechazar producto'))
+                        ->hidden(fn (Product $record): bool => $record->status === 'needs_review')
 
-                    ->action(function (Product $record, array $data): void
-                    {
-                    // $record->reviewed_note = $data['reviewed_note'];
-                    // $record->save();
-                    $record->status = 'rejected';
-                    $record->save();
+                        ->action(function (Product $record, array $data): void
+                        {
+                            // $record->reviewed_note = $data['reviewed_note'];
+                            // $record->save();
+                            $record->status = 'rejected';
+                            $record->save();
 
-                        Notification::make()
-                    ->success()
-                    ->body(__('Producto rechazadoo correctamente'))
-                            ->send();
+                            Notification::make()
+                                ->success()
+                                ->body(__('Producto rechazadoo correctamente'))
+                                ->send();
                         })
                         // ->form([
                         //     Forms\Components\Textarea::make('reviewed_note')
@@ -346,14 +352,14 @@ class ProductResource extends Resource
 
             ])
             ->groupedBulkActions([
-            //     Tables\Actions\DeleteBulkAction::make()
-            // ->action(function ()
-            // {
-            //             Notification::make()
-            //                 ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
-            //                 ->warning()
-            //                 ->send();
-            //         }),
+                //     Tables\Actions\DeleteBulkAction::make()
+                // ->action(function ()
+                // {
+                //             Notification::make()
+                //                 ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+                //                 ->warning()
+                //                 ->send();
+                //         }),
             ]);
     }
 

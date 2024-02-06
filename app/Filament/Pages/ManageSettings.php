@@ -50,130 +50,131 @@ class ManageSettings extends SettingsPage
     {
         return [
             Tabs::make('Settings')
-                ->tabs([Tabs\Tab::make(__('Información de la empresa'))
-                    ->icon('heroicon-o-identification')
-                    ->schema([
-                        TextInput::make('name')
-                            ->label(__('Nombre de la empresa'))
-                            ->prefixIcon('heroicon-o-finger-print')
-                            ->required()
-                            ->helperText(__('Este es el nombre que identifica a la empresa'))
-                            ->columnSpan(2),
-                        TextInput::make('location')
-                            ->label(__('Ubicación'))
-                            ->helperText(__('Ubicación de la empresa'))
-                            ->prefixIcon('heroicon-m-map-pin')
-                            ->rules([
-                                function (Get $get)
-                                {
-                                    return function (string $attribute, $value, $fail) use ($get)
+                ->tabs([
+                    Tabs\Tab::make(__('Información de la empresa'))
+                        ->icon('heroicon-o-identification')
+                        ->schema([
+                            TextInput::make('name')
+                                ->label(__('Nombre de la empresa'))
+                                ->prefixIcon('heroicon-o-finger-print')
+                                ->required()
+                                ->helperText(__('Este es el nombre que identifica a la empresa'))
+                                ->columnSpan(2),
+                            TextInput::make('location')
+                                ->label(__('Ubicación'))
+                                ->helperText(__('Ubicación de la empresa'))
+                                ->prefixIcon('heroicon-m-map-pin')
+                                ->rules([
+                                    function (Get $get)
                                     {
-                                        if ($get('name') == $get('location'))
-                                            $fail(__('settings.tab_general.name_location_fail'));
-                                    };
-                                }
-                            ])
-                            ->columnSpan(2),
-                        TextInput::make('email')
-                            ->email()
-                            ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
-                            ->label(__('Correo Electrónico'))
-                            ->prefixIcon('heroicon-s-at-symbol')
-                            ->helperText(__('Correo electrónico de tu empresa'))
-                            ->columnSpan(2),
-                        TextInput::make('phone')
-                            ->tel()
-                            ->minLength(8)
-                            ->label(__('Teléfono'))
-                            ->prefixIcon('heroicon-s-phone')
-                            ->helperText(__('Teléfono con el que se comunican con tu empresa'))
-                            ->mask('9999-9999')
-                            ->columnSpan(2),
-                        //------------------------------NEEDS FIXES----------------------------------
-                        // Croppie::make('logo')
-                        //     ->label(__('settings.tab_general.logo'))
-                        //     ->disk('azure')
-                        //     ->image()
-                        //     ->directory('nomiplex/' . env('PLEX_APP', 'plex') . '_' .  tenant()->id)
-                        //     ->preserveFilenames()
-                        //     ->enableDownload()
-                        //     ->imageResizeTargetWidth('800')
-                        //     ->imageResizeTargetHeight('300')
-                        //     ->helperText(__('settings.tab_general.logo_description'))
-                        //     ->modalHeading(__('settings.tab_general.logo_modal_heading'))
-                        //     ->modalSize('4xl')
-                        //     ->keepOriginalSize()
-                        //     ->enableOpen()
-                        //     ->columnSpan(2),
-                        TextInput::make('nit')
-                            ->label(__('NIT'))
-                            ->required()
-                            ->live()
-                            ->alphaNum()
-                            ->numeric()
-                            ->prefixIcon('heroicon-s-user')
-                            ->helperText(__('El NIT de tu empresa. Al ingresar el NIT la razón social será completada automáticamente con el nombre registrado en la SAT.'))
-                            ->mask(
-                                RawJs::make(<<<'JS'
+                                        return function (string $attribute, $value, $fail) use ($get)
+                                        {
+                                            if ($get('name') == $get('location'))
+                                                $fail(__('settings.tab_general.name_location_fail'));
+                                        };
+                                    }
+                                ])
+                                ->columnSpan(2),
+                            TextInput::make('email')
+                                ->email()
+                                ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
+                                ->label(__('Correo Electrónico'))
+                                ->prefixIcon('heroicon-s-at-symbol')
+                                ->helperText(__('Correo electrónico de tu empresa'))
+                                ->columnSpan(2),
+                            TextInput::make('phone')
+                                ->tel()
+                                ->minLength(8)
+                                ->label(__('Teléfono'))
+                                ->prefixIcon('heroicon-s-phone')
+                                ->helperText(__('Teléfono con el que se comunican con tu empresa'))
+                                ->mask('9999-9999')
+                                ->columnSpan(2),
+                            //------------------------------NEEDS FIXES----------------------------------
+                            // Croppie::make('logo')
+                            //     ->label(__('settings.tab_general.logo'))
+                            //     ->disk('azure')
+                            //     ->image()
+                            //     ->directory('nomiplex/' . env('PLEX_APP', 'plex') . '_' .  tenant()->id)
+                            //     ->preserveFilenames()
+                            //     ->enableDownload()
+                            //     ->imageResizeTargetWidth('800')
+                            //     ->imageResizeTargetHeight('300')
+                            //     ->helperText(__('settings.tab_general.logo_description'))
+                            //     ->modalHeading(__('settings.tab_general.logo_modal_heading'))
+                            //     ->modalSize('4xl')
+                            //     ->keepOriginalSize()
+                            //     ->enableOpen()
+                            //     ->columnSpan(2),
+                            TextInput::make('nit')
+                                ->label(__('NIT'))
+                                ->required()
+                                ->live()
+                                ->alphaNum()
+                                ->numeric()
+                                ->prefixIcon('heroicon-s-user')
+                                ->helperText(__('El NIT de tu empresa. Al ingresar el NIT la razón social será completada automáticamente con el nombre registrado en la SAT.'))
+                                ->mask(
+                                    RawJs::make(<<<'JS'
                                     $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
                                 JS)
-                            )
-                            ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
-                            ->afterStateUpdated(
-                                function (Get $get, Set $set)
-                                {
-                                    if (config('app.env') == 'local')
+                                )
+                                ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
+                                ->afterStateUpdated(
+                                    function (Get $get, Set $set)
                                     {
-                                        $client = new \GuzzleHttp\Client(array(
-                                            'verify' => false
-                                        ));
-                                    }
-                                    else
-                                    {
-                                        $client = new \GuzzleHttp\Client;
-                                    }
-                                    try
-                                    {
-
-                                        $response = Http::withHeaders([
-                                            'Accept'          => 'application/json',
-                                            'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
-                                        ])->timeout(10)->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find-exact/' . "NIT/{$get('nit')}");
-                                        if ($response->successful())
+                                        if (config('app.env') == 'local')
                                         {
-                                            if (isset($response['tax_name']))
+                                            $client = new \GuzzleHttp\Client(array(
+                                                'verify' => false
+                                            ));
+                                        }
+                                        else
+                                        {
+                                            $client = new \GuzzleHttp\Client;
+                                        }
+                                        try
+                                        {
+
+                                            $response = Http::withHeaders([
+                                                'Accept'          => 'application/json',
+                                                'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
+                                            ])->timeout(10)->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find-exact/' . "NIT/{$get('nit')}");
+                                            if ($response->successful())
                                             {
-                                                $normalized_tax_name = str_replace(',', ' ', $response['tax_name']);
-                                                $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
-                                                $set('legal_reason', $cleaned_tax_name);
+                                                if (isset($response['tax_name']))
+                                                {
+                                                    $normalized_tax_name = str_replace(',', ' ', $response['tax_name']);
+                                                    $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
+                                                    $set('legal_reason', $cleaned_tax_name);
+                                                }
+                                                else
+                                                {
+                                                    $set('legal_reason', '');
+                                                }
                                             }
                                             else
                                             {
                                                 $set('legal_reason', '');
                                             }
                                         }
-                                        else
+                                        catch (\GuzzleHttp\Exception\RequestException $e)
                                         {
                                             $set('legal_reason', '');
                                         }
                                     }
-                                    catch (\GuzzleHttp\Exception\RequestException $e)
-                                    {
-                                        $set('legal_reason', '');
-                                    }
-                                }
-                            )
-                            ->columnSpan(2),
-                        TextInput::make('legal_reason')
-                            ->label(__('Razón social'))
-                            ->prefixIcon('heroicon-m-building-office')
-                            ->helperText(__('Razón social de tu empresa. Si el NIT no autocompleta la razón social de tu empresa, puedes ingresarla manualmente'))
-                            ->columnSpan(2),
-                    ])
-                    ->columns(3)
-                    ->inlineLabel(),
-                Tabs\Tab::make(__('Información Home'))
-                    ->icon('entypo-shop')
+                                )
+                                ->columnSpan(2),
+                            TextInput::make('legal_reason')
+                                ->label(__('Razón social'))
+                                ->prefixIcon('heroicon-m-building-office')
+                                ->helperText(__('Razón social de tu empresa. Si el NIT no autocompleta la razón social de tu empresa, puedes ingresarla manualmente'))
+                                ->columnSpan(2),
+                        ])
+                        ->columns(3)
+                        ->inlineLabel(),
+                    Tabs\Tab::make(__('Información Home'))
+                        ->icon('entypo-shop')
                         ->schema([
                             Section::make('Información de la tienda')
                                 ->description('Sección que es BUHOGT')
@@ -239,19 +240,28 @@ class ManageSettings extends SettingsPage
 
                                 ])
                         ]),
+                    Tabs\Tab::make(__('Terminos y condiciones'))
+                        ->icon('heroicon-o-building-library')
+                        ->schema([
+                            RichEditor::make('terms_conditions')
+                            // ->hint('Translatable')
+                            ->label(__('Términos y condiciones'))
+                            ->hintColor('primary'),
+                            RichEditor::make('privacy_policies')
+                            // ->hint('Translatable')
+                            ->label(__('Políticas de privacidad'))
+                            ->hintColor('primary'),
+                            RichEditor::make('sales_polices')
+                            // ->hint('Translatable')
+                            ->label(__('Políticas de ventas'))
+                            ->hintColor('primary'),
+                        ]),
                     Tabs\Tab::make(__('Landin Page'))
                         ->icon('heroicon-o-map-pin')
                         ->schema([])
                         ->columns(3)
                         ->inlineLabel(),
-                    Tabs\Tab::make(__(''))
-                        ->icon('heroicon-o-building-library')
-                        ->schema([
-                            Card::make()
-                                ->schema([])
-                                ->columns(3)
-                                ->inlineLabel()
-                        ]),
+
                     Tabs\Tab::make(__('Pasarela de pagos'))
                         ->icon('heroicon-o-credit-card')
                         ->schema([

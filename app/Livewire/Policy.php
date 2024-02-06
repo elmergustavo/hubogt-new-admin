@@ -4,21 +4,19 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Settings\EntitySettings;
-// use App\Settings\GeneralSettings;
 
-class Terms extends Component
+class Policy extends Component
 {
 
-
-    public $terms_conditions;
+    public $privacy_policies;
 
     public function mount(EntitySettings $settings)
     {
-        $this->terms_conditions = $settings->terms_conditions;
+        $this->privacy_policies = $settings->privacy_policies;
     }
 
     public function render()
     {
-        return view('livewire.terms');
+        return view('livewire.policy');
     }
 }

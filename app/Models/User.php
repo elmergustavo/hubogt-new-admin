@@ -129,52 +129,25 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
         return Team::all();
     }
 
+    public function getRoleUserAttribute()
+    {
+        if ($this->role === 'user') {
+            return __('Cliente');
+        }
+        elseif ($this->role === 'admin')
+        {
+            return __('Administrador');
+        }
+        elseif ($this->role === 'vendor')
+        {
+            return __('Vendedor');
+        }
+        elseif ($this->role === 'service')
+        {
+            return __('Servicio');
+        }
+    }
 
-    // public function getAvatarUrlAttribute()
-    // {
-    //     $avatar = $this->avatar_url;
-    //     return is_null($avatar) ? '/images/avatar_default.png' : $avatar->url;
-    // }
 
 
-    // public function getAvatarUrlAttribute()
-    // {
-    //     if (filter_var($this->profile_photo_path, FILTER_VALIDATE_URL))
-    //     {
-    //         return $this->profile_photo_path;
-    //     }
-
-    //     return $this->getPhotoUrl();
-    // }
-
-
-    // public function setProfilePhotoFromUrl(string $url)
-    // {
-    //     $file = sys_get_temp_dir() . '/' . Str::uuid()->toString();
-
-    //     // Base64
-    //     if (str_starts_with($url, 'data:image'))
-    //     {
-    //         $name = $this->id . '-' . time() . '.png';
-    //         file_put_contents($file, base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $url)));
-    //         $this->updateProfilePhoto(new UploadedFile($file, $name));
-    //     }
-    //     else
-    //     {
-    //         $name = pathinfo($url)['basename'];
-    //         $response = Http::get($url);
-
-    //         //Determine if the status code is >= 200 and < 300
-    //         if ($response->successful())
-    //         {
-    //             file_put_contents($file, $response);
-    //             $this->updateProfilePhoto(new UploadedFile($file, $name));
-    //         }
-    //         else
-    //         {
-    //             session()->flash('flash.banner', 'Unable to retrive image');
-    //             session()->flash('flash.bannerStyle', 'danger');
-    //         }
-    //     }
-    // }
 }

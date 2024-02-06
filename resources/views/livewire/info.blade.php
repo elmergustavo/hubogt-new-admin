@@ -71,6 +71,4 @@
             <p>{!! $description_column3 !!}</p>
         </div>
     </div>
-
-
 </div>
