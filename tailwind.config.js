@@ -14,7 +14,7 @@ export default {
         './resources/views/filament/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
 
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        // './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
     ],
