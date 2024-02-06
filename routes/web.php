@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Livewire\FormRequests;
 use Laravel\Socialite\Facades\Socialite;
+use App\Livewire\SellerRegister;
 
 
-\Illuminate\Support\Facades\Route::get('form', Form::class);
 
 
 
@@ -22,7 +22,7 @@ Route::get('/landing', fn () => view('frontend.landing.index'))->name('landing')
 Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
 Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
 Route::post('/', [FormRequests::class, 'sendMail'])->name('form.send');
-Route::get('/onboarding', fn () => view('livewire.onboarding.seller-register'))->name('seller_register');
+
 // Route::get('/login', fn () => view('login'))->name('login');
 // Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
 // Route::get('/login', fn () => view('login'))->name('cookie-settings');
@@ -53,5 +53,5 @@ Route::middleware(['auth',
     // 'verified',
 ])->group(function ()
 {
-    Route::get('/onboarding', fn () => view('livewire.onboarding.seller-register'))->name('seller_register');
+    Route::get('/onboarding', SellerRegister::class)->name('seller_register');
 });
