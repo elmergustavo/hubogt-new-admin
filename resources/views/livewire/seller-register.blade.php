@@ -1,9 +1,11 @@
-@extends('components.layouts.app')
 
-@section('content')
-<div x-data="{ current_step: 1, 
-        current_page: 'page1', 
-        curren_page_step: 1, 
+
+
+<div>
+
+    <div x-data="{ current_step: 1,
+        current_page: 'page1',
+        curren_page_step: 1,
         selectedOption: 'opcion1',
         vender_en_linea: null,
         promocionar_mi_tienda: null,
@@ -13,7 +15,7 @@
 
     <div class="flex flex-col h-screen">
         {{-- page 1 --}}
-        <div class="flex-1 md:flex relative" x-show="current_page === 'page'">
+        <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
             <img src="assets/Group.png" alt="logo" class="absolute md:top-9 md:left-9">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/unsplash_Pdds9XsWyoM.png)">
@@ -99,7 +101,7 @@
         </div>
 
         {{-- page 3 --}}
-        <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
+        <div class="flex-1 md:flex relative" x-show="current_page === 'page3'">
             <img src="assets/Group.png" alt="logo" class="absolute top-9 left-9 hidden md:block">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/onboarding3.png)">
@@ -222,7 +224,7 @@
                                             }">
                                 </div>
                             </div>
-                            <a href="#" x-on:click.prevent="{current_step = {{ $i }}, curren_page_step = {{ $i }}}"
+                            <a href="#" x-on:click.prevent="current_step = {{ $i }}, curren_page_step = {{ $i }}"
                                 x-show="{{ $i }} != 5" :class="{
                                             'relative flex h-5 w-5 lg:h-8 lg:w-8 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-900': current_step ===
                                                 {{ $i }},
@@ -268,6 +270,8 @@
                     <div class="pt-8 pr-8 pl-8 flex w-full border-2">
                         <div class="w-1/2 flex flex-col">
                             <div class="grid grid-cols-2 pb-4">
+
+                                {{-- {{$this->form}} --}}
                                 <label for="storeDepartment" class="text-sm font-medium text-gray-900">Departamento
                                     de la
                                     tienda</label>
@@ -275,6 +279,8 @@
                                     class="w-52 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
                                     <option selected>Guatemala</option>
                                 </select>
+
+                                {{-- {{$this->form}} --}}
                             </div>
                             <div class="grid grid-cols-2 pb-4">
                                 <label for="municipio" class="text-sm font-medium text-gray-900">Municipio</label>
@@ -293,7 +299,7 @@
                 </div>
 
                 <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                    <button x-on:click="{curren_page_step = 2, current_step = 2 }"
+                    <button x-on:click.prevent="curren_page_step = 2, current_step = 2"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                         Guardar y continuar
                     </button>
@@ -324,7 +330,7 @@
                 </div>
 
                 <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                    <button x-on:click="{curren_page_step = 3, current_step = 3 }"
+                    <button x-on:click.prevent="curren_page_step = 3, current_step = 3"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                         Guardar y continuar
                     </button>
@@ -553,7 +559,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                    <button x-on:click="{curren_page_step = 4, current_step = 4 }"
+                    <button x-on:click.prevent="curren_page_step = 4, current_step = 4"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                         Guardar y continuar
                     </button>
@@ -688,7 +694,7 @@
                 </div>
 
                 <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                    <button x-on:click="{curren_page_step = 5, current_step = 5 }"
+                    <button x-on:click.prevent="curren_page_step = 5, current_step = 5"
                         class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                         Guardar y continuar
                     </button>
@@ -727,4 +733,6 @@
         </footer>
     </div>
 </div>
-@endsection
+
+
+</div>
