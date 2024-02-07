@@ -16,28 +16,29 @@
     </header>
 
     <main class="mt-8">
-        <h2 class="text-gray-700 dark:text-gray-200">Hi Olivia,</h2>
+        <h2 class="text-gray-700 dark:text-gray-200">Detalle del producto</h2>
 
         <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
-            Alicia has invited you to join the team on <span class="font-semibold ">Meraki UI</span>.
+            Datos del prodcuto
+            <span class="font-semibold ">BuhoGT</span>.
         </p>
-        
+
         <button class="px-6 py-2 mt-4 text-sm font-medium tracking-wider text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
             Accept the invite
         </button>
-        
+
         <p class="mt-8 text-gray-600 dark:text-gray-300">
-            Thanks, <br>
-            Meraki UI team
+            Gracias, <br>
+            Mombii
         </p>
     </main>
-    
+
 
     <footer class="mt-8">
-        <p class="text-gray-500 dark:text-gray-400">
-            This email was sent to <a href="#" class="text-blue-600 hover:underline dark:text-blue-400" target="_blank">contact@merakiui.com</a>. 
+        {{-- <p class="text-gray-500 dark:text-gray-400">
+            This email was sent to <a href="#" class="text-blue-600 hover:underline dark:text-blue-400" target="_blank">contact@merakiui.com</a>.
             If you'd rather not receive this kind of email, you can <a href="#" class="text-blue-600 hover:underline dark:text-blue-400">unsubscribe</a> or <a href="#" class="text-blue-600 hover:underline dark:text-blue-400">manage your email preferences</a>.
-        </p>
+        </p> --}}
     </footer>
 </section>
 </body>
