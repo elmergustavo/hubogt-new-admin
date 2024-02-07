@@ -15,7 +15,7 @@
 
     <div class="flex flex-col h-screen">
         {{-- page 1 --}}
-        <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
+        <div class="flex-1 md:flex relative" x-show="current_page === 'page4'">
             <img src="assets/Group.png" alt="logo" class="absolute md:top-9 md:left-9">
             <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                 style="background-image: url(assets/unsplash_Pdds9XsWyoM.png)">
@@ -200,7 +200,7 @@
         </div>
 
         {{-- page 4 --}}
-        <div class=" flex flex-col flex-1" x-show="current_page === 'page4'">
+        <div class=" flex flex-col flex-1" x-show="current_page === 'page1'">
             {{-- logo --}}
             <div class="flex justify-center p-5 sm:justify-normal sm:pb-10 ">
                 <img src="assets/logo/logo_horizontal.png" alt="logo_buho" class="">
@@ -260,7 +260,7 @@
             <div class="flex flex-col flex-1" x-show="curren_page_step === 1">
                 <div class="flex flex-col w-full justify-center items-center pt-4 sm:pt-12 pb-4 sm:pb-12">
                     <label class="font-medium text-xl sm:text-3xl">
-                        Preferencias de la tienda
+                        Ubicación de tu tienda
                     </label>
                     <label class="font-normal text-base sm:text-xl">
                         Empecemos! Cuéntanos algo sobre ti y tu tienda
@@ -271,29 +271,27 @@
                         <div class="w-1/2 flex flex-col">
                             <div class="grid grid-cols-2 pb-4">
 
-                                {{-- {{$this->form}} --}}
-                                <label for="storeDepartment" class="text-sm font-medium text-gray-900">Departamento
+                                {{$this->Departament}}
+                                {{-- <label for="storeDepartment" class="text-sm font-medium text-gray-900">Departamento
                                     de la
                                     tienda</label>
                                 <select id="storeDepartment"
                                     class="w-52 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
                                     <option selected>Guatemala</option>
-                                </select>
+                                </select> --}}
 
                                 {{-- {{$this->form}} --}}
                             </div>
                             <div class="grid grid-cols-2 pb-4">
-                                <label for="municipio" class="text-sm font-medium text-gray-900">Municipio</label>
+                                {{-- <label for="municipio" class="text-sm font-medium text-gray-900">Municipio</label>
                                 <select id="municipio"
                                     class="w-52 h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
                                     <option selected>Guatemala</option>
-                                </select>
+                                </select> --}}
                             </div>
                         </div>
                         <div class="w-1/2">
-                            El idioma predeterminado que usarás para describir tus artículos. Elige con cuidado! No
-                            puedes
-                            cambiarlo una vez que lo guardes, pero podrás añadir otros más adelante.
+                            Aquí nos gustaría saber dónde se encuentra ubicada tu tienda dentro de Guatemala. Por favor, selecciona tu departamento y municipio de residencia para que podamos ofrecerte una experiencia personalizada y conectarte con los compradores locales de tu área. ¡Gracias por ser parte de nuestra comunidad de vendedores!
                         </div>
                     </div>
                 </div>
@@ -320,7 +318,7 @@
                             vendedores se
                             inspiran en lo que venden, en su estilo... En cualquier cosa, prácticamente
                         </label>
-                        <input type="text" placeholder="Escribe el nombre de tu tienda" class="w-96">
+                        {{$this->NameShop}}
 
                         <div class="flex flex-col">
                             <label><b>*</b> Entre 4 y 20 carateres</label>
@@ -341,24 +339,24 @@
             <div class="flex flex-col flex-1 p-20" x-show="curren_page_step === 3">
                 <div class="flex flex-col">
                     <label class="font-medium text-4xl">Crea un Producto</label>
-                    <label>Añade algunas fotos y detalles sobre el artículo. Rellena lo que puedas por ahora, podrás
+                    <label class="py-5">Añade algunas fotos y detalles sobre el artículo. Rellena lo que puedas por ahora, podrás
                         modificarlo más adelante.</label>
                 </div>
                 <div class="space-y-10">
                     <div class="border flex flex-col pt-5 pb-5">
-                        <div class="flex flex-col">
+                        <div class="flex flex-col mx-5 mb-4">
                             <label>Fotos</label>
                             <label>Añade todas las que puedas para que los compradores puedan ver cada detalle. Un
                                 minímo de
                                 4 a 8 fotos.</label>
                         </div>
-                        <div class="flex flex-col lg:flex-row">
-                            <div class="flex flex-col pl-10">
+                        <div class="flex  lg:justify-between px-10">
+                            <div class="flex flex-col  pl-10">
                                 <div class="w-60">
-                                    <label>Fotos *</label>
-                                    <label>Usa hasta diez fotos para
+                                    <label>Fotos<span class="text-red-600">*</span></label>
+                                    <p>Usa hasta diez fotos para
                                         mostrar los aspectos más
-                                        destacables de tu artículo.</label>
+                                        destacables de tu artículo.</p>
                                 </div>
                                 <div class="flex flex-col w-60">
                                     <label>Consejos:</label>
@@ -388,7 +386,7 @@
                                 <div class="text-center">10</div>
                             </div>
                         </div>
-                        <div class="flex flex-col space-y-4">
+                        <div class="flex flex-col space-y-4 p-5">
                             <label class="text-xl">Como editar tus fotos</label>
                             <label>Recuerda que todas la fotos deben tener buena calidad, con fondos creativos o con
                                 fondo blanco, para ser aceptadas. Ver
@@ -439,7 +437,7 @@
                             </div>
                             <textarea class="w-full h-auto" type="text"></textarea>
                         </div>
-                        <div class="flex space-x-5 ">
+                        {{-- <div class="flex space-x-5 ">
                             <div class="flex flex-col">
                                 <label class="text-xl">Resumen del carrito Opcional</label>
                                 <label class="w-56">¿Vendes a Guatemala? La ley
@@ -450,7 +448,7 @@
                                     están a punto de comprar.</label>
                             </div>
                             <textarea class="w-full h-32" type="text"></textarea>
-                        </div>
+                        </div> --}}
                         <div class="flex space-x-5 ">
                             <div class="flex flex-col">
                                 <label class="text-xl">Etiquetas Opcional</label>
