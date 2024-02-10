@@ -2,49 +2,81 @@
 
 namespace App\Livewire;
 
+use App\Helpers\DepartmentMunicipalityOptions;
+
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Closure;
+use Filament\Forms\Form;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Form;
-use Illuminate\Contracts\View\View;
-use Livewire\Component;
-use Illuminate\Support\Facades\Http;
-
-use App\Helpers\DepartmentMunicipalityOptions;
-use Filament\Forms\Components\Select;
-
 
 use Illuminate\Support\Str;
 use Illuminate\Support\HtmlString;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
+use Livewire\Component;
 
 class SellerRegister extends Component implements HasForms
 {
     use InteractsWithForms;
+
+    public $current_page = 'page1';
+    public $current_step = 1;
+    public $curren_page_step = 1;
+
     public ?array $data = [
         'department'             => '',
         'municipality'           => '',
     ];
-    public $step = 1;
 
     public $department;
     public $municipality;
-    public $name;
+    
+    public $sku;
     public $cui;
+    public $tag;
+    public $banck;
+    public $phone;
+    public $title;
+    public $price;
+    public $amount;
+    public $category;
+    public $surnames;
+    public $name_shop;
+    public $birthdate;
+    public $first_name;
+    public $local_price;
+    public $description;
+    public $account_name;
+    public $offer_price;
     public $legal_reason;
+    public $company_name;
+    public $business_email;
+    public $account_number;
+    public $business_phone;
+    public $cui_individual;
+    public $social_networks;
+    public $individual_email;
+    public $nationwide_price;
+    public $estimated_shipping_time;
 
     protected function getForms(): array
     {
         return [
             'Departament' => $this->makeForm()
                 ->schema($this->getDepartamentFormSchema()),
+
+
             'NameShop' => $this->makeForm()
                 ->schema($this->getNameShopFormSchema()),
+
+
             'Title' => $this->makeForm()
                 ->schema($this->getTitleFormSchema()),
             'Category' => $this->makeForm()
@@ -57,10 +89,10 @@ class SellerRegister extends Component implements HasForms
                 ->schema($this->getSocialNetworksFormSchema()),
             'Price' => $this->makeForm()
                 ->schema($this->getPriceFormSchema()),
-            'Shipping_price1' => $this->makeForm()
-                ->schema($this->getShippingPrice1FormSchema()),
-            'Shipping_price2' => $this->makeForm()
-                ->schema($this->getShippingPrice2FormSchema()),
+            'LocalPrice' => $this->makeForm()
+                ->schema($this->getLocalPriceFormSchema()),
+            'NationwidePrice' => $this->makeForm()
+                ->schema($this->getNationwidePriceFormSchema()),
             'Estimated_shipping_time' => $this->makeForm()
                 ->schema($this->getEstimatedShippingTimeFormSchema()),
             'Offer_price' => $this->makeForm()
@@ -69,7 +101,10 @@ class SellerRegister extends Component implements HasForms
                 ->schema($this->getAmountFormSchema()),
             'SKU' => $this->makeForm()
                 ->schema($this->getSKUFormSchema()),
-            'individual' => $this->makeForm()
+            
+            
+
+            'Individual' => $this->makeForm()
                 ->schema($this->getIndividualFormSchema()),
             'business' => $this->makeForm()
                 ->schema($this->getBusinesslFormSchema()),
@@ -82,6 +117,45 @@ class SellerRegister extends Component implements HasForms
         ];
     }
 
+    public function currentStepOne()
+    {
+        
+        $this->Departament->validate();
+        
+        $this->current_step = 2;
+        $this->curren_page_step = 2;
+    }
+    
+    public function currentStepTwo()
+    {
+        $this->NameShop->validate();
+        $this->current_step = 3;
+        $this->curren_page_step = 3;
+    }
+    
+    public function currentStepThree()
+    {
+        $this->Title->validate();
+        $this->Category->validate();
+        $this->Description->validate();
+        $this->Tag->validate();
+        $this->Social_networks->validate();
+        $this->Price->validate();
+        $this->LocalPrice->validate();
+        $this->NationwidePrice->validate();
+        $this->Estimated_shipping_time->validate();
+        $this->Offer_price->validate();
+        $this->Amount->validate();
+        $this->SKU->validate();
+        $this->current_step = 4;
+        $this->curren_page_step = 4;
+    }
+
+    public function currentStepFour()
+    {
+        $this->current_step = 5;
+        $this->curren_page_step = 5;
+    }
 
     protected function getBanckFormSchema(): array
     {
@@ -89,20 +163,22 @@ class SellerRegister extends Component implements HasForms
             Select::make('banck')
                 ->label('')
                 ->options([
-                'bac'    => 'BAC Credomatic',
-                'bi'     => 'Banco Industrial',
-                'brural' => 'Banrural',
-                'gyt'    => 'Banco G&T Continental',
-                'bam'    => 'Bam',
-                'inter'  => 'InterBanco',
-                'other'  => 'Otra'
+                    'bac'    => 'BAC Credomatic',
+                    'bi'     => 'Banco Industrial',
+                    'brural' => 'Banrural',
+                    'gyt'    => 'Banco G&T Continental',
+                    'bam'    => 'Bam',
+                    'inter'  => 'InterBanco',
+                    'other'  => 'Otra'
                 ])
+                ->placeholder('Seleccione un banco de preferencia')
                 ->reactive()
                 ->live()
                 ->native(false)
                 ->searchable(),
         ];
     }
+
     protected function getAccountNumberFormSchema(): array
     {
         return [
@@ -110,6 +186,7 @@ class SellerRegister extends Component implements HasForms
                 ->label(''),
         ];
     }
+
     protected function getAccountNameFormSchema(): array
     {
         return [
@@ -117,11 +194,12 @@ class SellerRegister extends Component implements HasForms
                 ->label(''),
         ];
     }
+
     protected function getBusinesslFormSchema(): array
     {
         return [
             TextInput::make('cui')
-                ->label('cui')
+                ->label('CUI')
                 ->required()
                 ->lazy()
                 ->afterStateUpdated(
@@ -133,33 +211,34 @@ class SellerRegister extends Component implements HasForms
             TextInput::make('legal_reason')
                 ->label('Representate legal')
                 ->required(),
-            TextInput::make('x')
+            TextInput::make('company_name')
                 ->label('Nombre de la empresa'),
-            TextInput::make('g')
-                ->label('Correo electronico')
+            TextInput::make('business_email')
+                ->label('')
                 ->required(),
-            TextInput::make('h')
+            TextInput::make('phone')
                 ->label('Telefono')
                 ->required(),
         ];
     }
+
     protected function getIndividualFormSchema(): array
     {
         return [
-            TextInput::make('cui2')
-                ->label('cui')
+            TextInput::make('cui_individual')
+                ->label('CUI')
                 ->required()
                 ->lazy(),
-            TextInput::make('a')
+            TextInput::make('first_name')
                 ->label('Primer Nombre')
                 ->required(),
-            TextInput::make('b')
+            TextInput::make('surnames')
                 ->label('Apellidos')
                 ->required(),
-            TextInput::make('c')
-                ->label('Correo electronico')
+            TextInput::make('individual_email')
+                ->label('Correo electrónico')
                 ->required(),
-            TextInput::make('d')
+            TextInput::make('birthdate')
                 ->label('Fecha de nacimiento')
                 ->required(),
         ];
@@ -181,10 +260,12 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
+
     protected function getDescriptionFormSchema(): array
     {
         return [
-            TextInput::make('description')
+            RichEditor::make('description')
+                ->toolbarButtons([])
                 ->label('')
                 ->required()
         ];
@@ -197,6 +278,7 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
+
     protected function getSocialNetworksFormSchema(): array
     {
         return [
@@ -205,6 +287,7 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
+
     protected function getPriceFormSchema(): array
     {
         return [
@@ -213,24 +296,27 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
-    protected function getShippingPrice1FormSchema(): array
+
+    protected function getLocalPriceFormSchema(): array
     {
         return [
-            TextInput::make('shipping_price1')
+            TextInput::make('local_price')
                 ->label('')
                 ->numeric()
                 ->required()
         ];
     }
-    protected function getShippingPrice2FormSchema(): array
+
+    protected function getNationwidePriceFormSchema(): array
     {
         return [
-            TextInput::make('shipping_price2')
+            TextInput::make('nationwide_price')
                 ->label('')
                 ->numeric()
                 ->required()
         ];
     }
+
     protected function getEstimatedShippingTimeFormSchema(): array
     {
         return [
@@ -239,6 +325,7 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
+
     protected function getOfferPriceFormSchema(): array
     {
         return [
@@ -247,6 +334,7 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
+
     protected function getAmountFormSchema(): array
     {
         return [
@@ -255,6 +343,7 @@ class SellerRegister extends Component implements HasForms
                 ->required()
         ];
     }
+
     protected function getSKUFormSchema(): array
     {
         return [
@@ -287,7 +376,6 @@ class SellerRegister extends Component implements HasForms
                 ->reactive()
                 ->live()
                 ->native(false)
-                // ->extraAttributes(['title' => __('onboarding.tab_entity_info.municipality_tool_tip')])
                 ->required(),
         ];
     }
@@ -295,11 +383,10 @@ class SellerRegister extends Component implements HasForms
     protected function getNameShopFormSchema(): array
     {
         return [
-            TextInput::make('name')
+            TextInput::make('name_shop')
                 ->label('Nombre')
                 ->prefixIcon('heroicon-m-building-office')
                 ->placeholder(__('Escribe el nombre de tu tienda'))
-                // ->extraAttributes(['title' => __('onboarding.tab_entity_name.name_tool_tip')])
                 ->required()
 
         ];
@@ -324,8 +411,7 @@ class SellerRegister extends Component implements HasForms
                 'Accept'          => 'application/json',
                 'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
             ])->timeout(10)
-            // ->get(env('FELPLEX_END_POINT') . env('FELPLEX_ENTITY_ID') . "find/CUI/{$get('cui')}");
-            ->get('https://felplex.dev.plex.lat/api/entity/141/'. "find/CUI/{$get('cui')}");
+                ->get(env('FELPLEX_END_POINT') . env('FELPLEX_ENTITY_ID') . "/find/CUI/{$get('cui')}");
             if ($response->successful())
             {
                 if (isset($response[0]['tax_name']))
@@ -347,7 +433,7 @@ class SellerRegister extends Component implements HasForms
         }
         catch (\GuzzleHttp\Exception\RequestException $e)
         {
-            $set('legal_reason', 'hola');
+            $set('legal_reason', '');
         }
     }
 

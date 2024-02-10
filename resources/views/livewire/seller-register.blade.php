@@ -1,18 +1,18 @@
 <div>
-
-    <div x-data="{ current_step: 1,
-        current_page: 'page1',
-        curren_page_step: 1,
+    
+    <div x-data="{ 
+        current_step: $wire.entangle('current_step'),
+        current_page: $wire.entangle('current_page'),
+        curren_page_step: $wire.entangle('curren_page_step'),
         selectedOption: 'opcion1',
         vender_en_linea: null,
         promocionar_mi_tienda: null,
         posicionamiento_de_marca: null,
         pagos_y_envios: null,
     }">
-
         <div class="flex flex-col h-screen">
             {{-- page 1 --}}
-            <div class="flex-1 md:flex relative" x-show="current_page === 'page1'">
+            <div class="flex-1 md:flex relative" x-show="current_page === 'page'">
                 <img src="assets/Group.png" alt="logo" class="absolute md:top-9 md:left-9">
                 <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                     style="background-image: url(assets/unsplash_Pdds9XsWyoM.png)">
@@ -200,7 +200,7 @@
             </div>
 
             {{-- page 4 --}}
-            <div class=" flex flex-col flex-1" x-show="current_page === 'page4'">
+            <div class=" flex flex-col flex-1" x-show="current_page === 'page1'">
                 {{-- logo --}}
                 <div class="flex justify-center p-5 sm:justify-normal sm:pb-10 ">
                     <img src="assets/logo/logo_horizontal.png" alt="logo_buho" class="">
@@ -302,7 +302,7 @@
                     </div>
 
                     <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                        <button x-on:click.prevent="curren_page_step = 2, current_step = 2"
+                        <button wire:click='currentStepOne()' 
                             class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                             Guardar y continuar
                         </button>
@@ -333,7 +333,7 @@
                     </div>
 
                     <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                        <button x-on:click.prevent="curren_page_step = 3, current_step = 3"
+                        <button wire:click='currentStepTwo()'
                             class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                             Guardar y continuar
                         </button>
@@ -507,8 +507,8 @@
                                         a nivel local y nacional.</label>
                                 </div>
                                 <div class="flex space-x-4 w-full h-10">
-                                    {{ $this->Shipping_price1 }}
-                                    {{ $this->Shipping_price2 }}
+                                    {{ $this->LocalPrice }}
+                                    {{ $this->NationwidePrice }}
                                 </div>
                             </div>
                             <div class="flex space-x-5 ">
@@ -587,7 +587,7 @@
                         </div> --}}
                     </div>
                     <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                        <button x-on:click.prevent="curren_page_step = 4, current_step = 4"
+                        <button wire:click='currentStepThree()'
                             class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                             Guardar y continuar
                         </button>
@@ -660,7 +660,7 @@
                             <input class="w-60 h-10" type="text">
                         </div> --}}
                         <div>
-                            {{ $this->individual }}
+                            {{ $this->Individual }}
                         </div>
                     </div>
 
@@ -735,7 +735,7 @@
                     </div>
 
                     <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                        <button x-on:click.prevent="curren_page_step = 5, current_step = 5"
+                        <button wire:click='currentStepFour()'
                             class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                             Guardar y continuar
                         </button>
@@ -776,6 +776,4 @@
             </footer>
         </div>
     </div>
-
-
 </div>
