@@ -5,6 +5,7 @@ use App\Livewire\Form;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Livewire\FormRequests;
+use App\Livewire\IndexHome;
 use Laravel\Socialite\Facades\Socialite;
 use App\Livewire\SellerRegister;
 
@@ -13,8 +14,9 @@ use App\Livewire\SellerRegister;
 
 
 // Route::get('/', fn () => view('index'))->name('home');
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/home', fn () => view('home'))->name('ecommerce');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', fn () => view('index'))->name('ecommerce');
+Route::get('/', IndexHome::class)->name('index-home');
 Route::get('/producto-detalle', fn () => view('frontend.home.producto-detalle'))->name('producto_detalle');
 Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
 Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare');
