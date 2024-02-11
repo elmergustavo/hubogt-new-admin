@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a12e6031694f1017c64e24744a586a03",
+    "content-hash": "fdaa6439d4ba995ae524ba816f03c85f",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -6987,16 +6987,16 @@
         },
         {
             "name": "spatie/eloquent-sortable",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/eloquent-sortable.git",
-                "reference": "960ee1c888171f77cba9e3108da69c00a0d02e9c"
+                "reference": "7614a20c417b53e025b17eac8e84bc3d65962428"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/960ee1c888171f77cba9e3108da69c00a0d02e9c",
-                "reference": "960ee1c888171f77cba9e3108da69c00a0d02e9c",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/7614a20c417b53e025b17eac8e84bc3d65962428",
+                "reference": "7614a20c417b53e025b17eac8e84bc3d65962428",
                 "shasum": ""
             },
             "require": {
@@ -7045,7 +7045,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/eloquent-sortable/issues",
-                "source": "https://github.com/spatie/eloquent-sortable/tree/4.1.0"
+                "source": "https://github.com/spatie/eloquent-sortable/tree/4.1.1"
             },
             "funding": [
                 {
@@ -7057,7 +7057,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-11T16:39:58+00:00"
+            "time": "2024-01-22T08:45:25+00:00"
         },
         {
             "name": "spatie/image",
