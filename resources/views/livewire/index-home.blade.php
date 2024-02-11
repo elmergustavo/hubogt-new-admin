@@ -259,7 +259,7 @@
             <form id="form-search-navbar-movil"
                 class="flex items-center border border-black rounded-full overflow-hidden w-fit bg-white flex-1">
                 <input placeholder="Busca lo que se te ocurra" name="search" type="text"
-                    class="rounded-md w-full p-2 pl-5 pr-0 text-base outline-none" />
+                    class="focus:ring-0 border-none rounded-md w-full p-2 pl-5 pr-0 text-base outline-none" />
                 <button class="px-3 pr-5 outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px]" viewBox="0 0 24 24">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
