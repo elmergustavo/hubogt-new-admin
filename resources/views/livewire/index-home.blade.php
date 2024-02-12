@@ -166,7 +166,7 @@
                 class="flex items-center border border-black rounded-full overflow-hidden w-fit  outline-none flex-1">
 
                 <input name="search" placeholder="Busca lo que se te ocurra" type="text"
-                    class="rounded-md w-full p-2 pl-5 pr-0 text-base outline-none" />
+                    class="focus:ring-0 border-none rounded-md w-full p-2 pl-5 pr-0 text-base outline-none" />
 
                 <button data-modal-target="modal-results" class="px-3 pr-5 outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[20px] md:h-[20px] w-[10px] h-[10px]"
@@ -178,10 +178,62 @@
                 </button>
 
             </form>
+
+
+            {{-- <form id="form-search-navbar" class="flex flex-1 w-full">
+                <div class="flex flex-1">
+                    <label for="search-dropdown"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
+                    <button id="dropdown-button" data-dropdown-toggle="dropdown"
+                        class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
+                        type="button">All categories <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 1 4 4 4-4" />
+                        </svg></button>
+                    <div id="dropdown"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
+                            <li>
+                                <button type="button"
+                                    class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mockups</button>
+                            </li>
+                            <li>
+                                <button type="button"
+                                    class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Templates</button>
+                            </li>
+                            <li>
+                                <button type="button"
+                                    class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
+                            </li>
+                            <li>
+                                <button type="button"
+                                    class="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logos</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative w-full">
+                        <input type="search" id="search-dropdown"
+                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                            placeholder="Search Mockups, Logos, Design Templates..." required>
+                        <button type="submit"
+                            class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-primary-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </div>
+                </div>
+            </form> --}}
+
         </div>
 
         <div class="md:flex hidden items-center gap-5">
-            <a href="">
+            @guest
+            <a href="{{ route('login') }}">
                 <span class="lg:block hidden">Iniciar sesión</span>
                 <span class="lg:hidden block">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 20 20">
@@ -204,6 +256,9 @@
                     </svg>
                 </span>
             </a>
+            @endguest
+
+            @auth
             <a href="">
                 <span class="lg:block hidden">Tienda</span>
                 <span class="lg:hidden block">
@@ -214,6 +269,7 @@
                     </svg>
                 </span>
             </a>
+            @endauth
             <a href="">
                 <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[26px] md:h-[26px]" viewBox="0 0 24 24">
                     <path fill="red"
@@ -227,7 +283,26 @@
                         d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.137a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m12.75 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0" />
                 </svg>
             </a>
+            @auth
+            <a href="" class="md:flex hidden justify-center items-center gap-[2px] flex-col text-[15px]">
+                <img src="{{ Storage::url(Auth::user()->profile_photo_path )}}" class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
+                <span>{{ Auth::user()->name }}</span>
+            </a>
+
+            <form method="POST" action="{{ route('logout') }}" x-data>
+                @csrf
+
+                <x-dropdown-link href="{{ route('logout') }}" class="flex items-center"
+                    @click.prevent="$root.submit();">
+
+                    {{ __('Cerrar Sesión') }}
+                </x-dropdown-link>
+            </form>
+
+              @endauth
         </div>
+
+
 
         <button class="font-medium rounded-lg text-sm px-5 py-2.5 md:hidden flex items-center gap-2 flex-row-reverse"
             type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example"
@@ -258,7 +333,7 @@
 
             <form id="form-search-navbar-movil"
                 class="flex items-center border border-black rounded-full overflow-hidden w-fit bg-white flex-1">
-                <input placeholder="Busca lo que se te ocurra" name="search" type="text"
+                <input placeholder="Busca lo que se te ocurra xd" name="search" type="text"
                     class="focus:ring-0 border-none rounded-md w-full p-2 pl-5 pr-0 text-base outline-none" />
                 <button class="px-3 pr-5 outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px]" viewBox="0 0 24 24">
@@ -272,7 +347,7 @@
             <hr class="mb-5 mt-8">
 
             <div class="text-white flex flex-col gap-5 text-lg">
-                <a href="" class="flex items-center gap-5 justify-start">
+                <a href="{{ route('login') }}" class="flex items-center gap-5 justify-start">
                     <span class="">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 20 20">
                             <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
@@ -285,7 +360,7 @@
                     </span>
                     <span>Iniciar sesión</span>
                 </a>
-                <a href="" class="flex items-center gap-5 justify-start">
+                <a href="{{ route('login') }}" class="flex items-center gap-5 justify-start">
                     <span class="">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round"
@@ -1274,7 +1349,8 @@
                 class="max-w-7xl mx-auto flex lg:flex-row flex-col lg:justify-around justify-center lg:items-start items-center lg:gap-5 gap-10">
 
                 <div class="flex flex-col gap-4">
-                    <img src="/assets/logo/logo_horizontal_dark.svg" alt="" class="w-[270px] object-cover" />
+                    <img src="/assets/logo/logo_horizontal_dark.svg" alt=""
+                        class="w-[270px] object-cover" />
                     <div class="flex gap-5 lg:flex-row flex-wrap flex-col">
                         <button
                             class="h-full p-3 px-5 text-sm bg-white lg:w-fit w-full text-blue-900 hover:bg-white/90 font-bold">Vende
