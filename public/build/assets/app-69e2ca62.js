@@ -1,12 +1,4 @@
-const generateCarousel = () => {
-    const total_items = 9
-    document.querySelectorAll('[data-carousel-parent]').forEach(carousel => {
-
-      let template = ''
-      if (carousel.id === 'seccion-3') {
-        console.log('first')
-        Array(9).fill(1).forEach((_, i) => {
-          template += `
+const h=()=>{document.querySelectorAll("[data-carousel-parent]").forEach(e=>{let n="";if(e.id==="seccion-3"){console.log("first"),Array(9).fill(1).forEach((r,i)=>{n+=`
           <div class="carousel-item border border-transparent xl:w-[320px] lg:w-[330px] md:w-[367px]  w-full h-auto  ">
           <div class="relative h-[340px] w-full grid gap-2 grid-cols-2 grid-rows-2 px-8">
             <img src=" https://placehold.co/200x310" class="w-full h-full object-cover rounded" alt="image" />
@@ -17,57 +9,12 @@ const generateCarousel = () => {
           <div class="flex gap-3 py-3 items-center mt-10">
             <img src=" https://placehold.co/200x310" class="w-[50px] h-[70px] object-cover rounded" alt="image" />
             <p class="flex-1 text-sm ">
-              <span>Tienda ${i + 1}</span> <br>
+              <span>Tienda ${i+1}</span> <br>
               <span>Tecnología y Accesorios</span>
             </p>
           </div>
         </div>
-          `
-        })
-
-        carousel.innerHTML = template
-
-        const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
-        const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
-        let position = 0;
-
-        const item = carousel.querySelector('.carousel-item')
-
-        // Función para avanzar al siguiente grupo de elementos
-        nextBtn.addEventListener('click', function () {
-          position = position - (item.clientWidth + 2);
-
-          let rest_items = 0
-          if (window.innerWidth >= 1340) {
-            rest_items = 3
-          } else if (window.innerWidth >= 1024) {
-            rest_items = 2
-          } else if (window.innerWidth >= 768) {
-            rest_items = 1
-          }
-
-          if (position <= (-item.clientWidth * (total_items - rest_items)) + item.clientWidth) nextBtn.classList.add('hidden')
-
-          if (position !== 0) prevBtn.classList.remove('hidden')
-
-          carousel.style.transform = `translateX(${position}px)`;
-        });
-
-        // Función para retroceder al grupo anterior de elementos
-        prevBtn.addEventListener('click', function () {
-          position += item.clientWidth + 2;
-
-          if (position - item.clientWidth >= -item.clientWidth) prevBtn.classList.add('hidden')
-
-          if (position < 0) nextBtn.classList.remove('hidden')
-
-          carousel.style.transform = `translateX(${position}px)`;
-        });
-
-      } else {
-
-        Array(total_items).fill(1).forEach((_, i) => {
-          template += `
+          `}),e.innerHTML=n;const l=e.parentElement.querySelector("[data-prev-btn]"),a=e.parentElement.querySelector("[data-next-btn]");let t=0;const s=e.querySelector(".carousel-item");a.addEventListener("click",function(){t=t-(s.clientWidth+2);let r=0;window.innerWidth>=1340?r=3:window.innerWidth>=1024?r=2:window.innerWidth>=768&&(r=1),t<=-s.clientWidth*(9-r)+s.clientWidth&&a.classList.add("hidden"),t!==0&&l.classList.remove("hidden"),e.style.transform=`translateX(${t}px)`}),l.addEventListener("click",function(){t+=s.clientWidth+2,t-s.clientWidth>=-s.clientWidth&&l.classList.add("hidden"),t<0&&a.classList.remove("hidden"),e.style.transform=`translateX(${t}px)`})}else{Array(9).fill(1).forEach((i,d)=>{n+=`
           <div class="carousel-item xl:w-[220px] sm:w-[208px] w-full h-auto  ">
                   <div class="relative h-[200px] aspect-square w-full">
                     <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded" alt="image" />
@@ -80,7 +27,7 @@ const generateCarousel = () => {
                       </svg></button>
                   </div>
                   <div class="flex gap-4 flex-col pt-3">
-                    <h3 class="text-lg ">Item ${i + 1}</h3>
+                    <h3 class="text-lg ">Item ${d+1}</h3>
                     <!-- start stars  -->
                     <div class="flex items-center justify-start gap-2">
                       <span class="text-sm">4.8</span>
@@ -122,72 +69,14 @@ const generateCarousel = () => {
                       carrito</button>
                   </div>
                 </div>
-          `
-        })
-
-        carousel.innerHTML = template
-
-        const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
-        const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
-        let position = 0;
-
-        const item = carousel.querySelector('.carousel-item')
-
-        const gap = 35
-
-
-        // Función para avanzar al siguiente grupo de elementos
-        nextBtn.addEventListener('click', function () {
-          position = position - (item.clientWidth + gap);
-
-          let rest_items = 0
-          if (window.innerWidth >= 1340) {
-            rest_items = 4
-          } else if (window.innerWidth >= 1024) {
-            rest_items = 3
-          } else if (window.innerWidth >= 768) {
-            rest_items = 2
-          }
-
-          if (position <= (-item.clientWidth * (total_items - rest_items)) + item.clientWidth) nextBtn.classList.add('hidden')
-
-          if (position !== 0) prevBtn.classList.remove('hidden')
-
-          carousel.style.transform = `translateX(${position}px)`;
-        });
-
-        // Función para retroceder al grupo anterior de elementos
-        prevBtn.addEventListener('click', function () {
-          position += item.clientWidth + gap;
-
-          if (position - item.clientWidth >= -item.clientWidth) prevBtn.classList.add('hidden')
-
-          if (position < 0) nextBtn.classList.remove('hidden')
-
-          carousel.style.transform = `translateX(${position}px)`;
-        });
-      }
-    });
-  }
-  generateCarousel()
-
-  const generateCategoriesMovil = () => {
-
-    const $category_container = document.querySelector('#accordion-collapse-body-1')
-
-    const categories = ['Moda Mujer', 'Moda Hombre', 'Hogar & Jardín', 'Salud & Belleza', 'Coleccionables y Arte', 'Bolsos', 'Joyería', 'Más']
-
-    let template = ''
-
-    categories.forEach((category, index) => {
-      template += `
-            <div id="accordion-collapse-categoria-${index}" data-accordion="collapse" class="w-full">
-              <h2 id="accordion-collapse-categoria-${index}">
+          `}),e.innerHTML=n;const l=e.parentElement.querySelector("[data-prev-btn]"),a=e.parentElement.querySelector("[data-next-btn]");let t=0;const s=e.querySelector(".carousel-item"),r=35;a.addEventListener("click",function(){t=t-(s.clientWidth+r);let i=0;window.innerWidth>=1340?i=4:window.innerWidth>=1024?i=3:window.innerWidth>=768&&(i=2),t<=-s.clientWidth*(9-i)+s.clientWidth&&a.classList.add("hidden"),t!==0&&l.classList.remove("hidden"),e.style.transform=`translateX(${t}px)`}),l.addEventListener("click",function(){t+=s.clientWidth+r,t-s.clientWidth>=-s.clientWidth&&l.classList.add("hidden"),t<0&&a.classList.remove("hidden"),e.style.transform=`translateX(${t}px)`})}})};h();const m=()=>{const o=document.querySelector("#accordion-collapse-body-1"),e=["Moda Mujer","Moda Hombre","Hogar & Jardín","Salud & Belleza","Coleccionables y Arte","Bolsos","Joyería","Más"];let n="";e.forEach((l,a)=>{n+=`
+            <div id="accordion-collapse-categoria-${a}" data-accordion="collapse" class="w-full">
+              <h2 id="accordion-collapse-categoria-${a}">
                 <button type="button"
                   class="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-b-0 border-gray-200 gap-3"
-                  data-accordion-target="#accordion-categoria-${index}" aria-expanded="false"
-                  aria-controls="accordion-categoria-${index}">
-                  <span>${category}</span>
+                  data-accordion-target="#accordion-categoria-${a}" aria-expanded="false"
+                  aria-controls="accordion-categoria-${a}">
+                  <span>${l}</span>
                   <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -195,65 +84,9 @@ const generateCarousel = () => {
                   </svg>
                 </button>
               </h2>
-              <div id="accordion-categoria-${index}" class="hidden p-3"
-                aria-labelledby="accordion-collapse-categoria-${index}">
+              <div id="accordion-categoria-${a}" class="hidden p-3"
+                aria-labelledby="accordion-collapse-categoria-${a}">
                 Content
               </div>
             </div>
-          `
-    })
-
-    $category_container.innerHTML = template
-  }
-  generateCategoriesMovil()
-
-
-  const $formSearch = document.getElementById('form-search-navbar')
-  const $formSearchMovil = document.getElementById('form-search-navbar-movil')
-
-  $formSearch.addEventListener('submit', e => {
-    e.preventDefault()
-
-    const search = Object.fromEntries(new FormData(e.target)).search
-    document.getElementById('text-search').textContent = search
-
-    activeModal()
-  })
-
-  $formSearchMovil.addEventListener('submit', e => {
-    e.preventDefault()
-
-    const search = Object.fromEntries(new FormData(e.target)).search
-    document.getElementById('text-search-movil').textContent += `(${search})`
-    activeModal()
-  })
-
-  const activeModal = () => {
-    const $modalResults = document.getElementById('modal-results')
-
-    const instanceOptions = {
-      id: $modalResults.id,
-      override: true
-    };
-    const options = {
-      placement: 'bottom-right',
-      closable: false,
-      backdropClasses: 'bg-black/40 fixed inset-0 z-40',
-      onHide: () => {
-        console.log('modal is hidden');
-      },
-      onShow: () => {
-        console.log('m  odal is shown');
-      },
-      onToggle: () => {
-        console.log('modal has been toggled');
-      },
-    };
-
-    const modal = new Modal($modalResults, options, instanceOptions);
-    modal.show();
-
-    document.querySelector('#btn-modal-results-close').addEventListener('click', () => {
-      modal.hide();
-    })
-  }
+          `}),o.innerHTML=n};m();const p=document.getElementById("form-search-navbar"),g=document.getElementById("form-search-navbar-movil");p.addEventListener("submit",o=>{o.preventDefault();const e=Object.fromEntries(new FormData(o.target)).search;document.getElementById("text-search").textContent=e,c()});g.addEventListener("submit",o=>{o.preventDefault();const e=Object.fromEntries(new FormData(o.target)).search;document.getElementById("text-search-movil").textContent+=`(${e})`,c()});const c=()=>{const o=document.getElementById("modal-results"),e={id:o.id,override:!0},n={placement:"bottom-right",closable:!1,backdropClasses:"bg-black/40 fixed inset-0 z-40",onHide:()=>{console.log("modal is hidden")},onShow:()=>{console.log("m  odal is shown")},onToggle:()=>{console.log("modal has been toggled")}},l=new Modal(o,n,e);l.show(),document.querySelector("#btn-modal-results-close").addEventListener("click",()=>{l.hide()})};

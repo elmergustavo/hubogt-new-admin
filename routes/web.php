@@ -12,9 +12,9 @@ use App\Livewire\SellerRegister;
 
 // Route::get('/', fn () => view('index'))->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-// Route::get('/home', fn () => view('index'))->name('ecommerce');
-Route::get('/', IndexHome::class)->name('index-home');
-Route::get('/profile', Profile::class)->name('profile');
+Route::get('/', fn () => view('new-home'))->name('ecommerce');
+// Route::get('/', IndexHome::class)->name('index-home');
+Route::get('/profile', fn () => view('frontend.home.profile'))->name('profile');
 Route::get('/producto-detalle', fn () => view('frontend.home.producto-detalle'))->name('producto_detalle');
 Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
 Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare');
