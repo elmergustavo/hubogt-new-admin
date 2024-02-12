@@ -1,6 +1,4 @@
 <div>
-
-
     <div id="modal-results" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 md:h-[calc(100%-1rem)] h-[100dvh] ">
         <div class="relative md:p-4 p-2 xl:w-[1000px] lg:w-[80%] md:h-full h-[90dvh] w-full">
@@ -233,42 +231,42 @@
 
         <div class="md:flex hidden items-center gap-5">
             @guest
-            <a href="{{ route('login') }}">
-                <span class="lg:block hidden">Iniciar sesión</span>
-                <span class="lg:hidden block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 20 20">
-                        <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                            <path
-                                d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75z" />
-                            <path
-                                d="M14 10a.75.75 0 0 0-.75-.75H3.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 14 10" />
-                        </g>
-                    </svg>
-                </span>
-            </a>
-            <a href="">
-                <span class="lg:block hidden">Registrarse</span>
-                <span class="lg:hidden block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 24 24">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5"
-                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632" />
-                    </svg>
-                </span>
-            </a>
+                <a href="{{ route('login') }}">
+                    <span class="lg:block hidden">Iniciar sesión</span>
+                    <span class="lg:hidden block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 20 20">
+                            <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                <path
+                                    d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75z" />
+                                <path
+                                    d="M14 10a.75.75 0 0 0-.75-.75H3.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 14 10" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                <a href="">
+                    <span class="lg:block hidden">Registrarse</span>
+                    <span class="lg:hidden block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M15.75 6a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632" />
+                        </svg>
+                    </span>
+                </a>
             @endguest
 
             @auth
-            <a href="">
-                <span class="lg:block hidden">Tienda</span>
-                <span class="lg:hidden block">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 24 24">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5"
-                            d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75" />
-                    </svg>
-                </span>
-            </a>
+                <a href="">
+                    <span class="lg:block hidden">Tienda</span>
+                    <span class="lg:hidden block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[25px] h-[25px]" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5"
+                                d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75" />
+                        </svg>
+                    </span>
+                </a>
             @endauth
             <a href="">
                 <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[26px] md:h-[26px]" viewBox="0 0 24 24">
@@ -284,22 +282,23 @@
                 </svg>
             </a>
             @auth
-            <a href="" class="md:flex hidden justify-center items-center gap-[2px] flex-col text-[15px]">
-                <img src="{{ Storage::url(Auth::user()->profile_photo_path )}}" class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
-                <span>{{ Auth::user()->name }}</span>
-            </a>
+                <a href="" class="md:flex hidden justify-center items-center gap-[2px] flex-col text-[15px]">
+                    <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}"
+                        class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
+                    <span>{{ Auth::user()->name }}</span>
+                </a>
 
-            <form method="POST" action="{{ route('logout') }}" x-data>
-                @csrf
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
 
-                <x-dropdown-link href="{{ route('logout') }}" class="flex items-center"
-                    @click.prevent="$root.submit();">
+                    <x-dropdown-link href="{{ route('logout') }}" class="flex items-center"
+                        @click.prevent="$root.submit();">
 
-                    {{ __('Cerrar Sesión') }}
-                </x-dropdown-link>
-            </form>
+                        {{ __('Cerrar Sesión') }}
+                    </x-dropdown-link>
+                </form>
 
-              @endauth
+            @endauth
         </div>
 
 
@@ -652,7 +651,7 @@
                         </button>
                     </template>
                 </div>
-            </div>
+        </div>
             <!-- end carrousel -->
 
             <div class="grid lg:grid-cols-1 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-1 grid-cols-1 grid-rows-2 gap-5 lg:w-[700px]  w-auto"

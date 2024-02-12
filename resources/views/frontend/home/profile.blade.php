@@ -373,4 +373,33 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // seleccionar los menus laterales (movil/desktop)
+        document.querySelectorAll('.sidebar-userdash').forEach($sidebar => {
+            // dentro de cada menu seleccionar sus botones
+            $sidebar.querySelectorAll('.btn-sidebar').forEach($btn => {
+
+                $btn.addEventListener('click', () => {
+                    // desactivar todos los botones
+                    $btn.parentElement.querySelectorAll('button').forEach(e => {
+                        e.classList.remove('bg-blue-900', 'text-white')
+                    })
+                    // activar el botón que ha presionado
+                    $btn.classList.add('bg-blue-900', 'text-white')
+
+                    // obtener la sección que se quiere mostrar
+                    const $section = document.getElementById($btn.getAttribute('name'))
+                    // ocultar todas las secciones
+                    $section.parentElement.querySelectorAll('.section').forEach(e => {
+                        e.classList.add('hidden')
+                    })
+                    // mostrar la sección dependiendo del atributo name del botón que se presiono
+                    $section.classList.remove('hidden')
+                })
+            })
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @endsection
