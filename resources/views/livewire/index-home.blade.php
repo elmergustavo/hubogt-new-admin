@@ -284,9 +284,9 @@
                 </svg>
             </a>
             @auth
-            <a href="" class="md:flex hidden justify-center items-center gap-[2px] flex-col text-[15px]">
+            <a href="{{ route('profile') }}" class="md:flex hidden justify-center items-center gap-[2px] flex-col text-[15px]">
                 <img src="{{ Storage::url(Auth::user()->profile_photo_path )}}" class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
-                <span>{{ Auth::user()->name }}</span>
+                <span class="text-sm">{{ Auth::user()->name }}</span>
             </a>
 
             <form method="POST" action="{{ route('logout') }}" x-data>
