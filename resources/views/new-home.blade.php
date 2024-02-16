@@ -777,7 +777,7 @@
         </svg></button>
     </div>
     <div class="flex gap-4 flex-col pt-3">
-      <h3 class="text-lg  ">Item</h3>
+      <a href={{route('productos-descripcion')}} class="text-lg  ">Item</a>
       <!-- start stars  -->
       <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
         <span class="text-sm">4.8</span>
@@ -843,7 +843,7 @@
     <div class="flex gap-4 flex-col pt-3">
     <p>descripción</p>
     <div class="flex items-center gap-2">
-      <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
+      <a href="{{route('tienda-especifica')}}" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
         Visitar tienda
       </a>
       <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">

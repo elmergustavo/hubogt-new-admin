@@ -3,13 +3,16 @@
         class="max-w-7xl mx-auto flex lg:flex-row flex-col lg:justify-around justify-center lg:items-start items-center lg:gap-5 gap-10">
 
         <div class="flex flex-col gap-4">
-            <img src="/assets/logo/logo_horizontal_dark.svg" alt=""
-                class="w-[270px] object-cover" />
+            <img src="/assets/logo/logo_horizontal_dark.svg" alt="" class="w-[270px] object-cover" />
             <div class="flex gap-5 lg:flex-row flex-wrap flex-col">
-                <button
-                    class="h-full p-3 px-5 text-sm bg-white lg:w-fit w-full text-blue-900 hover:bg-white/90 font-bold">Vende
-                    en
-                    Buhogt</button>
+
+                <a href="{{ route('seller_register') }}">
+                    <button
+                        class="h-full p-3 px-5 text-sm bg-white lg:w-fit w-full text-blue-900 hover:bg-white/90 font-bold">Vende
+                        en
+                        Buhogt</button>
+                </a>
+
                 <button
                     class="h-full p-3 px-5 text-sm bg-white lg:w-fit w-full text-blue-900 hover:bg-white/90 font-bold">Contactanos</button>
             </div>
@@ -73,8 +76,7 @@
         </div>
     </div>
 
-    <div
-        class="text-gray-500 max-w-7xl mx-auto flex justify-center items-center flex-col gap-5 text-sm lg:mt-20 mt-10">
+    <div class="text-gray-500 max-w-7xl mx-auto flex justify-center items-center flex-col gap-5 text-sm lg:mt-20 mt-10">
         <div class="flex lg:flex-row flex-col gap-5 justify-center items-center text-center">
             <a href="">Configuraciones de uso</a>
             <a href="">Política de privacidad</a>
