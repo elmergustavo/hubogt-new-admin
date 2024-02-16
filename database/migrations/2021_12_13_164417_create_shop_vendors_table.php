@@ -17,13 +17,13 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('nit')->unique();
-            $table->string('cui')->unique();
+            $table->boolean('is_company')->default(false);
+            $table->string('nit')->nullable();
+            $table->string('cui')->nullable();
             $table->string('phone');
             $table->string('email');
-            $table->text('address');
+            $table->text('address')->nullable();
             $table->text('legal_info')->nullable();
-
 
             $table->string('legal_representative')->nullable();
             $table->date('registration_date')->nullable();
@@ -32,8 +32,9 @@ return new class extends Migration
             $table->string('logo')->nullable();
             $table->string('website_url')->nullable();
             $table->string('bank_details')->nullable();
-            $table->string('preferred_language')->default('es');
+            $table->string('preferred_language')->nullable()->default('es');
             $table->string('time_zone')->nullable();
+            $table->json('data')->nullable();
 
             $table->timestamps();
         });

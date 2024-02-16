@@ -13,14 +13,15 @@ return new class() extends Migration
      */
     public function up()
     {
-        Schema::create('shop_products', function (Blueprint $table) {
+        Schema::create('shop_products', function (Blueprint $table)
+        {
             $table->id();
             $table->foreignId('shop_brand_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('shop_id')->nullable()->constrained()->nullOnDelete();
             $table->string('name');
-            $table->string('slug')->unique()->nullable();
-            $table->string('sku')->unique()->nullable();
-            $table->string('barcode')->unique()->nullable();
+            $table->string('slug')->nullable();
+            $table->string('sku')->nullable();
+            $table->string('barcode')->nullable();
             $table->longText('description')->nullable();
             $table->unsignedBigInteger('qty')->default(0);
             $table->unsignedBigInteger('security_stock')->default(0);
@@ -42,23 +43,24 @@ return new class() extends Migration
             $table->decimal('weight_value', 10, 2)->nullable()
                 ->default(0.00)
                 ->unsigned();
-            $table->string('weight_unit')->default('kg');
+            $table->string('weight_unit')->nullable()->default('kg');
             $table->decimal('height_value', 10, 2)->nullable()
                 ->default(0.00)
                 ->unsigned();
-            $table->string('height_unit')->default('cm');
+            $table->string('height_unit')->nullable()->default('cm');
             $table->decimal('width_value', 10, 2)->nullable()
                 ->default(0.00)
                 ->unsigned();
-            $table->string('width_unit')->default('cm');
+            $table->string('width_unit')->nullable()->default('cm');
             $table->decimal('depth_value', 10, 2)->nullable()
                 ->default(0.00)
                 ->unsigned();
-            $table->string('depth_unit')->default('cm');
+            $table->string('depth_unit')->nullable()->default('cm');
             $table->decimal('volume_value', 10, 2)->nullable()
                 ->default(0.00)
                 ->unsigned();
-            $table->string('volume_unit')->default('l');
+            $table->string('volume_unit')->nullable()->default('l');
+            $table->json('data')->nullable();
             $table->timestamps();
         });
     }
