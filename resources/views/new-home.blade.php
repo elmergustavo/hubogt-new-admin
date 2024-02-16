@@ -4,11 +4,14 @@
 @section('content')
     <style>
         /* Añadir estilos personalizados */
-        .carousel-item {
-            flex: 0 0 auto;
+        [data-carousel-parent] {
+            scrollbar-width: none;
+        }
+
+        [data-carousel-parent]::-webkit-scrollbar {
+            display: none;
         }
     </style>
-    </head>
 
 
     <div class="mt-[5dvh] xl:px-0 ">
@@ -84,35 +87,19 @@
                 <span class="md:text-xl text-lg text-gray-700 mt-3 inline-block">Encuentra los mejores artículos</span>
             </header>
 
-            <div class="relative overflow-hidden mt-8">
+            <div class="relative w-full mt-8">
                 <!-- start carousel -->
-                <div class="flex justify-start items-start gap-[35px]" data-carousel-parent data-gap="35" id="seccion-1">
+                <div class="transition-all w-full flex justify-start items-start lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
+                    data-carousel-parent data-type-template="store" id="seccion-1">
                     <!-- start item carousel -->
-                    <div class="carousel-item xl:w-[220px] sm:w-[210px] w-full h-auto  flex flex-col gap-5">
-                        <h3 class="text-lg font-light">Tienda</h3>
-                        <div class="relative md:h-[230px] sm:h-[130px] h-[230px]  w-full ">
-                            <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded"
-                                alt="image" />
-                        </div>
-                        <p>descripción</p>
-                        <div class="flex items-center gap-2">
-                            <a href="" class="font-bold w-fit leading-5	 border-b border-black ">
-                                Visitar tienda
-                            </a>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
-                                <path fill="#000" fill-rule="evenodd"
-                                    d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                    </div>
+
                     <!-- end item carousel -->
                 </div>
                 <!-- end carousel -->
                 <!-- start botones Next y Previous -->
                 <button data-prev-btn
                     class="absolute hidden top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 border h-6" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
@@ -177,7 +164,7 @@
                 </div>
                 <!-- end banner "patrocinado" -->
 
-                <div class="md:mb-4 mb-10 md:pl-2 pl-0 flex gap-4 items-center md:w-[80%] w-full mx-auto">
+                <div class="md:mb-4 mb-10 md:pl-2 pl-0 lg:flex hidden gap-4 items-center md:w-[80%] w-full mx-auto">
                     <button
                         class="md:flex-none flex-1 w-fit p-2 px-3 bg-transparent border justify-center border-black hover:bg-gray-200 flex gap-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
@@ -191,10 +178,10 @@
                 </div>
 
                 <!-- start carrousel -->
-                <div class="relative overflow-hidden">
+                <div class="relative overflow-hidden lg:mt-0 mt-10">
                     <!-- start carousel -->
-                    <div class="flex justify-start items-center gap-[35px]" data-carousel-parent data-gap="35"
-                        id="seccion-2">
+                    <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
+                        data-carousel-parent data-type-template="product" id="seccion-2">
                         <!-- start item carousel -->
                         <div class="carousel-item xl:w-[220px] sm:w-[210px] w-full h-auto  ">
                             <div class="relative h-[200px] aspect-square w-full">
@@ -257,7 +244,7 @@
                     <!-- start botones Next y Previous -->
                     <button data-prev-btn
                         class="absolute hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 border h-6" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                             <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                         </svg>
@@ -277,7 +264,7 @@
         <!-- end sección "Patrocinado" -->
 
         <!-- start sección "Los productos mas vendidos" -->
-        <section class=" max-w-7xl mx-auto mb-20 ">
+        <section class=" max-w-7xl mx-auto mb-20  px-5">
             <header>
                 <h2 class="md:text-3xl text-2xl ">Los productos más vendidos</h2>
                 <span class="md:text-xl text-lg text-gray-700 mt-1 inline-block">Completa tus compras</span>
@@ -285,7 +272,8 @@
 
             <div class="relative overflow-hidden mt-16">
                 <!-- start carousel -->
-                <div class="flex justify-start items-center" data-carousel-parent id="seccion-3" data-gap="0">
+                <div class="flex justify-start items-center md:gap-[65px] gap-[30px] snap-mandatory snap-x overflow-x-scroll"
+                    data-carousel-parent id="seccion-3" data-type-template="imageGrid">
 
                     <!-- start item carousel -->
                     <div class="carousel-item border xl:w-[320px] lg:w-[330px] md:w-[367px]  w-full h-auto  ">
@@ -339,8 +327,8 @@
 
             <div class="relative overflow-hidden mt-8">
                 <!-- start carousel -->
-                <div class="flex justify-start items-center gap-[35px]" data-carousel-parent data-gap="35"
-                    id="seccion-4">
+                <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
+                    data-carousel-parent data-type-template="product" id="seccion-4">
                     <!-- start item carousel -->
                     <div class="carousel-item xl:w-[220px] sm:w-[208px] w-full h-auto  ">
                         <div class="relative h-[200px] aspect-square w-full">
@@ -403,7 +391,7 @@
                 <!-- start botones Next y Previous -->
                 <button data-prev-btn
                     class="absolute hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 border h-6" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
@@ -461,8 +449,8 @@
 
             <div class="relative overflow-hidden mt-8">
                 <!-- start carousel -->
-                <div class="flex justify-start items-center gap-[35px]" data-carousel-parent data-gap="35"
-                    id="seccion-4">
+                <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
+                    data-carousel-parent data-type-template="product" id="seccion-5">
                     <!-- start item carousel -->
                     <div class="carousel-item xl:w-[220px] sm:w-[208px] w-full h-auto  ">
                         <div class="relative h-[200px] aspect-square w-full">
@@ -525,7 +513,7 @@
                 <!-- start botones Next y Previous -->
                 <button data-prev-btn
                     class="absolute hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 border h-6" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
@@ -664,15 +652,15 @@
                     excepcional historia</a>
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-10 md:mt-16 mt-10">
                     <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">Una
-                            comunidad que
+                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">Una comunidad
+                            que
                             hace el bien</h6>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
-                            quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet.
-                            Ex non eius
-                            architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus
-                            quos. Culpa
+                            quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet. Ex
+                            non eius
+                            architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus quos.
+                            Culpa
                             voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
                     </div>
                     <div class=" text-blue-900">
@@ -680,22 +668,21 @@
                             emprendedores</h6>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
-                            quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet.
-                            Ex non eius
-                            architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus
-                            quos. Culpa
+                            quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet. Ex
+                            non eius
+                            architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus quos.
+                            Culpa
                             voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
                     </div>
                     <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">
-                            Tranquilidad
+                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">Tranquilidad
                             absoluta</h6>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
-                            quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet.
-                            Ex non eius
-                            architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus
-                            quos. Culpa
+                            quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet. Ex
+                            non eius
+                            architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus quos.
+                            Culpa
                             voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
                     </div>
                 </div>
@@ -709,8 +696,7 @@
                 class="max-w-7xl mx-auto flex md:flex-row flex-col justify-around md:gap-0 gap-8 px-5 md:py-[80px] py-10 items-center">
                 <form class="flex flex-col gap-5">
                     <h5 class="text-2xl">Suscríbase a nuestro boletín</h5>
-                    <span class="text-sm">Suscríbase a nuestro boletín para recibir ofertas exclusivas, ultimas
-                        noticias y
+                    <span class="text-sm">Suscríbase a nuestro boletín para recibir ofertas exclusivas, ultimas noticias y
                         actualizaciones</span>
                     <div class="flex gap-3 md:flex-row flex-col">
                         <input type="email" placeholder="Su correo electronico"
@@ -731,8 +717,8 @@
             <span class="text-blue-950 font-bold">Contenido de productos</span>
         </section>
 
-    </div>
 
+    </div>
 
     <script>
         const carrouselItems = [{
@@ -775,6 +761,247 @@
             }))
         })
     </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+    <script>
+        const getTemplate = (type) => {
+            const product = `<div class="carousel-item snap-start	">
+    <div class="relative md:!w-[220px] md:!h-[250px] w-[130px] h-[180px]">
+      <img src=" http://placehold.co/500x510" class="w-full h-full object-cover rounded" alt="image" />
+      <button
+        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+          xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+        </svg></button>
+    </div>
+    <div class="flex gap-4 flex-col pt-3">
+      <h3 class="text-lg  ">Item</h3>
+      <!-- start stars  -->
+      <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
+        <span class="text-sm">4.8</span>
+        <div class="flex items-center">
+          <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 22 20">
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 22 20">
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 22 20">
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 22 20">
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+          <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+            <path
+              d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+          </svg>
+        </div>
+      </div>
+      <!-- end stars  -->
+      <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+        <b class="text-base">Q27.88</b>
+        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
+      </div>
+      <span class="text-sm">by MysticArtByJose</span>
+      <button class="border border-black p-2 mt-2 hover:bg-gray-200 ">Añadir al
+        carrito</button>
+    </div>
+  </div>`
+
+            const imageGrid = `<div class="carousel-item snap-start border border-transparent lg:w-[283px] w-[210px]">
+    <div class="relative lg:w-[283px] w-[210px]  grid gap-2 grid-cols-2 grid-rows-2">
+      <img src=" https://placehold.co/200x310" class="w-full h-full object-cover rounded" alt="image" />
+      <img src=" https://placehold.co/100x310" class="w-full row-span-2 h-full object-cover rounded"
+        alt="image" />
+      <img src=" https://placehold.co/200x310" class="w-full h-full object-cover rounded" alt="image" />
+    </div>
+    <div class="flex gap-3 py-3 items-center mt-10">
+      <img src=" https://placehold.co/200x310" class="w-[50px] h-[70px] object-cover rounded" alt="image" />
+      <p class="flex-1 text-sm ">
+        <span>Tienda </span> <br>
+        <span>Tecnología y Accesorios</span>
+      </p>
+    </div>
+  </div>`
+
+            const store = `<div class="carousel-item snap-start	">
+    <div class="relative md:!w-[220px] md:!h-[250px] w-[130px] h-[180px]">
+      <img src=" http://placehold.co/500x510" class="w-full h-full object-cover rounded" alt="image" />
+    </div>
+    <div class="flex gap-4 flex-col pt-3">
+    <p>descripción</p>
+    <div class="flex items-center gap-2">
+      <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
+        Visitar tienda
+      </a>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
+        <path fill="#000" fill-rule="evenodd"
+          d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    </div>
+  </div>`
+
+            const temp = {
+                store,
+                product,
+                imageGrid
+            }
+
+            return temp[type]
+        }
+
+        const generateCarousel = () => {
+            const total_items = 9
+            document.querySelectorAll('[data-carousel-parent]').forEach(carousel => {
+
+                let template = ''
+                Array(total_items).fill(1).forEach((_, i) => {
+                    template += getTemplate(carousel.dataset.typeTemplate)
+                })
+
+                carousel.innerHTML = template
+
+                const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
+                const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
+
+                const item = carousel.querySelector('.carousel-item')
+
+                // Función para avanzar al siguiente grupo de elementos
+                nextBtn.addEventListener('click', function() {
+                    carousel.scrollTo({
+                        left: carousel.scrollLeft + item.clientWidth,
+                        behavior: 'smooth'
+                    })
+
+                });
+
+                // Función para retroceder al grupo anterior de elementos
+                prevBtn.addEventListener('click', function() {
+                    carousel.scrollTo({
+                        left: carousel.scrollLeft - item.clientWidth,
+                        behavior: 'smooth'
+                    })
+                });
+
+                carousel.addEventListener('scrollend', e => {
+
+                    prevBtn.classList[
+                        e.target.scrollLeft > 0 ? 'remove' : 'add'
+                    ]('hidden')
+
+                    nextBtn.classList[
+                        (e.target.scrollWidth - e.target.scrollLeft) <= e.target.clientWidth ?
+                        'add' : 'remove'
+                    ]('hidden')
+
+                })
+
+
+            });
+        }
+        generateCarousel()
+
+        const generateCategoriesMovil = () => {
+
+            const $category_container = document.querySelector('#accordion-collapse-body-1')
+
+            const categories = ['Moda Mujer', 'Moda Hombre', 'Hogar & Jardín', 'Salud & Belleza',
+                'Coleccionables y Arte', 'Bolsos', 'Joyería', 'Más'
+            ]
+
+            let template = ''
+
+            categories.forEach((category, index) => {
+                template += `
+            <div id="accordion-collapse-categoria-${index}" data-accordion="collapse" class="w-full">
+              <h2 id="accordion-collapse-categoria-${index}">
+                <button type="button"
+                  class="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-b-0 border-gray-200 gap-3"
+                  data-accordion-target="#accordion-categoria-${index}" aria-expanded="false"
+                  aria-controls="accordion-categoria-${index}">
+                  <span>${category}</span>
+                  <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M9 5 5 1 1 5" />
+                  </svg>
+                </button>
+              </h2>
+              <div id="accordion-categoria-${index}" class="hidden p-3"
+                aria-labelledby="accordion-collapse-categoria-${index}">
+                Content
+              </div>
+            </div>
+          `
+            })
+
+            $category_container.innerHTML = template
+        }
+        generateCategoriesMovil()
+
+
+        const $formSearch = document.getElementById('form-search-navbar')
+        const $formSearchMovil = document.getElementById('form-search-navbar-movil')
+
+        $formSearch.addEventListener('submit', e => {
+            e.preventDefault()
+
+            const search = Object.fromEntries(new FormData(e.target)).search
+            document.getElementById('text-search').textContent = search
+
+            activeModal()
+        })
+
+        $formSearchMovil.addEventListener('submit', e => {
+            e.preventDefault()
+
+            const search = Object.fromEntries(new FormData(e.target)).search
+            document.getElementById('text-search-movil').textContent += `(${search})`
+            activeModal()
+        })
+
+        const activeModal = () => {
+            const $modalResults = document.getElementById('modal-results')
+
+            const instanceOptions = {
+                id: $modalResults.id,
+                override: true
+            };
+            const options = {
+                placement: 'bottom-right',
+                closable: false,
+                backdropClasses: 'bg-black/40 fixed inset-0 z-40',
+                onHide: () => {
+                    console.log('modal is hidden');
+                },
+                onShow: () => {
+                    console.log('m  odal is shown');
+                },
+                onToggle: () => {
+                    console.log('modal has been toggled');
+                },
+            };
+
+            const modal = new Modal($modalResults, options, instanceOptions);
+            modal.show();
+
+            document.querySelector('#btn-modal-results-close').addEventListener('click', () => {
+                modal.hide();
+            })
+        }
+    </script>
 @endsection
