@@ -15,6 +15,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,600;6..12,700&display=swap"
         rel="stylesheet" />
+
+
+     <!-- Scripts -->
+     @filamentStyles
+     @livewireStyles
+     @vite('resources/css/app.css')
 </head>
 
 <body>
