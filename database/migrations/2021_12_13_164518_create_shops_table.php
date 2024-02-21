@@ -32,8 +32,8 @@ return new class extends Migration
             $table->string('shop_url')->unique()->nullable();
             $table->text('opening_hours')->nullable();
             $table->text('return_policy')->nullable();
-            $table->decimal('average_rating', 3, 2)->default(0.00);
-            $table->integer('review_count')->default(0);
+            $table->decimal('average_rating', 3, 2)->default(0.00)->nullable();
+            $table->integer('review_count')->default(0)->nullable();
             $table->string('category')->nullable();
             $table->string('geolocation')->nullable();
             $table->json('metadata')->nullable();
