@@ -39,7 +39,7 @@ class AdminPanelProvider extends PanelProvider
             // ->registration()
             ->passwordReset()
             ->emailVerification()
-            ->brandLogo(asset('images/logo_horizontal.svg'))
+            ->brandLogo(asset('images/new-logo-mombii.svg'))
             ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => '#252a61',

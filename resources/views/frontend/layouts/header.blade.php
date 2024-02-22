@@ -30,7 +30,7 @@
             <div class="col-xl-2 col-7 col-md-8 col-lg-2">
                 <div class="wsus_logo_area">
                     <a class="wsus__header_logo" href="{{ route('home') }}">
-                        <img src="/assets/logo/logo_horizontal.svg" alt="logo" class="img-fluid w-100">
+                        <img src="/assets/logo/new-logo-mombii.svg" alt="logo" class="img-fluid w-100">
                     </a>
                 </div>
             </div>

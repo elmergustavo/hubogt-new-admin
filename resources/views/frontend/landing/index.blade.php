@@ -30,7 +30,7 @@
             <div>
                 <a href="{{route('home')}}">
 
-                    <img class="w-36" src="images/logo_horizontal_dark.svg" class="" alt="">
+                    <img class="w-36" src="images/new-logo-mombii.svg" class="" alt="">
                 </a>
             </div>
             <div

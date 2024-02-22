@@ -3,7 +3,7 @@
         class="max-w-7xl mx-auto flex lg:flex-row flex-col lg:justify-around justify-center lg:items-start items-center lg:gap-5 gap-10">
 
         <div class="flex flex-col gap-4">
-            <img src="/assets/logo/logo_horizontal_dark.svg" alt="" class="w-[270px] object-cover" />
+            <img src="/assets/logo/new-logo-mombii-dark.svg" alt="" class="w-[270px] object-cover" />
             <div class="flex gap-5 lg:flex-row flex-wrap flex-col">
 
                 <a href="{{ route('seller_register') }}">
