@@ -13,11 +13,13 @@ use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\HtmlString;
@@ -32,6 +34,9 @@ use Livewire\Component;
 class SellerRegister extends Component implements HasForms
 {
     use InteractsWithForms;
+
+    public $media1     = [];
+    public $media2     = [];
 
     public $current_page     = 'page1';
     public $current_step     = 1;
@@ -50,7 +55,9 @@ class SellerRegister extends Component implements HasForms
     public $local_price;
     public $offer_price;
     public $description;
-    public $social_networks;
+    // public $social_networks = '';
+    // public $social_networks_name = [];
+    // public $link = [];
     public $nationwide_price;
     public $estimated_shipping_time;
     //
@@ -125,6 +132,8 @@ class SellerRegister extends Component implements HasForms
                 ->schema($this->getBanckFormSchema()),
             'Type_account' => $this->makeForm()
                 ->schema($this->getTypeAccountFormSchema()),
+            'Documents' => $this->makeForm()
+                ->schema($this->getDocumentsFormSchema()),
         ];
     }
 
@@ -145,6 +154,21 @@ class SellerRegister extends Component implements HasForms
 
     public function stepThree()
     {
+        $this->radio_individual_business == 'individual'
+            ? $this->Individual->validate()
+            :   $this->Business->validate();
+
+        $this->Banck->validate();
+        $this->Type_account->validate();
+        $this->Account_name->validate();
+        $this->Account_number->validate();
+        $this->Documents->validate();
+        $this->current_step     = 4;
+        $this->curren_page_step = 4;
+    }
+
+    public function stepFour()
+    {
         $this->Title->validate();
         $this->Category->validate();
         $this->Description->validate();
@@ -154,35 +178,15 @@ class SellerRegister extends Component implements HasForms
         $this->LocalPrice->validate();
         $this->NationwidePrice->validate();
         $this->Estimated_shipping_time->validate();
-        // $this->Offer_price->validate();
         $this->Amount->validate();
-        // $this->SKU->validate();
-        $this->current_step     = 4;
-        $this->curren_page_step = 4;
-    }
-
-    public function stepFour()
-    {
-        $this->radio_individual_business == 'individual'
-            ? $this->Individual->validate()
-            :   $this->Business->validate();
-
-        $this->Banck->validate();
-        $this->Type_account->validate();
-        $this->Account_name->validate();
-        $this->Account_number->validate();
-
-        //shops
         
+        // 
 
-        //shop_products        
-        
-
-        //shop_vendors
-        // $this->business_phone;
         $this->radio_individual_business == 'individual'
             ? $is_company                       = false
             : $is_company                       = true;
+
+        
 
         $vendor = Vendor::create([
             'user_id'              => auth()->user()->id,
@@ -209,6 +213,8 @@ class SellerRegister extends Component implements HasForms
                 $this->account_number,
             ]),
         ]);
+
+        $this->Documents->model($vendor)->saveRelationships();
 
         $shop = Shop::create([
             'shop_vendor_id' => $vendor->id,
@@ -238,7 +244,7 @@ class SellerRegister extends Component implements HasForms
                 $this->radio_questions,
             ]),
         ]);
-        
+
         $product = Product::create([
             'shop_brand_id'     => null,
             'shop_id'           => $shop->id,
@@ -255,7 +261,7 @@ class SellerRegister extends Component implements HasForms
             'is_visible'        => 0,
             'old_price'         => $this->local_price,
             'price'             => $this->price,
-            'discount'          => $this->offer_price,
+            'discount'          => $this->offer_price ?? 0,
             'cost'              => null,
             'type'              => null,
             'status'            => 'needs_review',
@@ -277,7 +283,7 @@ class SellerRegister extends Component implements HasForms
             'data'              => json_encode([
                 $this->tag,
                 $this->category,
-                $this->social_networks,
+                // $this->social_networks,
                 $this->nationwide_price,
                 $this->estimated_shipping_time,
             ]),
@@ -311,6 +317,7 @@ class SellerRegister extends Component implements HasForms
             'mail'  => $mail,
             'name'  => $name,
         ];
+
         $notifiable = new AnonymousNotifiable;
         $notifiable->route('mail', 'suporte@mombi.shop');
         Notification::send($notifiable, new VendorNotification($data));
@@ -319,18 +326,14 @@ class SellerRegister extends Component implements HasForms
         $this->department;
         $this->municipality;
 
-
-
         $this->current_step     = 5;
         $this->curren_page_step = 5;
     }
 
     public function irAlaTienda()
     {
-        ////
-        // 
-        $this->department = '';
-        $this->municipality = '';
+        $this->department = ''; //--
+        $this->municipality = ''; //--
         // 
         $this->name_shop = '';
         // 
@@ -342,7 +345,7 @@ class SellerRegister extends Component implements HasForms
         $this->local_price = '';
         $this->offer_price = '';
         $this->description = '';
-        $this->social_networks = '';
+        $this->social_networks = ''; //repeater
         $this->nationwide_price = '';
         $this->estimated_shipping_time = '';
         //
@@ -373,6 +376,36 @@ class SellerRegister extends Component implements HasForms
         $this->current_step     = 1;
         $this->curren_page_step = 1;
         return redirect()->route('home');
+    }
+
+    protected function getDocumentsFormSchema(): array
+    {
+        return [
+            SpatieMediaLibraryFileUpload::make('media1')
+                ->label('Factura de servicios (agua, luz o teléfono)')
+                ->collection('vendor-documents')
+                ->multiple()
+                ->maxFiles(5)
+                ->required(),
+            SpatieMediaLibraryFileUpload::make('media2')
+                ->label('RTU')
+                ->collection('vendor-documents')
+                ->maxFiles(1)
+                ->required(),
+        ];
+    }
+    protected function getRtuFormSchema(): array
+    {
+        return [
+            SpatieMediaLibraryFileUpload::make('media')
+                ->label('Factura de servicios (agua, luz o teléfono)')
+                ->collection('vendor-documents')
+                ->multiple()
+                ->maxFiles(5)
+                ->required()
+            // ->hiddenLabel()
+            ,
+        ];
     }
 
     protected function getBanckFormSchema(): array
@@ -529,9 +562,13 @@ class SellerRegister extends Component implements HasForms
     protected function getSocialNetworksFormSchema(): array
     {
         return [
-            TextInput::make('social_networks')
-                ->label('')
-                ->required()
+            // Repeater::make('social_networks')
+            // ->schema([
+            //     TextInput::make('social_networks_name'),
+            //     TextInput::make('link'),
+            // ])
+            // ->collapsed()
+            // ->columns(2)
         ];
     }
 
@@ -540,6 +577,7 @@ class SellerRegister extends Component implements HasForms
         return [
             TextInput::make('price')
                 ->label('')
+                ->numeric()
                 ->required()
         ];
     }
@@ -577,6 +615,7 @@ class SellerRegister extends Component implements HasForms
     {
         return [
             TextInput::make('offer_price')
+                ->numeric()
                 ->label('')
         ];
     }
@@ -586,6 +625,7 @@ class SellerRegister extends Component implements HasForms
         return [
             TextInput::make('amount')
                 ->label('')
+                ->numeric()
                 ->required()
         ];
     }
@@ -633,7 +673,6 @@ class SellerRegister extends Component implements HasForms
                 ->prefixIcon('heroicon-m-building-office')
                 ->placeholder(__('Escribe el nombre de tu tienda'))
                 ->required()
-
         ];
     }
 
