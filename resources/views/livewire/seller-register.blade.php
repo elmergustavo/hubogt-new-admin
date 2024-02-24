@@ -1,6 +1,6 @@
 <div>
 
-    <div x-cloak x-data="{ 
+    <div x-cloak x-data="{
         current_step: $persist($wire.entangle('current_step')),
         current_page: $persist($wire.entangle('current_page')),
         curren_page_step: $persist($wire.entangle('curren_page_step')),
@@ -47,7 +47,7 @@
     }">
         <div class="flex flex-col h-screen">
             {{-- page 1 --}}
-            <div class="flex-1 md:flex relative" x-cloak x-show="current_page == 'page1'">
+            <div class="flex-1 md:flex relative " x-cloak x-show="current_page == 'page1'">
                 <img src="assets/Group.png" alt="logo" class="absolute md:top-9 md:left-9">
                 <div class="w-full md:w-1/2 flex items-center justify-center bg-cover"
                     style="background-image: url(assets/unsplash_Pdds9XsWyoM.png)">
@@ -302,10 +302,10 @@
                             Empecemos! Cuéntanos algo sobre ti y tu tienda
                         </label>
                     </div>
-                    <div class="flex flex-1 w-full justify-center pr-32 pl-32">
-                        <div class="pt-8 pr-8 pl-8 flex w-full border-2">
-                            <div class="w-1/2 flex flex-col">
-                                <div class="grid grid-cols-2 pb-4">
+                    <div class="flex flex-1 w-full justify-center md:px-32 px-5">
+                        <div class="pt-8 pr-8 pl-8 flex md:flex-row flex-col w-full border-2">
+                            <div class="md:w-1/2 flex flex-col">
+                                <div class="grid md:grid-cols-2 pb-4">
 
                                     {{ $this->Departament }}
                                     {{-- <label for="storeDepartment"
@@ -328,7 +328,7 @@
                                     </select> --}}
                                 </div>
                             </div>
-                            <div class="w-1/2">
+                            <div class="md:w-1/2">
                                 Aquí nos gustaría saber dónde se encuentra ubicada tu tienda dentro de Guatemala. Por
                                 favor, selecciona tu departamento y municipio de residencia para que podamos ofrecerte
                                 una experiencia personalizada y conectarte con los compradores locales de tu área.
@@ -359,6 +359,7 @@
                                 inspiran en lo que venden, en su estilo... En cualquier cosa, prácticamente
                             </label>
                             {{ $this->NameShop }}
+                            {{-- {{ $this->Wizard }} --}}
 
                             <div class="flex flex-col">
                                 <label><b>*</b> Entre 4 y 20 carateres</label>
@@ -375,7 +376,7 @@
                 </div>
 
                 {{-- Step page 3 --}}
-                <div class="flex flex-col flex-1 p-20 space-y-16" x-cloak x-show="curren_page_step === 3">
+                <div class="flex flex-col flex-1 md:p-20 p-5 space-y-16" x-cloak x-show="curren_page_step === 3">
                     <div class="flex flex-col justify-center items-center space-y-4">
                         <label class="text-3xl font-medium">Como se te va a pagar</label>
                         <label class="text-xl">Buhogt le da varias opciones como recibir sus pagos y a sus
@@ -385,7 +386,7 @@
                             <img src="assets/Vector.png" alt="visa" class="w-16 h-10">
                         </div>
                     </div>
-                    <div class="flex flex-col border p-10 space-y-4">
+                    <div class="flex flex-col border md:p-10 p-4 space-y-4">
                         <label>¿Qué tipo de vendedor eres?</label>
                         <label>En buhogt usamos esto para poder verificar tu información. Esto no va afectar tu tienda
                             en
@@ -399,7 +400,7 @@
                                     id="opcion1" checked>
                                 <label for="opcion1" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
                             </div>
-                
+
                             <div class="flex">
                                 <input wire:model.lazy='radio_individual_business' type="radio" name="abcd" value="business"
                                     class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
@@ -409,8 +410,8 @@
                         </div>
                         <label>Si tienes alguna duda puedes contactarnos a buhogt equipo</label>
                     </div>
-                
-                    <div class="flex flex-col border p-10 space-y-4" x-cloak x-show="radio_individual_business === 'individual'">
+
+                    <div class="flex flex-col border md:p-10 p-4 space-y-1" x-cloak x-show="radio_individual_business === 'individual'">
                         <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
                         <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
                         <label>Esta información no sera pública en Buhogt.</label>
@@ -442,12 +443,12 @@
                             {{ $this->Individual }}
                         </div>
                     </div>
-                
+
                     <div class="flex flex-col border p-10 space-y-4" x-cloak x-show="radio_individual_business === 'business'">
                         <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
                         <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
                         <label>Esta información no sera pública en Buhogt.</label>
-                
+
                         {{-- <div class="flex space-x-5 ">
                             <label class="w-64">Nombre de la empresa:</label>
                             <input class="w-60 h-10" type="text">
@@ -476,14 +477,14 @@
                     <div>
                         {{ $this->Documents }}
                     </div>
-                
-                    <div class="flex flex-col border p-10 space-y-4">
+
+                    <div class="flex flex-col border md:p-10 p-4 space-y-4">
                         <label>Para comenzar, ¿Qué banco se prefiere que se te deposite?</label>
-                        <div class="flex space-x-4">
-                            <div class="w-96">
+                        <div class="flex flex-col md:flex-row md:space-x-4 w-full">
+                            <div class="md:w-96 w-full">
                                 {{ $this->Banck }}
                             </div>
-                            <div class="w-96">
+                            <div class="md:w-96 w-full">
                                 {{ $this->Type_account }}
                             </div>
                         </div>
@@ -520,7 +521,7 @@
                         <label>Se le estara haciendo su deposito cada 15 dias, cualquier cambio se puede contactar con
                             nuestro equipo.</label>
                     </div>
-                
+
                     <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
                         <button wire:click='stepThree()' class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                             Guardar y continuar
@@ -529,7 +530,7 @@
                 </div>
 
                 {{-- Step page 4 --}}
-                <div class="flex flex-col flex-1 p-20" x-cloak x-show="curren_page_step === 4">
+                <div class="flex flex-col flex-1 md:p-20 p-4" x-cloak x-show="curren_page_step === 4">
                     <div class="flex flex-col">
                         <label class="font-medium text-4xl">Crea un Producto</label>
                         <label class="py-5">Añade algunas fotos y detalles sobre el artículo. Rellena lo que puedas por
@@ -544,7 +545,7 @@
                                     minímo de
                                     4 a 8 fotos.</label>
                             </div>
-                            <div class="flex  lg:justify-between px-10">
+                            <div class="flex flex-col md:flex-row  lg:justify-between md:px-10 px-4">
                                 <div class="flex flex-col  pl-10">
                                     <div class="w-60">
                                         <label>Fotos<span class="text-red-600">*</span></label>
@@ -567,7 +568,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="grid  grid-cols-7 grid-rows-2 gap-4 [&>div]:flex [&>div]:flex-col [&>div]:justify-center [&>div]:border [&>div]:xl:w-36 [&>div]:xl:h-36 [&>div]:lg:w-24 [&>div]:lg:h-24 [&>div]:w-14 [&>div]:h-14 [&>div]:bg-[#F5FAFA]">
+                                    class=" w-full hidden md:grid  md:grid-cols-7 grid-cols-1 grid-rows-2 gap-4 [&>div]:flex md:[&>div]:flex-col [&>div]:justify-center [&>div]:border [&>div]:xl:w-36 [&>div]:xl:h-36 [&>div]:lg:w-24 [&>div]:lg:h-24 [&>div]:w-14 [&>div]:h-14 [&>div]:bg-[#F5FAFA]">
                                     <div class="text-center">Principal</div>
                                     <div class="text-center">Ángulos</div>
                                     <div class="text-center">Ángulos</div>
@@ -594,18 +595,18 @@
                                 <label class="text-xl">Información del producto</label>
                                 <label>Cuéntale al mundo por qué le va a encantar tu artículo.</label>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Título *</label>
                                     <label class="w-56">Incluye palabras clave que los
                                         compradores usarían para
                                         encontrar el artículo.</label>
                                 </div>
-                                <div class="w-full h-10">
+                                <div class="md:w-full">
                                     {{ $this->Title }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Categoría*</label>
                                     <label class="w-56">Escribe una descripción de dos
@@ -618,7 +619,7 @@
                                     {{ $this->Category }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Descripción *</label>
                                     <label class="w-56">Comienza con una breve
@@ -633,7 +634,7 @@
                                         saber qué proceso sigues y cuál
                                         es la historia del artículo.</label>
                                 </div>
-                                <div class="w-full h-10">
+                                <div class="md:w-full">
                                     {{ $this->Description }}
                                 </div>
                             </div>
@@ -649,7 +650,7 @@
                                 </div>
                                 <textarea class="w-full h-32" type="text"></textarea>
                             </div> --}}
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Etiquetas Opcional</label>
                                     <label class="w-56">¿Qué palabras se usarían para
@@ -672,9 +673,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="border space-y-10 p-5">
+                        <div class="border space-y-10 p-4">
                             <label>Inventario y precios</label>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Precio *</label>
                                     <label class="w-64">Recuerda tener en cuenta los
@@ -687,7 +688,7 @@
                                     {{ $this->Price }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Precio de envio *</label>
                                     <label class="w-64">Recuerda el envio va por
@@ -699,17 +700,17 @@
                                     {{ $this->NationwidePrice }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Tiempor estimado de envio*</label>
                                     <label class="w-64">Ingrese el tiempo estimado que
                                         se tomara en hacerlo.</label>
                                 </div>
-                                <div class="w-full h-10">
+                                <div class="md:w-full">
                                     {{ $this->Estimated_shipping_time }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Precio en oferta opcional</label>
                                     <label class="w-64">Define precios diferentes con
@@ -721,7 +722,7 @@
                                     {{ $this->Offer_price }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">Cantidad *</label>
                                     <label class="w-64">
@@ -733,7 +734,7 @@
                                     {{ $this->Amount }}
                                 </div>
                             </div>
-                            <div class="flex space-x-5 ">
+                            <div class="flex flex-col md:flex-row md:space-x-5 ">
                                 <div class="flex flex-col">
                                     <label class="text-xl">SKU opcional</label>
                                     <label class="w-64">Los códigos SKU son solo para

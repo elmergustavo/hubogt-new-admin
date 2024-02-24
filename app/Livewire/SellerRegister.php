@@ -29,6 +29,10 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\AnonymousNotifiable;
 
+
+use Filament\Forms\Components\Wizard;
+use Filament\Infolists\Components\Grid;
+
 use Livewire\Component;
 
 class SellerRegister extends Component implements HasForms
@@ -41,12 +45,12 @@ class SellerRegister extends Component implements HasForms
     public $current_page     = 'page1';
     public $current_step     = 1;
     public $curren_page_step = 1;
-    // 
+    //
     public $department;
     public $municipality;
-    // 
+    //
     public $name_shop;
-    // 
+    //
     public $sku;
     public $tag;
     public $price;
@@ -91,10 +95,10 @@ class SellerRegister extends Component implements HasForms
         return [
             'Departament' => $this->makeForm()
                 ->schema($this->getDepartamentFormSchema()),
-            // 
+            //
             'NameShop' => $this->makeForm()
                 ->schema($this->getNameShopFormSchema()),
-            // 
+            //
             'Title' => $this->makeForm()
                 ->schema($this->getTitleFormSchema()),
             'Category' => $this->makeForm()
@@ -119,7 +123,7 @@ class SellerRegister extends Component implements HasForms
                 ->schema($this->getAmountFormSchema()),
             'SKU' => $this->makeForm()
                 ->schema($this->getSKUFormSchema()),
-            // 
+            //
             'Individual' => $this->makeForm()
                 ->schema($this->getIndividualFormSchema()),
             'Business' => $this->makeForm()
@@ -134,6 +138,8 @@ class SellerRegister extends Component implements HasForms
                 ->schema($this->getTypeAccountFormSchema()),
             'Documents' => $this->makeForm()
                 ->schema($this->getDocumentsFormSchema()),
+            'Wizard' => $this->makeForm()
+                ->schema($this->getWizardSchema()),
         ];
     }
 
@@ -179,14 +185,14 @@ class SellerRegister extends Component implements HasForms
         $this->NationwidePrice->validate();
         $this->Estimated_shipping_time->validate();
         $this->Amount->validate();
-        
-        // 
+
+        //
 
         $this->radio_individual_business == 'individual'
             ? $is_company                       = false
             : $is_company                       = true;
 
-        
+
 
         $vendor = Vendor::create([
             'user_id'              => auth()->user()->id,
@@ -334,9 +340,9 @@ class SellerRegister extends Component implements HasForms
     {
         $this->department = ''; //--
         $this->municipality = ''; //--
-        // 
+        //
         $this->name_shop = '';
-        // 
+        //
         $this->sku = '';
         $this->tag = '';
         $this->price = '';
@@ -405,6 +411,29 @@ class SellerRegister extends Component implements HasForms
                 ->required()
             // ->hiddenLabel()
             ,
+        ];
+    }
+
+
+
+
+    protected function getWizardSchema(): array
+    {
+        return [
+            Wizard::make([
+                Wizard\Step::make('Order')
+                    ->schema([
+                        // ...
+                    ]),
+                Wizard\Step::make('Delivery')
+                    ->schema([
+                        // ...
+                    ]),
+                Wizard\Step::make('Billing')
+                    ->schema([
+                        // ...
+                    ]),
+            ])
         ];
     }
 
