@@ -375,7 +375,161 @@
                 </div>
 
                 {{-- Step page 3 --}}
-                <div class="flex flex-col flex-1 p-20" x-cloak x-show="curren_page_step === 3">
+                <div class="flex flex-col flex-1 p-20 space-y-16" x-cloak x-show="curren_page_step === 3">
+                    <div class="flex flex-col justify-center items-center space-y-4">
+                        <label class="text-3xl font-medium">Como se te va a pagar</label>
+                        <label class="text-xl">Buhogt le da varias opciones como recibir sus pagos y a sus
+                            compradores</label>
+                        <div class="flex space-x-3">
+                            <img src="assets/logos_mastercard.png" alt="mc" class="w-14 h-10">
+                            <img src="assets/Vector.png" alt="visa" class="w-16 h-10">
+                        </div>
+                    </div>
+                    <div class="flex flex-col border p-10 space-y-4">
+                        <label>¿Qué tipo de vendedor eres?</label>
+                        <label>En buhogt usamos esto para poder verificar tu información. Esto no va afectar tu tienda
+                            en
+                            Buhogt solo queremos
+                            saber más de ti.
+                        </label>
+                        <div class="flex space-x-16">
+                            <div class="flex">
+                                <input wire:model.lazy='radio_individual_business' type="radio" name="abcd" value="individual"
+                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                    id="opcion1" checked>
+                                <label for="opcion1" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
+                            </div>
+                
+                            <div class="flex">
+                                <input wire:model.lazy='radio_individual_business' type="radio" name="abcd" value="business"
+                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                    id="opcion2">
+                                <label for="opcion2" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
+                            </div>
+                        </div>
+                        <label>Si tienes alguna duda puedes contactarnos a buhogt equipo</label>
+                    </div>
+                
+                    <div class="flex flex-col border p-10 space-y-4" x-cloak x-show="radio_individual_business === 'individual'">
+                        <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
+                        <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
+                        <label>Esta información no sera pública en Buhogt.</label>
+                        {{-- <div class="flex space-x-5 ">
+                            <label class="w-64">Primer Nombre *</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Apellidos:*</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Correo electronico:*</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Telefono: *</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Fecha de nacimiento: *</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Nit:</label>
+                            <input class="w-60 h-10" type="text">
+                        </div> --}}
+                        <div>
+                            {{ $this->Individual }}
+                        </div>
+                    </div>
+                
+                    <div class="flex flex-col border p-10 space-y-4" x-cloak x-show="radio_individual_business === 'business'">
+                        <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
+                        <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
+                        <label>Esta información no sera pública en Buhogt.</label>
+                
+                        {{-- <div class="flex space-x-5 ">
+                            <label class="w-64">Nombre de la empresa:</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Representate legal:</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Correo electronico:*</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Telefono: *</label>
+                            <input class="w-60 h-10" type="text">
+                        </div>
+                        <div class="flex space-x-5 ">
+                            <label class="w-64">Nit:</label>
+                            <input class="w-60 h-10" type="text">
+                        </div> --}}
+                        <div>
+                            {{ $this->Business }}
+                        </div>
+                    </div>
+
+                    <div>
+                        {{ $this->Documents }}
+                    </div>
+                
+                    <div class="flex flex-col border p-10 space-y-4">
+                        <label>Para comenzar, ¿Qué banco se prefiere que se te deposite?</label>
+                        <div class="flex space-x-4">
+                            <div class="w-96">
+                                {{ $this->Banck }}
+                            </div>
+                            <div class="w-96">
+                                {{ $this->Type_account }}
+                            </div>
+                        </div>
+                        {{-- <div class="flex space-x-3">
+                            <div class="flex">
+                                <input type="radio" name="abc"
+                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                    id="abc" checked>
+                                <label for="abc" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
+                            </div>
+                            <div class="flex">
+                                <input type="radio" name="abc"
+                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                    id="abc">
+                                <label for="abc" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
+                            </div>
+                        </div> --}}
+                        <div class="flex ">
+                            {{-- <div class="flex flex-col">
+                                <label class="w-56">Nombre de cuenta:*</label>
+                            </div> --}}
+                            <div class="w-full">
+                                {{ $this->Account_name }}
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            {{-- <div class="flex flex-col">
+                                <label class="w-56">Número de cuenta:*</label>
+                            </div> --}}
+                            <div class="w-full">
+                                {{ $this->Account_number }}
+                            </div>
+                        </div>
+                        <label>Se le estara haciendo su deposito cada 15 dias, cualquier cambio se puede contactar con
+                            nuestro equipo.</label>
+                    </div>
+                
+                    <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
+                        <button wire:click='stepThree()' class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
+                            Guardar y continuar
+                        </button>
+                    </div>
+                </div>
+
+                {{-- Step page 4 --}}
+                <div class="flex flex-col flex-1 p-20" x-cloak x-show="curren_page_step === 4">
                     <div class="flex flex-col">
                         <label class="font-medium text-4xl">Crea un Producto</label>
                         <label class="py-5">Añade algunas fotos y detalles sobre el artículo. Rellena lo que puedas por
@@ -513,7 +667,7 @@
                                     <label class="w-56">Pon tu usuario de instagram
                                         para que el proceso de verificación sea más rápido.</label>
                                 </div>
-                                <div class="w-full h-10">
+                                <div class="w-full h-auto">
                                     {{ $this->Social_networks }}
                                 </div>
                             </div>
@@ -617,164 +771,6 @@
                             </div>
                         </div> --}}
                     </div>
-                    <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
-                        <button wire:click='stepThree()' class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
-                            Guardar y continuar
-                        </button>
-                    </div>
-                </div>
-
-                {{-- Step page 4 --}}
-                <div class="flex flex-col flex-1 p-20 space-y-16" x-cloak x-show="curren_page_step === 4">
-                    <div class="flex flex-col justify-center items-center space-y-4">
-                        <label class="text-3xl font-medium">Como se te va a pagar</label>
-                        <label class="text-xl">Buhogt le da varias opciones como recibir sus pagos y a sus
-                            compradores</label>
-                        <div class="flex space-x-3">
-                            <img src="assets/logos_mastercard.png" alt="mc" class="w-14 h-10">
-                            <img src="assets/Vector.png" alt="visa" class="w-16 h-10">
-                        </div>
-                    </div>
-                    <div class="flex flex-col border p-10 space-y-4">
-                        <label>¿Qué tipo de vendedor eres?</label>
-                        <label>En buhogt usamos esto para poder verificar tu información. Esto no va afectar tu tienda
-                            en
-                            Buhogt solo queremos
-                            saber más de ti.
-                        </label>
-                        <div class="flex space-x-16">
-                            <div class="flex">
-                                <input wire:model.lazy='radio_individual_business' type="radio" name="abcd"
-                                    value="individual"
-                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    id="opcion1" checked>
-                                <label for="opcion1"
-                                    class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
-                            </div>
-
-                            <div class="flex">
-                                <input wire:model.lazy='radio_individual_business' type="radio" name="abcd"
-                                    value="business"
-                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    id="opcion2">
-                                <label for="opcion2"
-                                    class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
-                            </div>
-                        </div>
-                        <label>Si tienes alguna duda puedes contactarnos a buhogt equipo</label>
-                    </div>
-
-                    <div class="flex flex-col border p-10 space-y-4" x-cloak
-                        x-show="radio_individual_business === 'individual'">
-                        <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
-                        <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
-                        <label>Esta información no sera pública en Buhogt.</label>
-                        NOMBRE COMPLETO
-                        {{-- <div class="flex space-x-5 ">
-                            <label class="w-64">Primer Nombre *</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Apellidos:*</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Correo electronico:*</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Telefono: *</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Fecha de nacimiento: *</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Nit:</label>
-                            <input class="w-60 h-10" type="text">
-                        </div> --}}
-                        <div>
-                            {{ $this->Individual }}
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col border p-10 space-y-4" x-cloak
-                        x-show="radio_individual_business === 'business'">
-                        <label class="font-medium text-xl">Cuentanos un poco más de ti</label>
-                        <label>Esto es para propositos de identidad, estaremos verficando que todo sea seguro.</label>
-                        <label>Esta información no sera pública en Buhogt.</label>
-
-                        {{-- <div class="flex space-x-5 ">
-                            <label class="w-64">Nombre de la empresa:</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Representate legal:</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Correo electronico:*</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Telefono: *</label>
-                            <input class="w-60 h-10" type="text">
-                        </div>
-                        <div class="flex space-x-5 ">
-                            <label class="w-64">Nit:</label>
-                            <input class="w-60 h-10" type="text">
-                        </div> --}}
-                        <div>
-                            {{ $this->Business }}
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col border p-10 space-y-4">
-                        <label>Para comenzar, ¿Qué banco se prefiere que se te deposite?</label>
-                        <div class="flex space-x-4">
-                            <div class="w-96">
-                                {{ $this->Banck }}
-                            </div>
-                            <div class="w-96">
-                                {{ $this->Type_account }}
-                            </div>
-                        </div>
-                        {{-- <div class="flex space-x-3">
-                            <div class="flex">
-                                <input type="radio" name="abc"
-                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    id="abc" checked>
-                                <label for="abc"
-                                    class="text-sm text-gray-500 ms-2 dark:text-gray-400">Individual</label>
-                            </div>
-                            <div class="flex">
-                                <input type="radio" name="abc"
-                                    class="shrink-0 mt-0.5 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                                    id="abc">
-                                <label for="abc" class="text-sm text-gray-500 ms-2 dark:text-gray-400">Negocio</label>
-                            </div>
-                        </div> --}}
-                        <div class="flex ">
-                            {{-- <div class="flex flex-col">
-                                <label class="w-56">Nombre de cuenta:*</label>
-                            </div> --}}
-                            <div class="w-full">
-                                {{ $this->Account_name }}
-                            </div>
-                        </div>
-                        <div class="flex ">
-                            {{-- <div class="flex flex-col">
-                                <label class="w-56">Número de cuenta:*</label>
-                            </div> --}}
-                            <div class="w-full">
-                                {{ $this->Account_number }}
-                            </div>
-                        </div>
-                        <label>Se le estara haciendo su deposito cada 15 dias, cualquier cambio se puede contactar con
-                            nuestro equipo.</label>
-                    </div>
-
                     <div class="flex justify-center lg:justify-end w-full py-2 lg:pb-0">
                         <button wire:click='stepFour()' class="bg-[#272B60] lg:w-60 p-2 text-white lg:mr-20 lg:mb-10 ">
                             Guardar y continuar
