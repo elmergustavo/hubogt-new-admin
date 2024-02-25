@@ -283,12 +283,34 @@
             </svg>
         </a>
         @auth
-            <a href="{{ route('profile') }}"
-                class="md:flex hidden justify-center items-center gap-[2px] flex-col text-[15px]">
-                <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}"
-                    class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
-                <span>{{ Auth::user()->name }}</span>
-            </a>
+
+            <x-dropdown align="right">
+                <x-slot name="trigger">
+                    <div class="md:flex hidden cursor-pointer justify-center items-center gap-[2px] flex-col text-[15px]">
+                        <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}"
+                            class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
+                        <span>{{ Auth::user()->name }}</span>
+                    </div>
+                </x-slot>
+
+                <x-slot name="content">
+                    <x-dropdown-link :href="route('profile')" wire:navigate>
+                        {{ __('Perfil') }}
+                    </x-dropdown-link>
+                    <x-dropdown-link :href="route('profile')" wire:navigate>
+                        {{ __('Ver pedidos') }}
+                    </x-dropdown-link>
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
+                        <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                            {{ __('Cerrar sesión') }}
+                        </x-dropdown-link>
+                    </form>
+                </x-slot>
+            </x-dropdown>
+
+
+
 
             {{-- <form method="POST" action="{{ route('logout') }}" x-data>
                 @csrf
