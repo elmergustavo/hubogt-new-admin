@@ -84,7 +84,7 @@ class NewOnboarding extends Component implements HasForms
                                         ->helperText(__('Ingrese aquí el correo electrónico a donde notificaremos asuntos sobre ventas')),
                                     TextInput::make('name_shop')
                                         ->label('Nombre de la tienda')
-                                        ->prefixIcon('heroicon-m-building-office')
+                                        ->prefixIcon('bxs-store')
                                         ->placeholder(__('Escribe el nombre de tu tienda'))
                                         ->helperText(__('¡No te preocupes! Puedes usar un nombre temporal ahora y cambiarlo más adelante.'))
                                         ->required(),
@@ -267,7 +267,7 @@ class NewOnboarding extends Component implements HasForms
                                                 $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
                                             JS)
                                         )
-                                        ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
+                                        // ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
                                         ->afterStateUpdated(
                                             function (Get $get, Set $set)
                                             {
@@ -353,15 +353,18 @@ class NewOnboarding extends Component implements HasForms
                                 ])
                         ]),
                     Wizard\Step::make('Añade inventario a tu tienda')
+                        ->icon('mdi-storefront-plus')
                         ->schema([
                             // ...
                         ]),
                     Wizard\Step::make('Configuración de pagos')
+                        ->icon('fluentui-payment-16')
                         ->schema([
                             // ...
                         ]),
                 ])
-                    ->skippable()->nextAction(fn (Action $action) => $action->extraAttributes([
+                    // ->skippable()
+                    ->nextAction(fn (Action $action) => $action->extraAttributes([
                         'class' => 'bg-primary mt-4',
                     ])->label('Guardar y continuar'))
 
