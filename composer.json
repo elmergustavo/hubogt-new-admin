@@ -13,6 +13,7 @@
         "blade-ui-kit/blade-heroicons": "^2.2",
         "blade-ui-kit/blade-icons": "^1.5",
         "codeat3/blade-fluentui-system-icons": "^1.32",
+        "codeat3/blade-google-material-design-icons": "^1.18",
         "davidhsianturi/blade-bootstrap-icons": "^1.4",
         "filament/filament": "^3.0",
         "filament/forms": "^3.2",
@@ -36,6 +37,7 @@
         "owenvoke/blade-entypo": "^2.1",
         "owenvoke/blade-fontawesome": "^2.5",
         "parallax/filament-comments": "^1.0",
+        "postare/blade-mdi": "^1.1",
         "spatie/laravel-settings": "^3.2",
         "squirephp/countries-en": "^3.3",
         "squirephp/currencies-en": "^3.3"

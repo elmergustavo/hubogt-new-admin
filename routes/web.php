@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoutingController;
 use App\Livewire\FormRequests;
 use App\Livewire\IndexHome;
+use App\Livewire\NewOnboarding;
 use App\Livewire\Profile;
 use Laravel\Socialite\Facades\Socialite;
 use App\Livewire\SellerRegister;
@@ -58,4 +59,5 @@ Route::middleware(['auth',
 ])->group(function ()
 {
     Route::get('/onboarding', SellerRegister::class)->name('seller_register');
+    Route::get('/new-onboarding', NewOnboarding::class)->name('new-onboarding');
 });

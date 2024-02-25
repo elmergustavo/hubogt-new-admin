@@ -21,9 +21,9 @@ export default {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+            // fontFamily: {
+            //     sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            // },
 
             colors: {
                 danger: { DEFAULT: '#E74C3C', 50: '#FBE2DF', 100: '#F9D1CD', 200: '#F4B0A9', 300: '#F08F85', 400: '#EB6D60', 500: '#E74C3C', 600: '#D12B1A', 700: '#9F2114', 800: '#6D160D', 900: '#3B0C07' },
@@ -100,6 +100,14 @@ export default {
                     '950': '#421313'
                 },
             },
+
+            maxWidth: {
+                "10xl": "1440px",
+              },
+              fontFamily: {
+                inter: ["Nunito", "sans-serif"],
+                spaceGrotesk: ["Space Grotesk", "sans-serif"],
+              },
         },
     },
 
