@@ -61,6 +61,10 @@ class NewOnboarding extends Component implements HasForms
                                     CreateAccount::make('sd')
                                         ->label('')
                                         ->view('forms.components.create-account')
+                                        ->viewData([
+                                            'title' => 'Datos de contacto',
+                                            'sub_title' => 'Estos datos serán utilizados para el envío de notificaciones de ventas, administración de las órdenes y notificaciones en general.',
+                                        ])
                                         ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                                     TextInput::make('person')
                                         ->label('Nombre completo')
@@ -125,6 +129,14 @@ class NewOnboarding extends Component implements HasForms
 
                             ])
                                 ->schema([
+                                    CreateAccount::make('sd')
+                                        ->label('')
+                                        ->view('forms.components.create-account')
+                                        ->viewData([
+                                            'title' => 'Información del negocio',
+                                            'sub_title' => '',
+                                        ])
+                                        ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                                     Select::make('status')
                                         ->label('Régimen Tributario')
                                         ->native(false)
@@ -254,6 +266,14 @@ class NewOnboarding extends Component implements HasForms
 
                             ])
                                 ->schema([
+                                    CreateAccount::make('sd')
+                                        ->label('')
+                                        ->view('forms.components.create-account')
+                                        ->viewData([
+                                            'title' => 'Representante Legal',
+                                            'sub_title' => '',
+                                        ])
+                                        ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                                     TextInput::make('dpi')
                                         ->label(__('Número de DPI o pasaporte'))
                                         ->required()
@@ -355,12 +375,26 @@ class NewOnboarding extends Component implements HasForms
                     Wizard\Step::make('Añade inventario a tu tienda')
                         ->icon('mdi-storefront-plus')
                         ->schema([
-                            // ...
+                            CreateAccount::make('sd')
+                                ->label('')
+                                ->view('forms.components.create-account')
+                                ->viewData([
+                                    'title' => 'Crear un producto',
+                                    'sub_title' => '',
+                                ])
+                                ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                         ]),
                     Wizard\Step::make('Configuración de pagos')
                         ->icon('fluentui-payment-16')
                         ->schema([
-                            // ...
+                            CreateAccount::make('sd')
+                                ->label('')
+                                ->view('forms.components.create-account')
+                                ->viewData([
+                                    'title' => 'Configuración de pagos',
+                                    'sub_title' => '',
+                                ])
+                                ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                         ]),
                 ])
                     // ->skippable()
