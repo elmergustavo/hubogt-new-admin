@@ -5,24 +5,36 @@
     <main class="xl:px-0 ">
 
         <!-- start hero -->
-        <header class=" 2xl:max-w-7xl max-w-full mx-auto mb-14 w-full md:h-[350px] h-[200px]">
-            <div class="w-full h-full">
-                <img src=" https://placehold.co/600x310" class="w-full h-full object-cover" alt="image" />
+        <header class=" 2xl:max-w-7xl max-w-full mx-auto md:mb-14 mb-0 w-full md:h-[300px] sm:h-[200px] h-[120px]">
+            <div class="w-full h-full relative">
+                <button
+                    class="lg:hidden block rounded-full p-2 px-3 flex items-center justify-center gap-2 absolute top-4 right-4 bg-white shadow-md shadow-black/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+                    </svg>
+                    <span class="text-sm">3K</span>
+                </button>
+                <img src="https://s3-alpha-sig.figma.com/img/264d/c639/2247ebd28799f3a7e249d055b12a862f?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EkkDvqe915vnHWQDi8~SA5xK70Qpl6VaT2SQ9BzT3633X5kvp~dGBx3UDyF7MzyGSGzvoFtugU55ihEJmD3XkgHuD41JkVXRIuOAv0~QXvSsxNKngFt8ir-2Kig-7YWmBUmV~newV9Lp5Y9m66RNOwPH0qGmvrfgWrDuKw8bIg2eP1LJum2GPQLHZfLi6gMgtKusTQNrY7z9X5WLPRi6Dsl8oLJlZmEA8qPVotiJtCgfi9KZFpKte-o-rp2vIC7TgSN-Vr~oLdKXS2OQ9wk83n4maS9PNwNTbdAyFHiKQSbr6Xr-TP8gjPudAxzhyN8xWcBCl-0-eIdByepltDl56A__"
+                    class="w-full h-full object-cover" alt="image" />
             </div>
         </header>
         <!-- end hero -->
 
         <!-- start sección sobre información de la tienda -->
-        <section class=" max-w-7xl mx-auto px-4 ">
-
-            <div class="lg:grid grid-cols-[1fr,1fr,auto] flex flex-wrap lg:gap-12 gap-5 place-items-start">
+        <section class="max-w-7xl mx-auto px-4 relative group">
+            <div data-hide-section
+                class="lg:grid grid-cols-[1fr,1fr,auto] flex flex-wrap lg:gap-12 gap-5 place-items-start transition-all lg:h-fit h-[320px] overflow-hidden">
 
                 <div
-                    class="lg:order-1 sm:order-1 order-1 flex md:flex-nowrap flex-wrap md:justify-start justify-center items-center gap-3">
-                    <img src=" https://placehold.co/300x300" class="w-[130px] rounded-md h-[130px] object-cover"
+                    class="lg:order-1 sm:order-1 order-1 flex md:flex-nowrap flex-wrap md:justify-start justify-center items-center gap-5">
+
+                    <img src="/images/tienda-1.png"
+                        class="md:w-[130px] md:h-[130px] w-[90px] h-[90px] rounded-md object-cover md:static absolute top-0 left-4   md:mt-0 -mt-[45px] border border-black"
                         alt="image" />
-                    <div class="flex flex-col gap-1">
-                        <h2 class="text-3xl">Levis</h2>
+
+                    <div class="flex flex-col gap-1 md:mt-0 mt-16">
+                        <h2 class="text-3xl ">Levis</h2>
                         <span>Archivos SVG para cortar imprimir o Sublimar</span>
                         <span class="text-gray-500">America del Norte</span>
                         <div class="flex md:flex-row flex-col justify-start gap-3 md:items-center items-start text-sm">
@@ -33,34 +45,36 @@
                                 </svg>
                                 Vendedor estrella
                             </span>
-                            <span>7,654 ventas</span>
-                            <div class="flex items-center justify-start gap-2">
-                                <div class="flex items-center">
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
+                            <div class="flex gap-3 items-center">
+                                <span class="">7,654 ventas</span>
+                                <div class="flex items-center justify-start gap-2">
+                                    <div class="flex items-center">
+                                        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                            <path
+                                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
                             <!-- end stars -->
@@ -101,10 +115,11 @@
                     </div>
                 </div>
 
-                <div class="lg:order-3 sm:order-2 order-3 flex justify-center items-start flex-1">
-                    <div class="flex flex-col gap-2 items-center">
-                        <img src=" https://placehold.co/300x300" class="w-[90px] rounded-full h-[90px] object-cover"
-                            alt="image" />
+                <div class="lg:order-3 sm:order-2 order-3 justify-center items-start flex-1 md:flex hidden">
+                    <div class="flex flex-col gap-2 items-center md:mt-0 sm:mt-16 mt-0">
+                        <img loading="lazy"
+                            src="https://s3-alpha-sig.figma.com/img/0390/4880/45ad9f1a3671d46b0751f4d25d66b889?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HpGY4iXQHKTU2-l7q~CK29ZQp9K6vpYhZaDT6A~Z3h6PlkArmD4Gno~VOeK9jAUso1FPyeGoqX7~iLfIDmUDlBh~TXaKqTsEsjkljjK9G1MZzkpkjhCE17XjMp8EiNbftdazbvL6WPT3dpXCwYLy5m0gO9rHMHruPeD2~PViri0LgbGbpPnr5BvK2SYIQQwpBRLPEbudKFOrU6dKfGeiJivmnpPnYfYI~FL0VRXvvG00GNsGLdNJwsj1igAheQJguPjyyiF8G2qNf2VHcurQM~wfz~umTjyjyjAi7nNCwLwQFpwa7B7boIST9cFPhB7ILwrv5-YNg8iV~aTwizMmaw__"
+                            class="w-[90px] rounded-full h-[90px] object-cover" alt="image" />
                         <div class="flex flex-col lg:text-base md:text-sm text-base gap-2 justify-center items-center">
                             <span>Tracey</span>
                             <span class="flex items-center justify-center lg:gap-2 gap-1">
@@ -125,18 +140,24 @@
             </div>
 
             <button
-                class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full flex justify-center gap-3 items-center hover:bg-gray-100">
+                class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full justify-center gap-3 items-center hover:bg-gray-100 lg:flex hidden ">
                 Seguir esta tienda
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
                     <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                         d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                 </svg>
             </button>
+
+            <input type="checkbox" class="hidden" id="read-more">
+            <label data-read-more for="read-more"
+                class="md:hidden block text-blue-500 active:text-blue-600 font-bold px-2 pt-3 border-t border-gray-300 w-full bg-white text-start absolute bottom-0 left-0 text-sm">
+                Leer más...
+            </label>
         </section>
         <!-- end sección sobre información de la tienda -->
 
         <!-- start sección productos -->
-        <section class="max-w-7xl mx-auto px-4 grid lg:grid-cols-[200px,1fr] grid-cols-1 gap-10 mt-16">
+        <section class="max-w-7xl mx-auto px-4 lg:grid-cols-[200px,1fr] grid-cols-1 gap-10 mt-16  md:grid hidden">
             <aside class="">
                 <div class="lg:block hidden sticky top-5 left-0">
                     <h3 class="text-orange-500 underline text-xl block mb-3">Jeans</h3>
@@ -150,113 +171,278 @@
                     </div>
                 </div>
 
+                <!-- start jeans mobile -->
+                <div class="lg:hidden block ">
+                    <button id="btn-drawer-categories-mobile"
+                        class="border border-black p-3 w-full mb-10 flex justify-center gap-2 items-center active:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16">
+                            <path fill="#000"
+                                d="M3.5 2A1.5 1.5 0 0 0 2 3.5v2A1.5 1.5 0 0 0 3.5 7h2A1.5 1.5 0 0 0 7 5.5v-2A1.5 1.5 0 0 0 5.5 2zm0 7A1.5 1.5 0 0 0 2 10.5v2A1.5 1.5 0 0 0 3.5 14h2A1.5 1.5 0 0 0 7 12.5v-2A1.5 1.5 0 0 0 5.5 9zM9 3.5A1.5 1.5 0 0 1 10.5 2h2A1.5 1.5 0 0 1 14 3.5v2A1.5 1.5 0 0 1 12.5 7h-2A1.5 1.5 0 0 1 9 5.5zM10.5 9A1.5 1.5 0 0 0 9 10.5v2a1.5 1.5 0 0 0 1.5 1.5h2a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 12.5 9z" />
+                        </svg>
+                        <span class="underline text-orange-500 font-bold text-lg">Jeans</span>
+                    </button>
 
-                <div id="accordion-collapse-tienda" data-accordion="collapse" class="w-full lg:hidden block">
-                    <h2 id="accordion-collapse-heading-tienda">
-                        <button type="button"
-                            class="flex items-center block border border-black justify-between w-full p-2 font-medium  gap-3 !bg-white"
-                            data-accordion-target="#accordion-collapse-body-tienda" aria-expanded="false"
-                            aria-controls="accordion-collapse-body-tienda">
-                            <h3 class="text-orange-500 underline text-xl">Jeans</h3>
-                            <svg data-accordion-icon class="w-3 h-3 rotate-360 shrink-0" aria-hidden="false"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5 5 1 1 5" />
+                    <div id="drawer-categories-mobile"
+                        class="sm:!w-[50%] !w-screen transition-all translate-y-full h-[100dvh] fixed top-0 left-0 bg-white z-20 overflow-x-scroll shadow-xl shadow-black/50">
+                        <header
+                            class="min-h-[70px] border-b border-gray-400 flex justify-between items-center px-4 py-2 sticky top-0 bg-white mb-5 shadow-lg shadow-black/10">
+                            <span class="font-semibold text-lg underline text-orange-500">Jeans</span>
+                            <button id="close-drawer-categories-mobile" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 active:text-red-500 text-black"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"
+                                        d="m9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0" />
+                                </svg>
+                            </button>
+                        </header>
+
+                        <div class="flex flex-col gap-2 p-4">
+                            <a href="" class="active:bg-gray-200 bg-gray-100 p-2 rounded font-semibold">Slim
+                                chicos</a>
+                            <hr class="border border-gray-300 my-1" />
+                            <a href=""
+                                class="active:bg-gray-200 bg-gray-100 p-2 rounded font-semibold">Vaqueros</a>
+                            <hr class="border border-gray-300 my-1" />
+                            <a href="" class="active:bg-gray-200 bg-gray-100 p-2 rounded font-semibold">Vintage
+                                Jeans</a>
+                            <hr class="border border-gray-300 my-1" />
+                            <a href=""
+                                class="active:bg-gray-200 bg-gray-100 p-2 rounded font-semibold">Encampanados</a>
+                            <hr class="border border-gray-300 my-1" />
+                            <a href="" class="active:bg-gray-200 bg-gray-100 p-2 rounded font-semibold">Jeans
+                                deportivos</a>
+                            <hr class="border border-gray-300 my-1" />
+                            <a href=""
+                                class="active:bg-gray-200 bg-gray-100 p-2 rounded font-semibold">Accesorios</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end jeans mobile -->
+
+            </aside>
+
+            <!-- start productos -->
+            <div class="relative">
+                <div class="lg:grid flex md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] grid-cols-2 place-items-center sm:gap-5 gap-4 gap-y-10  md:overflow-x-auto overflow-x-scroll snap-mandatory snap-x justify-start"
+                    data-carousel-parent>
+                    <!-- start item -->
+
+                    <!-- end item -->
+                </div>
+                <!-- start botones Next y Previous -->
+                <button data-prev-btn
+                    class="absolute hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                </button>
+                <button data-next-btn
+                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
+                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+                <!-- end botones Next y Previous -->
+
+                <!-- start pagination -->
+                <div class="w-fit mt-16 flex flex-col flex-wrap sm:w-fit w-full">
+                    <span class="md:text-sm text-base text-center md:text-start mb-8 block">Te queda mucho por
+                        descubrir</span>
+
+                    <div class="flex md:justify-between justify-center items-center gap-5">
+
+                        <button data-btn-prev-pagination class="opacity-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 cursor-pointer" viewBox="0 0 24 24">
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                             </svg>
                         </button>
-                    </h2>
-                    <div id="accordion-collapse-body-tienda" class="hidden p-3"
-                        aria-labelledby="accordion-collapse-heading-tienda">
-                        <div class="flex flex-col gap-3">
-                            <a href=""
-                                class="bg-gray-200 active:border-black font-semibold border border-transparent p-2">Slim
-                                chicos</a>
-                            <a href=""
-                                class="bg-gray-200 active:border-black font-semibold border border-transparent p-2">Vaqueros</a>
-                            <a href=""
-                                class="bg-gray-200 active:border-black font-semibold border border-transparent p-2">Vintage
-                                Jeans</a>
-                            <a href=""
-                                class="bg-gray-200 active:border-black font-semibold border border-transparent p-2">Encampanados</a>
-                            <a href=""
-                                class="bg-gray-200 active:border-black font-semibold border border-transparent p-2">Jeans
-                                deportivos</a>
-                            <a href=""
-                                class="bg-gray-200 active:border-black font-semibold border border-transparent p-2">Accesorios</a>
+
+                        <div data-pagination
+                            class="flex md:gap-5 gap-2 md:overflow-x-auto overflow-x-scroll md:w-auto w-[170px] snap-mandatory snap-x hidden-scroll">
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-yellow-500 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="1">1</button>
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="2">2</button>
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="3">3</button>
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="4">4</button>
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="5">5</button>
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="6">6</button>
+                            <button
+                                class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                data-page="7">7</button>
+                        </div>
+
+                        <button data-btn-next-pagination>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  cursor-pointer" viewBox="0 0 24 24">
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <!-- end pagination -->
+            </div>
+            <!-- end productos -->
+        </section>
+        <!-- end sección sección productos -->
+
+        <section class="mt-16 md:hidden block">
+            <header class="flex shadow-lg shadow-black/10" id="tabs-header">
+                <button id="items" class="flex-1 active:bg-gray-200 p-2 border-b-2 border-black">Items</button>
+                <button id="about" class="flex-1 active:bg-gray-200 p-2">About</button>
+            </header>
+
+            <div id="items-tab" class="tab-body max-w-7xl mx-auto p-4 pt-8">
+
+                <header class="mb-5 flex flex-col gap-3 justify-start">
+                    <div
+                        class="w-full border border-black rounded-full relative overflow-hidden has-[:focus]:outline outline-black outline-1 outline-offset-2">
+                        <input type="text" placeholder="Busca todos los 177 productos"
+                            class="bg-gray-200 text-black border-none outline-none  p-2 rounded-full w-full px-3 text-base pr-9">
+
+                        <div class="absolute bg-gray-200 top-0 right-0 w-8 h-full grid items-center rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5"
+                                    d="m21 21l-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-1">
+                        <select class="flex-1 p-2 px-3 rounded-full border border-black bg-white ">
+                            <option value="all" class="text-base ">All (177)</option>
+                            <option value="op-2" class="text-base">Option 2</option>
+                            <option value="op-3" class="text-base">Option 3</option>
+                        </select>
+
+                        <button class="p-2 px-3 rounded  active:bg-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M11 7L8 4m0 0L5 7m3-3v16m6-3l3 3m0 0l3-3m-3 3V4" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </header>
+
+                <div class="relative">
+                    <div class="flex sm:gap-5 gap-4 gap-y-10 overflow-x-scroll snap-mandatory snap-x justify-start "
+                        data-carousel-parent>
+                        <!-- start item -->
+
+                        <!-- end item -->
+                    </div>
+                    <!-- start botones Next y Previous -->
+                    <button data-prev-btn
+                        class="absolute hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
+                            <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                        </svg>
+                    </button>
+                    <button data-next-btn
+                        class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
+                            <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                    <!-- end botones Next y Previous -->
+
+                    <!-- start pagination -->
+                    <div class="w-fit mt-16 flex flex-col flex-wrap sm:w-fit w-full">
+                        <span class="md:text-sm text-base text-center md:text-start mb-8 block">Te queda mucho por
+                            descubrir</span>
+
+                        <div class="flex md:justify-between justify-center items-center gap-5">
+
+                            <button data-btn-prev-pagination class="opacity-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 cursor-pointer"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                                </svg>
+                            </button>
+
+                            <div data-pagination
+                                class="flex md:gap-5 gap-2 md:overflow-x-auto overflow-x-scroll md:w-auto w-[170px] snap-mandatory snap-x hidden-scroll">
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-yellow-500 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="1">1</button>
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="2">2</button>
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="3">3</button>
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="4">4</button>
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="5">5</button>
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="6">6</button>
+                                <button
+                                    class="snap-start flex-none w-12 h-12  bg-gray-300 hover:border-gray-500 border border-transparent rounded-full grid place-items-center"
+                                    data-page="7">7</button>
+                            </div>
+
+                            <button data-btn-next-pagination>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  cursor-pointer"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- end pagination -->
+                </div>
+            </div>
+
+            <div id="about-tab" class="tab-body hidden max-w-7xl mx-auto p-4 pt-8">
+
+                <div class="   justify-center items-start  flex">
+                    <div class="flex flex-col gap-2 items-center md:mt-0 sm:mt-16 mt-0">
+                        <img loading="lazy"
+                            src="https://s3-alpha-sig.figma.com/img/0390/4880/45ad9f1a3671d46b0751f4d25d66b889?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=HpGY4iXQHKTU2-l7q~CK29ZQp9K6vpYhZaDT6A~Z3h6PlkArmD4Gno~VOeK9jAUso1FPyeGoqX7~iLfIDmUDlBh~TXaKqTsEsjkljjK9G1MZzkpkjhCE17XjMp8EiNbftdazbvL6WPT3dpXCwYLy5m0gO9rHMHruPeD2~PViri0LgbGbpPnr5BvK2SYIQQwpBRLPEbudKFOrU6dKfGeiJivmnpPnYfYI~FL0VRXvvG00GNsGLdNJwsj1igAheQJguPjyyiF8G2qNf2VHcurQM~wfz~umTjyjyjAi7nNCwLwQFpwa7B7boIST9cFPhB7ILwrv5-YNg8iV~aTwizMmaw__"
+                            class="w-[90px] rounded-full h-[90px] object-cover" alt="image" />
+                        <div class="flex flex-col lg:text-base md:text-sm text-base gap-2 justify-center items-center">
+                            <span>Tracey</span>
+                            <span class="flex items-center justify-center lg:gap-2 gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
+                                    <g fill="#000">
+                                        <path
+                                            d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793a.72.72 0 0 1 .076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3z" />
+                                        <path
+                                            d="M15 6.954L8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5z" />
+                                    </g>
+                                </svg>
+                                Contacto
+                            </span>
                         </div>
                     </div>
                 </div>
 
-            </aside>
-
-            <div class="grid  md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] grid-cols-2 place-items-center gap-5 gap-y-10"
-                x-data="{ items: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] }">
-                <!-- start item -->
-                <template x-for="item in items">
-                    <div class="carousel-item xl:w-[220px] sm:w-[208px] w-full h-auto ">
-                        <div class="relative h-[200px] aspect-square w-full">
-                            <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded"
-                                alt="image" />
-                            <button
-                                class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    viewBox="0 0 24 24">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="1.5"
-                                        d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                                </svg></button>
-                        </div>
-                        <div class="flex gap-4 flex-col pt-3">
-                            <h3 class="text-lg ">Item ${i + 1}</h3>
-                            <!-- start stars  -->
-                            <div class="flex md:items-center items-start flex-col md:flex-row justify-start gap-2">
-                                <span class="text-sm">4.8</span>
-                                <div class="flex md:items-center items-start">
-                                    <svg class="w-4 h-4 text-black md:ms-1 ms-0" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                        <path
-                                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <!-- end stars  -->
-                            <div class="flex xl:gap-8 md:gap-5 gap-3 md:items-center items-start md:flex-row flex-col">
-                                <b class="text-base">Q27.88</b>
-                                <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
-                            </div>
-                            <span class="text-sm">by MysticArtByJose</span>
-                            <button
-                                class="border border-black md:p-2 p-1 py-2 mt-2 hover:bg-gray-200 md:text-base text-sm">Añadir
-                                al
-                                carrito</button>
-                        </div>
-                    </div>
-                </template>
-                <!-- end item -->
             </div>
         </section>
-        <!-- end sección sección productos -->
-
 
         <section
             class="flex min-h-[120px] md:justify-end justify-center md:items-end items-center gap-8 mb-10 max-w-7xl mx-auto mb-10  pb-0 text-sm">
@@ -264,251 +450,693 @@
             <span class="text-blue-950 font-bold">Contenido de productos</span>
         </section>
 
-
     </main>
 
     <script>
-        const getTemplate = (type) => {
-            const product = `<div class="carousel-item snap-start	">
-  <div class="relative md:!w-[220px] md:!h-[250px] w-[130px] h-[180px]">
-    <img src=" http://placehold.co/500x510" class="w-full h-full object-cover rounded" alt="image" />
-    <button
-      class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
-        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="1.5"
-          d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-      </svg></button>
-  </div>
-  <div class="flex gap-4 flex-col pt-3">
-    <h3 class="text-lg  ">Item</h3>
-    <!-- start stars  -->
-    <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
-      <span class="text-sm">4.8</span>
-      <div class="flex items-center">
-        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor" viewBox="0 0 22 20">
-          <path
-            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor" viewBox="0 0 22 20">
-          <path
-            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor" viewBox="0 0 22 20">
-          <path
-            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor" viewBox="0 0 22 20">
-          <path
-            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-        <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-          <path
-            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-        </svg>
-      </div>
-    </div>
-    <!-- end stars  -->
-    <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
-      <b class="text-base">Q27.88</b>
-      <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
-    </div>
-    <span class="text-sm">by MysticArtByJose</span>
-    <button class="border border-black p-2 mt-2 hover:bg-gray-200 ">Añadir al
-      carrito</button>
-  </div>
-</div>`
+        const paginationInit = () => {
+            document.querySelectorAll('[data-pagination]').forEach($paginationContainer => {
 
-            const imageGrid = `<div class="carousel-item snap-start border border-transparent lg:w-[283px] w-[210px]">
-  <div class="relative lg:w-[283px] w-[210px]  grid gap-2 grid-cols-2 grid-rows-2">
-    <img src=" https://placehold.co/200x310" class="w-full h-full object-cover rounded" alt="image" />
-    <img src=" https://placehold.co/100x310" class="w-full row-span-2 h-full object-cover rounded"
-      alt="image" />
-    <img src=" https://placehold.co/200x310" class="w-full h-full object-cover rounded" alt="image" />
-  </div>
-  <div class="flex gap-3 py-3 items-center mt-10">
-    <img src=" https://placehold.co/200x310" class="w-[50px] h-[70px] object-cover rounded" alt="image" />
-    <p class="flex-1 text-sm ">
-      <span>Tienda </span> <br>
-      <span>Tecnología y Accesorios</span>
-    </p>
-  </div>
-</div>`
+                let page = 1
+                const btnPrev = $paginationContainer.parentElement.querySelector('[data-btn-prev-pagination]')
+                const btnNext = $paginationContainer.parentElement.querySelector('[data-btn-next-pagination]')
 
-            const store = `<div class="carousel-item snap-start	">
-  <div class="relative md:!w-[220px] md:!h-[250px] w-[130px] h-[180px]">
-    <img src=" http://placehold.co/500x510" class="w-full h-full object-cover rounded" alt="image" />
-  </div>
-  <div class="flex gap-4 flex-col pt-3">
-  <p>descripción</p>
-  <div class="flex items-center gap-2">
-    <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
-      Visitar tienda
-    </a>
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
-      <path fill="#000" fill-rule="evenodd"
-        d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
-        clip-rule="evenodd" />
-    </svg>
-  </div>
-  </div>
-</div>`
+                btnNext.addEventListener('click', () => {
+                    if (btnPrev.classList.contains('opacity-0')) btnPrev.classList.remove('opacity-0')
 
-            const temp = {
-                store,
-                product,
-                imageGrid
-            }
+                    const nextPage = $paginationContainer.querySelector(`[data-page="${page + 1}"]`)
 
-            return temp[type]
-        }
+                    if ($paginationContainer.querySelector(`[data-page="${page + 2}"]`) === null) {
+                        btnNext.classList.add('opacity-0')
+                    }
 
-        const generateCarousel = () => {
-            const total_items = 9
-            document.querySelectorAll('[data-carousel-parent]').forEach(carousel => {
+                    if (nextPage === null) {
+                        return
+                    }
 
-                let template = ''
-                Array(total_items).fill(1).forEach((_, i) => {
-                    template += getTemplate(carousel.dataset.typeTemplate)
+                    page++
+
+                    $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+                        e.classList.add('bg-gray-300')
+                        e.classList.remove('bg-yellow-500')
+                    })
+
+                    nextPage.classList.remove('bg-gray-300')
+                    nextPage.classList.add('bg-yellow-500')
+                    $paginationContainer.scroll({
+                        behavior: 'smooth',
+                        left: $paginationContainer.scrollLeft + $paginationContainer.children[0]
+                            .clientWidth
+                    })
                 })
 
-                carousel.innerHTML = template
+                btnPrev.addEventListener('click', () => {
 
+                    if (btnNext.classList.contains('opacity-0')) btnNext.classList.remove('opacity-0')
+
+                    const prevPage = $paginationContainer.querySelector(`[data-page="${page - 1}"]`)
+
+                    if ($paginationContainer.querySelector(`[data-page="${page - 2}"]`) === null) {
+                        btnPrev.classList.add('opacity-0')
+                    }
+
+                    if (prevPage === null) return
+                    page--
+
+                    $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+                        e.classList.add('bg-gray-300')
+                        e.classList.remove('bg-bg-yellow-500')
+                    })
+
+                    prevPage.classList.remove('bg-gray-300')
+                    prevPage.classList.add('bg-yellow-500')
+                    $paginationContainer.scroll({
+                        behavior: 'smooth',
+                        left: $paginationContainer.scrollLeft - $paginationContainer.children[0]
+                            .clientWidth
+                    })
+                })
+
+                $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+
+                    e.addEventListener('click', () => {
+                        page = +e.dataset.page
+
+                        $paginationContainer.querySelector(
+                                `[data-page="${+e.dataset.page - 1}"]`) === null ?
+                            btnPrev.classList.add('opacity-0') :
+                            btnPrev.classList.remove('opacity-0')
+
+                        $paginationContainer.querySelector(
+                                `[data-page="${+e.dataset.page + 1}"]`) === null ?
+                            btnNext.classList.add('opacity-0') :
+                            btnNext.classList.remove('opacity-0')
+
+
+                        $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+                            e.classList.add('bg-gray-300')
+                            e.classList.remove('bg-bg-yellow-500')
+                        })
+
+                        e.classList.remove('bg-gray-300')
+                        e.classList.add('bg-yellow-500')
+                    })
+                })
+
+
+            })
+        }
+        paginationInit()
+
+        const generateCarousel = () => {
+
+            document.querySelectorAll('[data-carousel-parent]').forEach(carousel => {
                 const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
                 const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
 
-                const item = carousel.querySelector('.carousel-item')
+                const carouselInit = () => {
+                    const breakPointsWidth =
+                        'max-[320px]:!w-[134px] max-[375px]:!w-[160px] max-[425px]:!w-[185px] max-[768px]:!w-[229px] lg:!w-[220px]'
 
-                // Función para avanzar al siguiente grupo de elementos
-                nextBtn.addEventListener('click', function() {
-                    carousel.scrollTo({
-                        left: carousel.scrollLeft + item.clientWidth,
-                        behavior: 'smooth'
+                    const data = [{
+                            title: 'New balance age',
+                            img: 'product-1.png',
+                            price: '17.17',
+                            discount: '15.17'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-2.png',
+                            price: '117.17',
+                            discount: '55.12'
+                        },
+                        {
+                            title: 'Buda Mandala Hoodie',
+                            img: 'product-3.png',
+                            price: '217.17',
+                            discount: '155.17'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-4.png',
+                            price: '205.17',
+                            discount: '22.17'
+                        },
+                        {
+                            title: 'Chaqueta line',
+                            img: 'product-5.png',
+                            price: '57.17',
+                            discount: '65.14'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-2.png',
+                            price: '97.17',
+                            discount: '15.17'
+                        },
+                        {
+                            title: 'Chaqueta line',
+                            img: 'product-4.png',
+                            price: '219.19',
+                            discount: '55.17'
+                        },
+                        {
+                            title: 'Buda Mandala Hoodie',
+                            img: 'product-3.png',
+                            price: '217.17',
+                            discount: '155.17'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-4.png',
+                            price: '205.17',
+                            discount: '22.17'
+                        },
+                        {
+                            title: 'Chaqueta line',
+                            img: 'product-5.png',
+                            price: '57.17',
+                            discount: '65.14'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-2.png',
+                            price: '97.17',
+                            discount: '15.17'
+                        },
+                        {
+                            title: 'Anillos veranos',
+                            img: 'product-1.png',
+                            price: '34.17',
+                            discount: '5.17'
+                        },
+                    ]
+
+                    let template = ''
+                    data.forEach(({
+                        discount,
+                        img,
+                        price,
+                        title
+                    }, i) => {
+                        template += `<div class="carousel-item snap-start	">
+          <div class="relative md:!h-[250px] h-[180px] ${breakPointsWidth}">
+            <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="${title}" />
+            <button
+              class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+              </svg></button>
+          </div>
+          <div class="flex gap-4 flex-col pt-3">
+            <h3 class="text-lg  ">${title}</h3>
+            <!-- start stars  -->
+            <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
+              <span class="text-sm">4.8</span>
+              <div class="flex items-center">
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+              </div>
+            </div>
+            <!-- end stars  -->
+            <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+              <b class="text-base">Q${price}</b>
+              <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+            </div>
+            <span class="text-sm">by MysticArtByJose</span>
+
+          </div>
+        </div>`
                     })
+                    carousel.innerHTML = template
 
-                });
+                    carousel.addEventListener('scrollend', e => {
 
-                // Función para retroceder al grupo anterior de elementos
-                prevBtn.addEventListener('click', function() {
-                    carousel.scrollTo({
-                        left: carousel.scrollLeft - item.clientWidth,
-                        behavior: 'smooth'
+                        prevBtn.classList[
+                            e.target.scrollLeft > 0 ? 'remove' : 'add'
+                        ]('hidden')
+
+                        nextBtn.classList[
+                            (e.target.scrollWidth - e.target.scrollLeft) <= e.target
+                            .clientWidth ? 'add' : 'remove'
+                        ]('hidden')
+
                     })
-                });
+                }
+                carouselInit()
 
-                carousel.addEventListener('scrollend', e => {
+                const carouselAction = () => {
 
-                    prevBtn.classList[
-                        e.target.scrollLeft > 0 ? 'remove' : 'add'
-                    ]('hidden')
+                    const item = carousel.querySelector('.carousel-item')
 
-                    nextBtn.classList[
-                        (e.target.scrollWidth - e.target.scrollLeft) <= e.target.clientWidth ?
-                        'add' : 'remove'
-                    ]('hidden')
+                    // Función para avanzar al siguiente grupo de elementos
+                    nextBtn.addEventListener('click', function() {
+                        carousel.scrollTo({
+                            left: carousel.scrollLeft + item.clientWidth,
+                            behavior: 'smooth'
+                        })
 
-                })
+                    });
 
+                    // Función para retroceder al grupo anterior de elementos
+                    prevBtn.addEventListener('click', function() {
+                        carousel.scrollTo({
+                            left: carousel.scrollLeft - item.clientWidth,
+                            behavior: 'smooth'
+                        })
+                    });
 
-            });
+                }
+                carouselAction()
+
+            })
         }
         generateCarousel()
 
         const generateCategoriesMovil = () => {
+            const $drawerCategories = document.querySelector('#drawer-categories-mobile')
 
-            const $category_container = document.querySelector('#accordion-collapse-body-1')
-
-            const categories = ['Moda Mujer', 'Moda Hombre', 'Hogar & Jardín', 'Salud & Belleza',
-                'Coleccionables y Arte', 'Bolsos', 'Joyería', 'Más'
-            ]
-
-            let template = ''
-
-            categories.forEach((category, index) => {
-                template += `
-          <div id="accordion-collapse-categoria-${index}" data-accordion="collapse" class="w-full">
-            <h2 id="accordion-collapse-categoria-${index}">
-              <button type="button"
-                class="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-b-0 border-gray-200 gap-3"
-                data-accordion-target="#accordion-categoria-${index}" aria-expanded="false"
-                aria-controls="accordion-categoria-${index}">
-                <span>${category}</span>
-                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 5 5 1 1 5" />
-                </svg>
-              </button>
-            </h2>
-            <div id="accordion-categoria-${index}" class="hidden p-3"
-              aria-labelledby="accordion-collapse-categoria-${index}">
-              Content
-            </div>
-          </div>
-        `
+            document.querySelector('#close-drawer-categories-mobile').addEventListener('click', () => {
+                $drawerCategories.classList.remove('translate-y-0')
+                $drawerCategories.classList.add('translate-y-full')
             })
 
-            $category_container.innerHTML = template
+            document.querySelector('#btn-drawer-categories-mobile').addEventListener('click', () => {
+                $drawerCategories.classList.add('translate-y-0')
+                $drawerCategories.classList.remove('translate-y-full')
+            })
         }
         generateCategoriesMovil()
 
+        const tabs = () => {
+            document.querySelectorAll('#tabs-header button').forEach(tabBtn => {
+                tabBtn.addEventListener('click', () => {
+                    document.querySelectorAll('#tabs-header button').forEach(btn => {
+                        btn.classList.remove('border-b-2')
+                    })
+                    tabBtn.classList.add('border-b-2', 'border-black')
 
-        const $formSearch = document.getElementById('form-search-navbar')
-        const $formSearchMovil = document.getElementById('form-search-navbar-movil')
+                    const tabId = '#' + tabBtn.id + '-tab'
 
-        $formSearch.addEventListener('submit', e => {
-            e.preventDefault()
-
-            const search = Object.fromEntries(new FormData(e.target)).search
-            document.getElementById('text-search').textContent = search
-
-            activeModal()
-        })
-
-        $formSearchMovil.addEventListener('submit', e => {
-            e.preventDefault()
-
-            const search = Object.fromEntries(new FormData(e.target)).search
-            document.getElementById('text-search-movil').textContent += `(${search})`
-            activeModal()
-        })
-
-        const activeModal = () => {
-            const $modalResults = document.getElementById('modal-results')
-
-            const instanceOptions = {
-                id: $modalResults.id,
-                override: true
-            };
-            const options = {
-                placement: 'bottom-right',
-                closable: false,
-                backdropClasses: 'bg-black/40 fixed inset-0 z-40',
-                onHide: () => {
-                    console.log('modal is hidden');
-                },
-                onShow: () => {
-                    console.log('m  odal is shown');
-                },
-                onToggle: () => {
-                    console.log('modal has been toggled');
-                },
-            };
-
-            const modal = new Modal($modalResults, options, instanceOptions);
-            modal.show();
-
-            document.querySelector('#btn-modal-results-close').addEventListener('click', () => {
-                modal.hide();
+                    tabBtn.parentElement.parentElement.querySelectorAll('.tab-body').forEach(tab => {
+                        tab.classList.add('hidden')
+                    })
+                    document.querySelector(tabId).classList.remove('hidden')
+                })
             })
         }
+        tabs()
+
+        const readMoreFn = () => {
+            const input = document.getElementById('read-more')
+            const label = document.querySelector('[data-read-more]')
+            const sectionToHide = document.querySelector('[data-hide-section]')
+
+
+            input.addEventListener('change', () => {
+                label.textContent = input.checked ? 'Leer menos' : 'Leer más...'
+
+                if (input.checked) {
+                    label.classList.remove('bottom-0')
+                    label.classList.add('-bottom-[50px]')
+                    sectionToHide.classList.remove('h-[320px]')
+                } else {
+                    label.classList.remove('-bottom-[50px]')
+                    label.classList.add('bottom-0')
+                    sectionToHide.classList.add('h-[320px]')
+                }
+
+            })
+        }
+        readMoreFn()
+    </script>
+    <script>
+        const paginationInit = () => {
+            document.querySelectorAll('[data-pagination]').forEach($paginationContainer => {
+
+                let page = 1
+                const btnPrev = $paginationContainer.parentElement.querySelector('[data-btn-prev-pagination]')
+                const btnNext = $paginationContainer.parentElement.querySelector('[data-btn-next-pagination]')
+
+                btnNext.addEventListener('click', () => {
+                    if (btnPrev.classList.contains('opacity-0')) btnPrev.classList.remove('opacity-0')
+
+                    const nextPage = $paginationContainer.querySelector(`[data-page="${page + 1}"]`)
+
+                    if ($paginationContainer.querySelector(`[data-page="${page + 2}"]`) === null) {
+                        btnNext.classList.add('opacity-0')
+                    }
+
+                    if (nextPage === null) {
+                        return
+                    }
+
+                    page++
+
+                    $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+                        e.classList.add('bg-gray-300')
+                        e.classList.remove('bg-yellow-500')
+                    })
+
+                    nextPage.classList.remove('bg-gray-300')
+                    nextPage.classList.add('bg-yellow-500')
+                    $paginationContainer.scroll({
+                        behavior: 'smooth',
+                        left: $paginationContainer.scrollLeft + $paginationContainer.children[0]
+                            .clientWidth
+                    })
+                })
+
+                btnPrev.addEventListener('click', () => {
+
+                    if (btnNext.classList.contains('opacity-0')) btnNext.classList.remove('opacity-0')
+
+                    const prevPage = $paginationContainer.querySelector(`[data-page="${page - 1}"]`)
+
+                    if ($paginationContainer.querySelector(`[data-page="${page - 2}"]`) === null) {
+                        btnPrev.classList.add('opacity-0')
+                    }
+
+                    if (prevPage === null) return
+                    page--
+
+                    $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+                        e.classList.add('bg-gray-300')
+                        e.classList.remove('bg-bg-yellow-500')
+                    })
+
+                    prevPage.classList.remove('bg-gray-300')
+                    prevPage.classList.add('bg-yellow-500')
+                    $paginationContainer.scroll({
+                        behavior: 'smooth',
+                        left: $paginationContainer.scrollLeft - $paginationContainer.children[0]
+                            .clientWidth
+                    })
+                })
+
+                $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+
+                    e.addEventListener('click', () => {
+                        page = +e.dataset.page
+
+                        $paginationContainer.querySelector(
+                                `[data-page="${+e.dataset.page - 1}"]`) === null ?
+                            btnPrev.classList.add('opacity-0') :
+                            btnPrev.classList.remove('opacity-0')
+
+                        $paginationContainer.querySelector(
+                                `[data-page="${+e.dataset.page + 1}"]`) === null ?
+                            btnNext.classList.add('opacity-0') :
+                            btnNext.classList.remove('opacity-0')
+
+
+                        $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
+                            e.classList.add('bg-gray-300')
+                            e.classList.remove('bg-bg-yellow-500')
+                        })
+
+                        e.classList.remove('bg-gray-300')
+                        e.classList.add('bg-yellow-500')
+                    })
+                })
+
+
+            })
+        }
+        paginationInit()
+
+        const generateCarousel = () => {
+
+            document.querySelectorAll('[data-carousel-parent]').forEach(carousel => {
+                const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
+                const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
+
+                const carouselInit = () => {
+                    const breakPointsWidth =
+                        'max-[320px]:!w-[134px] max-[375px]:!w-[160px] max-[425px]:!w-[185px] max-[768px]:!w-[229px] lg:!w-[220px]'
+
+                    const data = [{
+                            title: 'New balance age',
+                            img: 'product-1.png',
+                            price: '17.17',
+                            discount: '15.17'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-2.png',
+                            price: '117.17',
+                            discount: '55.12'
+                        },
+                        {
+                            title: 'Buda Mandala Hoodie',
+                            img: 'product-3.png',
+                            price: '217.17',
+                            discount: '155.17'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-4.png',
+                            price: '205.17',
+                            discount: '22.17'
+                        },
+                        {
+                            title: 'Chaqueta line',
+                            img: 'product-5.png',
+                            price: '57.17',
+                            discount: '65.14'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-2.png',
+                            price: '97.17',
+                            discount: '15.17'
+                        },
+                        {
+                            title: 'Chaqueta line',
+                            img: 'product-4.png',
+                            price: '219.19',
+                            discount: '55.17'
+                        },
+                        {
+                            title: 'Buda Mandala Hoodie',
+                            img: 'product-3.png',
+                            price: '217.17',
+                            discount: '155.17'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-4.png',
+                            price: '205.17',
+                            discount: '22.17'
+                        },
+                        {
+                            title: 'Chaqueta line',
+                            img: 'product-5.png',
+                            price: '57.17',
+                            discount: '65.14'
+                        },
+                        {
+                            title: 'Jeans Buda',
+                            img: 'product-2.png',
+                            price: '97.17',
+                            discount: '15.17'
+                        },
+                        {
+                            title: 'Anillos veranos',
+                            img: 'product-1.png',
+                            price: '34.17',
+                            discount: '5.17'
+                        },
+                    ]
+
+                    let template = ''
+                    data.forEach(({
+                        discount,
+                        img,
+                        price,
+                        title
+                    }, i) => {
+                        template += `<div class="carousel-item snap-start	">
+          <div class="relative md:!h-[250px] h-[180px] ${breakPointsWidth}">
+            <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="${title}" />
+            <button
+              class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+              </svg></button>
+          </div>
+          <div class="flex gap-4 flex-col pt-3">
+            <h3 class="text-lg  ">${title}</h3>
+            <!-- start stars  -->
+            <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
+              <span class="text-sm">4.8</span>
+              <div class="flex items-center">
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+              </div>
+            </div>
+            <!-- end stars  -->
+            <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+              <b class="text-base">Q${price}</b>
+              <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+            </div>
+            <span class="text-sm">by MysticArtByJose</span>
+
+          </div>
+        </div>`
+                    })
+                    carousel.innerHTML = template
+
+                    carousel.addEventListener('scrollend', e => {
+
+                        prevBtn.classList[
+                            e.target.scrollLeft > 0 ? 'remove' : 'add'
+                        ]('hidden')
+
+                        nextBtn.classList[
+                            (e.target.scrollWidth - e.target.scrollLeft) <= e.target
+                            .clientWidth ? 'add' : 'remove'
+                        ]('hidden')
+
+                    })
+                }
+                carouselInit()
+
+                const carouselAction = () => {
+
+                    const item = carousel.querySelector('.carousel-item')
+
+                    // Función para avanzar al siguiente grupo de elementos
+                    nextBtn.addEventListener('click', function() {
+                        carousel.scrollTo({
+                            left: carousel.scrollLeft + item.clientWidth,
+                            behavior: 'smooth'
+                        })
+
+                    });
+
+                    // Función para retroceder al grupo anterior de elementos
+                    prevBtn.addEventListener('click', function() {
+                        carousel.scrollTo({
+                            left: carousel.scrollLeft - item.clientWidth,
+                            behavior: 'smooth'
+                        })
+                    });
+
+                }
+                carouselAction()
+
+            })
+        }
+        generateCarousel()
+
+        const generateCategoriesMovil = () => {
+            const $drawerCategories = document.querySelector('#drawer-categories-mobile')
+
+            document.querySelector('#close-drawer-categories-mobile').addEventListener('click', () => {
+                $drawerCategories.classList.remove('translate-y-0')
+                $drawerCategories.classList.add('translate-y-full')
+            })
+
+            document.querySelector('#btn-drawer-categories-mobile').addEventListener('click', () => {
+                $drawerCategories.classList.add('translate-y-0')
+                $drawerCategories.classList.remove('translate-y-full')
+            })
+        }
+        generateCategoriesMovil()
+
+        const tabs = () => {
+            document.querySelectorAll('#tabs-header button').forEach(tabBtn => {
+                tabBtn.addEventListener('click', () => {
+                    document.querySelectorAll('#tabs-header button').forEach(btn => {
+                        btn.classList.remove('border-b-2')
+                    })
+                    tabBtn.classList.add('border-b-2', 'border-black')
+
+                    const tabId = '#' + tabBtn.id + '-tab'
+
+                    tabBtn.parentElement.parentElement.querySelectorAll('.tab-body').forEach(tab => {
+                        tab.classList.add('hidden')
+                    })
+                    document.querySelector(tabId).classList.remove('hidden')
+                })
+            })
+        }
+        tabs()
+
+        const readMoreFn = () => {
+            const input = document.getElementById('read-more')
+            const label = document.querySelector('[data-read-more]')
+            const sectionToHide = document.querySelector('[data-hide-section]')
+
+
+            input.addEventListener('change', () => {
+                label.textContent = input.checked ? 'Leer menos' : 'Leer más...'
+
+                if (input.checked) {
+                    label.classList.remove('bottom-0')
+                    label.classList.add('-bottom-[50px]')
+                    sectionToHide.classList.remove('h-[320px]')
+                } else {
+                    label.classList.remove('-bottom-[50px]')
+                    label.classList.add('bottom-0')
+                    sectionToHide.classList.add('h-[320px]')
+                }
+
+            })
+        }
+        readMoreFn()
     </script>
 
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @endsection
