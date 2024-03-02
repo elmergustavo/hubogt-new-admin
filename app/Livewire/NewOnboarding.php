@@ -539,7 +539,7 @@ class NewOnboarding extends Component implements HasForms
                                 ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                         ]),
                 ])
-                    ->skippable()
+                    // ->skippable()
                     ->nextAction(fn (Action $action) => $action->extraAttributes([
                         'class' => 'bg-primary mt-4',
                     ])->label('Guardar y continuar'))
