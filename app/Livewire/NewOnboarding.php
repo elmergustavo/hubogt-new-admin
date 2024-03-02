@@ -133,137 +133,144 @@ class NewOnboarding extends Component implements HasForms
                                 ->schema([
 
 
-                                    Section::make('')
-                                        // ->description('Prevent abuse by limiting the number of requests per period')
-                                        ->schema([
-                                            CreateAccount::make('sd')
-                                                ->label('')
-                                                ->view('forms.components.create-account')
-                                                ->viewData([
-                                                    'title' => 'Información del negocio',
-                                                    'sub_title' => '',
-                                                ])
-                                                ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
-                                            Select::make('regimen')
-                                                ->label('Régimen Tributario')
-                                                ->native(false)
-                                                ->options([
-                                                    'draft' => 'Empresa SA. - Régimen general del IVA',
-                                                    'reviewing' => 'Personal individual - Régimen general del IVA',
-                                                    'published' => 'Personal individual - Pequeño contribuyente',
-                                                ])
-                                                ->reactive() // Asegúrate de que el campo es reactivo para actualizar el UI basado en su valor
-                                                // ->afterStateUpdated(fn (Closure $set) => $set('regimen', $this->state['regimen']))
-                                                // ->default('monthly')
-                                                ->helperText('Seleccione si es SA. o empresa individual'),
-                                            TextInput::make('adreess')
 
-                                                ->label(__('Dirección comercial'))
-                                                // ->prefixIcon('heroicon-s-phone')
-                                                ->helperText(__('Teléfono con el que se comunican con tu empresa'))
-
-                                                ->helperText('Ingrese aquí la dirección comercial'),
-                                            // TextInput::make('nit')
-                                            //     ->label('NIT')
-                                            //     ->helperText('Ingrese aquí el NIT con el que realizará las facturas a sus clientes'),
-
-                                            TextInput::make('nit')
-                                                ->label(__('NIT'))
-                                                ->required()
-                                                ->live()
-                                                ->alphaNum()
-                                                ->numeric()
-                                                ->prefixIcon('heroicon-s-user')
-                                                ->helperText(__('Ingrese aquí el NIT con el que realizará las facturas a sus clientes'))
-                                                ->mask(
-                                                    RawJs::make(<<<'JS'
+                                    CreateAccount::make('sd')
+                                        ->label('')
+                                        ->view('forms.components.create-account')
+                                        ->viewData([
+                                            'title' => 'Información del negocio',
+                                            'sub_title' => '',
+                                        ])
+                                        ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
+                                    Select::make('regimen')
+                                        ->label('Régimen Tributario')
+                                        ->native(false)
+                                        ->options([
+                                            'draft' => 'Empresa SA. - Régimen general del IVA',
+                                            'reviewing' => 'Personal individual - Régimen general del IVA',
+                                            'published' => 'Personal individual - Pequeño contribuyente',
+                                        ])
+                                        ->reactive() // Asegúrate de que el campo es reactivo para actualizar el UI basado en su valor
+                                        // ->afterStateUpdated(fn (Closure $set) => $set('regimen', $this->state['regimen']))
+                                        // ->default('monthly')
+                                        ->helperText('Seleccione si es SA. o empresa individual'),
+                                    TextInput::make('dpis')
+                                        ->label(__('Número de DPI o pasaporte'))
+                                        ->required()
+                                        ->live()
+                                        ->alphaNum()
+                                        ->numeric()
+                                        ->prefixIcon('heroicon-o-finger-print')
+                                        ->helperText(__('El número de identificación debe de coindicir con el de la imagen cargada'))
+                                        ->mask(
+                                            RawJs::make(<<<'JS'
+                                                        $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
+                                                    JS)
+                                        ),
+                                    TextInput::make('nit')
+                                        ->label(__('NIT'))
+                                        ->required()
+                                        ->live()
+                                        ->alphaNum()
+                                        ->numeric()
+                                        ->prefixIcon('heroicon-s-user')
+                                        ->helperText(__('Ingrese aquí el NIT con el que realizará las facturas a sus clientes'))
+                                        ->mask(
+                                            RawJs::make(<<<'JS'
                                                 $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
                                             JS)
-                                                )
-                                                ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
-                                                ->afterStateUpdated(
-                                                    function (Get $get, Set $set)
+                                        )
+                                        ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
+                                        ->afterStateUpdated(
+                                            function (Get $get, Set $set)
+                                            {
+                                                if (config('app.env') == 'local')
+                                                {
+                                                    $client = new \GuzzleHttp\Client(array(
+                                                        'verify' => false
+                                                    ));
+                                                }
+                                                else
+                                                {
+                                                    $client = new \GuzzleHttp\Client;
+                                                }
+                                                try
+                                                {
+
+                                                    $response = Http::withHeaders([
+                                                        'Accept'          => 'application/json',
+                                                        'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
+                                                    ])->timeout(10)->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find-exact/' . "NIT/{$get('nit')}");
+                                                    if ($response->successful())
                                                     {
-                                                        if (config('app.env') == 'local')
+                                                        if (isset($response['tax_name']))
                                                         {
-                                                            $client = new \GuzzleHttp\Client(array(
-                                                                'verify' => false
-                                                            ));
+                                                            $normalized_tax_name = str_replace(',', ' ', $response['tax_name']);
+                                                            $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
+                                                            $set('legal_reason', $cleaned_tax_name);
                                                         }
                                                         else
-                                                        {
-                                                            $client = new \GuzzleHttp\Client;
-                                                        }
-                                                        try
-                                                        {
-
-                                                            $response = Http::withHeaders([
-                                                                'Accept'          => 'application/json',
-                                                                'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
-                                                            ])->timeout(10)->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find-exact/' . "NIT/{$get('nit')}");
-                                                            if ($response->successful())
-                                                            {
-                                                                if (isset($response['tax_name']))
-                                                                {
-                                                                    $normalized_tax_name = str_replace(',', ' ', $response['tax_name']);
-                                                                    $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
-                                                                    $set('legal_reason', $cleaned_tax_name);
-                                                                }
-                                                                else
-                                                                {
-                                                                    $set('legal_reason', '');
-                                                                }
-                                                            }
-                                                            else
-                                                            {
-                                                                $set('legal_reason', '');
-                                                            }
-                                                        }
-                                                        catch (\GuzzleHttp\Exception\RequestException $e)
                                                         {
                                                             $set('legal_reason', '');
                                                         }
                                                     }
-                                                ),
-                                            TextInput::make('legal_reason')
-                                                ->label(__('Nombre de la persona individual'))
-                                                ->prefixIcon('heroicon-m-building-office')
-                                                ->placeholder(__('Ingrese aquí el nombre que representará a su negocio en Mombii'))
-                                                ->helperText(__('Razón social de tu negocio. Si el NIT no autocompleta la razón social de tu negocio, puedes ingresarla manualmente')),
+                                                    else
+                                                    {
+                                                        $set('legal_reason', '');
+                                                    }
+                                                }
+                                                catch (\GuzzleHttp\Exception\RequestException $e)
+                                                {
+                                                    $set('legal_reason', '');
+                                                }
+                                            }
+                                        ),
+                                    TextInput::make('legal_reason')
+                                        ->label(__('Nombre de la persona individual'))
+                                        ->prefixIcon('heroicon-m-building-office')
+                                        ->placeholder(__('Ingrese aquí el nombre que representará a su negocio en Mombii'))
+                                        ->helperText(__('Razón social de tu negocio. Si el NIT no autocompleta la razón social de tu negocio, puedes ingresarla manualmente')),
 
 
-                                            // TextInput::make('person')
-                                            //     ->label('Razón social o nombre de la persona individual')
-                                            // ->helperText('Ingrese aquí el nombre que representará a su negocio en Mombii'),
+                                    // TextInput::make('person')
+                                    //     ->label('Razón social o nombre de la persona individual')
+                                    // ->helperText('Ingrese aquí el nombre que representará a su negocio en Mombii'),
+                                    TextInput::make('adreess')
+
+                                        ->label(__('Dirección comercial'))
+                                        // ->prefixIcon('heroicon-s-phone')
+                                        ->helperText(__('Teléfono con el que se comunican con tu empresa'))
+
+                                        ->helperText('Ingrese aquí la dirección comercial'),
 
 
-                                            TextInput::make('phone')
-                                                ->tel()
-                                                ->minLength(8)
-                                                ->label(__('Teléfono'))
-                                                ->prefix('+502')
-                                                ->prefixIcon('heroicon-s-phone')
-                                                ->helperText(__('Teléfono con el que se comunican con tu empresa'))
-                                                ->mask('9999-9999')
-                                                ->helperText('Ingrese aquí el número de telefono del tienda'),
+                                    TextInput::make('phone')
+                                        ->tel()
+                                        ->minLength(8)
+                                        ->label(__('Teléfono'))
+                                        ->prefix('+502')
+                                        ->prefixIcon('heroicon-s-phone')
+                                        ->helperText(__('Teléfono con el que se comunican con tu empresa'))
+                                        ->mask('9999-9999')
+                                        ->helperText('Ingrese aquí el número de telefono del tienda'),
 
-                                            TextInput::make('email')
-                                                ->email()
-                                                ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
-                                                ->label(__('Correo Electrónico'))
-                                                ->prefixIcon('heroicon-s-at-symbol')
-                                                ->helperText(__('Ingrese aquí el correo de la tienda')),
+                                    TextInput::make('email')
+                                        ->email()
+                                        ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
+                                        ->label(__('Correo Electrónico'))
+                                        ->prefixIcon('heroicon-s-at-symbol')
+                                        ->helperText(__('Ingrese aquí el correo de la tienda')),
 
-                                            SpatieMediaLibraryFileUpload::make('avatar')
-                                                ->label('Factura de servicios (agua, luz o teléfono)')
-                                                // ->acceptedFileTypes(['application/pdf'])
-                                                ->helperText('Cargue aquí una factura de servicio'),
+                                    SpatieMediaLibraryFileUpload::make('avatar')
+                                        ->label('Factura de servicios (agua, luz o teléfono)')
+                                        // ->acceptedFileTypes(['application/pdf'])
+                                        ->helperText('Cargue aquí una factura de servicio'),
 
-                                            SpatieMediaLibraryFileUpload::make('rtu')
-                                                ->label('RTU')
-                                                ->acceptedFileTypes(['application/pdf'])
-                                                ->helperText('Cargue aquí el RTU actualizado'),
-                                        ])
+                                    SpatieMediaLibraryFileUpload::make('rtu')
+                                        ->label('RTU')
+                                        ->acceptedFileTypes(['application/pdf'])
+                                        ->helperText('Cargue aquí el RTU actualizado'),
+
 
                                 ]),
 

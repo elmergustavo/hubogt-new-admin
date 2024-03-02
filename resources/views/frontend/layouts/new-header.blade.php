@@ -50,7 +50,7 @@
                  class="flex items-center border border-black rounded-full  w-fit bg-white flex-1 relative">
 
                  <input name="search" placeholder="Busca lo que se te ocurra" type="text"
-                     class="rounded-full w-full md:text-base text-sm p-2 pl-5 pr-0 text-base outline-none"
+                     class="rounded-full w-full md:text-base text-sm p-2 pl-5 pr-0 text-base outline-none focus:ring-0 border-none"
                      autocomplete="off" />
 
                  <ul id="results-container"

@@ -22,7 +22,7 @@
         <header class="max-w-7xl px-5 mx-auto flex lg:flex-row flex-col gap-5 mb-14 w-full">
 
             <!-- start carrousel -->
-            <div class=" w-full md:min-h-[400px] min-h-[200px] relative border border-black" data-carousel="slide">
+            <div class=" w-full md:min-h-[450px] min-h-[200px] relative border rounded" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div id="carousel-section-hero" class="relative overflow-hidden lg:h-full h-[400px] w-auto">
                     <!-- Items -->
@@ -32,7 +32,7 @@
                 <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
                     x-data="{ indexes: [0, 1, 2, 3, 4] }">
                     <template x-for="index in indexes">
-                        <button type="button" class="md:w-3 w-2 md:h-3 h-2 rounded-full border border-white"
+                        <button type="button" class="md:w-3 w-2 md:h-3 h-2 rounded-full  bg-white"
                             :aria-current="index === 0" :aria-label="`Slide ${index}`" :data-carousel-slide-to="index">
                         </button>
                     </template>
@@ -123,27 +123,17 @@
         <!-- start sección "Patrocinado" -->
         <section class=" md:mb-20 mb-10">
             <!-- start banner "patrocinado" -->
-            <div class="bg-gray-100 px-5 py-4">
+            <div class="bg-blue-100 px-5 py-4">
                 <div class="grid md:grid-cols-[60%,1fr]  max-w-7xl mx-auto  grid-cols-1 gap-4  lg:w-[80%] w-full mx-auto ">
                     <div>
                         <span class="text-xs md:hidden block mb-8">Patrocinado</span>
-                        <div class=" md:min-h-[300px] w-full min-h-[100px] relative" data-carousel="static">
+                        <div class=" md:min-h-[300px] w-full min-h-[100px] relative" data-carousel="slide">
                             <!-- Carousel wrapper -->
                             <div id="carousel-section-patrocinado" class="relative overflow-hidden h-[300px] w-[7full">
                                 <!-- Items -->
 
                             </div>
-                            <button type="button"
-                                class="absolute top-0  end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                                data-carousel-next>
-                                <span class="inline-flex items-center justify-center w-10 h-10 bg-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
-                                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                    </svg>
-                                    <span class="sr-only">Next</span>
-                                </span>
-                            </button>
+
                         </div>
                     </div>
 
@@ -155,12 +145,12 @@
                             lanzamiento antes que
                             nadie</p>
                         <button
-                            class="md:w-4/6 w-full md:p-3 p-2 bg-transparent border border-black hover:bg-gray-200 font-semibold">Comprar</button>
+                            class="md:w-4/6 w-full md:p-3 p-2 bg-transparent border-2 border-black rounded hover:bg-blue-300 font-bold">Comprar</button>
                     </div>
                 </div>
             </div>
             <!-- end banner "patrocinado" -->
-            <div class="bg-gray-100 px-5 py-4 px-5 py-4  ">
+            <div class="bg-blue-100 px-5 py-4 px-5 py-4  ">
 
                 <div class="md:pl-2 pl-0 lg:flex hidden gap-4 items-center md:w-[80%] w-full max-w-7xl mx-auto">
                     <button
@@ -178,11 +168,11 @@
             </div>
 
             <!-- start carrousel -->
-            <div class="pt-10 md:pb-10 pb-4 bg-gray-200">
+            <div class="pt-10 md:pb-10 pb-4 bg-blue-950 text-white">
                 <div class="max-w-7xl mx-auto relative mt-0 px-5 ">
                     <!-- start carousel -->
                     <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
-                        data-carousel-parent data-type-template="product" id="seccion-2">
+                        data-carousel-parent data-color="white" data-type-template="product" id="seccion-2">
                         <!-- start item carousel -->
                         <div class="carousel-item xl:w-[220px] sm:w-[210px] w-full h-auto  ">
                             <div class="relative h-[200px] aspect-square w-full">
@@ -197,8 +187,8 @@
                                             d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                                     </svg></button>
                             </div>
-                            <div class="flex gap-4 flex-col pt-3">
-                                <h3 class="text-lg ">Item ${i + 1}</h3>
+                            <div class="flex gap-4 flex-col pt-3 ">
+                                <h3 class="text-sm ">Item ${i + 1}</h3>
                                 <!-- start stars  -->
                                 <div class="flex items-center justify-start gap-2">
                                     <span class="text-sm">4.8</span>
@@ -244,33 +234,33 @@
                     </div>
                     <!-- start botones Next y Previous -->
                     <button data-prev-btn
-                        class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 block bg-blue-900 rounded-full p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
-                            <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                        class="absolute left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6  h-6" viewBox="0 0 24 24">
+                            <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                         </svg>
                     </button>
+
                     <button data-next-btn
-                        class="absolute -right-0 top-[35%] transform -translate-y-1/2 block bg-blue-900 rounded-full p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
-                            <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                        class="absolute right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
+                            <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
                     </button>
-
                     <!-- end botones Next y Previous -->
 
                     <div class="md:pl-2 pl-0 md:hidden flex gap-4 items-center md:w-[80%] w-full max-w-7xl mx-auto mt-14">
                         <button
-                            class="w-fit p-2 px-3 bg-transparent border justify-center border-black hover:bg-gray-200 flex gap-2 items-center">
+                            class="w-fit p-2 px-3 bg-transparent border justify-center border-white hover:bg-gray-200 hover:text-black flex gap-2 items-center text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
-                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="1.5" d="M12 4.5v15m7.5-7.5h-15" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>
                             Seguir
                         </button>
 
-                        <span class="text-center">New Balance</span>
+                        <span class="text-center text-white">New Balance</span>
                     </div>
                 </div>
             </div>
@@ -335,10 +325,10 @@
         <!-- end sección "Los productos mas vendidos" -->
 
         <!-- start sección "Productos de temporada" -->
-        <section class="md:mb-20 mb-10">
+        <section class="md:mb-20 mb-10 bg-yellow-500 py-6 ">
             <header class="mx-auto px-5 max-w-7xl">
-                <h2 class="md:text-4xl text-3xl font-bold">Productos de temporada</h2>
-                <span class="md:text-xl text-lg text-gray-700 mt-3 inline-block">Aprovecha las ofertas</span>
+                <h2 class="md:text-4xl text-3xl font-bold text-gray-950">Productos de temporada</h2>
+                <span class="md:text-xl text-lg text-gray-800 mt-3 inline-block">Aprovecha las ofertas</span>
             </header>
 
             <div class="">
@@ -348,81 +338,81 @@
                         <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
                             data-carousel-parent data-type-template="product" id="seccion-4">
                             <!-- start item carousel -->
-                            <div class="carousel-item xl:w-[320px] sm:w-[208px] w-full h-auto  ">
-                                <div class="relative h-[300px] aspect-square w-full">
-                                    <span
-                                        class=" rounded-full bg-blue-900 text-white opacity-30 p-1 font-bold px-4  text-center absolute top-2 left-2">New</span>
-                                    <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded"
+                            <div class="carousel-item xl:w-[220px] sm:w-[208px] w-full h-auto ">
+                                <div class="relative h-[200px] aspect-square w-full">
+                                    <img src="./images/zapatos1.jpg" class="w-full h-full object-cover rounded"
                                         alt="image" />
                                     <button
-                                        class="uppercase bg-blue-900 hover:bg-blue-950 p-2 absolute bottom-0 left-0 w-full text-white font-bold">
-                                        Add to cart
-                                    </button>
+                                        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="1.5"
+                                                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+                                        </svg></button>
                                 </div>
-                                <div class="flex gap-2 flex-col pt-3">
+                                <div class="flex gap-4 flex-col pt-3">
+                                    <h3 class="text-lg ">Item ${i + 1}</h3>
                                     <!-- start stars  -->
-                                    <div class="flex flex-col items-start justify-start gap-1">
-                                        <span class="text-gray-500">Fashion</span>
-                                        <div class="flex items-center gap-2">
-                                            <div class="flex items-center">
-                                                <svg class="w-4 h-4 text-black " aria-hidden="true"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                    viewBox="0 0 22 20">
-                                                    <path
-                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                                </svg>
-                                                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                    viewBox="0 0 22 20">
-                                                    <path
-                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                                </svg>
-                                                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                    viewBox="0 0 22 20">
-                                                    <path
-                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                                </svg>
-                                                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
-                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                    viewBox="0 0 22 20">
-                                                    <path
-                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                                </svg>
-                                                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500"
-                                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                    fill="currentColor" viewBox="0 0 22 20">
-                                                    <path
-                                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                                                </svg>
-                                            </div>
-                                            <span class="text-sm text-gray-500">(40 reviews)</span>
+                                    <div class="flex items-center justify-start gap-2">
+                                        <span class="text-sm">4.8</span>
+                                        <div class="flex items-center">
+                                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
+                                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                viewBox="0 0 22 20">
+                                                <path
+                                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                            </svg>
                                         </div>
                                     </div>
                                     <!-- end stars  -->
-                                    <div class="mt-3">
-                                        <span class="text-xl">Mens Fashion Blazer</span>
-                                        <h3 class="flex items-center gap-2">
-                                            <b class="text-xl">$180</b>
-                                            <span class="text-rose-500 text-base line-through	">$200</span>
-                                        </h3>
+                                    <div class="flex xl:gap-8 md:gap-5 gap-3 items-center ">
+                                        <b class="text-base">Q27.88</b>
+                                        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
                                     </div>
+                                    <span class="text-sm">by MysticArtByJose</span>
+                                    <button class="border border-black p-2 mt-2 hover:bg-gray-200 ">Añadir al
+                                        carrito</button>
                                 </div>
                             </div>
                             <!-- end item carousel -->
                         </div>
                         <!-- start botones Next y Previous -->
                         <button data-prev-btn
-                            class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 block bg-blue-900 rounded-full p-2">
+                            class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
-                                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                             </svg>
                         </button>
                         <button data-next-btn
-                            class="absolute -right-0 top-[35%] transform -translate-y-1/2 block bg-blue-900 rounded-full p-2">
+                            class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
-                                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
                         </button>
@@ -498,7 +488,7 @@
                                     <h3 class="text-lg ">Item ${i + 1}</h3>
                                     <!-- start stars  -->
                                     <div class="flex items-center justify-start gap-2">
-                                        <span class="text-sm">4.8</span>
+                                        <!-- <span class="text-sm">4.8</span> -->
                                         <div class="flex items-center">
                                             <svg class="w-4 h-4 text-black ms-1" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -524,7 +514,7 @@
                                                 <path
                                                     d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                             </svg>
-                                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                                            <svg class="w-3 h-3 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                                 viewBox="0 0 22 20">
                                                 <path
@@ -534,8 +524,8 @@
                                     </div>
                                     <!-- end stars  -->
                                     <div class="flex xl:gap-8 md:gap-5 gap-3 items-center ">
-                                        <b class="text-base">Q27.88</b>
-                                        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
+                                        <b class="text-xl">Q27.88</b>
+                                        <span class="text-green-600 text-xs">Q37.17 </span>
                                     </div>
                                     <span class="text-sm">by MysticArtByJose</span>
                                     <button class="border border-black p-2 mt-2 hover:bg-gray-200 ">Añadir al
@@ -546,20 +536,19 @@
                         </div>
                         <!-- start botones Next y Previous -->
                         <button data-prev-btn
-                            class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 block bg-blue-900 rounded-full p-2">
+                            class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
-                                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                             </svg>
                         </button>
                         <button data-next-btn
-                            class="absolute -right-0 top-[35%] transform -translate-y-1/2 block bg-blue-900 rounded-full p-2">
+                            class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
-                                <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                                <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
                         </button>
-
                         <!-- end botones Next y Previous -->
                     </div>
                 </div>
@@ -569,95 +558,95 @@
         <!-- end sección "Ofertas de año navideñas" -->
 
         <!-- start sección "Nuestros tops tiendas" -->
-        <section class=" max-w-7xl mx-auto md:mb-20 mb-10 md:px-10 px-4 md:w-3/4 w-full">
-            <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-center">Nuestros tops tiendas </h2>
-            <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
+        <!-- <section class=" max-w-7xl mx-auto md:mb-20 mb-10 md:px-10 px-4 md:w-3/4 w-full">
+              <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-left font-bold">Nuestros tops tiendas </h2>
+              <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">Anais</p>
-                    <p class="text-gray-700 capitalize">Adoc</p>
-                    <p class="text-gray-700 capitalize">Fila</p>
-                    <p class="text-gray-700 capitalize">Laurance</p>
-                    <p class="text-gray-700 capitalize">Jhly</p>
-                    <p class="text-gray-700 capitalize">adidas</p>
-                    <p class="text-gray-700 capitalize">tatiana</p>
-                    <p class="text-gray-700 capitalize">asus</p>
+                  <p class="text-gray-700 capitalize">Anais</p>
+                  <p class="text-gray-700 capitalize">Adoc</p>
+                  <p class="text-gray-700 capitalize">Fila</p>
+                  <p class="text-gray-700 capitalize">Laurance</p>
+                  <p class="text-gray-700 capitalize">Jhly</p>
+                  <p class="text-gray-700 capitalize">adidas</p>
+                  <p class="text-gray-700 capitalize">tatiana</p>
+                  <p class="text-gray-700 capitalize">asus</p>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">Levis premium</p>
-                    <p class="text-gray-700 capitalize">Nike</p>
-                    <p class="text-gray-700 capitalize">casio</p>
-                    <p class="text-gray-700 capitalize">lacoste</p>
-                    <p class="text-gray-700 capitalize">tommy</p>
-                    <p class="text-gray-700 capitalize">boosts</p>
-                    <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
-                    <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                  <p class="text-gray-700 capitalize">Levis premium</p>
+                  <p class="text-gray-700 capitalize">Nike</p>
+                  <p class="text-gray-700 capitalize">casio</p>
+                  <p class="text-gray-700 capitalize">lacoste</p>
+                  <p class="text-gray-700 capitalize">tommy</p>
+                  <p class="text-gray-700 capitalize">boosts</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">Anais</p>
-                    <p class="text-gray-700 capitalize">Adoc</p>
-                    <p class="text-gray-700 capitalize">Fila</p>
-                    <p class="text-gray-700 capitalize">Laurance</p>
-                    <p class="text-gray-700 capitalize">Jhly</p>
-                    <p class="text-gray-700 capitalize">adidas</p>
-                    <p class="text-gray-700 capitalize">tatiana</p>
-                    <p class="text-gray-700 capitalize">asus</p>
+                  <p class="text-gray-700 capitalize">Anais</p>
+                  <p class="text-gray-700 capitalize">Adoc</p>
+                  <p class="text-gray-700 capitalize">Fila</p>
+                  <p class="text-gray-700 capitalize">Laurance</p>
+                  <p class="text-gray-700 capitalize">Jhly</p>
+                  <p class="text-gray-700 capitalize">adidas</p>
+                  <p class="text-gray-700 capitalize">tatiana</p>
+                  <p class="text-gray-700 capitalize">asus</p>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">Levis premium</p>
-                    <p class="text-gray-700 capitalize">Nike</p>
-                    <p class="text-gray-700 capitalize">casio</p>
-                    <p class="text-gray-700 capitalize">lacoste</p>
-                    <p class="text-gray-700 capitalize">tommy</p>
-                    <p class="text-gray-700 capitalize">boosts</p>
-                    <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
-                    <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                  <p class="text-gray-700 capitalize">Levis premium</p>
+                  <p class="text-gray-700 capitalize">Nike</p>
+                  <p class="text-gray-700 capitalize">casio</p>
+                  <p class="text-gray-700 capitalize">lacoste</p>
+                  <p class="text-gray-700 capitalize">tommy</p>
+                  <p class="text-gray-700 capitalize">boosts</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
                 </div>
-            </div>
-        </section>
+              </div>
+            </section> -->
         <!-- end sección "Nuestros tops tiendas" -->
 
         <!-- start sección "Nuestros tops productos" -->
-        <section class=" max-w-7xl mx-auto md:mb-20 mb-10 md:px-10 px-4 md:w-3/4 w-full">
-            <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-center">Nuestros tops productos </h2>
-            <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
+        <!-- <section class=" max-w-7xl mx-auto md:mb-20 mb-10 md:px-10 px-4 md:w-3/4 w-full">
+              <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-left font-bold">Nuestros tops productos </h2>
+              <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">televisores</p>
-                    <p class="text-gray-700 capitalize">zapatos</p>
-                    <p class="text-gray-700 capitalize">celulares</p>
-                    <p class="text-gray-700 capitalize">medias</p>
-                    <p class="text-gray-700 capitalize">ropa interior</p>
-                    <p class="text-gray-700 capitalize">calcetines</p>
-                    <p class="text-gray-700 capitalize">pantallas</p>
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">televisores</p>
-                    <p class="text-gray-700 capitalize">zapatos</p>
-                    <p class="text-gray-700 capitalize">celulares</p>
-                    <p class="text-gray-700 capitalize">medias</p>
-                    <p class="text-gray-700 capitalize">ropa interior</p>
-                    <p class="text-gray-700 capitalize">calcetines</p>
-                    <p class="text-gray-700 capitalize">pantallas</p>
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">televisores</p>
-                    <p class="text-gray-700 capitalize">zapatos</p>
-                    <p class="text-gray-700 capitalize">celulares</p>
-                    <p class="text-gray-700 capitalize">medias</p>
-                    <p class="text-gray-700 capitalize">ropa interior</p>
-                    <p class="text-gray-700 capitalize">calcetines</p>
-                    <p class="text-gray-700 capitalize">pantallas</p>
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
                 </div>
                 <div class="flex flex-col gap-4">
-                    <p class="text-gray-700 capitalize">televisores</p>
-                    <p class="text-gray-700 capitalize">zapatos</p>
-                    <p class="text-gray-700 capitalize">celulares</p>
-                    <p class="text-gray-700 capitalize">medias</p>
-                    <p class="text-gray-700 capitalize">ropa interior</p>
-                    <p class="text-gray-700 capitalize">calcetines</p>
-                    <p class="text-gray-700 capitalize">pantallas</p>
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
                 </div>
-            </div>
-        </section>
+              </div>
+            </section> -->
         <!-- end sección "Nuestros tops productos" -->
 
         <!-- start sección "Buho Vendedores" -->
@@ -682,15 +671,15 @@
 
         <!-- start sección "¿Que es Buhogt" -->
         <section class=" bg-blue-100 mt-[200px]">
-            <div class="max-w-7xl mx-auto  px-5 flex justify-center items-center flex-col pt-16 pb-20">
-                <h2 class="lg:text-5xl text-3xl md:text-start text-center font-light">¿Qúe es Buhogt?</h2>
+            <div class="max-w-7xl mx-auto  px-5 flex justify-center items-center flex-col pt-8 pb-20">
+                <h2 class="lg:text-5xl text-3xl md:text-start text-center font-semibold">¿Qúe es Buhogt?</h2>
                 <a href="" class="text-blue-600 underline block mt-2 md:text-start text-center">Lee nuestra
                     maravillosa
                     excepcional historia</a>
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-10 md:mt-16 mt-10">
                     <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">Una comunidad
-                            que
+                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-left text-2xl font-bold">Una
+                            comunidad que
                             hace el bien</h6>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
@@ -701,7 +690,8 @@
                             voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
                     </div>
                     <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">Apoya a
+                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-left text-2xl font-bold">Apoya
+                            a
                             emprendedores</h6>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
@@ -712,7 +702,8 @@
                             voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
                     </div>
                     <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-center text-2xl">Tranquilidad
+                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-left text-2xl font-bold">
+                            Tranquilidad
                             absoluta</h6>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
@@ -742,6 +733,7 @@
                             class="h-full p-3 px-5 text-sm bg-white w-fit text-blue-900 hover:bg-white/90">Suscríbase</button>
                     </div>
                 </form>
+
                 <svg class="w-[200px] h-[150px] md:block hidden object-cover" viewBox="0 0 186 122" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_488_39583" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
@@ -841,43 +833,41 @@
         </section>
     </main>
 
-
-
     <script>
         const generateStars = () => {
             return `<div class="flex items-center ">
-     <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-       fill="currentColor" viewBox="0 0 22 20">
-       <path
-         d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-     </svg>
-     <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-       fill="currentColor" viewBox="0 0 22 20">
-       <path
-         d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-     </svg>
-     <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-       fill="currentColor" viewBox="0 0 22 20">
-       <path
-         d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-     </svg>
-     <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-       fill="currentColor" viewBox="0 0 22 20">
-       <path
-         d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-     </svg>
-     <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-       xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-       <path
-         d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-     </svg>
-   </div>`
+   <svg class="w-3 h-3 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+     fill="currentColor" viewBox="0 0 22 20">
+     <path
+       d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+   </svg>
+   <svg class="w-3 h-3 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+     fill="currentColor" viewBox="0 0 22 20">
+     <path
+       d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+   </svg>
+   <svg class="w-3 h-3 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+     fill="currentColor" viewBox="0 0 22 20">
+     <path
+       d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+   </svg>
+   <svg class="w-3 h-3 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+     fill="currentColor" viewBox="0 0 22 20">
+     <path
+       d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+   </svg>
+   <svg class="w-3 h-3 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+     xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+     <path
+       d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+   </svg>
+ </div>`
         }
 
         const generateCarousel = () => {
-            const total_items = 9;
 
             document.querySelectorAll('[data-carousel-parent]').forEach((carousel) => {
+
                 let template = '';
 
                 if (carousel.dataset.typeTemplate === 'store') {
@@ -913,24 +903,24 @@
                         store
                     }, i) => {
                         template += `<div class="carousel-item snap-start	">
-    <span class="text-lg">Tienda ${store}</span>
-    <div class="relative md:!w-[220px] md:!h-[250px] w-[130px] h-[180px]">
-      <img loading="lazy" src="${img}" class="w-full h-full object-cover rounded shadow-lg shadow-black/20" alt="${store}" />
-    </div>
-    <div class="flex gap-4 flex-col pt-3">
-    <p>descripción</p>
-    <div class="flex items-center gap-2">
-      <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
-        Visitar tienda
-      </a>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
-        <path fill="#000" fill-rule="evenodd"
-          d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
-          clip-rule="evenodd" />
-      </svg>
-    </div>
-    </div>
-  </div>`
+        <span class="text-lg">Tienda ${store}</span>
+        <div class="relative md:!w-[220px] md:!h-[250px] w-[130px] h-[180px]">
+          <img loading="lazy" src="${img}" class="w-full h-full object-cover rounded shadow-lg shadow-black/20" alt="${store}" />
+        </div>
+        <div class="flex gap-4 flex-col pt-3">
+        <p>descripción</p>
+        <div class="flex items-center gap-2">
+          <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
+            Visitar tienda
+          </a>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
+            <path fill="#000" fill-rule="evenodd"
+              d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
+              clip-rule="evenodd" />
+          </svg>
+        </div>
+        </div>
+      </div>`
                     });
 
                 } else if (carousel.dataset.typeTemplate === 'imageGrid') {
@@ -966,32 +956,33 @@
                         title
                     }, i) => {
                         template += `
-          <div class="carousel-item snap-start border border-transparent lg:w-[283px] md:w-[210px] w-[180px]">
+              <div class="carousel-item snap-start border border-transparent lg:w-[283px] md:w-[210px] w-[180px]">
 
-          <div class="relative lg:w-[283px] md:w-[210px] w-[180px] lg:h-[450px] h-auto  grid gap-2 grid-cols-2 grid-rows-2 border border-gray-200  p-5">
-            <img loading="lazy" src="/images/best-products/best-m1-1.png" class="w-full h-full object-cover rounded" alt="image" />
-            <img loading="lazy" src="/images/best-products/best-1-large.png" class="w-full row-span-2 h-full object-cover rounded"
-              alt="image" />
-            <img loading="lazy" src="/images/best-products/best-m1-2.png" class="w-full h-full object-cover rounded" alt="image" />
-          </div>
+              <div class="relative lg:w-[283px] md:w-[210px] w-[180px] lg:h-[450px] h-auto  grid gap-2 grid-cols-2 grid-rows-2 border border-gray-200  p-5">
+                <img loading="lazy" src="/images/best-products/best-m1-1.png" class="w-full h-full object-cover rounded" alt="image" />
+                <img loading="lazy" src="/images/best-products/best-1-large.png" class="w-full row-span-2 h-full object-cover rounded"
+                  alt="image" />
+                <img loading="lazy" src="/images/best-products/best-m1-2.png" class="w-full h-full object-cover rounded" alt="image" />
+              </div>
 
-          <div class="flex gap-3 py-3 items-center lg:mt-10 mt-3">
-            <img loading="lazy" src="/images/best-products/best-title.png" class="lg:w-[50px] w-[35px] h-[50px] lg:h-[70px] object-cover rounded" alt="image" />
-            <p class="flex-1">
-              <span>${title} </span> <br>
-              <span class="md:text-sm text-xs">${category}</span>
-            </p>
-          </div>
+              <div class="flex gap-3 py-3 items-center lg:mt-10 mt-3">
+                <img loading="lazy" src="/images/best-products/best-title.png" class="lg:w-[50px] w-[35px] h-[50px] lg:h-[70px] object-cover rounded" alt="image" />
+                <p class="flex-1">
+                  <span>${title} </span> <br>
+                  <span class="md:text-sm text-xs">${category}</span>
+                </p>
+              </div>
 
-        </div>
-      `
+            </div>
+          `
                     });
 
                 } else {
 
                     const color = carousel.dataset.color || 'black'
 
-                    const breakPointsWidth = 'max-[425px]:!w-full max-[768px]:!w-[229px] xl:!w-[285px]'
+                    const breakPointsWidth =
+                        'max-[320px]:!w-[130px] max-[375px]:!w-[160px] max-[425px]:!w-[185px] max-[768px]:!w-[229px] lg:!w-[220px]'
 
                     const data = [{
                             title: 'New balance age',
@@ -1049,37 +1040,40 @@
                         price,
                         title
                     }, i) => {
-                        template += `<div class="carousel-item flex-none h-auto snap-start ${breakPointsWidth}">
-                    <div class="relative h-[300px] aspect-square w-full">
-                      <span
-                        class=" rounded-full bg-blue-900 text-white opacity-50 p-1 font-bold px-4  text-center absolute top-2 left-2">New</span>
-                      <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="image" />
-
-                    </div>
-                    <div class="flex gap-2 flex-col pt-3">
-                      <!-- start stars  -->
-                      <div class="flex flex-col items-start justify-start gap-1">
-                        <span class="text-gray-500">Fashion</span>
-                        <div class="flex items-center gap-2">
-                          ${generateStars()}
-                          <span class="text-sm text-gray-500">(40 reviews)</span>
-                        </div>
-                      </div>
-                      <!-- end stars  -->
-                      <div class="mt-3">
-                        <span class="text-xl">${title}</span>
-                        <h3 class="flex items-center gap-2">
-                          <b class="text-xl">$${price}</b>
-                          <span class="text-rose-500 text-base line-through	">$${discount}</span>
-                        </h3>
-                      </div>
-                    </div>
-                  </div>`
-
+                        template += `
+          <div class="carousel-item snap-start group ">
+            <div class="relative md:!h-[270px] h-[200px] ${breakPointsWidth} overflow-hidden shadow-lg shadow-black/10 rounded bg-transparent">
+              <img loading="lazy" src="/images/products/${img}" class="group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
+              <button
+                data-btn-like
+                class=" w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+                </svg></button>
+            </div>
+            <div class="flex gap-4 flex-col pt-3 text-[${color}]">
+              <h3 class="text-lg  md:min-h-fit min-h-[60px]">${title}</h3>
+              <!-- start stars  -->
+              <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2 text-[${color}]">
+                <span class="text-sm">4.8</span>
+                ${generateStars()}
+              </div>
+              <!-- end stars  -->
+              <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+                <b class="text-base price">Q${price}</b>
+                <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-xs">Q${discount} (25% descuento)</span>
+              </div>
+              <span class="text-sm">by MysticArtByJose</span>
+            </div>
+          </div>
+          `
                     });
                 }
 
                 carousel.innerHTML = template;
+
 
                 const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
                 const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
@@ -1166,21 +1160,21 @@
                 carrouselItems.forEach(item => {
                     template += !isHeroSection ?
                         `<div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="${item.img}"
-              class="aspect-video absolute h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 left-1/2"
-              alt="...">
-          </div>` :
-                        `<div class="hidden duration-700 ease-in-out" data-carousel-item>
           <img src="${item.img}"
-            class="object-cover absolute h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 left-1/2"
+            class="aspect-video absolute h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 left-1/2"
             alt="...">
-          <div
-            class="absolute -translate-y-1/2 top-1/2 flex gap-5 flex-col justify-start items-start text-white z-20 md:px-10 px-5">
-            <h5 class="md:text-3xl text-xl font-bold">${item.title}</h5>
-            <p class="md:text-base text-sm">${item.description}</p>
-          </div>
-          <div class="w-full h-full absolute top-0 left-0 bg-black/70 z-10"></div>
-        </div>`
+        </div>` :
+                        `<div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="${item.img}"
+          class="object-cover absolute h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 left-1/2"
+          alt="...">
+        <div
+          class="absolute -translate-y-1/2 top-1/2 flex gap-5 flex-col justify-start items-start text-white z-20 md:px-10 px-5">
+          <h5 class="md:text-3xl text-xl font-bold">${item.title}</h5>
+          <p class="md:text-base text-sm">${item.description}</p>
+        </div>
+        <div class="w-full h-full absolute top-0 left-0 bg-black/70 z-10"></div>
+      </div>`
                 })
                 return template
             }
@@ -1191,5 +1185,45 @@
         };
         generateCarouselHero()
     </script>
+
+
+    <script>
+        const manageLikes = () => {
+            const likesNavbar = document.querySelector('#button-like-navbar')
+            let counter = 0
+
+            document.querySelectorAll('.carousel-item [data-btn-like]').forEach($btnLike => {
+
+                $btnLike.addEventListener('click', () => {
+                    const svgHeart = $btnLike.children[0].children[0]
+
+                    svgHeart.classList.toggle('fill-red-500')
+
+                    svgHeart.classList.contains('fill-red-500') ?
+                        counter++
+                        :
+                        counter--
+
+
+                    if (counter > 0) {
+                        likesNavbar.children[0].classList.add('text-red-500')
+                        likesNavbar.children[1].classList.remove('hidden')
+                        likesNavbar.children[1].textContent = counter > 99 ? '99+' : counter
+
+                    } else {
+                        likesNavbar.children[0].classList.remove('text-red-500')
+                        likesNavbar.children[1].classList.add('hidden')
+                        likesNavbar.children[1].textContent = ''
+                    }
+
+                })
+            })
+
+        }
+
+        manageLikes()
+    </script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @endsection
