@@ -168,10 +168,10 @@
             </div>
 
             <!-- start carrousel -->
-            <div class="pt-10 md:pb-10 pb-4 bg-blue-950 text-white">
+            <div class="pt-10 md:pb-10 pb-4 bg-blue-950">
                 <div class="max-w-7xl mx-auto relative mt-0 px-5 ">
                     <!-- start carousel -->
-                    <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll"
+                    <div class="flex justify-start items-center lg:gap-[35px] gap-5 snap-mandatory snap-x overflow-x-scroll text-white"
                         data-carousel-parent data-color="white" data-type-template="product" id="seccion-2">
                         <!-- start item carousel -->
                         <div class="carousel-item xl:w-[220px] sm:w-[210px] w-full h-auto  ">
@@ -1046,7 +1046,7 @@
               <img loading="lazy" src="/images/products/${img}" class="group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
               <button
                 data-btn-like
-                class=" w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+                class=" w-8  h-8 grid place-items-center rounded-full bg-white text-black absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
                   xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
                   <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                     stroke-width="1.5"
