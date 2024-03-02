@@ -38,11 +38,6 @@
                         </p>
 
 
-
-
-
-
-
                     </div>
 
                     <div class="mt-8">
@@ -88,11 +83,7 @@
                                     @endif
                                 </div>
 
-
-
                                 <div class="flex flex-col mt-4">
-
-
                                     <x-button
                                         class="my-4 w-full text-2xl hover:bg-blue-900 text-center flex justify-center">
                                         {{ __('Iniciar Sesión') }}
