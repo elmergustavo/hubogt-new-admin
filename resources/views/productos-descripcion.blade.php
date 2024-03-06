@@ -797,25 +797,25 @@
                     store
                 }, i) => {
                     template += `<div class="carousel-item snap-start">
-    <span class=" block mb-4 lg:text-start text-center">Tienda ${store}</span>
-    <div class="relative md:w-[283px] w-[130px]">
-      <img src="${img}" class="border border-black w-full h-full object-cover rounded"
-        alt="${store}" />
-    </div>
-    <div class="flex gap-5 flex-col pt-3 md:items-start items-center ">
-      <p class="lg:text-start text-center">descripción</p>
-      <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
-        <div class="flex items-center md:gap-2 gap-1">
-          Visitar tienda
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
-            <path fill="#000" fill-rule="evenodd"
-              d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
-              clip-rule="evenodd" />
-          </svg>
+        <span class=" block mb-4 lg:text-start text-center">Tienda ${store}</span>
+        <div class="relative md:w-[283px] w-[130px]">
+          <img src="${img}" class="border border-black w-full h-full object-cover rounded"
+            alt="${store}" />
         </div>
-      </a>
-    </div>
-  </div>`
+        <div class="flex gap-5 flex-col pt-3 md:items-start items-center ">
+          <p class="lg:text-start text-center">descripción</p>
+          <a href="" class="font-bold w-fit leading-5 md:text-base text-sm	border-b border-black ">
+            <div class="flex items-center md:gap-2 gap-1">
+              Visitar tienda
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 16 16">
+                <path fill="#000" fill-rule="evenodd"
+                  d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>`
                 });
 
             } else {
@@ -882,34 +882,34 @@
                     title
                 }, i) => {
                     template += `
-  <div class="carousel-item snap-start group ">
-    <div class="relative md:!h-[270px] h-[200px] ${breakPointsWidth} overflow-hidden shadow-lg shadow-black/10 rounded bg-transparent">
-      <img loading="lazy" src="/images/products/${img}" class="group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
-      <button
-        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
-          xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="1.5"
-            d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-        </svg></button>
-    </div>
-    <div class="flex gap-4 flex-col pt-3 text-[${color}]">
-      <h3 class="text-lg  md:min-h-fit min-h-[60px]">${title}</h3>
-      <!-- start stars  -->
-      <div data-stars class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2 text-[${color}]">
-        <span class="text-sm">4.8</span>
+      <div class="carousel-item snap-start group ">
+        <div class="relative md:!h-[270px] h-[200px] ${breakPointsWidth} overflow-hidden shadow-lg shadow-black/10 rounded bg-transparent">
+          <img loading="lazy" src="/images/products/${img}" class="group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
+          <button
+            class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+            </svg></button>
+        </div>
+        <div class="flex gap-4 flex-col pt-3 text-[${color}]">
+          <h3 class="text-lg  md:min-h-fit min-h-[60px]">${title}</h3>
+          <!-- start stars  -->
+          <div data-stars class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2 text-[${color}]">
+            <span class="text-sm">4.8</span>
 
-      </div>
-      <!-- end stars  -->
-      <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
-        <b class="text-base">Q${price}</b>
-        <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-xs">Q${discount} (25% descuento)</span>
-      </div>
-      <span class="text-sm">by MysticArtByJose</span>
+          </div>
+          <!-- end stars  -->
+          <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+            <b class="text-base">Q${price}</b>
+            <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-xs">Q${discount} (25% descuento)</span>
+          </div>
+          <span class="text-sm">by MysticArtByJose</span>
 
-    </div>
-  </div>
-  `
+        </div>
+      </div>
+      `
                 });
             }
 
@@ -975,32 +975,32 @@
             document.querySelectorAll('[data-stars]').forEach(e => {
 
                 e.innerHTML = e.innerHTML + `<div class="flex items-center ">
-            <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-              <path
-                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-          </div>`
+                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                </svg>
+              </div>`
 
             })
         }
@@ -1095,6 +1095,162 @@
 
         }
         previewProductImageGallery()
+    </script>
+
+    <script>
+        const products = []
+
+        const addProduct = (newProduct) => {
+
+            const alreadyExist = products.find(product => product.title === newProduct.title)
+
+            if (alreadyExist) {
+
+                products.map(product => {
+                    if (product.title === newProduct.title) {
+                        product.quantity = product.quantity + 1
+                    }
+                    return product
+                })
+
+            } else {
+                products.push({
+                    ...newProduct,
+                    quantity: 1
+                })
+            }
+
+            console.table(products)
+        }
+
+        const configBtnCartNavbar = () => {
+            const $btnNavbarCart = document.querySelector('#button-cart-navbar')
+            const $listCart = document.querySelector('#list-cart')
+
+            $btnNavbarCart.addEventListener('click', () => {
+
+                const $overlay = document.querySelector('#overlay-cart')
+                $overlay.classList.remove('hidden')
+
+                const isAlreadyOpen = !$listCart.classList.contains('hidden')
+                $listCart.classList[isAlreadyOpen ? 'add' : 'remove']('hidden')
+
+                if (products.length > 0) {
+                    $listCart.classList.remove('-bottom-[85px]', 'h-fit')
+                    $listCart.classList.add('-bottom-[405px]', 'h-[400px]')
+                    refreshCart()
+                } else {
+                    $listCart.classList.remove('-bottom-[405px]', 'h-[400px]')
+                    $listCart.classList.add('-bottom-[85px]', 'h-fit')
+                }
+            })
+
+        }
+        configBtnCartNavbar()
+
+        const refreshCart = () => {
+            const $listCart = document.querySelector('#list-cart')
+            let productsHtml = ''
+
+            products.forEach(({
+                title,
+                img,
+                price,
+                quantity
+            }) => {
+                productsHtml += `
+    <div class="flex items-center gap-2 border border-gray-400 p-2 rounded">
+      <img src="${img}" alt="${title}" class="border-gray-300 border size-[70px] rounded object-cover">
+      <div class="flex flex-wrap gap-x-5">
+        <h3 class="font-bold flex-none w-full text-lg truncate">${title}</h3>
+        <span class="text-green-600">${price}</span>
+        <span class="">Cantidad: <b>${quantity}</b></span>
+      </div>
+    </div>
+    `
+            })
+
+            $listCart.innerHTML = productsHtml
+        }
+
+        const addToCart = () => {
+            const $btnCart = document.querySelector('#add-to-cart')
+            const $overlay = document.querySelector('#overlay-cart')
+
+            $overlay.addEventListener('click', () => {
+                const $listCart = document.querySelector('#list-cart')
+                $listCart.classList.add('hidden')
+                $overlay.classList.add('hidden')
+            })
+
+
+            $btnCart.addEventListener('click', () => {
+
+                // configurar los datos para mostrar en el carrito
+                const img = document.querySelector('#preview-1 img').src
+                const title = document.querySelector('#title-product').textContent
+                const price = document.querySelector('#price-product').textContent
+
+                const newProduct = {
+                    img,
+                    title,
+                    price
+                }
+
+                addProduct(newProduct)
+
+                // actualizar la vista del carrito
+                const $listCart = document.querySelector('#list-cart')
+                $listCart.classList.remove('-bottom-[85px]', 'h-fit')
+                $listCart.classList.add('-bottom-[405px]', 'h-[400px]')
+
+                refreshCart()
+
+                // mostrar numero de items en el icono de carrito
+                const $btnNavbarCart = document.querySelector('#button-cart-navbar')
+                const $spanItems = $btnNavbarCart.querySelector('#button-cart-navbar span')
+
+                $spanItems.classList[
+                    products.length > 0 ? 'remove' : 'add'
+                ]('hidden')
+
+                $spanItems.textContent = products.length > 0 ? products.length : ''
+
+
+                // mostrar un mensaje/alerta de que se agregó al carrito
+
+                const msgContainer = document.createElement('div')
+                msgContainer.classList.add('font-semibold', 'p-3', 'w-full', 'text-green-800',
+                    'bg-green-400/60', 'text-center', 'border', 'border-green-800', 'flex', 'items-center',
+                    'justify-center', 'gap-2', 'animation-added-to-cart-in')
+
+                msgContainer.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 16 16">
+        <path fill="currentColor" fill-rule="evenodd"
+          d="M15 8c0 .982-.472 1.854-1.202 2.402a2.995 2.995 0 0 1-.848 2.547a2.995 2.995 0 0 1-2.548.849A2.996 2.996 0 0 1 8 15a2.996 2.996 0 0 1-2.402-1.202a2.995 2.995 0 0 1-2.547-.848a2.995 2.995 0 0 1-.849-2.548A2.996 2.996 0 0 1 1 8c0-.982.472-1.854 1.202-2.402a2.995 2.995 0 0 1 .848-2.547a2.995 2.995 0 0 1 2.548-.849A2.995 2.995 0 0 1 8 1c.982 0 1.854.472 2.402 1.202a2.995 2.995 0 0 1 2.547.848c.695.695.978 1.645.849 2.548A2.996 2.996 0 0 1 15 8m-3.291-2.843a.75.75 0 0 1 .135 1.052l-4.25 5.5a.75.75 0 0 1-1.151.043l-2.25-2.5a.75.75 0 1 1 1.114-1.004l1.65 1.832l3.7-4.789a.75.75 0 0 1 1.052-.134"
+          clip-rule="evenodd" />
+      </svg>
+      Añadido correctamente
+    `
+
+                $btnCart.classList.add('hidden')
+                $btnCart.parentElement.appendChild(msgContainer)
+
+                setTimeout(() => {
+                    msgContainer.classList.remove('animation-added-to-cart-in')
+                    msgContainer.classList.add('animation-added-to-cart-out')
+                }, 1300);
+
+                setTimeout(() => {
+                    $btnCart.parentElement.removeChild(msgContainer)
+                    $btnCart.classList.remove('hidden')
+                    $btnCart.classList.add('animation-added-to-cart-in')
+                }, 1600);
+
+            })
+        }
+
+        addToCart()
     </script>
 
     <script>
