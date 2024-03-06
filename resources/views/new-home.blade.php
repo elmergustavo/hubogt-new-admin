@@ -676,42 +676,74 @@
                 <a href="" class="text-blue-600 underline block mt-2 md:text-start text-center">Lee nuestra
                     maravillosa
                     excepcional historia</a>
-                <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-20 gap-10 md:mt-16 mt-10">
-                    <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-left text-2xl font-bold">Una
-                            comunidad que
-                            hace el bien</h6>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
+
+                <div class="flex flex-col gap-5 mt-10">
+
+                    <div class=" text-blue-900 group">
+                        <input type="checkbox" id="acc-1" class="hidden">
+                        <label for="acc-1"
+                            class="cursor-pointer lg:text-3xl flex items-center justify-between w-full  md:text-start text-left text-2xl font-bold  border-black border-b-2 group-has-[:checked]:border-transparent border-blue-900/50 transition-all duration-[.5s] ease-in-out p-3">
+                            Una comunidad que hace el bien
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="md:size-10 size-6 group-has-[:checked]:rotate-[180deg] transition-all duration-[.5s] ease-in-out"
+                                viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5" d="m4.5 15.75l7.5-7.5l7.5 7.5" />
+                            </svg>
+                        </label>
+                        <div
+                            class="h-[0px] bg-blue-950 text-white px-5 rounded overflow-hidden group-has-[:checked]:overflow-y-scroll transition-all duration-[.5s] ease-in-out lg:group-has-[:checked]:h-[100px] md:group-has-[:checked]:h-[200px] sm:group-has-[:checked]:h-[300px] group-has-[:checked]:h-[60vh]   hidden-scroll flex justify-center items-center ">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
                             quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet. Ex
                             non eius
                             architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus quos.
                             Culpa
-                            voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
+                            voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</div>
                     </div>
-                    <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-left text-2xl font-bold">Apoya
-                            a
-                            emprendedores</h6>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
+                    <div class=" text-blue-900 group">
+                        <input type="checkbox" id="acc-2" class="hidden">
+                        <label for="acc-2"
+                            class="cursor-pointer lg:text-3xl flex items-center justify-between w-full  md:text-start text-left text-2xl font-bold  border-black border-b-2 group-has-[:checked]:border-transparent border-blue-900/50 transition-all duration-[.5s] ease-in-out p-3">
+                            Apoya a emprendedores
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="md:size-10 size-6 group-has-[:checked]:rotate-[180deg] transition-all duration-[.5s] ease-in-out"
+                                viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5" d="m4.5 15.75l7.5-7.5l7.5 7.5" />
+                            </svg>
+                        </label>
+                        <div
+                            class="h-[0px] bg-blue-950 text-white px-5 rounded overflow-hidden group-has-[:checked]:overflow-y-scroll transition-all duration-[.5s] ease-in-out lg:group-has-[:checked]:h-[100px] md:group-has-[:checked]:h-[200px] sm:group-has-[:checked]:h-[300px] group-has-[:checked]:h-[60vh]   hidden-scroll flex justify-center items-center ">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
                             quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet. Ex
                             non eius
                             architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus quos.
                             Culpa
-                            voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
+                            voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</div>
                     </div>
-                    <div class=" text-blue-900">
-                        <h6 class="lg:text-3xl block mb-8 md:min-h-[70px] md:text-start text-left text-2xl font-bold">
-                            Tranquilidad
-                            absoluta</h6>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
+                    <div class=" text-blue-900 group">
+                        <input type="checkbox" id="acc-3" class="hidden">
+                        <label for="acc-3"
+                            class="cursor-pointer lg:text-3xl flex items-center justify-between w-full  md:text-start text-left text-2xl font-bold  border-black border-b-2 group-has-[:checked]:border-transparent border-blue-900/50 transition-all duration-[.5s] ease-in-out p-3">
+                            Tranquilidad absoluta
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="md:size-10 size-6 group-has-[:checked]:rotate-[180deg] transition-all duration-[.5s] ease-in-out"
+                                viewBox="0 0 24 24">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="1.5" d="m4.5 15.75l7.5-7.5l7.5 7.5" />
+                            </svg>
+                        </label>
+                        <div
+                            class="h-[0px] bg-blue-950 text-white px-5 rounded overflow-hidden group-has-[:checked]:overflow-y-scroll transition-all duration-[.5s] ease-in-out lg:group-has-[:checked]:h-[100px] md:group-has-[:checked]:h-[200px] sm:group-has-[:checked]:h-[300px] group-has-[:checked]:h-[60vh]   hidden-scroll flex justify-center items-center ">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa tempora quod necessitatibus
                             voluptates
                             quo unde. Corporis illo ex ratione perspiciatis nam odio fuga aliquam tempora quae eveniet. Ex
                             non eius
                             architecto possimus cupiditate, voluptates asperiores corporis, explicabo, nesciunt minus quos.
                             Culpa
-                            voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</p>
+                            voluptas dicta quo aspernatur? Ab dolore nesciunt commodi obcaecati.</div>
                     </div>
                 </div>
             </div>
@@ -1185,7 +1217,6 @@
         };
         generateCarouselHero()
     </script>
-
 
     <script>
         const manageLikes = () => {

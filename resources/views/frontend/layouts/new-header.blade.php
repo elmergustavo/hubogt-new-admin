@@ -619,31 +619,7 @@
  </div>
  <!-- end categorías -->
 
-
  <script>
-     const drawerNavbarMobile = () => {
-
-         const drawerNavbarMobile = document.querySelector('#drawer-navbar-mobile')
-
-         document.querySelector('#btn-drawer-navbar-mobile').addEventListener('click', () => {
-             drawerNavbarMobile.classList.remove('-translate-x-full')
-             drawerNavbarMobile.classList.add('translate-x-0')
-             drawerNavbarMobile.querySelector('.overlay').classList.remove('opacity-0')
-             drawerNavbarMobile.querySelector('.overlay').classList.add('opacity-100')
-         })
-
-
-         drawerNavbarMobile.querySelector('#close-drawer-navbar-mobile').addEventListener('click', () => {
-
-             drawerNavbarMobile.querySelector('.overlay').classList.add('opacity-0')
-             drawerNavbarMobile.querySelector('.overlay').classList.remove('opacity-100')
-             drawerNavbarMobile.classList.add('-translate-x-full')
-             drawerNavbarMobile.classList.remove('translate-x-0')
-         })
-     }
-     drawerNavbarMobile()
-
-
      const categoriesMobile = () => {
          const drawerSelected = document.querySelector('#drawer-category-selected')
 
@@ -679,9 +655,34 @@
          })
      }
      categoriesMobile()
+ </script>
+
+ <script>
+     const drawerNavbarMobile = () => {
+
+         const drawerNavbarMobile = document.querySelector('#drawer-navbar-mobile')
+
+         document.querySelector('#btn-drawer-navbar-mobile').addEventListener('click', () => {
+             drawerNavbarMobile.classList.remove('-translate-x-full')
+             drawerNavbarMobile.classList.add('translate-x-0')
+             drawerNavbarMobile.querySelector('.overlay').classList.remove('opacity-0')
+             drawerNavbarMobile.querySelector('.overlay').classList.add('opacity-100')
+         })
 
 
+         drawerNavbarMobile.querySelector('#close-drawer-navbar-mobile').addEventListener('click', () => {
 
+             drawerNavbarMobile.querySelector('.overlay').classList.add('opacity-0')
+             drawerNavbarMobile.querySelector('.overlay').classList.remove('opacity-100')
+             drawerNavbarMobile.classList.add('-translate-x-full')
+             drawerNavbarMobile.classList.remove('translate-x-0')
+         })
+     }
+     drawerNavbarMobile()
+ </script>
+
+
+ <script>
      //
      const handleFormSubmit = () => {
 
