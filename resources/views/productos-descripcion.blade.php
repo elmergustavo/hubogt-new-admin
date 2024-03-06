@@ -206,42 +206,59 @@
 
                 </section>
 
-                <section class="mt-8 border border-gray-500 flex flex-col">
-                    <span class=" block text-center p-3">Envió de Buhogt, vendido por 1+mes</span>
+                <section class="mt-8 border border-gray-500 flex flex-col group">
+                    <input type="checkbox" name="" id="envio" class="hidden">
 
-                    <hr class="border border-gray-300">
+                    <label
+                        class=" flex items-center justify-between w-full hover:bg-gray-100 text-center p-3 cursor-pointer"
+                        for="envio">
+                        Envió de Buhogt, vendido por 1+mes
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="size-5 group-has-[:checked]:rotate-[180deg] transition-all duration-[.5s] ease-in-out"
+                            viewBox="0 0 24 24">
+                            <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5" d="m4.5 15.75l7.5-7.5l7.5 7.5" />
+                        </svg>
+                    </label>
 
-                    <div class="p-3">
-                        <div class="flex justify-between">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
-                                <path fill="#000" fill-rule="evenodd"
-                                    d="M2 2a1 1 0 0 0-1 1v14c0 1.354.897 2.498 2.129 2.872a3 3 0 0 0 5.7.128h6.341a3 3 0 0 0 5.7-.128A3.001 3.001 0 0 0 23 17v-4a5 5 0 0 0-5-5h-4V3a1 1 0 0 0-1-1zm13.171 16H14v-8h4a3 3 0 0 1 3 3v4a.997.997 0 0 1-.293.707a3 3 0 0 0-5.536.293m-9.878.293a1 1 0 1 1 1.414 1.414a1 1 0 0 1-1.414-1.414M17 19a1 1 0 1 1 2 0a1 1 0 0 1-2 0"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span>Q35.00</span>
+                    <div
+                        class=" flex flex-col h-[0px]  overflow-hidden group-has-[:checked]:overflow-y-scroll transition-all duration-[.5s] ease-in-out  group-has-[:checked]:h-[300px] hidden-scroll">
+
+                        <hr class=" border border-gray-300">
+
+                        <div class="p-3">
+                            <div class="flex justify-between">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+                                    <path fill="#000" fill-rule="evenodd"
+                                        d="M2 2a1 1 0 0 0-1 1v14c0 1.354.897 2.498 2.129 2.872a3 3 0 0 0 5.7.128h6.341a3 3 0 0 0 5.7-.128A3.001 3.001 0 0 0 23 17v-4a5 5 0 0 0-5-5h-4V3a1 1 0 0 0-1-1zm13.171 16H14v-8h4a3 3 0 0 1 3 3v4a.997.997 0 0 1-.293.707a3 3 0 0 0-5.536.293m-9.878.293a1 1 0 1 1 1.414 1.414a1 1 0 0 1-1.414-1.414M17 19a1 1 0 1 1 2 0a1 1 0 0 1-2 0"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Q35.00</span>
+                            </div>
+                            <span>1-3 días de trabajo</span>
+                            <span class="text-orange-500 w-full flex justify-end">Gratis con plus</span>
+                            <span class="">Envíos premium</span>
+
                         </div>
-                        <span>1-3 días de trabajo</span>
-                        <span class="text-orange-500 w-full flex justify-end">Gratis con plus</span>
-                        <span class="">Envíos premium</span>
 
+                        <hr class="border border-gray-300 mt-4">
+
+                        <div class="p-3 flex flex-col">
+                            <div class="flex justify-between">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
+                                    <path fill="#000" fill-rule="evenodd"
+                                        d="M2 2a1 1 0 0 0-1 1v14c0 1.354.897 2.498 2.129 2.872a3 3 0 0 0 5.7.128h6.341a3 3 0 0 0 5.7-.128A3.001 3.001 0 0 0 23 17v-4a5 5 0 0 0-5-5h-4V3a1 1 0 0 0-1-1zm13.171 16H14v-8h4a3 3 0 0 1 3 3v4a.997.997 0 0 1-.293.707a3 3 0 0 0-5.536.293m-9.878.293a1 1 0 1 1 1.414 1.414a1 1 0 0 1-1.414-1.414M17 19a1 1 0 1 1 2 0a1 1 0 0 1-2 0"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span>Q25.00</span>
+                            </div>
+                            <span><b>3 - 5</b> Tiempo de entrega</span>
+                            <span>Envíos Standard</span>
+
+                            <span class="font-semibold text-blue-900 mt-8">Prueba por 30 días gratis</span>
+                        </div>
                     </div>
 
-                    <hr class="border border-gray-300 mt-4">
-
-                    <div class="p-3 flex flex-col">
-                        <div class="flex justify-between">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
-                                <path fill="#000" fill-rule="evenodd"
-                                    d="M2 2a1 1 0 0 0-1 1v14c0 1.354.897 2.498 2.129 2.872a3 3 0 0 0 5.7.128h6.341a3 3 0 0 0 5.7-.128A3.001 3.001 0 0 0 23 17v-4a5 5 0 0 0-5-5h-4V3a1 1 0 0 0-1-1zm13.171 16H14v-8h4a3 3 0 0 1 3 3v4a.997.997 0 0 1-.293.707a3 3 0 0 0-5.536.293m-9.878.293a1 1 0 1 1 1.414 1.414a1 1 0 0 1-1.414-1.414M17 19a1 1 0 1 1 2 0a1 1 0 0 1-2 0"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span>Q25.00</span>
-                        </div>
-                        <span><b>3 - 5</b> Tiempo de entrega</span>
-                        <span>Envíos Standard</span>
-
-                        <span class="font-semibold text-blue-900 mt-8">Prueba por 30 días gratis</span>
-                    </div>
                 </section>
 
                 <section class="mt-10">
@@ -652,6 +669,7 @@
             <span class="text-blue-950 font-bold">Contenido de productos</span>
         </section>
     </main>
+
 
 
     <script>
