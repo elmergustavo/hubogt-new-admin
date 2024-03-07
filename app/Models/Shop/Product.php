@@ -25,6 +25,44 @@ class Product extends Model implements HasMedia
      */
     protected $table = 'shop_products';
 
+    protected $fillable = [
+        'shop_brand_id',
+        'shop_id',
+        'name',
+        'slug',
+        'sku',
+        'barcode',
+        'description',
+        'qty',
+        'security_stock',
+        'featured',
+        'video_link',
+        'is_approved',
+        'is_visible',
+        'old_price',
+        'price',
+        'discount',
+        'cost',
+        'type',
+        'status',
+        'backorder',
+        'requires_shipping',
+        'published_at',
+        'seo_title',
+        'seo_description',
+        'weight_value',
+        'weight_unit',
+        'height_value',
+        'height_unit',
+        'width_value',
+        'width_unit',
+        'depth_value',
+        'depth_unit',
+        'volume_value',
+        'volume_unit',
+        'data'
+    ];
+
     /**
      * @var array<string, string>
      */
