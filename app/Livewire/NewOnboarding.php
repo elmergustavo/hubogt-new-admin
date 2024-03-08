@@ -84,6 +84,8 @@ class NewOnboarding extends Component implements HasForms
                                         ->label(__('Número de teléfono'))
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText('Ingrese aquí el número de teléfono donde notificaremos asuntos sobre ventas')
+                                        ->defaultCountry('GT')
+                                        ->onlyCountries(['BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA'])
                                         ->required(),
                                     TextInput::make('email1')
                                         ->email()
@@ -234,6 +236,8 @@ class NewOnboarding extends Component implements HasForms
                                         ->label(__('Teléfono'))
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText('Ingrese aquí el número de telefono del tienda')
+                                        ->defaultCountry('GT')
+                                        ->onlyCountries(['BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA'])
                                         ->required(),
                                     TextInput::make('email')
                                         ->email()
@@ -339,13 +343,12 @@ class NewOnboarding extends Component implements HasForms
                                                 ->placeholder(__('Ingrese aquí el nombre completo del representate legal'))
                                                 ->helperText(__('Si el DPI no autocompleta el nombre completo, puedes ingresarla manualmente'))
                                                 ->required(),
-                                            TextInput::make('phone3')
-                                                ->tel()
-                                                ->minLength(8)
-                                                ->label(__('Número de teléfono'))
+                                            PhoneInput::make('phone3')
+                                                ->label(__('Teléfono'))
                                                 ->prefixIcon('heroicon-s-phone')
+                                                ->defaultCountry('GT')
+                                                ->onlyCountries(['CR', 'SV', 'GT', 'HN', 'NI', 'PA', 'BZ'])
                                                 ->required()
-                                                ->mask('9999-9999')
                                                 ->helperText('Ingrese aquí el teléfono del representate legal'),
                                             TextInput::make('email')
                                                 ->email()
@@ -485,7 +488,7 @@ class NewOnboarding extends Component implements HasForms
 
                         ]),
                 ])
-                    ->skippable()
+                    // ->skippable()
                     ->nextAction(fn (Action $action) => $action->extraAttributes([
                         'class' => 'bg-primary mt-4',
                     ])->label('Guardar y continuar'))
@@ -537,21 +540,21 @@ class NewOnboarding extends Component implements HasForms
         // 'time_zone',
         // 'data',
         $shop = Shop::create($this->form->getState());
-        // 'vendor_id', 
-        // 'name', 
-        // 'banner', 
-        // 'description', 
+        // 'vendor_id',
+        // 'name',
+        // 'banner',
+        // 'description',
         // 'fb_link',
-        // 'tw_link', 
-        // 'insta_link', 
-        // 'status', 
-        // 'shop_url', 
+        // 'tw_link',
+        // 'insta_link',
+        // 'status',
+        // 'shop_url',
         // 'opening_hours',
-        // 'return_policy', 
-        // 'average_rating', 
-        // 'review_count', 
+        // 'return_policy',
+        // 'average_rating',
+        // 'review_count',
         // 'category',
-        // 'geolocation', 
+        // 'geolocation',
         // 'metadata'
         $product = Product::create($this->form->getState());
         // 'shop_brand_id',
