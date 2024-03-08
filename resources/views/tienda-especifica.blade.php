@@ -139,14 +139,14 @@
 
             </div>
 
-            <button
+            <!-- <button
                 class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full justify-center gap-3 items-center hover:bg-gray-100 lg:flex hidden ">
                 Seguir esta tienda
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+                  <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                 </svg>
-            </button>
+              </button> -->
 
             <input type="checkbox" class="hidden" id="read-more">
             <label data-read-more for="read-more"
@@ -302,8 +302,8 @@
 
         <section class="mt-16 md:hidden block">
             <header class="flex shadow-lg shadow-black/10" id="tabs-header">
-                <button id="items" class="flex-1 active:bg-gray-200 p-2 border-b-2 border-black">Items</button>
-                <button id="about" class="flex-1 active:bg-gray-200 p-2">About</button>
+                <button id="items" class="flex-1 active:bg-gray-200 p-2 border-b-2 border-black">Productos</button>
+                <button id="about" class="flex-1 active:bg-gray-200 p-2">Nostros</button>
             </header>
 
             <div id="items-tab" class="tab-body max-w-7xl mx-auto p-4 pt-8">
@@ -325,7 +325,7 @@
 
                     <div class="flex gap-1">
                         <select class="flex-1 p-2 px-3 rounded-full border border-black bg-white ">
-                            <option value="all" class="text-base ">All (177)</option>
+                            <option value="all" class="text-base ">Todos (177)</option>
                             <option value="op-2" class="text-base">Option 2</option>
                             <option value="op-3" class="text-base">Option 3</option>
                         </select>
@@ -452,348 +452,6 @@
 
     </main>
 
-    <script>
-        const paginationInit = () => {
-            document.querySelectorAll('[data-pagination]').forEach($paginationContainer => {
-
-                let page = 1
-                const btnPrev = $paginationContainer.parentElement.querySelector('[data-btn-prev-pagination]')
-                const btnNext = $paginationContainer.parentElement.querySelector('[data-btn-next-pagination]')
-
-                btnNext.addEventListener('click', () => {
-                    if (btnPrev.classList.contains('opacity-0')) btnPrev.classList.remove('opacity-0')
-
-                    const nextPage = $paginationContainer.querySelector(`[data-page="${page + 1}"]`)
-
-                    if ($paginationContainer.querySelector(`[data-page="${page + 2}"]`) === null) {
-                        btnNext.classList.add('opacity-0')
-                    }
-
-                    if (nextPage === null) {
-                        return
-                    }
-
-                    page++
-
-                    $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
-                        e.classList.add('bg-gray-300')
-                        e.classList.remove('bg-yellow-500')
-                    })
-
-                    nextPage.classList.remove('bg-gray-300')
-                    nextPage.classList.add('bg-yellow-500')
-                    $paginationContainer.scroll({
-                        behavior: 'smooth',
-                        left: $paginationContainer.scrollLeft + $paginationContainer.children[0]
-                            .clientWidth
-                    })
-                })
-
-                btnPrev.addEventListener('click', () => {
-
-                    if (btnNext.classList.contains('opacity-0')) btnNext.classList.remove('opacity-0')
-
-                    const prevPage = $paginationContainer.querySelector(`[data-page="${page - 1}"]`)
-
-                    if ($paginationContainer.querySelector(`[data-page="${page - 2}"]`) === null) {
-                        btnPrev.classList.add('opacity-0')
-                    }
-
-                    if (prevPage === null) return
-                    page--
-
-                    $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
-                        e.classList.add('bg-gray-300')
-                        e.classList.remove('bg-bg-yellow-500')
-                    })
-
-                    prevPage.classList.remove('bg-gray-300')
-                    prevPage.classList.add('bg-yellow-500')
-                    $paginationContainer.scroll({
-                        behavior: 'smooth',
-                        left: $paginationContainer.scrollLeft - $paginationContainer.children[0]
-                            .clientWidth
-                    })
-                })
-
-                $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
-
-                    e.addEventListener('click', () => {
-                        page = +e.dataset.page
-
-                        $paginationContainer.querySelector(
-                                `[data-page="${+e.dataset.page - 1}"]`) === null ?
-                            btnPrev.classList.add('opacity-0') :
-                            btnPrev.classList.remove('opacity-0')
-
-                        $paginationContainer.querySelector(
-                                `[data-page="${+e.dataset.page + 1}"]`) === null ?
-                            btnNext.classList.add('opacity-0') :
-                            btnNext.classList.remove('opacity-0')
-
-
-                        $paginationContainer.querySelectorAll('[data-page]').forEach(e => {
-                            e.classList.add('bg-gray-300')
-                            e.classList.remove('bg-bg-yellow-500')
-                        })
-
-                        e.classList.remove('bg-gray-300')
-                        e.classList.add('bg-yellow-500')
-                    })
-                })
-
-
-            })
-        }
-        paginationInit()
-
-        const generateCarousel = () => {
-
-            document.querySelectorAll('[data-carousel-parent]').forEach(carousel => {
-                const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
-                const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
-
-                const carouselInit = () => {
-                    const breakPointsWidth =
-                        'max-[320px]:!w-[134px] max-[375px]:!w-[160px] max-[425px]:!w-[185px] max-[768px]:!w-[229px] lg:!w-[220px]'
-
-                    const data = [{
-                            title: 'New balance age',
-                            img: 'product-1.png',
-                            price: '17.17',
-                            discount: '15.17'
-                        },
-                        {
-                            title: 'Jeans Buda',
-                            img: 'product-2.png',
-                            price: '117.17',
-                            discount: '55.12'
-                        },
-                        {
-                            title: 'Buda Mandala Hoodie',
-                            img: 'product-3.png',
-                            price: '217.17',
-                            discount: '155.17'
-                        },
-                        {
-                            title: 'Jeans Buda',
-                            img: 'product-4.png',
-                            price: '205.17',
-                            discount: '22.17'
-                        },
-                        {
-                            title: 'Chaqueta line',
-                            img: 'product-5.png',
-                            price: '57.17',
-                            discount: '65.14'
-                        },
-                        {
-                            title: 'Jeans Buda',
-                            img: 'product-2.png',
-                            price: '97.17',
-                            discount: '15.17'
-                        },
-                        {
-                            title: 'Chaqueta line',
-                            img: 'product-4.png',
-                            price: '219.19',
-                            discount: '55.17'
-                        },
-                        {
-                            title: 'Buda Mandala Hoodie',
-                            img: 'product-3.png',
-                            price: '217.17',
-                            discount: '155.17'
-                        },
-                        {
-                            title: 'Jeans Buda',
-                            img: 'product-4.png',
-                            price: '205.17',
-                            discount: '22.17'
-                        },
-                        {
-                            title: 'Chaqueta line',
-                            img: 'product-5.png',
-                            price: '57.17',
-                            discount: '65.14'
-                        },
-                        {
-                            title: 'Jeans Buda',
-                            img: 'product-2.png',
-                            price: '97.17',
-                            discount: '15.17'
-                        },
-                        {
-                            title: 'Anillos veranos',
-                            img: 'product-1.png',
-                            price: '34.17',
-                            discount: '5.17'
-                        },
-                    ]
-
-                    let template = ''
-                    data.forEach(({
-                        discount,
-                        img,
-                        price,
-                        title
-                    }, i) => {
-                        template += `<div class="carousel-item snap-start	">
-          <div class="relative md:!h-[250px] h-[180px] ${breakPointsWidth}">
-            <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="${title}" />
-            <button
-              class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
-                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-              </svg></button>
-          </div>
-          <div class="flex gap-4 flex-col pt-3">
-            <h3 class="text-lg  ">${title}</h3>
-            <!-- start stars  -->
-            <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
-              <span class="text-sm">4.8</span>
-              <div class="flex items-center">
-                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-              </div>
-            </div>
-            <!-- end stars  -->
-            <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
-              <b class="text-base">Q${price}</b>
-              <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
-            </div>
-            <span class="text-sm">by MysticArtByJose</span>
-
-          </div>
-        </div>`
-                    })
-                    carousel.innerHTML = template
-
-                    carousel.addEventListener('scrollend', e => {
-
-                        prevBtn.classList[
-                            e.target.scrollLeft > 0 ? 'remove' : 'add'
-                        ]('hidden')
-
-                        nextBtn.classList[
-                            (e.target.scrollWidth - e.target.scrollLeft) <= e.target
-                            .clientWidth ? 'add' : 'remove'
-                        ]('hidden')
-
-                    })
-                }
-                carouselInit()
-
-                const carouselAction = () => {
-
-                    const item = carousel.querySelector('.carousel-item')
-
-                    // Función para avanzar al siguiente grupo de elementos
-                    nextBtn.addEventListener('click', function() {
-                        carousel.scrollTo({
-                            left: carousel.scrollLeft + item.clientWidth,
-                            behavior: 'smooth'
-                        })
-
-                    });
-
-                    // Función para retroceder al grupo anterior de elementos
-                    prevBtn.addEventListener('click', function() {
-                        carousel.scrollTo({
-                            left: carousel.scrollLeft - item.clientWidth,
-                            behavior: 'smooth'
-                        })
-                    });
-
-                }
-                carouselAction()
-
-            })
-        }
-        generateCarousel()
-
-        const generateCategoriesMovil = () => {
-            const $drawerCategories = document.querySelector('#drawer-categories-mobile')
-
-            document.querySelector('#close-drawer-categories-mobile').addEventListener('click', () => {
-                $drawerCategories.classList.remove('translate-y-0')
-                $drawerCategories.classList.add('translate-y-full')
-            })
-
-            document.querySelector('#btn-drawer-categories-mobile').addEventListener('click', () => {
-                $drawerCategories.classList.add('translate-y-0')
-                $drawerCategories.classList.remove('translate-y-full')
-            })
-        }
-        generateCategoriesMovil()
-
-        const tabs = () => {
-            document.querySelectorAll('#tabs-header button').forEach(tabBtn => {
-                tabBtn.addEventListener('click', () => {
-                    document.querySelectorAll('#tabs-header button').forEach(btn => {
-                        btn.classList.remove('border-b-2')
-                    })
-                    tabBtn.classList.add('border-b-2', 'border-black')
-
-                    const tabId = '#' + tabBtn.id + '-tab'
-
-                    tabBtn.parentElement.parentElement.querySelectorAll('.tab-body').forEach(tab => {
-                        tab.classList.add('hidden')
-                    })
-                    document.querySelector(tabId).classList.remove('hidden')
-                })
-            })
-        }
-        tabs()
-
-        const readMoreFn = () => {
-            const input = document.getElementById('read-more')
-            const label = document.querySelector('[data-read-more]')
-            const sectionToHide = document.querySelector('[data-hide-section]')
-
-
-            input.addEventListener('change', () => {
-                label.textContent = input.checked ? 'Leer menos' : 'Leer más...'
-
-                if (input.checked) {
-                    label.classList.remove('bottom-0')
-                    label.classList.add('-bottom-[50px]')
-                    sectionToHide.classList.remove('h-[320px]')
-                } else {
-                    label.classList.remove('-bottom-[50px]')
-                    label.classList.add('bottom-0')
-                    sectionToHide.classList.add('h-[320px]')
-                }
-
-            })
-        }
-        readMoreFn()
-    </script>
     <script>
         const paginationInit = () => {
             document.querySelectorAll('[data-pagination]').forEach($paginationContainer => {

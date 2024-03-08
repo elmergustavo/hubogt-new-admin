@@ -187,7 +187,7 @@
                                             d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                                     </svg></button>
                             </div>
-                            <div class="flex gap-4 flex-col pt-3 ">
+                            <div class="flex gap-2 flex-col pt-3 ">
                                 <h3 class="text-sm ">Item ${i + 1}</h3>
                                 <!-- start stars  -->
                                 <div class="flex items-center justify-start gap-2">
@@ -223,7 +223,7 @@
                                 <!-- end stars  -->
                                 <div class="flex xl:gap-8 md:gap-5 gap-3 items-center ">
                                     <b class="text-base">Q27.88</b>
-                                    <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
+                                    <span class="text-green-600 text-xs">Q37.17 </span>
                                 </div>
                                 <span class="text-sm">by MysticArtByJose</span>
                                 <button class="border border-black p-2 mt-2 hover:bg-gray-200 ">Añadir al
@@ -431,7 +431,7 @@
                 <span class="md:text-xl text-lg text-gray-700 mt-1 inline-block">Completa tus compras</span>
             </header>
 
-            <div class="flex justify-end md:px-5 px-0">
+            <div class="flex justify-center md:px-5 px-0">
                 <div
                     class="bg-green-100 lg:w-[80%] w-[90%] flex flex-row pt-8 md:px-20 px-0 md:pl-20 pl-5 md:items-start items-end pb-0 gap-8 mt-10 justify-center">
 
@@ -865,6 +865,8 @@
         </section>
     </main>
 
+    <!-- start ./home.js -->
+
     <script>
         const generateStars = () => {
             return `<div class="flex items-center ">
@@ -992,10 +994,12 @@
 
               <div class="relative lg:w-[283px] md:w-[210px] w-[180px] lg:h-[450px] h-auto  grid gap-2 grid-cols-2 grid-rows-2 border border-gray-200  p-5">
                 <img loading="lazy" src="/images/best-products/best-m1-1.png" class="w-full h-full object-cover rounded" alt="image" />
-                <img loading="lazy" src="/images/best-products/best-1-large.png" class="w-full row-span-2 h-full object-cover rounded"
-                  alt="image" />
+
                 <img loading="lazy" src="/images/best-products/best-m1-2.png" class="w-full h-full object-cover rounded" alt="image" />
-              </div>
+                <img loading="lazy" src="/images/best-products/best-m1-2.png" class="w-full h-full object-cover rounded" alt="image" />
+                <img loading="lazy" src="/images/best-products/best-m1-2.png" class="w-full h-full object-cover rounded" alt="image" />
+
+                </div>
 
               <div class="flex gap-3 py-3 items-center lg:mt-10 mt-3">
                 <img loading="lazy" src="/images/best-products/best-title.png" class="lg:w-[50px] w-[35px] h-[50px] lg:h-[70px] object-cover rounded" alt="image" />
@@ -1006,7 +1010,7 @@
               </div>
 
             </div>
-          `
+          `;
                     });
 
                 } else {
@@ -1085,17 +1089,17 @@
                     d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                 </svg></button>
             </div>
-            <div class="flex gap-4 flex-col pt-3 text-[${color}]">
+            <div class="flex gap-2 flex-col pt-3 text-[${color}]">
               <h3 class="text-lg  md:min-h-fit min-h-[60px]">${title}</h3>
               <!-- start stars  -->
               <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2 text-[${color}]">
-                <span class="text-sm">4.8</span>
+
                 ${generateStars()}
               </div>
               <!-- end stars  -->
               <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
                 <b class="text-base price">Q${price}</b>
-                <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-xs">Q${discount} (25% descuento)</span>
+                <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-xs">Q${discount} </span>
               </div>
               <span class="text-sm">by MysticArtByJose</span>
             </div>
@@ -1217,7 +1221,9 @@
         };
         generateCarouselHero()
     </script>
+    <!-- end ./home.js -->
 
+    <!-- start ../utils/dinamyc-likes.js-->
     <script>
         const manageLikes = () => {
             const likesNavbar = document.querySelector('#button-like-navbar')
@@ -1255,6 +1261,7 @@
         manageLikes()
     </script>
 
+    <!-- end ./utils/dinamyc-likes.js -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @endsection

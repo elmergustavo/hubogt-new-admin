@@ -17,7 +17,7 @@
                     </svg>
                 </button>
 
-                <img src="../images/logohorizontal.png" alt=""
+                <img src="/assets/logo/new-logo-mombii.svg" alt="Logo"
                     class="md:w-32 sm:w-[30%] w-[115px] object-cover order-1" />
 
             </div>
