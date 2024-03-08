@@ -28,7 +28,7 @@ Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
 Route::get('/pago', fn () => view('pago'))->name('pago');
 Route::get('/tienda-general', fn () => view('tienda-general'))->name('pago');
 Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
-// Route::post('/', [FormRequests::class, 'sendMail'])->name('form.send');
+Route::post('/', [FormRequests::class, 'sendMail'])->name('form.send');
 
 // Route::get('/login', fn () => view('login'))->name('login');
 // Route::get('/preguntas-frecuentes', fn () => view('faq'))->name('faq');
