@@ -81,13 +81,15 @@ class NewOnboarding extends Component implements HasForms
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText(__('Teléfono con el que se comunican con tu empresa'))
                                         ->mask('9999-9999')
-                                        ->helperText('Ingrese aquí el número de teléfono donde notificaremos asuntos sobre ventas'),
+                                        ->helperText('Ingrese aquí el número de teléfono donde notificaremos asuntos sobre ventas')
+                                        ->required(),
                                     TextInput::make('email1')
                                         ->email()
                                         ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                         ->label(__('Correo Electrónico'))
                                         ->prefixIcon('heroicon-s-at-symbol')
-                                        ->helperText(__('Ingrese aquí el correo electrónico a donde notificaremos asuntos sobre ventas')),
+                                        ->helperText(__('Ingrese aquí el correo electrónico a donde notificaremos asuntos sobre ventas'))
+                                        ->required(),
                                     TextInput::make('name_shop')
                                         ->label('Nombre de la tienda')
                                         ->prefixIcon('bxs-store')
@@ -153,7 +155,8 @@ class NewOnboarding extends Component implements HasForms
                                         ->reactive() // Asegúrate de que el campo es reactivo para actualizar el UI basado en su valor
                                         // ->afterStateUpdated(fn (Closure $set) => $set('regimen', $this->state['regimen']))
                                         // ->default('monthly')
-                                        ->helperText('Seleccione si es SA. o empresa individual'),
+                                        ->helperText('Seleccione si es SA. o empresa individual')
+                                        ->required(),
                                     TextInput::make('dpis')
                                         ->label(__('Número de DPI o pasaporte'))
                                         ->required()
@@ -229,7 +232,8 @@ class NewOnboarding extends Component implements HasForms
                                         ->label(__('Nombre de la persona individual'))
                                         ->prefixIcon('heroicon-m-building-office')
                                         ->placeholder(__('Ingrese aquí el nombre que representará a su negocio en Mombii'))
-                                        ->helperText(__('Razón social de tu negocio. Si el NIT no autocompleta la razón social de tu negocio, puedes ingresarla manualmente')),
+                                        ->helperText(__('Razón social de tu negocio. Si el NIT no autocompleta la razón social de tu negocio, puedes ingresarla manualmente'))
+                                        ->required(),
 
 
                                     // TextInput::make('person')
@@ -241,7 +245,8 @@ class NewOnboarding extends Component implements HasForms
                                         // ->prefixIcon('heroicon-s-phone')
                                         ->helperText(__('Teléfono con el que se comunican con tu empresa'))
 
-                                        ->helperText('Ingrese aquí la dirección comercial'),
+                                        ->helperText('Ingrese aquí la dirección comercial')
+                                        ->required(),
 
 
                                     TextInput::make('phone')
@@ -252,24 +257,28 @@ class NewOnboarding extends Component implements HasForms
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText(__('Teléfono con el que se comunican con tu empresa'))
                                         ->mask('9999-9999')
-                                        ->helperText('Ingrese aquí el número de telefono del tienda'),
+                                        ->helperText('Ingrese aquí el número de telefono del tienda')
+                                        ->required(),
 
                                     TextInput::make('email')
                                         ->email()
                                         ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                         ->label(__('Correo Electrónico'))
                                         ->prefixIcon('heroicon-s-at-symbol')
-                                        ->helperText(__('Ingrese aquí el correo de la tienda')),
+                                        ->helperText(__('Ingrese aquí el correo de la tienda'))
+                                        ->required(),
 
                                     SpatieMediaLibraryFileUpload::make('avatar')
                                         ->label('Factura de servicios (agua, luz o teléfono)')
                                         // ->acceptedFileTypes(['application/pdf'])
-                                        ->helperText('Cargue aquí una factura de servicio'),
+                                        ->helperText('Cargue aquí una factura de servicio')
+                                        ->required(),
 
                                     SpatieMediaLibraryFileUpload::make('rtu')
                                         ->label('RTU')
                                         ->acceptedFileTypes(['application/pdf'])
-                                        ->helperText('Cargue aquí el RTU actualizado'),
+                                        ->helperText('Cargue aquí el RTU actualizado')
+                                        ->required(),
 
 
                                 ]),
@@ -359,14 +368,15 @@ class NewOnboarding extends Component implements HasForms
                                                 ->label(__('Nombre completo'))
                                                 ->prefixIcon('heroicon-m-user')
                                                 ->placeholder(__('Ingrese aquí el nombre completo del representate legal'))
-                                                ->helperText(__('Si el DPI no autocompleta el nombre completo, puedes ingresarla manualmente')),
+                                                ->helperText(__('Si el DPI no autocompleta el nombre completo, puedes ingresarla manualmente'))
+                                                ->required(),
                                             TextInput::make('phone3')
                                                 ->tel()
                                                 ->minLength(8)
                                                 ->label(__('Número de teléfono'))
                                                 ->prefix('+502')
                                                 ->prefixIcon('heroicon-s-phone')
-
+                                                ->required()
                                                 ->mask('9999-9999')
                                                 ->helperText('Ingrese aquí el teléfono del representate legal'),
                                             TextInput::make('email')
@@ -374,24 +384,29 @@ class NewOnboarding extends Component implements HasForms
                                                 ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                                 ->label(__('Correo Electrónico'))
                                                 ->prefixIcon('heroicon-s-at-symbol')
-                                                ->helperText(__('Ingrese aquí el correo del representate legal')),
+                                                ->helperText(__('Ingrese aquí el correo del representate legal'))
+                                                ->required(),
                                             DatePicker::make('date_of_birth')
                                                 ->label('Fecha de expiración de DPI o pasaporte')
-                                                ->format('d/m/Y'),
+                                                ->format('d/m/Y')
+                                                ->required(),
                                             // ->native(false),
 
                                             SpatieMediaLibraryFileUpload::make('dpi_or_')
                                                 ->label('DPI o pasaporte')
                                                 // ->acceptedFileTypes(['application/pdf'])
-                                                ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
+                                                ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)')
+                                                ->required(),
                                             SpatieMediaLibraryFileUpload::make('rtu_legal')
                                                 ->label('RTU')
                                                 // ->acceptedFileTypes(['application/pdf'])
-                                                ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
+                                                ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)')
+                                                ->required(),
                                             SpatieMediaLibraryFileUpload::make('invoices')
                                                 ->label('Factura de servicios (agua, luz o teléfono)')
                                                 // ->acceptedFileTypes(['application/pdf'])
-                                                ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
+                                                ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)')
+                                                ->required(),
 
                                         ])
                                 ])
