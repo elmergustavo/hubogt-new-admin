@@ -27,7 +27,7 @@
     <header class="bg-[#161933] py-4">
         <nav class="flex justify-between items-center w-[90%] mx-auto">
             <div>
-                <a href="{{route('home')}}">
+                <a href="{{route('ecommerce')}}">
                     <img class="w-36" src="images/new-logo-mombii-dark.svg" class="" alt="">
                 </a>
             </div>
