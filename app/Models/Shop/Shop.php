@@ -13,10 +13,22 @@ class Shop extends Model
     protected $table = 'shops';
 
     protected $fillable = [
-        'vendor_id', 'name', 'banner', 'description', 'fb_link',
-        'tw_link', 'insta_link', 'status', 'shop_url', 'opening_hours',
-        'return_policy', 'average_rating', 'review_count', 'category',
-        'geolocation', 'metadata'
+        'vendor_id', 
+        'name', 
+        'banner', 
+        'description', 
+        'fb_link',
+        'tw_link', 
+        'insta_link', 
+        'status', 
+        'shop_url', 
+        'opening_hours',
+        'return_policy', 
+        'average_rating', 
+        'review_count', 
+        'category',
+        'geolocation', 
+        'metadata'
     ];
 
     public function vendor()
