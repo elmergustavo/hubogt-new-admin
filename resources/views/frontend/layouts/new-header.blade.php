@@ -71,7 +71,7 @@
             <!-- start input search -->
 
             <!-- start links navigation -->
-            <div class="hidden lg:flex items-center md:gap-5 gap-3 lg:order-3 order-2">
+            <div class="flex lg:flex items-center md:gap-5 gap-3 lg:order-3 order-2">
                 @guest
                     <a href="{{ route('login') }}">
                         <span class="lg:block hidden">Iniciar sesión</span>
@@ -124,36 +124,32 @@
                     <span
                         class="text-xs -z-10 -top-4 bg-red-500 rounded-full p-1 px-2 font-bold text-white -right-3 absolute hidden"></span>
                 </a>
-                <div class="relative grid place-items-center">
-                    <button id="button-cart-navbar">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
-                            viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="1.5"
-                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.137a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m12.75 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0" />
-                        </svg>
-                        <span
-                            class="text-xs -z-10 -top-4 bg-red-500 rounded-full p-1 px-2 font-bold text-white -right-3 absolute hidden"></span>
 
-                    </button>
-                    <div class="bg-white shadow-lg shadow-black absolute -bottom-[65px] h-fit border rounded right-0 w-[350px] p-3   overflow-y-scroll space-y-4 hidden py-6"
-                        id="list-cart">
-                        <span class="text-center text-black/50 w-full block ">No hay productos en el carrito</span>
-                    </div>
-                </div>
+
+                @livewire('shop-add-to-cart')
+
 
 
                 @auth
-
                     <x-dropdown align="right">
                         <x-slot name="trigger">
                             <div
                                 class="md:flex hidden cursor-pointer justify-center items-center gap-[2px] flex-col text-[15px]">
-                                <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}"
-                                    class="w-[35px] h-[35px] object-cover rounded-full" alt="image" />
-                                <span>{{ Auth::user()->name }}</span>
+                                @php
+                                    $user = Auth::user();
+                                    $profilePhotoUrl = $user->profile_photo_path
+                                        ? Storage::url($user->profile_photo_path)
+                                        : 'https://ui-avatars.com/api/?name=' .
+                                            urlencode($user->name) .
+                                            '&color=7F9CF5&background=EBF4FF';
+                                @endphp
+
+                                <img src="{{ $profilePhotoUrl }}" class="w-[35px] h-[35px] object-cover rounded-full"
+                                    alt="User Image" />
+                                <span>{{ $user->name }}</span>
                             </div>
                         </x-slot>
+
 
                         <x-slot name="content">
                             <x-dropdown-link :href="route('profile')" wire:navigate>
@@ -170,18 +166,6 @@
                             </form>
                         </x-slot>
                     </x-dropdown>
-
-
-
-
-                    {{-- <form method="POST" action="{{ route('logout') }}" x-data>
-                @csrf
-
-                <x-dropdown-link href="{{ route('logout') }}" class="flex items-center" @click.prevent="$root.submit();">
-
-                    {{ __('Cerrar Sesión') }}
-                </x-dropdown-link>
-            </form> --}}
 
                 @endauth
 
@@ -212,7 +196,7 @@
             <!-- end input search mobile -->
 
             <!-- start links navigation mobile -->
-            <div class="lg:hidden flex order-2 items-center md:gap-5 sm:gap-5 gap-3">
+            {{-- <div class="lg:hidden flex order-2 items-center md:gap-5 sm:gap-5 gap-3">
                 <button id="btn-search-input-mobile">
                     <svg xmlns="http://www.w3.org/2000/svg" class="sm:w-[25px] w-6 sm:h-[25px] h-6"
                         viewBox="0 0 24 24">
@@ -229,15 +213,10 @@
                             d="M15.75 6a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632" />
                     </svg>
                 </a>
-                <a href="">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="sm:w-[25px] w-6 sm:h-[25px] h-6"
-                        viewBox="0 0 24 24">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5"
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.137a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m12.75 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0" />
-                    </svg>
-                </a>
-            </div>
+                <div>
+                    @livewire('shop-add-to-cart')
+                </div>
+            </div> --}}
             <!-- end links navigation mobile -->
         </div>
     </nav>

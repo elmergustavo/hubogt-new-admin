@@ -13,12 +13,13 @@ use App\Livewire\SellerRegister;
 
 // Route::get('/', fn () => view('index'))->name('home');
 Route::get('/', fn () => view('new-home'))->name('ecommerce');
+// Route::get('/dashboard', fn () => view('new-home'))->name('ecommerce');
 Route::get('/onboarding-pago', fn () => view('onboarding-pago'))->name('onboarding-pago');
 Route::get('/categorias-productos', fn () => view('categorias-productos'))->name('categorias-productos');
 Route::get('/productos-descripcion', fn () => view('productos-descripcion'))->name('productos-descripcion');
 Route::get('/categorias-segment-productos', fn () => view('categorias-segment-productos'))->name('productos-descripcion');
 Route::get('/tienda-especifica', fn () => view('tienda-especifica'))->name('tienda-especifica');
-// Route::get('/', IndexHome::class)->name('index-home');
+Route::get('/dashboard', IndexHome::class)->name('index-home');
 Route::get('/profile', fn () => view('frontend.home.profile'))->name('profile');
 Route::get('/producto-detalle', fn () => view('frontend.home.producto-detalle'))->name('producto_detalle');
 Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
