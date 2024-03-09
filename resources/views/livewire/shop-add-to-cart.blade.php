@@ -32,28 +32,24 @@
 
     </div> --}}
 
-    <x-filament::modal icon="heroicon-o-exclamation-triangle" icon-color="danger" slide-over id="feedback" width="md" class="ml-[70px] md:ml-0">
+
+
+    <x-filament::modal icon="heroicon-o-exclamation-triangle" icon-color="danger" slide-over id="feedback"
+        :width="$modalWidth">
+
 
 
         <div class="pointer-events-none fixed inset-y-0 right-0 flex  pl-10">
-            <!--
-                Slide-over panel, show/hide based on slide-over state.
 
-                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-                  From: "translate-x-full"
-                  To: "translate-x-0"
-                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-                  From: "translate-x-0"
-                  To: "translate-x-full"
-              -->
-            <div class="pointer-events-auto w-screen md:max-w-md max-w-xs">
+            <div class="pointer-events-auto w-screen md:max-w-md max-w-xs ">
                 <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                     <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                         <div class="flex items-start justify-between">
                             <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping
                                 cart</h2>
                             <div class="ml-3 flex h-7 items-center">
-                                <button wire:click="closeModalslide()"  type="button" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
+                                <button wire:click="closeModalslide()" type="button"
+                                    class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
                                     <span class="absolute -inset-0.5"></span>
                                     <span class="sr-only">Close panel</span>
                                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -155,8 +151,10 @@
             </div>
         </div>
 
-    </x-filament::modal>
 
+
+
+    </x-filament::modal>
 
 
 </div>

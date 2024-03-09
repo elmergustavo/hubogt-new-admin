@@ -36,6 +36,7 @@
         "livewire/volt": "^1.0",
         "mallardduck/blade-boxicons": "^2.4",
         "mckenziearts/blade-untitledui-icons": "^1.2",
+        "mobiledetect/mobiledetectlib": "^4.8",
         "owenvoke/blade-entypo": "^2.1",
         "owenvoke/blade-fontawesome": "^2.5",
         "parallax/filament-comments": "^1.0",
