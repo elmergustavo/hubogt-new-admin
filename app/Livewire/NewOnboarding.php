@@ -45,12 +45,6 @@ class NewOnboarding extends Component implements HasForms
         $this->form->fill();
     }
 
-    // public function create(): void
-    // {
-    //     dd($this->form->getState());
-    // }
-
-
     public function form(Form $form): Form
     {
         return $form
@@ -80,21 +74,21 @@ class NewOnboarding extends Component implements HasForms
                                         ->prefixIcon('bi-person-fill')
                                         ->helperText('Ingrese aquí el nombre de la persona que administra la cuenta')
                                         ->required(),
-                                    PhoneInput::make('phone1')
+                                    PhoneInput::make('vendor_phone')
                                         ->label(__('Número de teléfono'))
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText('Ingrese aquí el número de teléfono donde notificaremos asuntos sobre ventas')
                                         ->defaultCountry('GT')
                                         ->onlyCountries(['BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA'])
                                         ->required(),
-                                    TextInput::make('email1')
+                                    TextInput::make('vendor_email')
                                         ->email()
                                         ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                         ->label(__('Correo Electrónico'))
                                         ->prefixIcon('heroicon-s-at-symbol')
                                         ->helperText(__('Ingrese aquí el correo electrónico a donde notificaremos asuntos sobre ventas'))
                                         ->required(),
-                                    TextInput::make('name_shop')
+                                    TextInput::make('shop_name')
                                         ->label('Nombre de la tienda')
                                         ->prefixIcon('bxs-store')
                                         ->placeholder(__('Escribe el nombre de tu tienda'))
@@ -149,7 +143,7 @@ class NewOnboarding extends Component implements HasForms
                                         ->reactive()
                                         ->helperText('Seleccione si es SA. o empresa individual')
                                         ->required(),
-                                    TextInput::make('dpis')
+                                    TextInput::make('shop_dpi')
                                         ->label(__('Número de DPI o pasaporte'))
                                         ->required()
                                         ->live()
@@ -162,7 +156,7 @@ class NewOnboarding extends Component implements HasForms
                                                         $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
                                                     JS)
                                         ),
-                                    TextInput::make('nit')
+                                    TextInput::make('shop_nit')
                                         ->label(__('NIT'))
                                         ->required()
                                         ->live()
@@ -222,42 +216,42 @@ class NewOnboarding extends Component implements HasForms
                                                 }
                                             }
                                         ),
-                                    TextInput::make('legal_reason')
+                                    TextInput::make('shop_legal_reason')
                                         ->label(__('Nombre de la persona individual'))
                                         ->prefixIcon('heroicon-m-building-office')
                                         ->placeholder(__('Ingrese aquí el nombre que representará a su negocio en Mombii'))
                                         ->helperText(__('Razón social de tu negocio. Si el NIT no autocompleta la razón social de tu negocio, puedes ingresarla manualmente'))
                                         ->required(),
-                                    TextInput::make('adreess')
+                                    TextInput::make('shop_adreess')
                                         ->label(__('Dirección comercial'))
                                         ->helperText('Ingrese aquí la dirección comercial')
                                         ->required(),
-                                    PhoneInput::make('phone')
+                                    PhoneInput::make('shop_phone')
                                         ->label(__('Teléfono'))
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText('Ingrese aquí el número de telefono del tienda')
                                         ->defaultCountry('GT')
                                         ->onlyCountries(['BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA'])
                                         ->required(),
-                                    TextInput::make('email')
+                                    TextInput::make('shop_email')
                                         ->email()
                                         ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                         ->label(__('Correo Electrónico'))
                                         ->prefixIcon('heroicon-s-at-symbol')
                                         ->helperText(__('Ingrese aquí el correo de la tienda'))
                                         ->required(),
-                                    Section::make('Documentos')
+                                    Section::make('shop_documentos')
                                         ->description('')
                                         ->schema([
                                             Grid::make([
                                                 'default' => 2, 'sm' => 2, 'md' => 2, 'xl' => 2, '2xl' => 2,
                                             ])
                                                 ->schema([
-                                                    SpatieMediaLibraryFileUpload::make('avatar')
+                                                    SpatieMediaLibraryFileUpload::make('shop_public_services_bill')
                                                         ->label('Factura de servicios (agua, luz o teléfono)')
                                                         ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
 
-                                                    SpatieMediaLibraryFileUpload::make('rtu')
+                                                    SpatieMediaLibraryFileUpload::make('shop_rtu')
                                                         ->label('Cargue aquí el RTU actualizado')
                                                         ->acceptedFileTypes(['application/pdf'])
                                                         ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
@@ -279,7 +273,7 @@ class NewOnboarding extends Component implements HasForms
                                                     'sub_title' => 'Ingrese los datos del representante legal de la SA.',
                                                 ])
                                                 ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
-                                            TextInput::make('dpi')
+                                            TextInput::make('vendor_dpi')
                                                 ->label(__('Número de DPI o pasaporte'))
                                                 ->required()
                                                 ->live()
@@ -337,32 +331,32 @@ class NewOnboarding extends Component implements HasForms
                                                         }
                                                     }
                                                 ),
-                                            TextInput::make('name_dpi')
+                                            TextInput::make('vendor_name')
                                                 ->label(__('Nombre completo'))
                                                 ->prefixIcon('heroicon-m-user')
                                                 ->placeholder(__('Ingrese aquí el nombre completo del representate legal'))
                                                 ->helperText(__('Si el DPI no autocompleta el nombre completo, puedes ingresarla manualmente'))
                                                 ->required(),
-                                            PhoneInput::make('phone3')
+                                            PhoneInput::make('vendor_phone')
                                                 ->label(__('Teléfono'))
                                                 ->prefixIcon('heroicon-s-phone')
                                                 ->defaultCountry('GT')
                                                 ->onlyCountries(['CR', 'SV', 'GT', 'HN', 'NI', 'PA', 'BZ'])
                                                 ->required()
                                                 ->helperText('Ingrese aquí el teléfono del representate legal'),
-                                            TextInput::make('email')
+                                            TextInput::make('vendor_email')
                                                 ->email()
                                                 ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                                 ->label(__('Correo Electrónico'))
                                                 ->prefixIcon('heroicon-s-at-symbol')
                                                 ->helperText(__('Ingrese aquí el correo del representate legal'))
                                                 ->required(),
-                                            DatePicker::make('date_of_birth')
+                                            DatePicker::make('vendor_expiration')
                                                 ->label('Fecha de expiración de DPI o pasaporte')
                                                 ->format('d/m/Y')
                                                 ->required(),
                                             // ->native(false),
-                                            Section::make('Documentos')
+                                            Section::make('vendor_documentos')
                                                 ->description('')
                                                 ->collapsible()
                                                 ->schema([
@@ -370,13 +364,13 @@ class NewOnboarding extends Component implements HasForms
                                                         'default' => 2, 'sm' => 2, 'md' => 2, 'xl' => 2, '2xl' => 2,
                                                     ])
                                                         ->schema([
-                                                            SpatieMediaLibraryFileUpload::make('dpi_or_')
+                                                            SpatieMediaLibraryFileUpload::make('vendor_dpi_or_passport')
                                                                 ->label('DPI o pasaporte')
                                                                 ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
-                                                            SpatieMediaLibraryFileUpload::make('rtu_legal')
+                                                            SpatieMediaLibraryFileUpload::make('vendor_rtu')
                                                                 ->label('RTU')
                                                                 ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
-                                                            SpatieMediaLibraryFileUpload::make('invoices')
+                                                            SpatieMediaLibraryFileUpload::make('vendor_public_services_bill')
                                                                 ->label('Factura de servicios (agua, luz o teléfono)')
                                                                 ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
                                                         ])
@@ -403,29 +397,29 @@ class NewOnboarding extends Component implements HasForms
                                         ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                                     Grid::make(['default' => 1, 'sm' => 1, 'md' => 3,])
                                         ->schema([
-                                            TextInput::make('name')
+                                            TextInput::make('product_name')
                                                 ->label('Nombre')
                                                 ->prefixIcon('polaris-product-filled-icon')
                                                 ->placeholder(__('Ingrese aquí el nombre de tu artículo')),
-                                            TextInput::make('price')
+                                            TextInput::make('product_price')
                                                 ->label('Precio original')
                                                 ->numeric()
                                                 ->prefix('Q.'),
-                                            TextInput::make('discount')
+                                            TextInput::make('product_discount')
                                                 ->label('Precio descuento')
                                                 ->numeric()
                                                 ->prefix('Q.'),
                                         ]),
                                     Grid::make(['default' => 1, 'sm' => 1, 'md' => 1,])
                                         ->schema([
-                                            Textarea::make('description')
+                                            Textarea::make('product_description')
                                                 ->label('Descripción')
                                                 ->placeholder(__('Comienza con una breve descripción de las mejores cualidades del artículo')),
                                             Section::make('Imagenes del producto')
                                                 ->description('')
                                                 ->collapsible()
                                                 ->schema([
-                                                    SpatieMediaLibraryFileUpload::make('media')
+                                                    SpatieMediaLibraryFileUpload::make('product_images')
                                                         ->label('')
                                                         ->collection('product-images')
                                                         ->multiple()
@@ -520,16 +514,18 @@ class NewOnboarding extends Component implements HasForms
         // Post::create($this->form->getState());
         // $this->form->getState();
 
-        $vendor = Vendor::create($this->form->getState());
+        $vendor = Vendor::create([
+            // '',--
+            // 'cui',--
+            'phone' => 'vendor_phone',
+            'email' => 'vendor_email',
+            // 'address',--
+            // 'legal_representative',--
+
+        ]);
         // 'user_id',
         // 'is_company',
-        // 'nit',
-        // 'cui',
-        // 'phone',
-        // 'email',
-        // 'address',
         // 'legal_info',
-        // 'legal_representative',
         // 'registration_date',
         // 'vendor_type',
         // 'is_verified',
@@ -539,9 +535,12 @@ class NewOnboarding extends Component implements HasForms
         // 'preferred_language',
         // 'time_zone',
         // 'data',
-        $shop = Shop::create($this->form->getState());
+        $shop = Shop::create([
+            'name' => 'shop_name',
+            'address' => 'shop_adreess',
+
+        ]);
         // 'vendor_id',
-        // 'name',
         // 'banner',
         // 'description',
         // 'fb_link',
@@ -556,7 +555,9 @@ class NewOnboarding extends Component implements HasForms
         // 'category',
         // 'geolocation',
         // 'metadata'
-        $product = Product::create($this->form->getState());
+        $product = Product::create([
+
+        ]);
         // 'shop_brand_id',
         // 'shop_id',
         // 'name',

@@ -15,7 +15,8 @@ class Shop extends Model
     protected $fillable = [
         'vendor_id', 
         'name', 
-        'banner', 
+        'banner',
+        'address',
         'description', 
         'fb_link',
         'tw_link', 
