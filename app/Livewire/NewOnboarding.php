@@ -142,7 +142,8 @@ class NewOnboarding extends Component implements HasForms
                                         ->label('Régimen Tributario')
                                         ->native(false)
                                         ->options([
-                                            'draft'     => 'Empresa SA. - Régimen general del IVA',
+                                            'RPT'       => 'Empresa SA. - Régimen general del IVA',
+                                            'regimen'   => 'Empresa SA. - Régimen Pequeño Contribuyente',
                                             'reviewing' => 'Personal individual - Régimen general del IVA',
                                             'published' => 'Personal individual - Pequeño contribuyente',
                                         ])
