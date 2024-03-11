@@ -20,6 +20,7 @@
         "eduard9969/blade-polaris-icons": "^2.3",
         "filament/filament": "^3.0",
         "filament/forms": "^3.2",
+        "filament/notifications": "^3.2",
         "filament/spatie-laravel-media-library-plugin": "^3.0",
         "filament/spatie-laravel-settings-plugin": "^3.0",
         "filament/spatie-laravel-tags-plugin": "^3.0",

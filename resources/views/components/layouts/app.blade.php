@@ -24,6 +24,8 @@
 
     <body class="antialiased">
         {{ $slot }}
+        
+        @livewire('notifications')
 
         @filamentScripts
         @livewireScripts
