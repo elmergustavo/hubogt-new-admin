@@ -13,8 +13,7 @@ class Vendor extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
-
-
+    
     protected $table = 'shop_vendors';
 
     protected $fillable = [
@@ -26,7 +25,7 @@ class Vendor extends Model implements HasMedia
         'email',
         'address',
         'legal_info',
-        'legal_representative',
+        'full_name',
         'registration_date',
         'vendor_type',
         'is_verified',
