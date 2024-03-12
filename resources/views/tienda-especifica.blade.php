@@ -154,13 +154,13 @@
             </div>
 
             <!-- <button
-                        class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full justify-center gap-3 items-center hover:bg-gray-100 lg:flex hidden ">
-                        Seguir esta tienda
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                          <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                        </svg>
-                      </button> -->
+                                class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full justify-center gap-3 items-center hover:bg-gray-100 lg:flex hidden ">
+                                Seguir esta tienda
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                                  <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+                                </svg>
+                              </button> -->
 
             <input type="checkbox" class="hidden" id="read-more">
             <label data-read-more for="read-more"
@@ -666,12 +666,12 @@
                           d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                       </svg></button>
                   </div>
-                  <div class="flex gap-4 flex-col pt-3">
+                  <div class="flex gap-4 flex-col pt-3 text-base">
                     <h3 class="text-lg  md:min-h-fit min-h-[50px] line-clamp-2">${title}</h3>
                     ${generateStars()}
                     <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
-                      <b class="text-base">Q${price}</b>
-                      <span class="text-green-600 text-base">Q${discount} </span>
+                      <b class="text-base price-product">Q${price}</b>
+                      <span class="text-green-600 line-through text-sm">Q${discount} </span>
                     </div>
                     <span class="text-sm">by MysticArtByJose</span>
                   </div>
