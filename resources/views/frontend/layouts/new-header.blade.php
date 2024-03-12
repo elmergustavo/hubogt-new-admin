@@ -208,7 +208,7 @@
      <div class="bg-white sm:w-[50%] w-[80%]  h-full absolute top-0 z-50">
          <header
              class="min-h-[70px] border-b border-gray-400 flex justify-between items-center px-4 py-2 sticky top-0 bg-white mb-5 shadow-lg shadow-black/10">
-             <img src="../images/new-mombii.png" alt="" class="w-32  object-contain " />
+             <img src="/assets/logo/new-logo-mombii.svg" alt="" class="w-32  object-contain " />
              <button id="close-drawer-navbar-mobile" class="">
                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 active:text-red-500 text-black"
                      viewBox="0 0 24 24">
