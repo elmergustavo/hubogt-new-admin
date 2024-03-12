@@ -127,7 +127,9 @@
 
                 <div id="overlay-likes" class="bg-black/0 hidden z-20 w-screen h-screen fixed top-0 left-0"></div>
               </div>
-             <div class="relative grid place-items-center">
+
+              @livewire('shop-add-to-cart')
+             {{-- <div class="relative grid place-items-center">
                  <button id="button-cart-navbar">
                      <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
                          viewBox="0 0 24 24">
@@ -143,7 +145,7 @@
                      id="list-cart">
                      <span class="text-center text-black/50 w-full block ">No hay productos en el carrito</span>
                  </div>
-             </div>
+             </div> --}}
              <!-- end links navigation -->
 
              <!-- start input search mobile -->
