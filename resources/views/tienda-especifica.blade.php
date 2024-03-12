@@ -154,13 +154,13 @@
             </div>
 
             <!-- <button
-                    class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full justify-center gap-3 items-center hover:bg-gray-100 lg:flex hidden ">
-                    Seguir esta tienda
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-                      <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                    </svg>
-                  </button> -->
+                        class="lg:mt-2 mt-10 p-3 border border-black lg:w-[30%] md:w-[50%] lg:mx-0 mx-auto w-full justify-center gap-3 items-center hover:bg-gray-100 lg:flex hidden ">
+                        Seguir esta tienda
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                          <path fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+                        </svg>
+                      </button> -->
 
             <input type="checkbox" class="hidden" id="read-more">
             <label data-read-more for="read-more"
@@ -307,9 +307,9 @@
 
                 <header class="mb-5 flex flex-col gap-3 justify-start">
                     <div
-                        class="w-full border border-black rounded-full relative overflow-hidden has-[:focus]:outline outline-black outline-1 outline-offset-2">
+                        class="w-full border border-black rounded relative overflow-hidden has-[:focus]:outline outline-black outline-1 outline-offset-2">
                         <input type="text" placeholder="Busca todos los 177 productos"
-                            class="bg-gray-200 text-black border-none outline-none  p-2 rounded-full w-full px-3 text-base pr-9">
+                            class="bg-gray-200 text-black border-none outline-none  p-2 rounded w-full px-3 text-base pr-9">
 
                         <div class="absolute bg-gray-200 top-0 right-0 w-8 h-full grid items-center rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
@@ -321,12 +321,32 @@
                     </div>
 
                     <div class="flex gap-1">
-                        <select class="flex-1 p-2 px-3 rounded-full border border-black bg-white ">
+                        {{-- <select class="flex-1 p-2 px-3 rounded-full border border-black bg-white ">
                             <option value="all" class="text-base ">Todos (177)</option>
                             <option value="op-2" class="text-base">Option 2</option>
                             <option value="op-3" class="text-base">Option 3</option>
-                        </select>
-
+                        </select> --}}
+                        <div class="w-full relative">
+                            <button id="dropdown-sizes" data-dropdown-toggle="dropdown-size-toggle"
+                                class="w-full p-3 px-4 !m-0 border border-black flex items-center justify-between rounded"
+                                type="button">
+                                Todos (177)
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div id="dropdown-size-toggle"
+                                class="bg-white z-50 hidden shadow w-full border border-gray-500 p-2 rounded ">
+                                <ul class="" aria-labelledby="dropdown-sizes">
+                                    <li class="hover:bg-blue-950 hover:text-white p-2">2</li>
+                                    <li class="hover:bg-blue-950 hover:text-white p-2">6</li>
+                                    <li class="hover:bg-blue-950 hover:text-white p-2">4</li>
+                                </ul>
+                            </div>
+                        </div>
                         <button class="p-2 px-3 rounded  active:bg-gray-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
                                 <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
