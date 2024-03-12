@@ -172,7 +172,7 @@
                 <section class="space-y-3 mt-8">
                     <div class="w-full relative">
                         <button id="dropdown-sizes" data-dropdown-toggle="dropdown-size-toggle"
-                            class="w-full p-3 px-4  !m-0 border border-black flex items-center justify-between"
+                            class="w-full p-3 px-4  !m-0 border border-black flex items-center justify-between rounded"
                             type="button">
                             Seleccione el tamaño
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -183,7 +183,7 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdown-size-toggle"
-                            class="bg-white z-10 hidden shadow w-full border border-gray-500 p-2">
+                            class="bg-white z-10 hidden shadow w-full border border-gray-500 p-2 rounded">
                             <span class="font-semibold mb-3 block">USA size</span>
                             <ul class="" aria-labelledby="dropdown-sizes">
                                 <li class="hover:bg-blue-950 hover:text-white p-2">32</li>
@@ -196,21 +196,21 @@
                     <div class="w-full">
 
                         <button id="add-to-cart"
-                            class="font-semibold p-3 w-full text-blue-900 bg-blue-200 hover:bg-blue-300 border border-transparent">Añadir
+                            class="font-semibold rounded p-3 w-full text-blue-900 bg-blue-200 hover:bg-blue-300 border border-transparent">Añadir
                             al
                             carrito</button>
 
                     </div>
-                    <button class="font-semibold p-3 w-full text-white bg-blue-900 hover:bg-blue-950">Comprar
+                    <button class="font-semibold rounded p-3 w-full text-white bg-blue-900 hover:bg-blue-950">Comprar
                         ahora</button>
 
                 </section>
 
-                <section class="mt-8 border border-gray-500 flex flex-col group">
+                <section class="mt-8 border border-gray-500 rounded flex flex-col group">
                     <input type="checkbox" name="" id="envio" class="hidden">
 
                     <label
-                        class=" flex items-center justify-between w-full hover:bg-gray-100 text-center p-3 cursor-pointer"
+                        class=" flex items-center justify-between w-full rounded hover:bg-gray-100 text-center p-3 cursor-pointer"
                         for="envio">
                         Envió de Buhogt, vendido por 1+mes
                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -328,15 +328,8 @@
             <header class="flex lg:flex-row flex-col gap-3">
                 <h4 class="md:text-3xl text-2xl md:text-start text-center font-semibold">Mas artículos de esta
                     tienda</h4>
-                <button class="lg:ml-2 ml-0 p-2 px-4 border border-black flex justify-center items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
-                        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5"
-                            d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                    </svg>
-                    Seguir
-                </button>
-                <button class="p-2 px-4 border border-black">Ver 1,000 artículos más</button>
+
+                <button class="p-2 px-4 border border-black rounded">Ver 1,000 artículos más</button>
             </header>
 
             <div class="relative">
@@ -364,8 +357,8 @@
 
         <!-- start sección "También podría interesante" -->
         <section class=" max-w-7xl mx-auto mb-20 px-5">
-            <header class="flex lg:flex-row flex-col lg:text-start text-center gap-3 justify-between">
-                <div class="flex lg:flex-row flex-col lg:gap-5 gap-2 lg:items-end items-center">
+            <header class="flex lg:flex-row flex-col lg:text-start  gap-3 justify-between">
+                <div class="flex lg:flex-row flex-col lg:gap-5 gap-2 lg:items-end items-left">
                     <h4 class="md:text-3xl text-2xl font-semibold">También podría interesante</h4>
                     <p class="flex items-center gap-2 text-sm">
                         <span>incluyendo anuncios</span>
@@ -376,7 +369,6 @@
                         </svg>
                     </p>
                 </div>
-                <button class="p-2 px-4 border border-black">Ver más</button>
             </header>
 
             <div class="relative">
@@ -404,9 +396,9 @@
 
         <!-- start "Tiendas similares" -->
         <section class=" max-w-7xl mx-auto mb-20 px-5">
-            <header class="flex md:flex-row flex-col lg:gap-16 gap-5 md:items-end items-center">
+            <header class="flex md:flex-row flex-col lg:gap-16 gap-5 md:items-end items-left">
                 <h4 class=" md:text-3xl text-2xl font-semibold">Tiendas similares</h4>
-                <span class="text-gray-400 text-xl">Patrocinado</span>
+                <span class="text-gray-400 text-lg">Patrocinado</span>
             </header>
 
             <div class="relative">
@@ -514,7 +506,7 @@
         <!-- start "Comentarios" -->
         <section class=" max-w-7xl mx-auto mb-20 px-5 grid md:grid-cols-2 grid-cols-1 lg:gap-5 gap-16">
             <div class="flex flex-col gap-3">
-                <span class="text-2xl">Calidad del articulo</span>
+                <span class="text-2xl">Valoraciones</span>
                 <div class="flex gap-2 items-center" data-stars>
                     <span class="text-sm">4.6</span>
                 </div>
@@ -611,14 +603,14 @@
         <section class="max-w-7xl mx-auto mb-20 px-5">
             <span class="text-xl font-light block mb-10">Explora más búsquedas relacionadas</span>
             <div class="flex flex-wrap gap-2">
-                <div class="border border-black p-3">arte de sombrilla de playa</div>
-                <div class="border border-black p-3">playa imprimirle</div>
-                <div class="border border-black p-3">Impresión de playa</div>
-                <div class="border border-black p-3">Azul y blanco</div>
-                <div class="border border-black p-3">fotografía de playa</div>
-                <div class="border border-black p-3">descarga instantánea</div>
-                <div class="border border-black p-3">Estampado playa azul</div>
-                <div class="border border-black p-3">Decoración de la pared de playa</div>
+                <div class="border border-black p-3 rounded">arte de sombrilla de playa</div>
+                <div class="border border-black p-3 rounded">playa imprimirle</div>
+                <div class="border border-black p-3 rounded">Impresión de playa</div>
+                <div class="border border-black p-3 rounded">Azul y blanco</div>
+                <div class="border border-black p-3 rounded">fotografía de playa</div>
+                <div class="border border-black p-3 rounded">descarga instantánea</div>
+                <div class="border border-black p-3 rounded">Estampado playa azul</div>
+                <div class="border border-black p-3 rounded">Decoración de la pared de playa</div>
             </div>
 
             <div class="mt-14 text-sm flex flex-wrap gap-5">
@@ -669,7 +661,6 @@
             <span class="text-blue-950 font-bold">Contenido de productos</span>
         </section>
     </main>
-
 
 
     <script>
@@ -826,48 +817,56 @@
                     'max-[320px]:!w-[130px] max-[375px]:!w-[160px] max-[425px]:!w-[185px] max-[768px]:!w-[229px] lg:!w-[220px]'
 
                 const data = [{
+                        id: 1,
                         title: 'New balance age',
                         img: 'product-1.png',
                         price: '17.17',
                         discount: '15.17'
                     },
                     {
+                        id: 2,
                         title: 'Jeans Buda',
                         img: 'product-2.png',
                         price: '117.17',
                         discount: '55.12'
                     },
                     {
+                        id: 3,
                         title: 'Buda Mandala Hoodie',
                         img: 'product-3.png',
                         price: '217.17',
                         discount: '155.17'
                     },
                     {
+                        id: 4,
                         title: 'Jeans Buda',
                         img: 'product-4.png',
                         price: '205.17',
                         discount: '22.17'
                     },
                     {
+                        id: 5,
                         title: 'Chaqueta line',
                         img: 'product-5.png',
                         price: '57.17',
                         discount: '65.14'
                     },
                     {
+                        id: 6,
                         title: 'Jeans Buda',
                         img: 'product-2.png',
                         price: '97.17',
                         discount: '15.17'
                     },
                     {
+                        id: 7,
                         title: 'Anillos veranos',
                         img: 'product-1.png',
                         price: '34.17',
                         discount: '5.17'
                     },
                     {
+                        id: 8,
                         title: 'Chaqueta line',
                         img: 'product-4.png',
                         price: '219.19',
@@ -879,13 +878,16 @@
                     discount,
                     img,
                     price,
-                    title
+                    title,
+                    id
                 }, i) => {
                     template += `
-      <div class="carousel-item snap-start group ">
+      <div class="carousel-item snap-start group " >
         <div class="relative md:!h-[270px] h-[200px] ${breakPointsWidth} overflow-hidden shadow-lg shadow-black/10 rounded bg-transparent">
-          <img loading="lazy" src="/images/products/${img}" class="group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
+          <img loading="lazy" src="/images/products/${img}" class="image-product group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
           <button
+          data-id="${id}"
+          data-btn-like
             class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
               xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -894,16 +896,15 @@
             </svg></button>
         </div>
         <div class="flex gap-4 flex-col pt-3 text-[${color}]">
-          <h3 class="text-lg  md:min-h-fit min-h-[60px]">${title}</h3>
+          <h3 class="text-lg  md:min-h-fit min-h-[60px] title-product">${title}</h3>
           <!-- start stars  -->
           <div data-stars class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2 text-[${color}]">
-            <span class="text-sm">4.8</span>
 
           </div>
           <!-- end stars  -->
           <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
-            <b class="text-base">Q${price}</b>
-            <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-xs">Q${discount} (25% descuento)</span>
+            <b class="text-base price-product">Q${price}</b>
+            <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-base">Q${discount} </span>
           </div>
           <span class="text-sm">by MysticArtByJose</span>
 
@@ -971,42 +972,37 @@
         });
 
 
-        const generateStars = () => {
+        const generateStars = (amountFilled = 4, value = '4.8', directionValue = 'left') => {
+
+            const starsFilled = Array(amountFilled).fill(`
+        <svg xmlns="http://www.w3.org/2000/svg" class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16"><path fill="#000" fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75" clip-rule="evenodd"/></svg>
+        `)
+
+            const starsUnfilled = Array(5 - amountFilled).fill(`
+        <svg xmlns="http://www.w3.org/2000/svg" class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 24 24"><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345z"/></svg>
+        `)
+
+            return `
+        <div class="flex  items-center justify-start gap-2 ${directionValue === 'left' ? 'flex-row' : 'flex-row-reverse'}">
+              <span class="md:${directionValue === 'left' ? 'text-xs' : 'text-sm'} text-xs">${value}</span>
+              <div class="flex items-center">
+                ${starsFilled.join(' ')}
+                ${starsUnfilled.join(' ')}
+              </div>
+            </div>
+        `
+        }
+
+
+        const initStars = () => {
             document.querySelectorAll('[data-stars]').forEach(e => {
-
-                e.innerHTML = e.innerHTML + `<div class="flex items-center ">
-                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 text-inherit	 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                </svg>
-              </div>`
-
+                e.innerHTML = generateStars()
             })
         }
 
-        generateStars()
+        initStars()
     </script>
+
 
     <script>
         const setSelectedItem = (itemSelected) => {
@@ -1254,161 +1250,171 @@
     </script>
 
     <script>
-        const products = []
+        const manageLikes = () => {
+            const likesNavbar = document.querySelector('#button-like-navbar')
+            let productsLiked = []
 
-        const addProduct = (newProduct) => {
+            const removeProductFromLikeProductsList = (id) => {
+                console.log('removeProductFromLikeProductsList')
+                const existProduct = productsLiked.find(product => product.id === id)
 
-            const alreadyExist = products.find(product => product.title === newProduct.title)
-
-            if (alreadyExist) {
-
-                products.map(product => {
-                    if (product.title === newProduct.title) {
-                        product.quantity = product.quantity + 1
-                    }
-                    return product
-                })
-
-            } else {
-                products.push({
-                    ...newProduct,
-                    quantity: 1
-                })
+                if (existProduct) {
+                    productsLiked = productsLiked.filter(product => product.id !== id) || []
+                }
             }
 
-            console.table(products)
-        }
+            const addLikeProductsList = (newProduct) => {
+                const alreadyExist = productsLiked.find(product => product.id === newProduct.id)
 
-        const configBtnCartNavbar = () => {
-            const $btnNavbarCart = document.querySelector('#button-cart-navbar')
-            const $listCart = document.querySelector('#list-cart')
+                if (alreadyExist) {
+                    alert('Ya has agregado este producto a tu lista de me gusta')
+                    return;
+                }
 
-            $btnNavbarCart.addEventListener('click', () => {
+                productsLiked.push(newProduct)
+            }
 
-                const $overlay = document.querySelector('#overlay-cart')
-                $overlay.classList.remove('hidden')
+            const refreshProductLikedListNavbar = () => {
+                const $listLikes = document.querySelector('#list-likes')
+                let template = ''
 
-                const isAlreadyOpen = !$listCart.classList.contains('hidden')
-                $listCart.classList[isAlreadyOpen ? 'add' : 'remove']('hidden')
-
-                if (products.length > 0) {
-                    $listCart.classList.remove('-bottom-[85px]', 'h-fit')
-                    $listCart.classList.add('-bottom-[405px]', 'h-[400px]')
-                    refreshCart()
+                if (productsLiked.length === 0) {
+                    template =
+                        '<span class="text-center text-black/50 w-full block z-10">No hay productos que te gusten</span>'
+                    $listLikes.innerHTML = template
                 } else {
-                    $listCart.classList.remove('-bottom-[405px]', 'h-[400px]')
-                    $listCart.classList.add('-bottom-[85px]', 'h-fit')
+
+                    productsLiked.forEach(({
+                        title,
+                        img,
+                        price,
+                        id
+                    }) => {
+                        template += `
+        <div class="flex items-center gap-2 border border-gray-400 p-2 rounded relative">
+          <img src="${img}" alt="${title}" class="border-gray-300 border size-[70px] rounded object-cover">
+          <div class="flex flex-wrap gap-x-5">
+            <h3 class="font-bold flex-none w-full text-lg truncate">${title}</h3>
+            <span class="text-green-600">${price}</span>
+          </div>
+          <button data-id="${id}" class="button-delete-liked-product  bg-red-500 active:bg-red-500 text-white hover:bg-red-600 p-1 text-sm px-2 rounded-md absolute bottom-2 right-2">Eliminar<button>
+        </div>
+        `
+                    })
+                    $listLikes.innerHTML = template
+
+                    document.querySelectorAll('.button-delete-liked-product').forEach($btn => {
+                        $btn.addEventListener('click', () => {
+                            removeProductFromLikeProductsList($btn.dataset.id)
+                            refreshProductLikedListNavbar()
+                            updateHearButtonNavbar()
+
+                            document.querySelectorAll(`button[data-id="${$btn.dataset.id}"]`)
+                                .forEach(btnProductLike => {
+
+                                    const svgHeart = btnProductLike.children[0].children[0]
+                                    const isLiked = !!svgHeart.classList.contains(
+                                        'fill-red-500')
+                                    if (isLiked) svgHeart.classList.remove('fill-red-500')
+
+                                })
+
+                        })
+                    })
+
                 }
-            })
+            }
 
-        }
-        configBtnCartNavbar()
+            const updateHearButtonNavbar = () => {
+                // update heart button counter in navbar
 
-        const refreshCart = () => {
-            const $listCart = document.querySelector('#list-cart')
-            let productsHtml = ''
+                const $listLikes = document.querySelector('#list-likes')
 
-            products.forEach(({
-                title,
-                img,
-                price,
-                quantity
-            }) => {
-                productsHtml += `
-    <div class="flex items-center gap-2 border border-gray-400 p-2 rounded">
-      <img src="${img}" alt="${title}" class="border-gray-300 border size-[70px] rounded object-cover">
-      <div class="flex flex-wrap gap-x-5">
-        <h3 class="font-bold flex-none w-full text-lg truncate">${title}</h3>
-        <span class="text-green-600">${price}</span>
-        <span class="">Cantidad: <b>${quantity}</b></span>
-      </div>
-    </div>
-    `
-            })
+                if (productsLiked.length > 0) {
+                    $listLikes.classList.remove('-bottom-[85px]', 'h-fit')
+                    $listLikes.classList.add('-bottom-[405px]', 'h-[400px]')
 
-            $listCart.innerHTML = productsHtml
-        }
+                    likesNavbar.children[0].classList.add('text-red-500')
+                    likesNavbar.children[1].classList.remove('hidden')
+                    likesNavbar.children[1].textContent = productsLiked.length > 99 ? '99+' : productsLiked.length
 
-        const addToCart = () => {
-            const $btnCart = document.querySelector('#add-to-cart')
-            const $overlay = document.querySelector('#overlay-cart')
+                } else {
+                    likesNavbar.children[0].classList.remove('text-red-500')
+                    likesNavbar.children[1].classList.add('hidden')
+                    likesNavbar.children[1].textContent = ''
 
-            $overlay.addEventListener('click', () => {
-                const $listCart = document.querySelector('#list-cart')
-                $listCart.classList.add('hidden')
-                $overlay.classList.add('hidden')
-            })
+                    $listLikes.classList.add('-bottom-[85px]', 'h-fit')
+                    $listLikes.classList.remove('-bottom-[405px]', 'h-[400px]')
+                    $listLikes.innerHTML =
+                        '<span class="text-center text-black/50 w-full block z-10">No hay productos que te gusten</span>'
 
-
-            $btnCart.addEventListener('click', () => {
-
-                // configurar los datos para mostrar en el carrito
-                const img = document.querySelector('#preview-1 img').src
-                const title = document.querySelector('#title-product').textContent
-                const price = document.querySelector('#price-product').textContent
-
-                const newProduct = {
-                    img,
-                    title,
-                    price
                 }
+            }
 
-                addProduct(newProduct)
+            document.querySelectorAll('.carousel-item [data-btn-like]').forEach($btnLike => {
 
-                // actualizar la vista del carrito
-                const $listCart = document.querySelector('#list-cart')
-                $listCart.classList.remove('-bottom-[85px]', 'h-fit')
-                $listCart.classList.add('-bottom-[405px]', 'h-[400px]')
+                $btnLike.addEventListener('click', () => {
+                    const svgHeart = $btnLike.children[0].children[0]
 
-                refreshCart()
+                    const isLiked = !!svgHeart.classList.contains('fill-red-500')
 
-                // mostrar numero de items en el icono de carrito
-                const $btnNavbarCart = document.querySelector('#button-cart-navbar')
-                const $spanItems = $btnNavbarCart.querySelector('#button-cart-navbar span')
+                    // update card like button
+                    svgHeart.classList[isLiked ? 'remove' : 'add']('fill-red-500')
 
-                $spanItems.classList[
-                    products.length > 0 ? 'remove' : 'add'
-                ]('hidden')
+                    const id = $btnLike.dataset.id
 
-                $spanItems.textContent = products.length > 0 ? products.length : ''
+                    if (isLiked) {
+                        // remove from list
+                        removeProductFromLikeProductsList(id)
 
+                    } else {
+                        // add to list
 
-                // mostrar un mensaje/alerta de que se agregó al carrito
+                        // get product data liked
+                        // console.log($btnLike.parentElement.parentElement)
+                        const img = $btnLike.parentElement.parentElement.querySelector('.image-product')
+                            .src
+                        const title = $btnLike.parentElement.parentElement.querySelector(
+                            '.title-product').textContent
+                        const price = $btnLike.parentElement.parentElement.querySelector(
+                            '.price-product').textContent
 
-                const msgContainer = document.createElement('div')
-                msgContainer.classList.add('font-semibold', 'p-3', 'w-full', 'text-green-800',
-                    'bg-green-400/60', 'text-center', 'border', 'border-green-800', 'flex', 'items-center',
-                    'justify-center', 'gap-2', 'animation-added-to-cart-in')
+                        // update product liked list
+                        addLikeProductsList({
+                            id,
+                            img,
+                            title,
+                            price
+                        })
+                    }
 
-                msgContainer.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 16 16">
-        <path fill="currentColor" fill-rule="evenodd"
-          d="M15 8c0 .982-.472 1.854-1.202 2.402a2.995 2.995 0 0 1-.848 2.547a2.995 2.995 0 0 1-2.548.849A2.996 2.996 0 0 1 8 15a2.996 2.996 0 0 1-2.402-1.202a2.995 2.995 0 0 1-2.547-.848a2.995 2.995 0 0 1-.849-2.548A2.996 2.996 0 0 1 1 8c0-.982.472-1.854 1.202-2.402a2.995 2.995 0 0 1 .848-2.547a2.995 2.995 0 0 1 2.548-.849A2.995 2.995 0 0 1 8 1c.982 0 1.854.472 2.402 1.202a2.995 2.995 0 0 1 2.547.848c.695.695.978 1.645.849 2.548A2.996 2.996 0 0 1 15 8m-3.291-2.843a.75.75 0 0 1 .135 1.052l-4.25 5.5a.75.75 0 0 1-1.151.043l-2.25-2.5a.75.75 0 1 1 1.114-1.004l1.65 1.832l3.7-4.789a.75.75 0 0 1 1.052-.134"
-          clip-rule="evenodd" />
-      </svg>
-      Añadido correctamente
-    `
+                    // update UI product liked list
+                    refreshProductLikedListNavbar()
 
-                $btnCart.classList.add('hidden')
-                $btnCart.parentElement.appendChild(msgContainer)
-
-                setTimeout(() => {
-                    msgContainer.classList.remove('animation-added-to-cart-in')
-                    msgContainer.classList.add('animation-added-to-cart-out')
-                }, 1300);
-
-                setTimeout(() => {
-                    $btnCart.parentElement.removeChild(msgContainer)
-                    $btnCart.classList.remove('hidden')
-                    $btnCart.classList.add('animation-added-to-cart-in')
-                }, 1600);
-
+                    updateHearButtonNavbar()
+                })
             })
+
+
+            document.querySelector('#button-like-navbar').addEventListener('click', () => {
+
+                const listLikes = document.querySelector('#list-likes')
+                listLikes.classList.toggle('hidden')
+
+                document.querySelector('#overlay-likes').classList.remove('hidden')
+            })
+
+
+            document.querySelector('#overlay-likes').addEventListener('click', (e) => {
+                const $listLikes = document.querySelector('#list-likes')
+                $listLikes.classList.add('hidden')
+                e.target.classList.add('hidden')
+            })
+
         }
 
-        addToCart()
+        manageLikes()
     </script>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @endsection
