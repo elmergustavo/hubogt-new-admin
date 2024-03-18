@@ -35,7 +35,7 @@ class AppPanelProvider extends PanelProvider
         return $panel
             // ->default()
             ->default()
-            ->id('app')
+            ->id('admin')
             ->path('admin')
             ->login(Login::class)
             ->emailVerification()

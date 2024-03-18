@@ -177,6 +177,7 @@ return [
         App\Providers\Filament\AppPanelProvider::class,
         App\Providers\Filament\SellerPanelProvider::class,
         App\Providers\Filament\ServicePanelProvider::class,
+        App\Providers\Filament\CustomerServicePanelProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
