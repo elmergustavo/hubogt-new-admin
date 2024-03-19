@@ -1,12 +1,5 @@
 <div>
-    {{-- The whole world belongs to you. --}}
 
-
-
-    {{-- <button wire:click="openModalslide()">
-
-
-    </button> --}}
 
     <x-filament::modal icon="heroicon-o-exclamation-triangle" icon-color="danger" slide-over id="feedback"
         :width="$modalWidth">

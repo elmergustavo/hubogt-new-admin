@@ -10,14 +10,10 @@ class ShopAddToCart extends Component
 
     public $modalWidth;
 
-    public function mount()
+    public function render()
     {
         $detect = new MobileDetect;
         $this->modalWidth = $detect->isMobile() ? 'xs' : 'md';
-    }
-
-    public function render()
-    {
         return view('livewire.shop-add-to-cart');
     }
 

@@ -17,8 +17,10 @@
                  </svg>
              </button>
 
-             <img src="/assets/logo/new-logo-mombii.svg" alt="logo"
-                 class="md:w-32 sm:w-[30%] w-[115px] object-cover order-1" />
+             <a href="{{ route('ecommerce') }}">
+                 <img src="/assets/logo/new-logo-mombii.svg" alt="logo"
+                     class="md:w-32 sm:w-[30%] w-[115px] object-cover order-1" />
+             </a>
 
          </div>
 
@@ -72,83 +74,105 @@
 
          <!-- start links navigation -->
          <div class="hidden lg:flex items-center md:gap-5 gap-3 lg:order-3 order-2">
-             <a href="">
-                 <span class="lg:block hidden">Iniciar sesión</span>
-                 <span class="lg:hidden block">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-6 md:h-[25px] h-6"
-                         viewBox="0 0 20 20">
-                         <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                             <path
-                                 d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75z" />
-                             <path
-                                 d="M14 10a.75.75 0 0 0-.75-.75H3.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 14 10" />
-                         </g>
-                     </svg>
-                 </span>
-             </a>
-             <a href="">
-                 <span class="lg:block hidden">Registrarse</span>
-                 <span class="lg:hidden block">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
-                         viewBox="0 0 24 24">
-                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="1.5"
-                             d="M15.75 6a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632" />
-                     </svg>
-                 </span>
-             </a>
-             <a href="">
-                 <span class="lg:block hidden">Tienda</span>
-                 <span class="lg:hidden block">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
-                         viewBox="0 0 24 24">
-                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="1.5"
-                             d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75" />
-                     </svg>
-                 </span>
-             </a>
+             @guest
+                 <a href="{{ route('login') }}">
+                     <span class="lg:block hidden">Iniciar sesión</span>
+                     <span class="lg:hidden block">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-6 md:h-[25px] h-6"
+                             viewBox="0 0 20 20">
+                             <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                 <path
+                                     d="M17 4.25A2.25 2.25 0 0 0 14.75 2h-5.5A2.25 2.25 0 0 0 7 4.25v2a.75.75 0 0 0 1.5 0v-2a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 .75.75v11.5a.75.75 0 0 1-.75.75h-5.5a.75.75 0 0 1-.75-.75v-2a.75.75 0 0 0-1.5 0v2A2.25 2.25 0 0 0 9.25 18h5.5A2.25 2.25 0 0 0 17 15.75z" />
+                                 <path
+                                     d="M14 10a.75.75 0 0 0-.75-.75H3.704l1.048-.943a.75.75 0 1 0-1.004-1.114l-2.5 2.25a.75.75 0 0 0 0 1.114l2.5 2.25a.75.75 0 1 0 1.004-1.114l-1.048-.943h9.546A.75.75 0 0 0 14 10" />
+                             </g>
+                         </svg>
+                     </span>
+                 </a>
+                 <a href="">
+                     <span class="lg:block hidden">Registrarse</span>
+                     <span class="lg:hidden block">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
+                             viewBox="0 0 24 24">
+                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="1.5"
+                                 d="M15.75 6a3.75 3.75 0 1 1-7.5 0a3.75 3.75 0 0 1 7.5 0M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632" />
+                         </svg>
+                     </span>
+                 </a>
+
+             @endguest
+             @auth
+                 <a href="">
+                     <span class="lg:block hidden">Tienda</span>
+                     <span class="lg:hidden block">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
+                             viewBox="0 0 24 24">
+                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                 stroke-width="1.5"
+                                 d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75" />
+                         </svg>
+                     </span>
+                 </a>
+             @endauth
              <div class="relative grid place-items-center">
-                <button id="button-like-navbar">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                    class="stroke-black text-transparent md:w-[25px] w-5 md:h-[25px] h-5" viewBox="0 0 24 24">
-                    <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                      d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                  </svg>
-                  <span
-                    class="text-xs -z-10 -top-4 bg-red-500 rounded-full p-1 px-2 font-bold text-white -right-3 absolute hidden"></span>
-
-                </button>
-                <div
-                  class="bg-white shadow-lg shadow-black absolute -bottom-[85px] h-fit border rounded right-0 w-[350px] p-3   overflow-y-scroll space-y-4 hidden py-6 z-30"
-                  id="list-likes">
-                  <span class="text-center text-black/50 w-full block z-10">No hay productos que te gusten</span>
-                </div>
-
-                <div id="overlay-likes" class="bg-black/0 hidden z-20 w-screen h-screen fixed top-0 left-0"></div>
-              </div>
-
-              @livewire('shop-add-to-cart')
-             {{-- <div class="relative grid place-items-center">
-                 <button id="button-cart-navbar">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="md:w-[25px] w-5 md:h-[25px] h-5"
-                         viewBox="0 0 24 24">
-                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                             stroke-width="1.5"
-                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.137a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m12.75 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0" />
+                 <button id="button-like-navbar">
+                     <svg xmlns="http://www.w3.org/2000/svg"
+                         class="stroke-black text-transparent md:w-[25px] w-5 md:h-[25px] h-5" viewBox="0 0 24 24">
+                         <path fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                             d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
                      </svg>
                      <span
                          class="text-xs -z-10 -top-4 bg-red-500 rounded-full p-1 px-2 font-bold text-white -right-3 absolute hidden"></span>
 
                  </button>
-                 <div class="bg-white shadow-lg shadow-black absolute -bottom-[65px] h-fit border rounded right-0 w-[350px] p-3   overflow-y-scroll space-y-4 hidden py-6"
-                     id="list-cart">
-                     <span class="text-center text-black/50 w-full block ">No hay productos en el carrito</span>
+                 <div class="bg-white shadow-lg shadow-black absolute -bottom-[85px] h-fit border rounded right-0 w-[350px] p-3   overflow-y-scroll space-y-4 hidden py-6 z-30"
+                     id="list-likes">
+                     <span class="text-center text-black/50 w-full block z-10">No hay productos que te gusten</span>
                  </div>
-             </div> --}}
-             <!-- end links navigation -->
 
-             <!-- start input search mobile -->
+                 <div id="overlay-likes" class="bg-black/0 hidden z-20 w-screen h-screen fixed top-0 left-0"></div>
+             </div>
+
+             @livewire('shop-add-to-cart')
+             @auth
+                 <x-dropdown align="right">
+                     <x-slot name="trigger">
+                         <div
+                             class="md:flex hidden cursor-pointer justify-center items-center gap-[2px] flex-col text-[15px]">
+                             @php
+                                 $user = Auth::user();
+                                 $profilePhotoUrl = $user->profile_photo_path
+                                     ? Storage::url($user->profile_photo_path)
+                                     : 'https://ui-avatars.com/api/?name=' .
+                                         urlencode($user->name) .
+                                         '&color=7F9CF5&background=EBF4FF';
+                             @endphp
+
+                             <img src="{{ $profilePhotoUrl }}" class="w-[35px] h-[35px] object-cover rounded-full"
+                                 alt="User Image" />
+                             <span>{{ $user->name }}</span>
+                         </div>
+                     </x-slot>
+
+
+                     <x-slot name="content">
+                         <x-dropdown-link :href="route('profile')" wire:navigate>
+                             {{ __('Perfil') }}
+                         </x-dropdown-link>
+                         <x-dropdown-link :href="route('profile')" wire:navigate>
+                             {{ __('Ver pedidos') }}
+                         </x-dropdown-link>
+                         <form method="POST" action="{{ route('logout') }}" x-data>
+                             @csrf
+                             <x-dropdown-link href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                                 {{ __('Cerrar sesión') }}
+                             </x-dropdown-link>
+                         </form>
+                     </x-slot>
+                 </x-dropdown>
+
+             @endauth
          </div>
          <!-- input search -->
          <div class="-translate-x-full transition-transform lg:hidden gap-5 flex justify-between items-center bg-white w-full h-full absolute top-0 left-0 right-0 bottom-0 ease-in duration-100 overflow-x-hidden"
@@ -161,7 +185,7 @@
                  </svg>
              </button>
              <input id="input-search" type="text" placeholder="¿Qué estás buscando?"
-       class="w-full h-full outline-none text-lg  border-none focus:outline-none focus:bg-transparent focus:border-none focus:ring-0 focus:text-current">
+                 class="w-full h-full outline-none text-lg  border-none focus:outline-none focus:bg-transparent focus:border-none focus:ring-0 focus:text-current">
 
 
          </div>
@@ -197,10 +221,10 @@
                  </svg>
              </a> --}}
 
-             <div class="sm:w-[25px] w-6 sm:h-[25px] h-6">
+             @livewire('shop-add-to-cart')
+             {{-- <div class="sm:w-[25px] w-6 sm:h-[25px] h-6">
 
-                 @livewire('shop-add-to-cart')
-             </div>
+             </div> --}}
          </div>
          <!-- end links navigation mobile -->
      </div>
