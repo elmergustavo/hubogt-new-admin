@@ -2,10 +2,18 @@
 
 
 @section('content')
+    <style>
+        [data-carousel-parent],
+        .hidden-scroll {
+            scrollbar-width: none;
+        }
 
-    <head>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+        [data-carousel-parent]::-webkit-scrollbar,
+        .hidden-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
     <section class="max-w-7xl mx-auto mt-[10dvh] xl:px-0 px-4">
         <div class="md:grid md:grid-cols-[1fr,350px] flex flex-col-reverse  gap-10">
             <!-- star artículos favoritos -->
@@ -116,7 +124,8 @@
                         <span>Q65.99</span>
                     </div>
                 </div>
-                <button class="p-3 rounded-lg w-full text-white bg-primary hover:bg-blue-950 mt-10">Proceder a Pago </button>
+                <button class="p-3 rounded-lg w-full text-white bg-primary hover:bg-blue-950 mt-10">Proceder a Pago
+                </button>
             </div>
             <!-- end forma de pago -->
         </div>
