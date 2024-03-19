@@ -68,7 +68,7 @@ class ProductResource extends Resource
 
         $shopId = optional(auth()->user()->shop)->id; // Devuelve null si `shop` es null
 
-     
+
 
         if ($shopId)
         {
@@ -120,7 +120,7 @@ class ProductResource extends Resource
                             ->columns(2),
 
                         Forms\Components\Section::make('Imagenes del producto')
-                            ->description('Ingresar los productos en orden')
+                            ->description('Sube tus imágenes en el orden correspondiente con el cual quieres que aparezcan en la página web.')
                             ->schema([
                                 SpatieMediaLibraryFileUpload::make('media')
                                     ->collection('product-images')
@@ -300,7 +300,7 @@ class ProductResource extends Resource
                                 ->danger()
                                 ->send();
 
-                           
+
                             $record->discount = null;
                             $record->save();
                         }

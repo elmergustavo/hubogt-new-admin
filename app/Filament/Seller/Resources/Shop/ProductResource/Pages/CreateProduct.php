@@ -41,14 +41,23 @@ class CreateProduct extends CreateRecord
                 ->success()
                 ->actions([
                     Action::make('view')
-                    ->button(),
+                        ->button(),
                     // ->url(route('products.show', $post), shouldOpenInNewTab: true),
                 ])
                 ->body('Un nuevo producto ha sido creado.')
                 ->sendToDatabase($admin);
         }
 
+    }
 
-
+    protected function getCreatedNotification(): ?Notification
+    {
+        return Notification::make()
+        ->title('Producto creado correctamente')
+        ->success()
+        ->color('success')
+        ->seconds(12)
+        ->body('Los administradores estarán revisando el producto y en 24 horas recibirás una notificación de aceptación.')
+        ->send();
     }
 }

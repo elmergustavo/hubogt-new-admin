@@ -23,7 +23,7 @@ enum OrderStatus: string implements HasColor, HasIcon, HasLabel
         return match ($this) {
             self::New => 'Nuevo',
             self::Processing => 'Procesando',
-            self::Shipped => 'Confirmado',
+            self::Shipped => 'Entregado',
             self::Delivered => 'Delivered',
             self::Cancelled => 'Cancelado',
         };
