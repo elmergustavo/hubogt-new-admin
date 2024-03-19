@@ -145,16 +145,15 @@
                             lanzamiento antes que
                             nadie</p>
                         <button
-                            class="md:w-4/6 w-full md:p-3 p-2 bg-transparent border-2 border-black rounded hover:bg-blue-300 font-bold">Comprar</button>
+                            class="md:w-4/6 w-full md:p-3 p-2 bg-transparent border-2 border-black rounded-lg hover:bg-blue-300 font-bold ">Comprar</button>
                     </div>
                 </div>
             </div>
             <!-- end banner "patrocinado" -->
-            <div class="bg-blue-100 px-5 py-4 px-5 py-4  ">
-
+            <div class="bg-blue-100 px-5 py-4">
                 <div class="md:pl-2 pl-0 lg:flex hidden gap-4 items-center md:w-[80%] w-full max-w-7xl mx-auto">
                     <button
-                        class="md:flex-none flex-1 w-fit p-2 px-3 bg-transparent border justify-center border-black hover:bg-gray-200 flex gap-2 items-center">
+                        class="md:flex-none flex-1 w-fit p-2 px-3 bg-transparent border justify-center border-black hover:bg-gray-200 flex gap-2 items-center rounded-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
                             <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M12 4.5v15m7.5-7.5h-15" />
@@ -162,7 +161,7 @@
                         Seguir
                     </button>
 
-                    <span class="md:flex-none flex-1 text-center">New Balance</span>
+                    <span class="md:flex-none flex-1 text-center">Nuevo Balance</span>
                 </div>
 
             </div>
@@ -661,8 +660,8 @@
                     en Buhogt? Abre un
                     puesto y empieza a vender</>
                 <div class="flex gap-5 sm:flex-row flex-col">
-                    <button class=" p-2 px-5 bg-blue-900 hover:bg-blue-950 text-white">Comienza a vender</button>
-                    <button class=" p-2 px-5 border-blue-900 border hover:bg-gray-200 text-blue-900">Requisitos para
+                    <button class=" p-2 px-5 bg-blue-900 hover:bg-blue-950 text-white rounded-lg">Comienza a vender</button>
+                    <button class=" p-2 px-5 border-blue-900 border hover:bg-gray-200 text-blue-900 rounded-lg">Requisitos para
                         vender</button>
                 </div>
             </div>
@@ -760,9 +759,9 @@
                         actualizaciones</span>
                     <div class="flex gap-3 md:flex-row flex-col">
                         <input type="email" placeholder="Su correo electronico"
-                            class="bg-white/10 p-3 px-5 text-sm md:w-[60%] w-full">
+                            class="bg-white/10 p-3 px-5 text-sm md:w-[60%] w-full rounded-lg">
                         <button
-                            class="h-full p-3 px-5 text-sm bg-white w-fit text-blue-900 hover:bg-white/90">Suscríbase</button>
+                            class="h-full p-3 px-5 text-sm bg-white w-fit text-blue-900 hover:bg-white/90 rounded-lg">Suscríbase</button>
                     </div>
                 </form>
 

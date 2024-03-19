@@ -4,8 +4,19 @@
 @section('content')
     <!-- end navbar -->
 
+    <style>
+        [data-carousel-parent],
+        .hidden-scroll {
+            scrollbar-width: none;
+        }
 
-    <div class="max-w-7xl mx-auto mt-[10dvh] xl:px-0 px-4 min-h-[50dvh]">
+        [data-carousel-parent]::-webkit-scrollbar,
+        .hidden-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <main class="max-w-7xl mx-auto mt-[10dvh] xl:px-0 px-4 min-h-[50dvh]">
         <!-- start steps -->
         <section class="flex justify-start lg:gap-10 gap-3 items-center">
 
@@ -71,49 +82,49 @@
                 <div class="flex flex-col gap-2">
                     <label for="name" class="w-auto">Nombre</label>
                     <input name="name" type="text" placeholder="Coloca acá tu nombre"
-                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="3" required>
+                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="3" required>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="lastName" class="w-auto">Apellido(s)</label>
                     <input name="lastName" type="text" placeholder="Coloca acá tu apellido"
-                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="3" required>
+                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="3" required>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="phone" class="w-auto">Número telefónico</label>
                     <input name="phone" type="text" placeholder="0000-0000"
-                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="8" maxlength="10"
+                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="8" maxlength="10"
                         required>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="address" class="w-auto">Dirección</label>
                     <input name="address" type="text" placeholder="Coloca tu dirección exacta"
-                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="8" required>
+                        class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="8" required>
                 </div>
                 <div class="grid md:grid-cols-2 gap-3 grid-cols-1">
                     <div class="flex flex-col gap-2 flex-1">
                         <label for="postCode" class="w-auto">Código postal</label>
                         <input name="postCode" type="text" placeholder="00000"
-                            class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full" minlength="5"
+                            class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full rounded-lg" minlength="5"
                             maxlength="5" required>
                     </div>
                     <div class="flex flex-col gap-2 flex-1">
                         <label for="city" class="w-auto">Ciudad</label>
                         <input name="city" type="text" placeholder="Guatemala"
-                            class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full w-full"
+                            class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full rounded-lg"
                             minlength="2" required>
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-3 grid-cols-1">
                     <div class="flex flex-col gap-2 flex-1">
                         <label for="department" class="w-auto">Departamento</label>
-                        <select name="department" class="p-3 border border-gray-400 px-4 bg-white h-full w-full">
+                        <select name="department" class="p-3 border border-gray-400 px-4 bg-white h-full w-full rounded-lg">
                             <option value="central-java">Central Java</option>
                         </select>
                     </div>
                     <div class="flex flex-col gap-2 flex-1">
                         <label for="township" class="w-auto">Municipio</label>
-                        <input name="township" type="text" placeholder="Indonesia"
-                            class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="3" required>
+                        <input name="township" type="text" placeholder="Guatemala"
+                            class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="3" required>
                     </div>
                 </div>
 
@@ -121,7 +132,7 @@
                     class="bg-red-600/20 border border-red-500 text-red-500 p-2 font-bold hidden">
                 </div>
 
-                <button class="bg-blue-900 p-4 hover:bg-blue-950 text-white text-xl uppercase mt-10">Continuar</button>
+                <button class="bg-primary p-4 hover:bg-blue-950 text-white text-xl uppercase mt-5 rounded-lg">Continuar</button>
             </form>
             <!-- end formulario de envió -->
 
@@ -131,7 +142,7 @@
 
                 <div class="relative">
                     <div id="dropdownRadioButton" data-dropdown-toggle="dropdown-paid"
-                        class=" text-center flex justify-between items-center w-full border border-black p-5"
+                        class=" text-center flex justify-between items-center w-full border border-black p-5 rounded-lg"
                         type="button">
                         <div class="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
@@ -155,11 +166,11 @@
                     </div>
 
                     <!-- Dropdown menu -->
-                    <div id="dropdown-paid" class="z-10 hidden w-full bg-white text-black border border-black shadow ">
+                    <div id="dropdown-paid" class="z-10 hidden w-full bg-white text-black border border-black shadow rounded-lg">
                         <ul class=" text-sm text-gray-700" aria-labelledby="dropdownRadioButton">
                             <li>
                                 <label
-                                    class="text-sm font-medium text-gray-900 flex items-center gap-2 p-5 hover:bg-gray-200">
+                                    class="text-sm font-medium text-gray-900 flex items-center gap-2 p-5 hover:bg-gray-200 rounded-lg">
                                     <input type="radio" name="type-paid" value="tarjeta">
                                     Tarjeta de crédito o débito
                                 </label>
@@ -185,26 +196,26 @@
                         <div class="flex flex-col gap-2">
                             <label for="cardName" class="w-auto">Nombre</label>
                             <input id="cardName" name="cardName" type="text" placeholder="Coloca acá tu nombre"
-                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="5"
+                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="5"
                                 required>
                         </div>
                         <div class="flex flex-col gap-2">
                             <label for="cardNumber" class="w-auto">Número de la tarjeta</label>
                             <input id="cardNumber" name="cardNumber" type="number" placeholder="000 000 000 000 000"
-                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5" minlength="20"
+                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg" minlength="20"
                                 maxlength="20" required>
                         </div>
                         <div class="grid md:grid-cols-2 gap-3 grid-cols-1">
                             <div class="flex flex-col gap-2 flex-1">
                                 <label for="cardYear" class="w-auto">MM/YY</label>
                                 <input id="cardYear" name="cardYear" type="text" placeholder="00/2025"
-                                    class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full"
+                                    class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full rounded-lg"
                                     minlength="4" required>
                             </div>
                             <div class="flex flex-col gap-2 flex-1">
                                 <label for="cardCvv" class="w-auto">CVV</label>
                                 <input id="cardCvv" name="cardCvv" type="number" placeholder="123"
-                                    class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full w-full"
+                                    class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 flex-1 w-full rounded-lg"
                                     minlength="3" minlength="3" required>
                             </div>
                         </div>
@@ -215,7 +226,7 @@
                         <div class=" flex flex-col gap-2">
                             <label for="name" class="w-auto">Nombre</label>
                             <input id="name" name="name" type="text" placeholder="Coloca acá tu nombre"
-                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5">
+                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg">
                         </div>
 
                         <div class="flex flex-col gap-2">
@@ -223,7 +234,7 @@
 
                             <div class="relative">
                                 <div id="dropdown-banco-name" data-dropdown-toggle="dropdown-radio-banco"
-                                    class="text-center flex justify-between items-center w-full border border-black p-3"
+                                    class="text-center flex justify-between items-center w-full border border-black p-3 rounded-lg"
                                     type="button">
                                     <div class="flex items-center gap-2">
                                         <span id="banco-label">Banco</span>
@@ -237,7 +248,7 @@
 
                                 <!-- Dropdown menu -->
                                 <div id="dropdown-radio-banco"
-                                    class="z-10 hidden w-full bg-white text-black border border-black shadow ">
+                                    class="z-10 hidden w-full bg-white text-black border border-black shadow rounded-lg">
                                     <ul class=" text-sm text-gray-700" aria-labelledby="dropdown-banco-name">
                                         <li>
                                             <label
@@ -268,7 +279,7 @@
                         <div class="flex flex-col gap-2">
                             <label for="bankNumber" class="w-auto">Numero de banco</label>
                             <input id="bankNumber" name="bankNumber" type="text" placeholder="000102010000020"
-                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5">
+                                class=" placeholder:text-gray-700 p-3 border border-gray-400 px-5 rounded-lg">
                         </div>
                     </div>
 
@@ -314,7 +325,7 @@
 
                 <div class="flex gap-5 flex-wrap">
                     <button id="btn_back_step"
-                        class="flex-1 bg-transparent hover:bg-gray-200 p-4 uppercase flex justify-center gap-5 items-center"
+                        class="flex-1 bg-transparent hover:bg-gray-200 p-4 uppercase flex justify-center gap-5 items-center rounded-lg"
                         type="button">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20">
                             <path fill="currentColor" fill-rule="evenodd"
@@ -323,7 +334,7 @@
                         </svg>
                         Regresar
                     </button>
-                    <button id="btn_paid" class="flex-1 bg-blue-900 text-white hover:bg-blue-950 p-4 uppercase">
+                    <button id="btn_paid" class="flex-1 bg-blue-900 text-white hover:bg-blue-950 p-4 uppercase rounded-lg">
                         Pagar
                     </button>
                 </div>
@@ -345,7 +356,7 @@
                         esperamos ver otra vez</span>
                 </div>
 
-                <button class="uppercase bg-blue-900 hover:bg-blue-950 text-white w-fit p-5 px-8 mt-16">ir a mi
+                <button class="uppercase bg-blue-900 hover:bg-blue-950 text-white w-fit p-5 px-8 mt-16 rounded-lg">ir a mi
                     usuario</button>
             </section>
             <!-- end sección paso 3 -->
@@ -375,7 +386,7 @@
                 <aside class="mt-10">
                     <div class="md:block hidden">
                         <div class="grid grid-cols-[auto,1fr] gap-5 items-center">
-                            <img src=" https://placehold.co/300x310"
+                            <img src="/images/products/product-1.png"
                                 class="xl:w-[120px] w-[100px] xl:h-[120px] h-[100px] object-cover rounded"
                                 alt="image" />
                             <div class="flex flex-col gap-3">
@@ -385,12 +396,12 @@
                         </div>
                     </div>
 
-                    <div id="accordion-products-paid" data-accordion="collapse" class="md:hidden block">
-                        <h2 id="accordion-collapse-heading-products-paid">
+                    <div id="accordion-collapse" data-accordion="collapse" class="md:hidden block">
+                        <h2 id="accordion-collapse-heading-1">
                             <button type="button"
                                 class="flex items-center justify-between w-full p-5 font-medium text-gray-800 border border-gray-500  gap-3"
-                                data-accordion-target="#accordion-body-products-paid" aria-expanded="false"
-                                aria-controls="accordion-body-products-paid">
+                                data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                                aria-controls="accordion-collapse-body-1">
                                 <span>Productos seleccionados</span>
                                 <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -399,11 +410,11 @@
                                 </svg>
                             </button>
                         </h2>
-                        <div id="accordion-body-products-paid" class="hidden py-8"
-                            aria-labelledby="accordion-collapse-heading-products-paid">
+                        <div id="accordion-collapse-body-1" class="hidden py-8"
+                            aria-labelledby="accordion-collapse-heading-1">
 
                             <div class="grid grid-cols-[auto,1fr] gap-5 items-center">
-                                <img src=" https://placehold.co/300x310"
+                                <img src="/images/products/product-1.png"
                                     class="aspect-square sm:w-[100px] w-[85px] sm:h-[100px] h-[85px] object-cover rounded"
                                     alt="image" />
                                 <div class="flex flex-col gap-3">
@@ -434,7 +445,7 @@
                 <aside class="mt-10">
                     <div class="md:block hidden">
                         <div class="grid grid-cols-[auto,1fr] gap-5 items-center">
-                            <img src=" https://placehold.co/300x310"
+                            <img src="/images/products/product-1.png"
                                 class="xl:w-[120px] w-[100px] xl:h-[120px] h-[100px] object-cover rounded"
                                 alt="image" />
                             <div class="flex flex-col gap-3">
@@ -462,7 +473,7 @@
                             aria-labelledby="accordion-collapse-heading-products-paid">
 
                             <div class="grid grid-cols-[auto,1fr] gap-5 items-center">
-                                <img src=" https://placehold.co/300x310"
+                                <img src="/images/products/product-1.png"
                                     class="aspect-square sm:w-[100px] w-[85px] sm:h-[100px] h-[85px] object-cover rounded"
                                     alt="image" />
                                 <div class="flex flex-col gap-3">
@@ -505,242 +516,40 @@
             </section>
             <!-- end orden de pago para (paso 3) -->
         </section>
-    </div>
+    </main>
 
     <!-- star artículos similares -->
     <section class="max-w-7xl mx-auto mb-10 xl:px-0 px-4 mt-32 mb-[20dvh]">
         <span class="text-3xl mb-10 block sm:text-start text-center">Otros productos que te pueden interesar</span>
 
-        <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-12">
-            <!-- start item card -->
-            <div>
-                <div class="relative h-[250px] w-full">
-                    <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded" alt="image" />
-                    <button
-                        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="1.5"
-                                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                        </svg></button>
-                </div>
-                <div class="flex gap-4 flex-col py-3">
-                    <h3 class="text-lg mb-2">Buddha Mandala Hoodie</h3>
-                    <!-- start stars  -->
-                    <div class="flex items-center justify-start gap-2">
-                        <span class="text-sm">4.8</span>
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- end stars  -->
-                    <div class="flex xl:gap-8 md:gap-5 gap-3 items-center flex-wrap">
-                        <b class="text-lg">Q27.88</b>
-                        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
-                    </div>
-                    <span>by MysticArtByJose</span>
-                    <button class="border border-black p-2 mt-8 hover:bg-gray-200 ">Añadir al
-                        carrito</button>
-                </div>
+        <!-- start productos -->
+        <div class="relative">
+            <div class="flex md:gap-12 gap-5 overflow-x-scroll snap-mandatory snap-x justify-start" data-carousel-parent>
+                <!-- start item -->
+
+                <!-- end item -->
             </div>
-            <!-- end item card -->
-            <!-- start item card -->
-            <div>
-                <div class="relative h-[250px] w-full">
-                    <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded" alt="image" />
-                    <button
-                        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border hover:bg-gray-100 right-4 z-10"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="1.5"
-                                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                        </svg></button>
-                </div>
-                <div class="flex gap-4 flex-col py-3">
-                    <h3 class="text-lg mb-2">Buddha Mandala Hoodie</h3>
-                    <!-- start stars  -->
-                    <div class="flex items-center justify-start gap-2">
-                        <span class="text-sm">4.8</span>
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- end stars  -->
-                    <div class="flex xl:gap-8 md:gap-5 gap-3 items-center flex-wrap">
-                        <b class="text-lg">Q27.88</b>
-                        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
-                    </div>
-                    <span>by MysticArtByJose</span>
-                    <button class="border border-black p-2 mt-8 hover:bg-gray-200 ">Añadir al
-                        carrito</button>
-                </div>
-            </div>
-            <!-- end item card -->
-            <!-- start item card -->
-            <div>
-                <div class="relative h-[250px] w-full">
-                    <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded" alt="image" />
-                    <button
-                        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border hover:bg-gray-100 right-4 z-10"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="1.5"
-                                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                        </svg></button>
-                </div>
-                <div class="flex gap-4 flex-col py-3">
-                    <h3 class="text-lg mb-2">Buddha Mandala Hoodie</h3>
-                    <!-- start stars  -->
-                    <div class="flex items-center justify-start gap-2">
-                        <span class="text-sm">4.8</span>
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- end stars  -->
-                    <div class="flex xl:gap-8 md:gap-5 gap-3 items-center flex-wrap">
-                        <b class="text-lg">Q27.88</b>
-                        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
-                    </div>
-                    <span>by MysticArtByJose</span>
-                    <button class="border border-black p-2 mt-8 hover:bg-gray-200 ">Añadir al
-                        carrito</button>
-                </div>
-            </div>
-            <!-- end item card -->
-            <!-- start item card -->
-            <div>
-                <div class="relative h-[250px] w-full">
-                    <img src=" https://placehold.co/300x310" class="w-full h-full object-cover rounded" alt="image" />
-                    <button
-                        class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border hover:bg-gray-100 right-4 z-10"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="1.5"
-                                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
-                        </svg></button>
-                </div>
-                <div class="flex gap-4 flex-col py-3">
-                    <h3 class="text-lg mb-2">Buddha Mandala Hoodie</h3>
-                    <!-- start stars  -->
-                    <div class="flex items-center justify-start gap-2">
-                        <span class="text-sm">4.8</span>
-                        <div class="flex items-center">
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- end stars  -->
-                    <div class="flex xl:gap-8 md:gap-5 gap-3 items-center flex-wrap">
-                        <b class="text-lg">Q27.88</b>
-                        <span class="text-green-600 text-xs">Q37.17 (25% descuento)</span>
-                    </div>
-                    <span>by MysticArtByJose</span>
-                    <button class="border border-black p-2 mt-8 hover:bg-gray-200 ">Añadir al
-                        carrito</button>
-                </div>
-            </div>
-            <!-- end item card -->
+            <!-- start botones Next y Previous -->
+            <button data-prev-btn
+                class="absolute hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
+                    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+            </button>
+            <button data-next-btn
+                class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
+                    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
+            <!-- end botones Next y Previous -->
         </div>
+        <!-- end productos -->
+
     </section>
     <!-- end artículos similares -->
-
-
 
     <script>
         const $stepOne = document.querySelector('#step-1')
@@ -1024,6 +833,168 @@
                     'border-2')
             })
         })
+    </script>
+
+    <script>
+        const carousel = document.querySelector('[data-carousel-parent]')
+        const prevBtn = carousel.parentElement.querySelector('[data-prev-btn]');
+        const nextBtn = carousel.parentElement.querySelector('[data-next-btn]');
+
+        const carouselInit = () => {
+            const breakPointsWidth =
+                'max-[320px]:!w-[135px] max-[375px]:!w-[160px] max-[425px]:!w-[185px] max-[768px]:!w-[214px] lg:!w-[284px]'
+
+
+            const data = [{
+                    title: 'New balance age',
+                    img: 'product-1.png',
+                    price: '17.17',
+                    discount: '15.17'
+                },
+                {
+                    title: 'Jeans Buda',
+                    img: 'product-2.png',
+                    price: '117.17',
+                    discount: '55.12'
+                },
+                {
+                    title: 'Buda Mandala Hoodie',
+                    img: 'product-3.png',
+                    price: '217.17',
+                    discount: '155.17'
+                },
+                {
+                    title: 'Jeans Buda',
+                    img: 'product-4.png',
+                    price: '205.17',
+                    discount: '22.17'
+                },
+                {
+                    title: 'Chaqueta line',
+                    img: 'product-5.png',
+                    price: '57.17',
+                    discount: '65.14'
+                },
+                {
+                    title: 'Jeans Buda',
+                    img: 'product-2.png',
+                    price: '97.17',
+                    discount: '15.17'
+                },
+                {
+                    title: 'Anillos veranos',
+                    img: 'product-1.png',
+                    price: '34.17',
+                    discount: '5.17'
+                },
+                {
+                    title: 'Chaqueta line',
+                    img: 'product-4.png',
+                    price: '219.19',
+                    discount: '55.17'
+                },
+            ]
+
+            let template = ''
+            data.forEach(({
+                discount,
+                img,
+                price,
+                title
+            }, i) => {
+                template += `<div class="carousel-item snap-start	">
+      <div class="relative  md:!h-[250px] h-[180px] ${breakPointsWidth}">
+          <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="image" />
+          <button
+            class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
+              xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
+            </svg></button>
+        </div>
+        <div class="flex gap-4 flex-col pt-3">
+          <h3 class="text-lg  ">${title}</h3>
+          <!-- start stars  -->
+          <div class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2">
+            <span class="text-sm">4.8</span>
+            <div class="flex items-center">
+              <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 text-black ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+              <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path
+                  d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+              </svg>
+            </div>
+          </div>
+          <!-- end stars  -->
+          <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+            <b class="text-base">Q${price}</b>
+            <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+          </div>
+          <span class="text-sm">by MysticArtByJose</span>
+
+        </div>
+        </div>`
+            })
+            carousel.innerHTML = template
+
+            carousel.addEventListener('scrollend', e => {
+
+                prevBtn.classList[
+                    e.target.scrollLeft > 0 ? 'remove' : 'add'
+                ]('hidden')
+
+                nextBtn.classList[
+                    (e.target.scrollWidth - e.target.scrollLeft) <= e.target.clientWidth ? 'add' : 'remove'
+                ]('hidden')
+
+            })
+        }
+        carouselInit()
+
+        const carouselAction = () => {
+
+            const item = carousel.querySelector('.carousel-item')
+
+            // Función para avanzar al siguiente grupo de elementos
+            nextBtn.addEventListener('click', function() {
+                carousel.scrollTo({
+                    left: carousel.scrollLeft + item.clientWidth,
+                    behavior: 'smooth'
+                })
+
+            });
+
+            // Función para retroceder al grupo anterior de elementos
+            prevBtn.addEventListener('click', function() {
+                carousel.scrollTo({
+                    left: carousel.scrollLeft - item.clientWidth,
+                    behavior: 'smooth'
+                })
+            });
+
+        }
+        carouselAction()
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 @endsection
