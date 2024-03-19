@@ -101,14 +101,14 @@
                         </div>
                         <!-- start botones Next y Previous -->
                         <button data-prev-btn
-                            class="absolute -left-0 hidden top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                            class="absolute -left-0 hidden top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                                 <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                             </svg>
                         </button>
                         <button data-next-btn
-                            class="absolute -right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                            class="absolute -right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
                                 <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -172,7 +172,7 @@
                 <section class="space-y-3 mt-8">
                     <div class="w-full relative">
                         <button id="dropdown-sizes" data-dropdown-toggle="dropdown-size-toggle"
-                            class="w-full p-3 px-4  !m-0 border border-black flex items-center justify-between rounded"
+                            class="w-full p-3 px-4  !m-0 border border-black flex items-center justify-between rounded-lg"
                             type="button">
                             Seleccione el tamaño
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -183,12 +183,12 @@
                         </button>
                         <!-- Dropdown menu -->
                         <div id="dropdown-size-toggle"
-                            class="bg-white z-10 hidden shadow w-full border border-gray-500 p-2 rounded">
+                            class="bg-white z-10 hidden shadow w-full border border-gray-500 p-2 rounded-lg">
                             <span class="font-semibold mb-3 block">USA size</span>
                             <ul class="" aria-labelledby="dropdown-sizes">
-                                <li class="hover:bg-blue-950 hover:text-white p-2">32</li>
-                                <li class="hover:bg-blue-950 hover:text-white p-2">36</li>
-                                <li class="hover:bg-blue-950 hover:text-white p-2">40</li>
+                                <li class="hover:bg-blue-950 hover:text-white p-2 rounded-lg">32</li>
+                                <li class="hover:bg-blue-950 hover:text-white p-2 rounded-lg">36</li>
+                                <li class="hover:bg-blue-950 hover:text-white p-2 rounded-lg">40</li>
                             </ul>
                         </div>
 
@@ -196,17 +196,17 @@
                     <div class="w-full">
 
                         <button id="add-to-cart"
-                            class="font-semibold rounded p-3 w-full text-blue-900 bg-blue-200 hover:bg-blue-300 border border-transparent">Añadir
+                            class="font-semibold p-3 w-full text-blue-900 bg-blue-200 hover:bg-blue-300 border border-transparent rounded-lg">Añadir
                             al
                             carrito</button>
 
                     </div>
-                    <button class="font-semibold rounded p-3 w-full text-white bg-blue-900 hover:bg-blue-950">Comprar
+                    <button class="font-semibold rounded-lg p-3 w-full text-white bg-blue-900 hover:bg-blue-950">Comprar
                         ahora</button>
 
                 </section>
 
-                <section class="mt-8 border border-gray-500 rounded flex flex-col group">
+                <section class="mt-8 border border-gray-500 rounded-lg flex flex-col group">
                     <input type="checkbox" name="" id="envio" class="hidden">
 
                     <label
@@ -266,7 +266,7 @@
                     <div id="accordion-options" data-accordion="collapse">
                         <h2 id="accordion-heading-materials">
                             <button type="button"
-                                class="py-3 flex items-center justify-between w-full !text-black !bg-white"
+                                class="py-3 flex items-center justify-between w-full !text-black !bg-white rounded-lg"
                                 data-accordion-target="#accordion-body-materials" aria-expanded="false"
                                 aria-controls="accordion-body-materials">
                                 <span class="font-bold">Materiales</span>
@@ -277,13 +277,13 @@
                                 </svg>
                             </button>
                         </h2>
-                        <div id="accordion-body-materials" class="hidden bg-gray-100 p-3 rounded"
+                        <div id="accordion-body-materials" class="hidden bg-gray-100 p-3 rounded-lg"
                             aria-labelledby="accordion-heading-materials">
                             Content...
                         </div>
                         <h2 id="accordion-heading-details" class="mt-3">
                             <button type="button"
-                                class="py-3 flex items-center justify-between w-full !text-black !bg-white"
+                                class="py-3 flex items-center justify-between w-full !text-black !bg-white rounded-lg"
                                 data-accordion-target="#accordion-body-details" aria-expanded="false"
                                 aria-controls="accordion-body-details">
                                 <span class="font-bold">Detalles</span>
@@ -294,13 +294,13 @@
                                 </svg>
                             </button>
                         </h2>
-                        <div id="accordion-body-details" class="hidden bg-gray-100 p-3 rounded"
+                        <div id="accordion-body-details" class="hidden bg-gray-100 p-3 rounded-lg"
                             aria-labelledby="accordion-heading-details">
                             Content...
                         </div>
                         <h2 id="accordion-heading-size" class="mt-3">
                             <button type="button"
-                                class="py-3 flex items-center justify-between w-full !text-black !bg-white"
+                                class="py-3 flex items-center justify-between w-full !text-black !bg-white rounded-lg"
                                 data-accordion-target="#accordion-body-size" aria-expanded="false"
                                 aria-controls="accordion-body-size">
                                 <span class="font-bold">Tamaño y ajustes</span>
@@ -311,7 +311,7 @@
                                 </svg>
                             </button>
                         </h2>
-                        <div id="accordion-body-size" class="hidden bg-gray-100 p-3 rounded"
+                        <div id="accordion-body-size" class="hidden bg-gray-100 p-3 rounded-lg"
                             aria-labelledby="accordion-heading-size">
                             Content...
                         </div>
@@ -329,7 +329,7 @@
                 <h4 class="md:text-3xl text-2xl md:text-start text-center font-semibold">Mas artículos de esta
                     tienda</h4>
 
-                <button class="p-2 px-4 border border-black rounded">Ver 1,000 artículos más</button>
+                <button class="p-2 px-4 border border-black rounded-lg">Ver 1,000 artículos más</button>
             </header>
 
             <div class="relative">
@@ -338,14 +338,14 @@
 
                 </div>
                 <button data-prev-btn
-                    class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
                 </button>
                 <button data-next-btn
-                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -377,14 +377,14 @@
 
                 </div>
                 <button data-prev-btn
-                    class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
                 </button>
                 <button data-next-btn
-                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -407,14 +407,14 @@
 
                 </div>
                 <button data-prev-btn
-                    class="absolute -left-0 hidden top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -left-0 hidden top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
                 </button>
                 <button data-next-btn
-                    class="absolute -right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -436,14 +436,14 @@
 
                 </div>
                 <button data-prev-btn
-                    class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -left-0 hidden top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                     </svg>
                 </button>
                 <button data-next-btn
-                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1">
+                    class="absolute -right-0 top-[35%] transform -translate-y-1/2 bg-white hover:bg-gray-200 hover:border-black w-fit block border px-2 py-1 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h border-6" viewBox="0 0 24 24">
                         <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -458,7 +458,7 @@
 
                 <div class="flex md:justify-between justify-center items-center gap-5">
 
-                    <button id="btn-prev-pagination" class="opacity-0">
+                    <button id="btn-prev-pagination" class="opacity-0 rounded-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 cursor-pointer" viewBox="0 0 24 24">
                             <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -491,7 +491,7 @@
                     </div>
 
                     <button id="btn-next-pagination">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  cursor-pointer" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  cursor-pointer rounded-lg" viewBox="0 0 24 24">
                             <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
@@ -603,14 +603,14 @@
         <section class="max-w-7xl mx-auto mb-20 px-5">
             <span class="text-xl font-light block mb-10">Explora más búsquedas relacionadas</span>
             <div class="flex flex-wrap gap-2">
-                <div class="border border-black p-3 rounded">arte de sombrilla de playa</div>
-                <div class="border border-black p-3 rounded">playa imprimirle</div>
-                <div class="border border-black p-3 rounded">Impresión de playa</div>
-                <div class="border border-black p-3 rounded">Azul y blanco</div>
-                <div class="border border-black p-3 rounded">fotografía de playa</div>
-                <div class="border border-black p-3 rounded">descarga instantánea</div>
-                <div class="border border-black p-3 rounded">Estampado playa azul</div>
-                <div class="border border-black p-3 rounded">Decoración de la pared de playa</div>
+                <div class="border border-black p-3 rounded-lg">arte de sombrilla de playa</div>
+                <div class="border border-black p-3 rounded-lg">playa imprimirle</div>
+                <div class="border border-black p-3 rounded-lg">Impresión de playa</div>
+                <div class="border border-black p-3 rounded-lg">Azul y blanco</div>
+                <div class="border border-black p-3 rounded-lg">fotografía de playa</div>
+                <div class="border border-black p-3 rounded-lg">descarga instantánea</div>
+                <div class="border border-black p-3 rounded-lg">Estampado playa azul</div>
+                <div class="border border-black p-3 rounded-lg">Decoración de la pared de playa</div>
             </div>
 
             <div class="mt-14 text-sm flex flex-wrap gap-5">
@@ -1297,7 +1297,7 @@
             <h3 class="font-bold flex-none w-full text-lg truncate">${title}</h3>
             <span class="text-green-600">${price}</span>
           </div>
-          <button data-id="${id}" class="button-delete-liked-product  bg-red-500 active:bg-red-500 text-white hover:bg-red-600 p-1 text-sm px-2 rounded-md absolute bottom-2 right-2">Eliminar<button>
+          <button data-id="${id}" class="button-delete-liked-product  bg-red-500 active:bg-red-500 text-white hover:bg-red-600 p-1 text-sm px-2 rounded-lg absolute bottom-2 right-2">Eliminar<button>
         </div>
         `
                     })

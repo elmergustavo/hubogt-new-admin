@@ -2,11 +2,20 @@
 
 
 @section('content')
+    <style>
+        .hidden-scroll {
+            scrollbar-width: none;
+        }
+
+        .hidden-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
     <main class="xl:px-0 ">
 
         <!-- start hero -->
         <header class=" 2xl:max-w-7xl lg:max-w-2xl max-w-full mx-auto lg:mb-14 mb-0 pt-16 md:pb-16 pb-8  w-full relative ">
-            <button class="absolute top-5 left-5 lg:hidden block">
+            <button class="absolute top-5 left-5 lg:hidden block rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 24 24">
                     <path fill="#000" fill-rule="evenodd"
                         d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0"
@@ -128,7 +137,7 @@
                             <img src="https://s3-alpha-sig.figma.com/img/ec28/6c72/4f9eb52f0d89f062a872a3625c3a52b8?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ekMIolNt95qN~jAUHrR3GyNberMNw3VDXN4hbiiSbZTdImUQU2bHSAr6l0jcjqeLRtJrdcbSCR9ayv2Y2RaNy8I2RI3IptaZsigPe21~OwNKFqyXr20ok58SfV6--0jQ5hhK4gqJvVSlRRLJBFwCbV-69cUO6LzaUV~eyoy2F724zeRG51kXNuuPLSOSuhf21BloCoMjUGEHeE3zt3o2JO83J5Fem2WnKfWD~S0uxEy3UHe-sC8vQ5orjmUqHfxjIxP89WJR1WnrRZXl43yF80RK7ykn~TE7lERZUyKdz3ifMWfI1rNruigEw9BQS96DLYVXzSSHRayZwU09SK4t4Q__"
                                 class="w-full lg:h-[660px] h-[200px] object-cover rounded" alt="image" />
                         </div>
-                        <button class="w-full p-3 border border-black text-center hover:bg-gray-200">Comprar ahora</button>
+                        <button class="w-full p-3 border border-black text-center hover:bg-gray-200 rounded-lg">Comprar ahora</button>
                     </div>
                 </aside>
 
@@ -147,7 +156,7 @@
                         id="filter-container">
                         <div class="lg:min-w-auto min-w-[170px] ">
                             <button id="dropdown-filter" data-dropdown-toggle="dropdown-toggle-filter"
-                                class="border border-black rounded p-3 flex lg:text-base text-sm items-center gap-2 font-bold"
+                                class="border border-black rounded-lg p-3 flex lg:text-base text-sm items-center gap-2 font-bold"
                                 type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
                                     <g fill="none" stroke="#000" stroke-width="2">
@@ -216,7 +225,7 @@
                 template += `
             <div class="">
               <button id="dropdown-filter-${index}" data-dropdown-toggle="dropdown-filter-toggle-${index}"
-                class="border border-black rounded p-3 flex !flex-nowrap w-full items-center lg:justify-start justify-between lg:text-base text-sm" type="button"><span class="block flex-1 w-full min-w-fit">${filter}</span> <svg
+                class="border border-black rounded-lg p-3 flex !flex-nowrap w-full items-center lg:justify-start justify-between lg:text-base text-sm" type="button"><span class="block flex-1 w-full min-w-fit">${filter}</span> <svg
                   class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                   viewBox="0 0 10 6">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -422,7 +431,7 @@
               ${generateStars()}
               <div class="flex md:flex-row flex-col xl:gap-8 md:gap-5 gap-3 md:items-center items-start">
                 <b class="text-base">Q${price}</b>
-                <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+                <span class="text-green-600 text-xs line-through">Q${discount}</span>
               </div>
               <span class="text-sm">by MysticArtByJose</span>
 
@@ -457,7 +466,7 @@
               ${generateStars()}
               <div class="flex md:flex-row flex-col xl:gap-8 md:gap-5 gap-3 md:items-center items-start">
                 <b class="text-base">Q${price}</b>
-                <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+                <span class="text-green-600 text-xs line-through">Q${discount}</span>
               </div>
               <span class="text-sm">by MysticArtByJose</span>
 

@@ -2,10 +2,16 @@
 
 
 @section('content')
+<style>
+    .hidden-scroll {
+      scrollbar-width: none;
+    }
 
-<head>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    .hidden-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+
     <main class="xl:px-0 ">
 
         <!-- start hero -->
@@ -13,7 +19,7 @@
             class=" lg:max-w-7xl max-w-full mx-auto w-full lg:gap-10 gap-4 lg:grid grid-cols-[auto,1fr] flex-wrap px-4  lg:my-16 my-10 flex max-[350px]:mb-10 lg:mb-[100px] mb-10">
 
             <div class="lg:hidden flex items-center justify-center w-full relative flex-none w-full h-fit md:mb-8 mb-4">
-                <button class="absolute top-0 left-0 ">
+                <button class="absolute top-0 left-0 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 24 24">
                         <path fill="#000" fill-rule="evenodd"
                             d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0"
@@ -24,7 +30,7 @@
             </div>
 
             <img src="https://s3-alpha-sig.figma.com/img/02a1/a70a/4f48ba7805a2d53d913f9f77b7713103?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=at7EiKzeemU3jMiYxOwYblwowLbSPJGEWy90-0cswzORKeu8hoiosCLaHtCLyw9p6pozSUEyD10uvGzXU1I1dR~EIApjmh86TdlbJFrZvhLLivpzQur0ZE~g29sPFWHLi-zglzo~8VTuKBXcM7P-LVo6JTrueb8UZgpAZLQv7Gl3LnJNk7~pARppWhngKk54dLlKnhF4GyIRg00llgRX5gOoS~A5wl4ePM2INZnGriYqKXCkrZvONbzahXYE1cTveaEkoNi2NwqY51Z9C7aj6JmJwOYCeIxsH9fc71Byi75k14v6pG1-XmHEMRCW1mNbPl07tHaiG-dtrevdZxq9Xw__"
-                class="lg:w-[550px] max-[350px]:w-full w-[50%] h-auto lg:h-[300px] object-cover rounded aspect-video"
+                class="lg:w-[550px] max-[350px]:w-full w-[50%] h-auto lg:h-[300px] object-cover rounded-lg aspect-video"
                 alt="image" />
 
             <div class="flex flex-col md:gap-4 gap-2 max-[350px]:flex-none w-full flex-1 lg:justify-start justify-center">
@@ -67,7 +73,7 @@
                     / Artesanos / Cuero
                     y Tallado</p>
                 <button
-                    class="lg:rounded rounded-md lg:mt-8 mt-0 p-2 xl:w-[40%] lg:w-[50%] w-full border border-black hover:bg-gray-200 font-bold md:text-base text-sm ">
+                    class="rounded-lg lg:mt-8 mt-0 p-2 xl:w-[40%] lg:w-[50%] w-full border border-black hover:bg-gray-200 font-bold md:text-base text-sm ">
                     Comprar este articulo
                 </button>
             </div>
@@ -79,22 +85,22 @@
             <span class="underline font-bold text-2xl">Categorías</span>
 
             <div class="w-full mt-3 flex gap-2 text-sm overflow-x-scroll hidden-scroll">
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Maraton</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Corto
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Maraton</a>
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Corto
                     plazo</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Camisas y
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Camisas y
                     blusas</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Chaquetas y
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Chaquetas y
                     Blazer</a>
                 <a href=""
-                    class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Sudaderas</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Ropa
+                    class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Sudaderas</a>
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Ropa
                     deportiva</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Abrigos</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Ropa
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Abrigos</a>
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Ropa
                     interior</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Medias</a>
-                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded p-2 font-semibold">Vestidos</a>
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Medias</a>
+                <a href="" class="hover:underline w-fit flex-none bg-gray-200 rounded-lg p-2 font-semibold">Vestidos</a>
             </div>
         </section>
         <!-- end categorías list mobile -->
@@ -155,9 +161,9 @@
                                 en
                                 tu compra</div>
                             <img src="https://s3-alpha-sig.figma.com/img/ec28/6c72/4f9eb52f0d89f062a872a3625c3a52b8?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ekMIolNt95qN~jAUHrR3GyNberMNw3VDXN4hbiiSbZTdImUQU2bHSAr6l0jcjqeLRtJrdcbSCR9ayv2Y2RaNy8I2RI3IptaZsigPe21~OwNKFqyXr20ok58SfV6--0jQ5hhK4gqJvVSlRRLJBFwCbV-69cUO6LzaUV~eyoy2F724zeRG51kXNuuPLSOSuhf21BloCoMjUGEHeE3zt3o2JO83J5Fem2WnKfWD~S0uxEy3UHe-sC8vQ5orjmUqHfxjIxP89WJR1WnrRZXl43yF80RK7ykn~TE7lERZUyKdz3ifMWfI1rNruigEw9BQS96DLYVXzSSHRayZwU09SK4t4Q__"
-                                class="w-full lg:h-[660px] h-[200px] object-cover rounded" alt="image" />
+                                class="w-full lg:h-[660px] h-[200px] object-cover rounded-lg" alt="image" />
                         </div>
-                        <button class="w-full p-3 border border-black text-center hover:bg-gray-200">Comprar ahora</button>
+                        <button class="w-full p-3 border border-black text-center hover:bg-gray-200 rounded-lg">Comprar ahora</button>
                     </div>
                 </aside>
 
@@ -176,7 +182,7 @@
                         id="filter-container">
                         <div class="lg:min-w-auto min-w-[170px] ">
                             <button id="dropdown-filter" data-dropdown-toggle="dropdown-toggle-filter"
-                                class="border border-black rounded p-3 flex lg:text-base text-sm items-center gap-2 font-bold"
+                                class="border border-black rounded-lg p-3 flex lg:text-base text-sm items-center gap-2 font-bold"
                                 type="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
                                     <g fill="none" stroke="#000" stroke-width="2">
@@ -245,7 +251,7 @@
                 template += `
         <div class="">
           <button id="dropdown-filter-${index}" data-dropdown-toggle="dropdown-filter-toggle-${index}"
-            class="border border-black rounded p-3 flex !flex-nowrap w-full items-center lg:justify-start justify-between lg:text-base text-sm" type="button"><span class="block flex-1 w-full min-w-fit">${filter}</span> <svg
+            class="border border-black rounded-lg p-3 flex !flex-nowrap w-full items-center lg:justify-start justify-between lg:text-base text-sm" type="button"><span class="block flex-1 w-full min-w-fit">${filter}</span> <svg
               class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
               viewBox="0 0 10 6">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -401,7 +407,7 @@
             }, i) => {
                 template += `<div class="carousel-item 	h-full flex flex-col">
         <div class="relative  md:!h-[250px] h-[180px] ${breakPointsWidth}">
-          <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="${title}" />
+          <img src="/images/products/${img}" class="w-full h-full object-cover rounded-lg" alt="${title}" />
           <button
           data-btn-like
             class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
@@ -416,7 +422,7 @@
           ${generateStars()}
           <div class="flex md:flex-row flex-col xl:gap-8 md:gap-5 gap-3 md:items-center items-start">
             <b class="text-base">Q${price}</b>
-            <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+            <span class="text-green-600 text-xs line-through">Q${discount}</span>
           </div>
           <span class="text-sm">by MysticArtByJose</span>
 
@@ -436,7 +442,7 @@
             }, i) => {
                 template += `<div class="carousel-item 	h-full flex flex-col">
         <div class="relative  md:!h-[250px] h-[180px] ${breakPointsWidth}">
-          <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="${title}" />
+          <img src="/images/products/${img}" class="w-full h-full object-cover rounded-lg" alt="${title}" />
           <button
           data-btn-like
             class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
@@ -451,7 +457,7 @@
           ${generateStars()}
           <div class="flex md:flex-row flex-col xl:gap-8 md:gap-5 gap-3 md:items-center items-start">
             <b class="text-base">Q${price}</b>
-            <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+            <span class="text-green-600 text-xs line-through">Q${discount}</span>
           </div>
           <span class="text-sm">by MysticArtByJose</span>
 
@@ -471,7 +477,7 @@
             }, i) => {
                 template += `<div class="carousel-item 	h-full flex flex-col">
         <div class="relative  md:!h-[250px] h-[180px] ${breakPointsWidth}">
-          <img src="/images/products/${img}" class="w-full h-full object-cover rounded" alt="${title}" />
+          <img src="/images/products/${img}" class="w-full h-full object-cover rounded-lg" alt="${title}" />
           <button
           data-btn-like
             class="w-8  h-8 grid place-items-center rounded-full bg-white absolute top-4 border right-4 z-10 hover:bg-gray-100"><svg
@@ -486,7 +492,7 @@
           ${generateStars()}
           <div class="flex md:flex-row flex-col xl:gap-8 md:gap-5 gap-3 md:items-center items-start">
             <b class="text-base">Q${price}</b>
-            <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+            <span class="text-green-600 text-xs line-through">Q${discount}</span>
           </div>
           <span class="text-sm">by MysticArtByJose</span>
 

@@ -20,7 +20,6 @@ Route::get('/productos-descripcion', fn () => view('productos-descripcion'))->na
 Route::get('/categorias-segment-productos', fn () => view('categorias-segment-productos'))->name('productos-descripcion');
 Route::get('/tienda-especifica', fn () => view('tienda-especifica'))->name('tienda-especifica');
 Route::get('/dashboard', IndexHome::class)->name('index-home');
-Route::get('/profile', fn () => view('frontend.home.profile'))->name('profile');
 Route::get('/producto-detalle', fn () => view('frontend.home.producto-detalle'))->name('producto_detalle');
 Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
 Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare');
@@ -57,11 +56,13 @@ Route::post('/', [FormRequests::class, 'sendMail'])->name('form.send');
 
 // require __DIR__ . '/auth.php';
 
-Route::middleware(['auth',
+Route::middleware([
+    'auth',
     // config('jetstream.auth_session'),
     // 'verified',
 ])->group(function ()
 {
     Route::get('/onboarding', SellerRegister::class)->name('seller_register');
     Route::get('/new-onboarding', NewOnboarding::class)->name('new-onboarding');
+    Route::get('/profile', fn () => view('frontend.home.profile'))->name('profile');
 });
