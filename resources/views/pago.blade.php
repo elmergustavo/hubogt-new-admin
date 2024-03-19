@@ -289,7 +289,7 @@
           <!-- end stars  -->
           <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
             <b class="text-base">Q${price}</b>
-            <span class="text-green-600 text-xs">Q${discount} (25% descuento)</span>
+            <span class="text-green-600 text-xs line-through">Q${discount}</span>
           </div>
           <span class="text-sm">by MysticArtByJose</span>
 
