@@ -46,7 +46,7 @@
 
                 <div class="relative">
                     <button
-                        class="border border-black rounded-md flex hover:text-white hover:bg-blue-900  items-center justify-center gap-2 px-2 py-1 transition-all"
+                        class="border border-black rounded-lg flex hover:text-white hover:bg-blue-900  items-center justify-center gap-2 px-2 py-1 transition-all"
                         id="btn-filters-sidebar-mobile">
                         <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -435,7 +435,7 @@
 
             <div class="flex md:flex-row flex-col xl:gap-8 md:gap-5 gap-3 md:items-center items-start">
               <b class="text-base">Q${price}</b>
-              ${discount ? `<span class="text-green-600 text-base">Q${discount} </span>` : ``}
+              ${discount ? `<span class="text-green-600 text-sm line-through">Q${discount} </span>` : ``}
             </div>
             <span class="text-sm">by MysticArtByJose</span>
 
@@ -853,7 +853,7 @@
         </script>
 
         <script src="../utils/dinamyc-likes.js"></script>
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        {{-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     @endsection
 

@@ -20,15 +20,15 @@ Route::get('/productos-descripcion', fn () => view('productos-descripcion'))->na
 Route::get('/categorias-segment-productos', fn () => view('categorias-segment-productos'))->name('productos-descripcion');
 Route::get('/tienda-especifica', fn () => view('tienda-especifica'))->name('tienda-especifica');
 Route::get('/dashboard', IndexHome::class)->name('index-home');
-Route::get('/producto-detalle', fn () => view('frontend.home.producto-detalle'))->name('producto_detalle');
-Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
-Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare');
+// Route::get('/producto-detalle', fn () => view('frontend.home.producto-detalle'))->name('producto_detalle');
+// Route::get('/tiendas', fn () => view('frontend.home.vendor'))->name('vendor');
+// Route::get('/comparar', fn () => view('frontend.home.compare'))->name('compare');
+// Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
+// Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
 Route::get('/landing', fn () => view('frontend.landing.index'))->name('landing');
-Route::get('/blogs', fn () => view('frontend.home.blog'))->name('blog');
 Route::get('/pago', fn () => view('pago'))->name('pago');
 Route::get('/tienda-general', fn () => view('tienda-general'))->name('pago');
 Route::get('/search-productos', fn () => view('search-productos'))->name('pago');
-Route::get('/preguntas-frecuentes', fn () => view('frontend.home.faqs'))->name('faqs');
 Route::post('/', [FormRequests::class, 'sendMail'])->name('form.send');
 
 // Route::get('/login', fn () => view('login'))->name('login');

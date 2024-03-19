@@ -2,6 +2,17 @@
 
 
 @section('content')
+    <style>
+        [data-carousel-parent],
+        .hidden-scroll {
+            scrollbar-width: none;
+        }
+
+        [data-carousel-parent]::-webkit-scrollbar,
+        .hidden-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
     <main class="mt-[5dvh] xl:px-0 ">
 
         <!-- start sección "Tiendas BUHOGT" -->
@@ -304,94 +315,94 @@
 
         <!-- start sección "Nuestros tops tiendas" -->
         <!-- <section class=" max-w-7xl mx-auto md:mb-20 mb-10 md:px-10 px-4 md:w-3/4 w-full">
-          <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-center">Nuestros tops tiendas </h2>
-          <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">Anais</p>
-              <p class="text-gray-700 capitalize">Adoc</p>
-              <p class="text-gray-700 capitalize">Fila</p>
-              <p class="text-gray-700 capitalize">Laurance</p>
-              <p class="text-gray-700 capitalize">Jhly</p>
-              <p class="text-gray-700 capitalize">adidas</p>
-              <p class="text-gray-700 capitalize">tatiana</p>
-              <p class="text-gray-700 capitalize">asus</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">Levis premium</p>
-              <p class="text-gray-700 capitalize">Nike</p>
-              <p class="text-gray-700 capitalize">casio</p>
-              <p class="text-gray-700 capitalize">lacoste</p>
-              <p class="text-gray-700 capitalize">tommy</p>
-              <p class="text-gray-700 capitalize">boosts</p>
-              <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
-              <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">Anais</p>
-              <p class="text-gray-700 capitalize">Adoc</p>
-              <p class="text-gray-700 capitalize">Fila</p>
-              <p class="text-gray-700 capitalize">Laurance</p>
-              <p class="text-gray-700 capitalize">Jhly</p>
-              <p class="text-gray-700 capitalize">adidas</p>
-              <p class="text-gray-700 capitalize">tatiana</p>
-              <p class="text-gray-700 capitalize">asus</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">Levis premium</p>
-              <p class="text-gray-700 capitalize">Nike</p>
-              <p class="text-gray-700 capitalize">casio</p>
-              <p class="text-gray-700 capitalize">lacoste</p>
-              <p class="text-gray-700 capitalize">tommy</p>
-              <p class="text-gray-700 capitalize">boosts</p>
-              <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
-              <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
-            </div>
-          </div>
-        </section> -->
+              <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-center">Nuestros tops tiendas </h2>
+              <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">Anais</p>
+                  <p class="text-gray-700 capitalize">Adoc</p>
+                  <p class="text-gray-700 capitalize">Fila</p>
+                  <p class="text-gray-700 capitalize">Laurance</p>
+                  <p class="text-gray-700 capitalize">Jhly</p>
+                  <p class="text-gray-700 capitalize">adidas</p>
+                  <p class="text-gray-700 capitalize">tatiana</p>
+                  <p class="text-gray-700 capitalize">asus</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">Levis premium</p>
+                  <p class="text-gray-700 capitalize">Nike</p>
+                  <p class="text-gray-700 capitalize">casio</p>
+                  <p class="text-gray-700 capitalize">lacoste</p>
+                  <p class="text-gray-700 capitalize">tommy</p>
+                  <p class="text-gray-700 capitalize">boosts</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">Anais</p>
+                  <p class="text-gray-700 capitalize">Adoc</p>
+                  <p class="text-gray-700 capitalize">Fila</p>
+                  <p class="text-gray-700 capitalize">Laurance</p>
+                  <p class="text-gray-700 capitalize">Jhly</p>
+                  <p class="text-gray-700 capitalize">adidas</p>
+                  <p class="text-gray-700 capitalize">tatiana</p>
+                  <p class="text-gray-700 capitalize">asus</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">Levis premium</p>
+                  <p class="text-gray-700 capitalize">Nike</p>
+                  <p class="text-gray-700 capitalize">casio</p>
+                  <p class="text-gray-700 capitalize">lacoste</p>
+                  <p class="text-gray-700 capitalize">tommy</p>
+                  <p class="text-gray-700 capitalize">boosts</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                  <p class="text-gray-700 capitalize">Lorem, ipsum.</p>
+                </div>
+              </div>
+            </section> -->
         <!-- end sección "Nuestros tops tiendas" -->
 
         <!-- start sección "Nuestros tops productos" -->
         <!-- <section class=" max-w-7xl mx-auto md:mb-20 mb-10 md:px-10 px-4 md:w-3/4 w-full">
-          <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-center">Nuestros tops productos </h2>
-          <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">televisores</p>
-              <p class="text-gray-700 capitalize">zapatos</p>
-              <p class="text-gray-700 capitalize">celulares</p>
-              <p class="text-gray-700 capitalize">medias</p>
-              <p class="text-gray-700 capitalize">ropa interior</p>
-              <p class="text-gray-700 capitalize">calcetines</p>
-              <p class="text-gray-700 capitalize">pantallas</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">televisores</p>
-              <p class="text-gray-700 capitalize">zapatos</p>
-              <p class="text-gray-700 capitalize">celulares</p>
-              <p class="text-gray-700 capitalize">medias</p>
-              <p class="text-gray-700 capitalize">ropa interior</p>
-              <p class="text-gray-700 capitalize">calcetines</p>
-              <p class="text-gray-700 capitalize">pantallas</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">televisores</p>
-              <p class="text-gray-700 capitalize">zapatos</p>
-              <p class="text-gray-700 capitalize">celulares</p>
-              <p class="text-gray-700 capitalize">medias</p>
-              <p class="text-gray-700 capitalize">ropa interior</p>
-              <p class="text-gray-700 capitalize">calcetines</p>
-              <p class="text-gray-700 capitalize">pantallas</p>
-            </div>
-            <div class="flex flex-col gap-4">
-              <p class="text-gray-700 capitalize">televisores</p>
-              <p class="text-gray-700 capitalize">zapatos</p>
-              <p class="text-gray-700 capitalize">celulares</p>
-              <p class="text-gray-700 capitalize">medias</p>
-              <p class="text-gray-700 capitalize">ropa interior</p>
-              <p class="text-gray-700 capitalize">calcetines</p>
-              <p class="text-gray-700 capitalize">pantallas</p>
-            </div>
-          </div>
-        </section> -->
+              <h2 class="md:text-3xl text-xl block mb-8 md:text-start text-center">Nuestros tops productos </h2>
+              <div class="grid md:grid-cols-4 grid-cols-2 md:place-items-start place-items-center gap-10">
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="text-gray-700 capitalize">televisores</p>
+                  <p class="text-gray-700 capitalize">zapatos</p>
+                  <p class="text-gray-700 capitalize">celulares</p>
+                  <p class="text-gray-700 capitalize">medias</p>
+                  <p class="text-gray-700 capitalize">ropa interior</p>
+                  <p class="text-gray-700 capitalize">calcetines</p>
+                  <p class="text-gray-700 capitalize">pantallas</p>
+                </div>
+              </div>
+            </section> -->
         <!-- end sección "Nuestros tops productos" -->
 
 

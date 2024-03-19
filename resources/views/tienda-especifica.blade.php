@@ -188,7 +188,7 @@
                 <!-- start jeans mobile -->
                 <div class="lg:hidden block ">
                     <button id="btn-drawer-categories-mobile"
-                        class="border border-black p-3 w-full mb-10 flex justify-center gap-2 items-center active:bg-gray-200">
+                        class="border border-black p-3 w-full mb-10 flex justify-center gap-2 items-center active:bg-gray-200 rounded-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16">
                             <path fill="#000"
                                 d="M3.5 2A1.5 1.5 0 0 0 2 3.5v2A1.5 1.5 0 0 0 3.5 7h2A1.5 1.5 0 0 0 7 5.5v-2A1.5 1.5 0 0 0 5.5 2zm0 7A1.5 1.5 0 0 0 2 10.5v2A1.5 1.5 0 0 0 3.5 14h2A1.5 1.5 0 0 0 7 12.5v-2A1.5 1.5 0 0 0 5.5 9zM9 3.5A1.5 1.5 0 0 1 10.5 2h2A1.5 1.5 0 0 1 14 3.5v2A1.5 1.5 0 0 1 12.5 7h-2A1.5 1.5 0 0 1 9 5.5zM10.5 9A1.5 1.5 0 0 0 9 10.5v2a1.5 1.5 0 0 0 1.5 1.5h2a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 12.5 9z" />
@@ -307,9 +307,9 @@
 
                 <header class="mb-5 flex flex-col gap-3 justify-start">
                     <div
-                        class="w-full border border-black rounded relative overflow-hidden has-[:focus]:outline outline-black outline-1 outline-offset-2">
+                        class="w-full border border-black rounded-lg relative overflow-hidden outline-black outline-1 outline-offset-2">
                         <input type="text" placeholder="Busca todos los 177 productos"
-                            class="bg-gray-200 text-black border-none outline-none  p-2 rounded w-full px-3 text-base pr-9">
+                            class="bg-gray-200 text-black border-none outline-none  p-2 rounded-lg w-full px-3 text-base pr-9">
 
                         <div class="absolute bg-gray-200 top-0 right-0 w-8 h-full grid items-center rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24">
@@ -328,7 +328,7 @@
                         </select> --}}
                         <div class="w-full relative">
                             <button id="dropdown-sizes" data-dropdown-toggle="dropdown-size-toggle"
-                                class="w-full p-3 px-4 !m-0 border border-black flex items-center justify-between rounded"
+                                class="w-full p-3 px-4 !m-0 border border-black flex items-center justify-between rounded-lg"
                                 type="button">
                                 Todos (177)
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -339,11 +339,11 @@
                             </button>
                             <!-- Dropdown menu -->
                             <div id="dropdown-size-toggle"
-                                class="bg-white z-50 hidden shadow w-full border border-gray-500 p-2 rounded ">
+                                class="bg-white z-50 hidden shadow w-full border border-gray-500 p-2 rounded-lg">
                                 <ul class="" aria-labelledby="dropdown-sizes">
-                                    <li class="hover:bg-blue-950 hover:text-white p-2">2</li>
-                                    <li class="hover:bg-blue-950 hover:text-white p-2">6</li>
-                                    <li class="hover:bg-blue-950 hover:text-white p-2">4</li>
+                                    <li class="hover:bg-blue-950 hover:text-white p-2 rounded-lg">2</li>
+                                    <li class="hover:bg-blue-950 hover:text-white p-2 rounded-lg">6</li>
+                                    <li class="hover:bg-blue-950 hover:text-white p-2 rounded-lg">4</li>
                                 </ul>
                             </div>
                         </div>

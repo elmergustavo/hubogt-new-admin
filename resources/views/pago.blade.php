@@ -29,8 +29,8 @@
                                 <h3 class="text-lg">Buddha Mandala Hoodie</h3>
                                 <p class="text-gray-500 mt-2">by MysticArtByJose</p>
                                 <div class="my-7 flex justify-between gap-3 items-center flex-wrap  ">
-                                    <button class="hover:underline">Guardar para más tarde</button>
-                                    <button class="hover:underline">Eliminar</button>
+                                    <button class="hover:underline rounded-lg">Guardar para más tarde</button>
+                                    <button class="hover:underline rounded-lg">Eliminar</button>
                                 </div>
                                 <div class="flex items-center justify-start gap-2">
                                     <span>4.8</span>
@@ -116,7 +116,7 @@
                         <span>Q65.99</span>
                     </div>
                 </div>
-                <button class="p-3 rounded w-full text-white bg-blue-900 hover:bg-blue-950 mt-10">Proceder a Pago </button>
+                <button class="p-3 rounded-lg w-full text-white bg-primary hover:bg-blue-950 mt-10">Proceder a Pago </button>
             </div>
             <!-- end forma de pago -->
         </div>
