@@ -92,7 +92,7 @@
                         </div>
                         <div class="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
                             <button type="submit"
-                                class="rounded-full bg-indigo-950 shadow-2xl px-8 py-2.5 text-center text-md font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar
+                                class="rounded-lg bg-indigo-950 shadow-2xl px-8 py-2.5 text-center text-md font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar
                                 registro</button>
                         </div>
                     </form>

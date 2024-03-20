@@ -480,7 +480,7 @@ class NewOnboarding extends Component implements HasForms
 
                         ]),
                 ])
-                    ->skippable()
+                    // ->skippable()
                     ->nextAction(fn (Action $action) => $action->extraAttributes([
                         'class' => 'bg-primary mt-4',
                     ])->label('Guardar y continuar'))

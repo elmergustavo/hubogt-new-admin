@@ -43,8 +43,8 @@
                 </ul>
             </div>
             <div class="flex items-center gap-6">
-                <a href="{{route('seller_register')}}"
-                    class="bg-[#FFF] text-black font-medium border-black px-4 md:px-14 py-2 rounded-full hover:bg-[#87acec]">Registrate</a>
+                <a href="{{route('new-onboarding')}}"
+                    class="bg-[#FFF] text-black font-medium border-black px-4 md:px-14 py-2 rounded-lg hover:bg-[#87acec]">Registrate</a>
                 <ion-icon onclick="onToggleMenu(this)" name="menu"
                     class="text-3xl text-white cursor-pointer md:hidden"></ion-icon>
             </div>
@@ -85,8 +85,8 @@
                     del Comercio Online!
                 </p> <br>
                 <div class="mt-10 flex items-center w-full px-12 md:px-0">
-                    <a href="{{ route('seller_register') }}"
-                        class="mt-8 max-w-[20rem] md:w-1/2 w-full flex justify-center  shadow-xl rounded-full border border-indigo-9500 bg-null px-12 py-3 text-[1.1rem] font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-indigo-500 transition duration-300 ease-in-out">
+                    <a href="{{ route('new-onboarding') }}"
+                        class="mt-8 max-w-[20rem] md:w-1/2 w-full flex justify-center  shadow-xl rounded-lg border border-indigo-9500 bg-null px-12 py-3 text-[1.1rem] font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-indigo-500 transition duration-300 ease-in-out">
                         Registrate ahora
                     </a>
                     <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a> -->
@@ -403,8 +403,8 @@
                         paso hacia el éxito está a solo un clic de distancia!
                     </p>
 
-                    <a href="{{ route('seller_register') }}"
-                        class="mt-8 shadow-2xl inline-block rounded-full bg-indigo-950 px-12 py-3 text-md font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
+                    <a href="{{ route('new-onboarding') }}"
+                        class="mt-8 shadow-2xl inline-block rounded-lg bg-indigo-950 px-12 py-3 text-md font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
                         Registrate ahora
                     </a>
                 </div>
@@ -433,8 +433,8 @@
 
                     </p>
 
-                    <a href="{{ route('seller_register') }}"
-                        class="mt-8 shadow-2xl inline-block rounded-full bg-indigo-950 px-12 py-3 text-md font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
+                    <a href="{{ route('new-onboarding') }}"
+                        class="mt-8 shadow-2xl inline-block rounded-lg bg-indigo-950 px-12 py-3 text-md font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400">
                         Registrate ahora
                     </a>
                 </div>

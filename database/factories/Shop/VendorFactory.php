@@ -21,7 +21,6 @@ class VendorFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'address' => $this->faker->address,
             'legal_info' => $this->faker->paragraph,
-            'legal_representative' => $this->faker->name,
             'registration_date' => $this->faker->date,
             'vendor_type' => $this->faker->randomElement(['individual', 'company']),
             'is_verified' => $this->faker->boolean,

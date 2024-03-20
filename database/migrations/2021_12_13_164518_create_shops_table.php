@@ -15,7 +15,7 @@ return new class extends Migration
         {
             $table->id();
             $table->bigInteger('shop_vendor_id')->unsigned();
-            $table->bigInteger('business_information_id')->unsigned();
+            $table->bigInteger('business_information_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned();
 
             $table->foreign('business_information_id')->references('id')->on('business_information');
