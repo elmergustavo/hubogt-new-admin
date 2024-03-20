@@ -505,7 +505,7 @@
 
         <!-- start "Comentarios" -->
         <section class=" max-w-7xl mx-auto mb-20 px-5 grid md:grid-cols-2 grid-cols-1 lg:gap-5 gap-16">
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-3 sticky h-fit top-5">
                 <span class="text-2xl">Valoraciones</span>
                 <div class="flex gap-2 items-center" data-stars>
                     <span class="text-sm">4.6</span>
