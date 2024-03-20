@@ -17,15 +17,15 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
+            $table->string('full_name')->nullable();
             $table->boolean('is_company')->default(false);
             $table->string('nit')->nullable();
             $table->string('cui')->nullable();
-            $table->string('phone');
-            $table->string('email');
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
             $table->text('address')->nullable();
             $table->text('legal_info')->nullable();
 
-            $table->string('legal_representative')->nullable();
             $table->date('registration_date')->nullable();
             $table->string('vendor_type')->nullable();
             $table->boolean('is_verified')->default(false);

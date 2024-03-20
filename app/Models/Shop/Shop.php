@@ -13,9 +13,11 @@ class Shop extends Model
     protected $table = 'shops';
 
     protected $fillable = [
-        'vendor_id', 
+        'shop_vendor_id',
+        'business_information_id', 
         'name', 
-        'banner', 
+        'banner',
+        'address',
         'description', 
         'fb_link',
         'tw_link', 
@@ -28,7 +30,11 @@ class Shop extends Model
         'review_count', 
         'category',
         'geolocation', 
-        'metadata'
+        'metadata',
+        'bank',
+        'type_account',
+        'name_account',
+        'number_account',
     ];
 
     public function vendor()

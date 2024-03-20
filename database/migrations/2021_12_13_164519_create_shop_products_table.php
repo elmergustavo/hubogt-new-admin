@@ -18,7 +18,7 @@ return new class() extends Migration
             $table->id();
             $table->foreignId('shop_brand_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('shop_id')->nullable()->constrained()->nullOnDelete();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->string('sku')->nullable();
             $table->string('barcode')->nullable();
@@ -40,25 +40,15 @@ return new class() extends Migration
             $table->date('published_at')->nullable();
             $table->string('seo_title', 60)->nullable();
             $table->string('seo_description', 160)->nullable();
-            $table->decimal('weight_value', 10, 2)->nullable()
-                ->default(0.00)
-                ->unsigned();
+            $table->decimal('weight_value', 10, 2)->nullable()->default(0.00)->unsigned();
             $table->string('weight_unit')->nullable()->default('kg');
-            $table->decimal('height_value', 10, 2)->nullable()
-                ->default(0.00)
-                ->unsigned();
+            $table->decimal('height_value', 10, 2)->nullable()->default(0.00)->unsigned();
             $table->string('height_unit')->nullable()->default('cm');
-            $table->decimal('width_value', 10, 2)->nullable()
-                ->default(0.00)
-                ->unsigned();
+            $table->decimal('width_value', 10, 2)->nullable()->default(0.00)->unsigned();
             $table->string('width_unit')->nullable()->default('cm');
-            $table->decimal('depth_value', 10, 2)->nullable()
-                ->default(0.00)
-                ->unsigned();
+            $table->decimal('depth_value', 10, 2)->nullable()->default(0.00)->unsigned();
             $table->string('depth_unit')->nullable()->default('cm');
-            $table->decimal('volume_value', 10, 2)->nullable()
-                ->default(0.00)
-                ->unsigned();
+            $table->decimal('volume_value', 10, 2)->nullable()->default(0.00)->unsigned();
             $table->string('volume_unit')->nullable()->default('l');
             $table->json('data')->nullable();
             $table->timestamps();

@@ -5,7 +5,10 @@ namespace App\Livewire;
 use App\Models\Shop\Shop;
 use App\Models\Shop\Vendor;
 use App\Models\Shop\Product;
+use App\Models\LegalRepresentative;
+use App\Models\BusinessInformation;
 
+use Filament\Notifications\Notification;
 use App\Helpers\DepartmentMunicipalityOptions;
 use Livewire\Component;
 use Filament\Forms\Contracts\HasForms;
@@ -37,7 +40,7 @@ use Filament\Forms\Components\Radio;
 class NewOnboarding extends Component implements HasForms
 {
     use InteractsWithForms;
-
+    public $step = 1;
     public $data = [];
 
     public function mount(): void
@@ -45,29 +48,19 @@ class NewOnboarding extends Component implements HasForms
         $this->form->fill();
     }
 
-    // public function create(): void
-    // {
-    //     dd($this->form->getState());
-    // }
-
-
     public function form(Form $form): Form
     {
         return $form
             ->schema([
                 Wizard::make([
+                    //VENDOR
                     Wizard\Step::make('Datos de contacto')
                         ->icon('mdi-store-edit')
                         // ->description('Registrate para comenzar a vender tus productos en Mombii')
                         ->schema([
-                            Grid::make([
-                                'default' => 1,
-                                'sm'      => 1,
-                                'md'      => 2,
-                                // 'xl' => 2,
-                            ])
+                            Grid::make(['default' => 1,'md' => 2])
                                 ->schema([
-                                    CreateAccount::make('sd')
+                                    CreateAccount::make('sds')
                                         ->label('')
                                         ->view('forms.components.create-account')
                                         ->viewData([
@@ -75,26 +68,26 @@ class NewOnboarding extends Component implements HasForms
                                             'sub_title' => 'Estos datos serán utilizados para el envío de notificaciones de ventas, administración de las órdenes y notificaciones en general.',
                                         ])
                                         ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
-                                    TextInput::make('person')
+                                    TextInput::make('vendor_full_name')
                                         ->label('Nombre completo')
                                         ->prefixIcon('bi-person-fill')
                                         ->helperText('Ingrese aquí el nombre de la persona que administra la cuenta')
                                         ->required(),
-                                    PhoneInput::make('phone1')
+                                    PhoneInput::make('vendor_phone')
                                         ->label(__('Número de teléfono'))
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText('Ingrese aquí el número de teléfono donde notificaremos asuntos sobre ventas')
                                         ->defaultCountry('GT')
                                         ->onlyCountries(['BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA'])
                                         ->required(),
-                                    TextInput::make('email1')
+                                    TextInput::make('vendor_email')
                                         ->email()
                                         ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                         ->label(__('Correo Electrónico'))
                                         ->prefixIcon('heroicon-s-at-symbol')
                                         ->helperText(__('Ingrese aquí el correo electrónico a donde notificaremos asuntos sobre ventas'))
                                         ->required(),
-                                    TextInput::make('name_shop')
+                                    TextInput::make('shop_name')
                                         ->label('Nombre de la tienda')
                                         ->prefixIcon('bxs-store')
                                         ->placeholder(__('Escribe el nombre de tu tienda'))
@@ -126,11 +119,9 @@ class NewOnboarding extends Component implements HasForms
                     Wizard\Step::make('Información del negocio')
                         ->icon('gmdi-add-business-r')
                         ->schema([
-                            Grid::make([
-                                'default' => 1, 'sm' => 1, 'md' => 2,
-                            ])
+                            Grid::make(['default' => 1, 'md' => 2,])
                                 ->schema([
-                                    CreateAccount::make('sd')
+                                    CreateAccount::make('sds')
                                         ->label('')
                                         ->view('forms.components.create-account')
                                         ->viewData([
@@ -138,19 +129,19 @@ class NewOnboarding extends Component implements HasForms
                                             'sub_title' => '',
                                         ])
                                         ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
-                                    Select::make('regimen')
+                                    Select::make('bi_regimen')
                                         ->label('Régimen Tributario')
                                         ->native(false)
                                         ->options([
-                                            'RPT'       => 'Empresa SA. - Régimen general del IVA',
-                                            'regimen'   => 'Empresa SA. - Régimen Pequeño Contribuyente',
-                                            'reviewing' => 'Personal individual - Régimen general del IVA',
-                                            'published' => 'Personal individual - Pequeño contribuyente',
+                                            'RPT' => 'Empresa SA. - Régimen general del IVA',
+                                            'RPC' => 'Empresa SA. - Régimen Pequeño Contribuyente',
+                                            'RGI' => 'Personal individual - Régimen general del IVA',
+                                            'PC'  => 'Personal individual - Pequeño contribuyente',
                                         ])
                                         ->reactive()
                                         ->helperText('Seleccione si es SA. o empresa individual')
                                         ->required(),
-                                    TextInput::make('dpis')
+                                    TextInput::make('bi_cui')
                                         ->label(__('Número de DPI o pasaporte'))
                                         ->required()
                                         ->live()
@@ -163,7 +154,7 @@ class NewOnboarding extends Component implements HasForms
                                                         $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
                                                     JS)
                                         ),
-                                    TextInput::make('nit')
+                                    TextInput::make('bi_nit')
                                         ->label(__('NIT'))
                                         ->required()
                                         ->live()
@@ -180,67 +171,67 @@ class NewOnboarding extends Component implements HasForms
                                         ->afterStateUpdated(
                                             function (Get $get, Set $set)
                                             {
-                                                if (config('app.env') == 'local')
-                                                {
-                                                    $client = new \GuzzleHttp\Client(array(
-                                                        'verify' => false
-                                                    ));
-                                                }
-                                                else
-                                                {
-                                                    $client = new \GuzzleHttp\Client;
-                                                }
-                                                try
-                                                {
+                                                // if (config('app.env') == 'local')
+                                                // {
+                                                //     $client = new \GuzzleHttp\Client(array(
+                                                //         'verify' => false
+                                                //     ));
+                                                // }
+                                                // else
+                                                // {
+                                                //     $client = new \GuzzleHttp\Client;
+                                                // }
+                                                // try
+                                                // {
 
-                                                    $response = Http::withHeaders([
-                                                        'Accept'          => 'application/json',
-                                                        'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
-                                                    ])->timeout(10)
-                                                        // ->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find-exact/' . "NIT/{$get('nit')}");
-                                                        ->get(env('FELPLEX_END_POINT') . env('FELPLEX_ENTITY_ID') . "/find/NIT/" . $get("nit"));
-                                                    if ($response->successful())
-                                                    {
-                                                        if (isset($response['tax_name']))
-                                                        {
-                                                            $normalized_tax_name = str_replace(',', ' ', $response['tax_name']);
-                                                            $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
-                                                            $set('legal_reason', $cleaned_tax_name);
-                                                        }
-                                                        else
-                                                        {
-                                                            $set('legal_reason', '');
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        $set('legal_reason', '');
-                                                    }
-                                                }
-                                                catch (\GuzzleHttp\Exception\RequestException $e)
-                                                {
-                                                    $set('legal_reason', '');
-                                                }
+                                                //     $response = Http::withHeaders([
+                                                //         'Accept'          => 'application/json',
+                                                //         'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
+                                                //     ])->timeout(10)
+                                                //           // ->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find-exact/' . "NIT/{$get('nit')}");
+                                                //         ->get(env('FELPLEX_END_POINT') . env('FELPLEX_ENTITY_ID') . "/find/NIT/" . $get("nit"));
+                                                //     if ($response->successful())
+                                                //     {
+                                                //         if (isset($response['tax_name']))
+                                                //         {
+                                                //             $normalized_tax_name = str_replace(',', ' ', $response['tax_name']);
+                                                //             $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
+                                                //             $set('legal_reason', $cleaned_tax_name);
+                                                //         }
+                                                //         else
+                                                //         {
+                                                //             $set('legal_reason', '');
+                                                //         }
+                                                //     }
+                                                //     else
+                                                //     {
+                                                //         $set('legal_reason', '');
+                                                //     }
+                                                // }
+                                                // catch (\GuzzleHttp\Exception\RequestException $e)
+                                                // {
+                                                //     $set('legal_reason', '');
+                                                // }
                                             }
                                         ),
-                                    TextInput::make('legal_reason')
+                                    TextInput::make('bi_legal_reason')
                                         ->label(__('Nombre de la persona individual'))
                                         ->prefixIcon('heroicon-m-building-office')
                                         ->placeholder(__('Ingrese aquí el nombre que representará a su negocio en Mombii'))
                                         ->helperText(__('Razón social de tu negocio. Si el NIT no autocompleta la razón social de tu negocio, puedes ingresarla manualmente'))
                                         ->required(),
-                                    TextInput::make('adreess')
+                                    TextInput::make('bi_adreess')
                                         ->label(__('Dirección comercial'))
                                         ->helperText('Ingrese aquí la dirección comercial')
                                         ->required(),
-                                    PhoneInput::make('phone')
+                                    PhoneInput::make('bi_phone')
                                         ->label(__('Teléfono'))
                                         ->prefixIcon('heroicon-s-phone')
                                         ->helperText('Ingrese aquí el número de telefono del tienda')
                                         ->defaultCountry('GT')
                                         ->onlyCountries(['BZ', 'CR', 'SV', 'GT', 'HN', 'NI', 'PA'])
                                         ->required(),
-                                    TextInput::make('email')
+                                    TextInput::make('bi_email')
                                         ->email()
                                         ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                         ->label(__('Correo Electrónico'))
@@ -249,16 +240,15 @@ class NewOnboarding extends Component implements HasForms
                                         ->required(),
                                     Section::make('Documentos')
                                         ->description('')
+                                        ->collapsible()
                                         ->schema([
-                                            Grid::make([
-                                                'default' => 2, 'sm' => 2, 'md' => 2, 'xl' => 2, '2xl' => 2,
-                                            ])
+                                            Grid::make(['sm' => 1, 'md' => 2])
                                                 ->schema([
-                                                    SpatieMediaLibraryFileUpload::make('avatar')
+                                                    SpatieMediaLibraryFileUpload::make('shop_public_services_bill')
                                                         ->label('Factura de servicios (agua, luz o teléfono)')
                                                         ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
 
-                                                    SpatieMediaLibraryFileUpload::make('rtu')
+                                                    SpatieMediaLibraryFileUpload::make('shop_rtu')
                                                         ->label('Cargue aquí el RTU actualizado')
                                                         ->acceptedFileTypes(['application/pdf'])
                                                         ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
@@ -267,12 +257,19 @@ class NewOnboarding extends Component implements HasForms
                                 ]),
 
                             Section::make('')
-                                ->hidden(fn (Get $get) => $this->hiddenPayPeriod($get('regimen')))
+                                ->hidden(function (Get $get)
+                                {
+                                    if ($get('bi_regimen') == 'RPT' || $get('bi_regimen') == 'RPC')
+                                    {
+                                        return false;
+                                    }
+                                    return true;
+                                })
                                 ->reactive()
                                 ->schema([
-                                    Grid::make(['default' => 1, 'sm' => 1, 'md' => 2,])
+                                    Grid::make(['sm' => 1, 'md' => 2])
                                         ->schema([
-                                            CreateAccount::make('sd')
+                                            CreateAccount::make('sdc')
                                                 ->label('')
                                                 ->view('forms.components.create-account')
                                                 ->viewData([
@@ -280,7 +277,7 @@ class NewOnboarding extends Component implements HasForms
                                                     'sub_title' => 'Ingrese los datos del representante legal de la SA.',
                                                 ])
                                                 ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
-                                            TextInput::make('dpi')
+                                            TextInput::make('lr_cui')
                                                 ->label(__('Número de DPI o pasaporte'))
                                                 ->required()
                                                 ->live()
@@ -293,72 +290,71 @@ class NewOnboarding extends Component implements HasForms
                                                         $input.replace(/[^0-9k.]/g, '').replace(/(\..*?)\..*/g, '$1');
                                                     JS)
                                                 )
-                                                // ->regEx('/^[0-9]{5}([0-9]){0,4}(-?[0-9kK]){1}$/')
                                                 ->afterStateUpdated(
                                                     function (Get $get, Set $set)
                                                     {
-                                                        if (config('app.env') == 'local')
-                                                        {
-                                                            $client = new \GuzzleHttp\Client(array(
-                                                                'verify' => false
-                                                            ));
-                                                        }
-                                                        else
-                                                        {
-                                                            $client = new \GuzzleHttp\Client;
-                                                        }
-                                                        try
-                                                        {
+                                                        // if (config('app.env') == 'local')
+                                                        // {
+                                                        //     $client = new \GuzzleHttp\Client(array(
+                                                        //         'verify' => false
+                                                        //     ));
+                                                        // }
+                                                        // else
+                                                        // {
+                                                        //     $client = new \GuzzleHttp\Client;
+                                                        // }
+                                                        // try
+                                                        // {
 
-                                                            $response = Http::withHeaders([
-                                                                'Accept'          => 'application/json',
-                                                                'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
-                                                            ])->timeout(10)->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find/' . "CUI/{$get('dpi')}");
-                                                            if ($response->successful())
-                                                            {
-                                                                if (isset($response[0]['tax_name']))
-                                                                {
-                                                                    $normalized_tax_name = str_replace(',', ' ', $response[0]['tax_name']);
-                                                                    $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
-                                                                    $set('name_dpi', $cleaned_tax_name);
-                                                                }
-                                                                else
-                                                                {
-                                                                    $set('name_dpi', '');
-                                                                }
-                                                            }
-                                                            else
-                                                            {
-                                                                $set('name_dpi', '');
-                                                            }
-                                                        }
-                                                        catch (\GuzzleHttp\Exception\RequestException $e)
-                                                        {
-                                                            $set('name_dpi', '');
-                                                        }
+                                                        //     $response = Http::withHeaders([
+                                                        //         'Accept'          => 'application/json',
+                                                        //         'X-Authorization' => env('FELPLEX_AUTHORIZATION_HEADER')
+                                                        //     ])->timeout(10)->get(env('FELPLEX_END_POINT') . 'entity/' . env('FELPLEX_ENTITY_ID') . '/' . 'find/' . "CUI/{$get('dpi')}");
+                                                        //     if ($response->successful())
+                                                        //     {
+                                                        //         if (isset($response[0]['tax_name']))
+                                                        //         {
+                                                        //             $normalized_tax_name = str_replace(',', ' ', $response[0]['tax_name']);
+                                                        //             $cleaned_tax_name    = trim(preg_replace('/\s\s+/', ' ', str_replace("\n", " ", $normalized_tax_name)));
+                                                        //             $set('name_dpi', $cleaned_tax_name);
+                                                        //         }
+                                                        //         else
+                                                        //         {
+                                                        //             $set('name_dpi', '');
+                                                        //         }
+                                                        //     }
+                                                        //     else
+                                                        //     {
+                                                        //         $set('name_dpi', '');
+                                                        //     }
+                                                        // }
+                                                        // catch (\GuzzleHttp\Exception\RequestException $e)
+                                                        // {
+                                                        //     $set('name_dpi', '');
+                                                        // }
                                                     }
                                                 ),
-                                            TextInput::make('name_dpi')
+                                            TextInput::make('lr_legal_reason')
                                                 ->label(__('Nombre completo'))
                                                 ->prefixIcon('heroicon-m-user')
                                                 ->placeholder(__('Ingrese aquí el nombre completo del representate legal'))
                                                 ->helperText(__('Si el DPI no autocompleta el nombre completo, puedes ingresarla manualmente'))
                                                 ->required(),
-                                            PhoneInput::make('phone3')
+                                            PhoneInput::make('lr_phone')
                                                 ->label(__('Teléfono'))
                                                 ->prefixIcon('heroicon-s-phone')
                                                 ->defaultCountry('GT')
                                                 ->onlyCountries(['CR', 'SV', 'GT', 'HN', 'NI', 'PA', 'BZ'])
                                                 ->required()
                                                 ->helperText('Ingrese aquí el teléfono del representate legal'),
-                                            TextInput::make('email')
+                                            TextInput::make('lr_email')
                                                 ->email()
                                                 ->regEx('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/')
                                                 ->label(__('Correo Electrónico'))
                                                 ->prefixIcon('heroicon-s-at-symbol')
                                                 ->helperText(__('Ingrese aquí el correo del representate legal'))
                                                 ->required(),
-                                            DatePicker::make('date_of_birth')
+                                            DatePicker::make('lr_expiration')
                                                 ->label('Fecha de expiración de DPI o pasaporte')
                                                 ->format('d/m/Y')
                                                 ->required(),
@@ -367,17 +363,15 @@ class NewOnboarding extends Component implements HasForms
                                                 ->description('')
                                                 ->collapsible()
                                                 ->schema([
-                                                    Grid::make([
-                                                        'default' => 2, 'sm' => 2, 'md' => 2, 'xl' => 2, '2xl' => 2,
-                                                    ])
+                                                    Grid::make(['sm' => 1, 'md' => 2])
                                                         ->schema([
-                                                            SpatieMediaLibraryFileUpload::make('dpi_or_')
+                                                            SpatieMediaLibraryFileUpload::make('vendor_dpi_or_passport')
                                                                 ->label('DPI o pasaporte')
                                                                 ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
-                                                            SpatieMediaLibraryFileUpload::make('rtu_legal')
+                                                            SpatieMediaLibraryFileUpload::make('vendor_rtu')
                                                                 ->label('RTU')
                                                                 ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
-                                                            SpatieMediaLibraryFileUpload::make('invoices')
+                                                            SpatieMediaLibraryFileUpload::make('vendor_public_services_bill')
                                                                 ->label('Factura de servicios (agua, luz o teléfono)')
                                                                 ->helperText('Puedes subir un archivo de tipo (pdf, png, jpg, jpeg)'),
                                                         ])
@@ -390,11 +384,9 @@ class NewOnboarding extends Component implements HasForms
                     Wizard\Step::make('Añade inventario a tu tienda')
                         ->icon('mdi-storefront-plus')
                         ->schema([
-                            Grid::make([
-                                'default' => 1, 'sm' => 1, 'md' => 2,
-                            ])
+                            Grid::make(['default' => 1, 'sm' => 1, 'md' => 2,])
                                 ->schema([
-                                    CreateAccount::make('sd')
+                                    CreateAccount::make('sdsd')
                                         ->label('')
                                         ->view('forms.components.create-account')
                                         ->viewData([
@@ -404,29 +396,29 @@ class NewOnboarding extends Component implements HasForms
                                         ->columnSpan(['default' => 1, 'sm' => 1, 'md' => 2, 'xl' => 2,]),
                                     Grid::make(['default' => 1, 'sm' => 1, 'md' => 3,])
                                         ->schema([
-                                            TextInput::make('name')
+                                            TextInput::make('product_name')
                                                 ->label('Nombre')
                                                 ->prefixIcon('polaris-product-filled-icon')
                                                 ->placeholder(__('Ingrese aquí el nombre de tu artículo')),
-                                            TextInput::make('price')
+                                            TextInput::make('product_price')
                                                 ->label('Precio original')
                                                 ->numeric()
                                                 ->prefix('Q.'),
-                                            TextInput::make('discount')
+                                            TextInput::make('product_discount')
                                                 ->label('Precio descuento')
                                                 ->numeric()
                                                 ->prefix('Q.'),
                                         ]),
-                                    Grid::make(['default' => 1, 'sm' => 1, 'md' => 1,])
+                                    Grid::make(['default' => 1])
                                         ->schema([
-                                            Textarea::make('description')
+                                            Textarea::make('product_description')
                                                 ->label('Descripción')
                                                 ->placeholder(__('Comienza con una breve descripción de las mejores cualidades del artículo')),
                                             Section::make('Imagenes del producto')
                                                 ->description('')
                                                 ->collapsible()
                                                 ->schema([
-                                                    SpatieMediaLibraryFileUpload::make('media')
+                                                    SpatieMediaLibraryFileUpload::make('product_images')
                                                         ->label('')
                                                         ->collection('product-images')
                                                         ->multiple()
@@ -446,7 +438,7 @@ class NewOnboarding extends Component implements HasForms
                                     'title'     => 'Configuración de pagos',
                                     'sub_title' => '',
                                 ]),
-                            Select::make('banck')
+                            Select::make('shop_banck')
                                 ->label('Banco')
                                 ->placeholder('Seleccione un banco de preferencia')
                                 ->prefixIcon('bxs-bank')
@@ -459,28 +451,27 @@ class NewOnboarding extends Component implements HasForms
                                     'inter'  => 'InterBanco',
                                     'other'  => 'Otra'
                                 ])
-                                ->required()
                                 ->reactive()
                                 ->live()
                                 ->native(false)
                                 ->columnSpan(['default' => 1])
                                 ->searchable(),
-                            Radio::make('status')
+                            Radio::make('shop_type_account')
                                 ->label('¿Qué tipo de cuenta tienes?')
                                 ->inline()
                                 ->inlineLabel(false)
                                 ->columnSpan(['default' => 1,])
                                 ->options([
-                                    'ahorro' => 'Ahorro',
+                                    'ahorro'    => 'Ahorro',
                                     'monetario' => 'Monetario',
                                 ]),
                             Grid::make(['default' => 1, 'sm' => 1, 'md' => 2,])
                                 ->schema([
-                                    TextInput::make('name_account')
+                                    TextInput::make('shop_name_account')
                                         ->label('Nombre de cuenta')
                                         ->prefixIcon('heroicon-m-user')
                                         ->placeholder(__('Ingrese aquí el nombre completo de tu cuenta de banco')),
-                                    TextInput::make('number_account')
+                                    TextInput::make('shop_number_account')
                                         ->label('Número de cuenta')
                                         ->placeholder(__('Ingrese aquí el número completo de tu cuenta de banco'))
                                         ->prefixIcon('iconpark-bankcardtwo')
@@ -489,11 +480,10 @@ class NewOnboarding extends Component implements HasForms
 
                         ]),
                 ])
-                    // ->skippable()
+                    ->skippable()
                     ->nextAction(fn (Action $action) => $action->extraAttributes([
                         'class' => 'bg-primary mt-4',
                     ])->label('Guardar y continuar'))
-
                     ->submitAction(new HtmlString(Blade::render(<<<BLADE
                         <x-filament::button
                             type="submit"
@@ -502,97 +492,64 @@ class NewOnboarding extends Component implements HasForms
                             Guardar
                         </x-filament::button>
                     BLADE)))
-
             ])
-
             ->statePath('data');
-    }
-
-
-
-    public function hiddenPayPeriod($regimenValue)
-    {
-        // Retorna true para ocultar la sección basado en tu lógica
-        return $regimenValue !== 'draft';  // Ajusta esta condición según tus necesidades
     }
 
     public function submit(): void
     {
-        // Post::create($this->form->getState());
-        // $this->form->getState();
+        $data = $this->form->getState();
 
-        $vendor = Vendor::create($this->form->getState());
-        // 'user_id',
-        // 'is_company',
-        // 'nit',
-        // 'cui',
-        // 'phone',
-        // 'email',
-        // 'address',
-        // 'legal_info',
-        // 'legal_representative',
-        // 'registration_date',
-        // 'vendor_type',
-        // 'is_verified',
-        // 'logo',
-        // 'website_url',
-        // 'bank_details',
-        // 'preferred_language',
-        // 'time_zone',
-        // 'data',
-        $shop = Shop::create($this->form->getState());
-        // 'vendor_id',
-        // 'name',
-        // 'banner',
-        // 'description',
-        // 'fb_link',
-        // 'tw_link',
-        // 'insta_link',
-        // 'status',
-        // 'shop_url',
-        // 'opening_hours',
-        // 'return_policy',
-        // 'average_rating',
-        // 'review_count',
-        // 'category',
-        // 'geolocation',
-        // 'metadata'
-        $product = Product::create($this->form->getState());
-        // 'shop_brand_id',
-        // 'shop_id',
-        // 'name',
-        // 'slug',
-        // 'sku',
-        // 'barcode',
-        // 'description',
-        // 'qty',
-        // 'security_stock',
-        // 'featured',
-        // 'video_link',
-        // 'is_approved',
-        // 'is_visible',
-        // 'old_price',
-        // 'price',
-        // 'discount',
-        // 'cost',
-        // 'type',
-        // 'status',
-        // 'backorder',
-        // 'requires_shipping',
-        // 'published_at',
-        // 'seo_title',
-        // 'seo_description',
-        // 'weight_value',
-        // 'weight_unit',
-        // 'height_value',
-        // 'height_unit',
-        // 'width_value',
-        // 'width_unit',
-        // 'depth_value',
-        // 'depth_unit',
-        // 'volume_value',
-        // 'volume_unit',
-        // 'data'
+        if ($data['bi_regimen'] == 'RPT' || $data['bi_regimen'] == 'RPC')
+        {
+            $legal_representative = LegalRepresentative::create([
+                'full_name'      => $data['lr_legal_reason'],
+                'cui'            => $data['lr_cui'],
+                'cui_expiration' => $data['lr_expiration'],
+                'phone'          => $data['lr_phone'],
+                'email'          => $data['lr_email'],
+            ]);
+        }
+
+        $business_information = BusinessInformation::create([
+            'legal_representative_id' => $legal_representative->id ?? null,
+            'full_name'               => $data['bi_legal_reason'],
+            'cui'                     => $data['bi_cui'],
+            'nit'                     => $data['bi_nit'],
+            'tax_regime'              => $data['bi_regimen'],
+            'commercial_address'      => $data['bi_adreess'],
+            'phone'                   => $data['bi_phone'],
+            'email'                   => $data['bi_email'],
+        ]);
+
+        $vendor = Vendor::create([
+            'user_id'   => auth()->user()->id,
+            'full_name' => $data['vendor_full_name'],
+            'phone'     => $data['vendor_phone'],
+            'email'     => $data['vendor_email'],
+        ]);
+
+        $shop = Shop::create([
+            'business_information_id' => $business_information->id,
+            'user_id'                 => auth()->user()->id,
+            'shop_vendor_id'          => $vendor->id,
+            'name'                    => $data['shop_name'],
+            'bank'                    => $data['shop_banck'],
+            'type_account'            => $data['shop_type_account'],
+            'name_account'            => $data['shop_name_account'],
+            'number_account'          => $data['shop_number_account'],
+        ]);
+
+        $product = Product::create([
+            'shop_id'     => $shop->id,
+            'name'        => $data['product_name'],
+            'price'       => $data['product_price'],
+            'discount'    => $data['product_discount'],
+            'description' => $data['product_description'],
+
+        ]);
+
+        $this->step = 2;
     }
 
     public function render()
