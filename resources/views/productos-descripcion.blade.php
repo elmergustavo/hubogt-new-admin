@@ -491,7 +491,8 @@
                     </div>
 
                     <button id="btn-next-pagination">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  cursor-pointer rounded-lg" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  cursor-pointer rounded-lg"
+                            viewBox="0 0 24 24">
                             <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
@@ -505,16 +506,160 @@
 
         <!-- start "Comentarios" -->
         <section class=" max-w-7xl mx-auto mb-20 px-5 grid md:grid-cols-2 grid-cols-1 lg:gap-5 gap-16">
-            <div class="flex flex-col gap-3 sticky h-fit top-5">
-                <span class="text-2xl">Valoraciones</span>
-                <div class="flex gap-2 items-center" data-stars>
-                    <span class="text-sm">4.6</span>
+
+            <div class="flex flex-col sm:justify-start justify-center sticky h-fit top-5">
+                <span class="text-2xl md:mb-3 mb-5">Valoraciones</span>
+                <!--  -->
+                <div class="flex gap-2 items-center">
+                    <span class="text-base me-1 font-semibold">4.6</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 16 16">
+                        <path fill="#000" fill-rule="evenodd"
+                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 16 16">
+                        <path fill="#000" fill-rule="evenodd"
+                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 16 16">
+                        <path fill="#000" fill-rule="evenodd"
+                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 16 16">
+                        <path fill="#000" fill-rule="evenodd"
+                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" viewBox="0 0 16 16">
+                        <path fill="#000" fill-rule="evenodd"
+                            d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                            clip-rule="evenodd" />
+                    </svg>
                 </div>
-                <span class="text-2xl">Envío</span>
-                <div class="flex gap-2 items-center" data-stars>
-                    <span class="text-sm">4.6</span>
+                <!--  -->
+
+                <!--  -->
+                <div class="w-fit my-8 flex flex-col justify-center items-end gap-2" id="rating-list">
+
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="h-2 rounded bg-gray-900 w-[100px] ms-2"></div>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="h-2 rounded bg-gray-900 w-[100px] ms-2"></div>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="h-2 rounded bg-gray-900 w-[100px] ms-2"></div>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="h-2 rounded bg-gray-900 w-[100px] ms-2"></div>
+                    </div>
+
+                    <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="md:${directionValue === 'left' ? 'size-4' : 'size-5'} size-4" viewBox="0 0 16 16">
+                            <path fill="#000" fill-rule="evenodd"
+                                d="M8 1.75a.75.75 0 0 1 .692.462l1.41 3.393l3.664.293a.75.75 0 0 1 .428 1.317l-2.791 2.39l.853 3.575a.75.75 0 0 1-1.12.814L7.998 12.08l-3.135 1.915a.75.75 0 0 1-1.12-.814l.852-3.574l-2.79-2.39a.75.75 0 0 1 .427-1.318l3.663-.293l1.41-3.393A.75.75 0 0 1 8 1.75"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="h-2 rounded bg-gray-900 w-[100px] ms-2"></div>
+                    </div>
                 </div>
+                <!--  -->
+
+                <button
+                    class="rounded-lg font-semibold bg-blue-950 active:bg-blue-950 hover:bg-blue-900 text-white w-fit p-2 md:w-[210px] w-full mt-5">Calificar
+                    este producto</button>
             </div>
+
             <div>
                 <span class="text-2xl">Comentarios</span>
                 <div class="flex flex-col gap-10 mt-5">
@@ -818,56 +963,56 @@
 
                 const data = [{
                         id: 1,
-                        title: 'New balance age',
+                        title: 'Nike Air Max',
                         img: 'product-1.png',
                         price: '17.17',
                         discount: '15.17'
                     },
                     {
                         id: 2,
-                        title: 'Jeans Buda',
+                        title: 'Adidas Superstar',
                         img: 'product-2.png',
                         price: '117.17',
                         discount: '55.12'
                     },
                     {
                         id: 3,
-                        title: 'Buda Mandala Hoodie',
+                        title: 'Puma Future Rider',
                         img: 'product-3.png',
                         price: '217.17',
                         discount: '155.17'
                     },
                     {
                         id: 4,
-                        title: 'Jeans Buda',
+                        title: 'Converse Chuck Taylor',
                         img: 'product-4.png',
                         price: '205.17',
                         discount: '22.17'
                     },
                     {
                         id: 5,
-                        title: 'Chaqueta line',
+                        title: 'New Balance 574',
                         img: 'product-5.png',
                         price: '57.17',
                         discount: '65.14'
                     },
                     {
                         id: 6,
-                        title: 'Jeans Buda',
+                        title: 'Vans Old Skool',
                         img: 'product-2.png',
                         price: '97.17',
                         discount: '15.17'
                     },
                     {
                         id: 7,
-                        title: 'Anillos veranos',
+                        title: 'Reebok Classic',
                         img: 'product-1.png',
                         price: '34.17',
                         discount: '5.17'
                     },
                     {
                         id: 8,
-                        title: 'Chaqueta line',
+                        title: 'Under Armour Curry',
                         img: 'product-4.png',
                         price: '219.19',
                         discount: '55.17'
@@ -882,7 +1027,7 @@
                     id
                 }, i) => {
                     template += `
-      <div class="carousel-item snap-start group " >
+      <div class="carousel-item snap-start group  flex justify-between flex-col gap-3" >
         <div class="relative md:!h-[270px] h-[200px] ${breakPointsWidth} overflow-hidden shadow-lg shadow-black/10 rounded bg-transparent">
           <img loading="lazy" src="/images/products/${img}" class="image-product group-hover:scale-[1.1] transition-transform !w-full !h-full !align-bottom	 object-cover rounded" alt="${title}" />
           <button
@@ -895,20 +1040,20 @@
                 d="M21 8.25c0-2.485-2.099-4.5-4.687-4.5c-1.936 0-3.598 1.126-4.313 2.733c-.715-1.607-2.377-2.733-4.312-2.733C5.098 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12" />
             </svg></button>
         </div>
-        <div class="flex gap-4 flex-col pt-3 text-[${color}]">
-          <h3 class="text-lg  md:min-h-fit min-h-[60px] title-product">${title}</h3>
+        <div class="flex gap-4 flex-col text-[${color}] flex-1">
+          <h3 class="text-lg leading-snug text-pretty title-product">${title}</h3>
           <!-- start stars  -->
           <div data-stars class="flex md:flex-row flex-col md:items-center items-start justify-start gap-2 text-[${color}]">
 
           </div>
           <!-- end stars  -->
-          <div class="flex lg:flex-row flex-col xl:gap-8 md:gap-5 gap-3 lg:items-center items-start">
+          <div class="flex flex-row xl:gap-8 md:gap-5 gap-2 md:items-center items-start">
             <b class="text-base price-product">Q${price}</b>
-            <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through text-base">Q${discount} </span>
+            <span class="${color === 'white' ? 'text-green-400' : 'text-green-600'} line-through md:text-base sm:text-sm text-xs">Q${discount} </span>
+          </div>
+
           </div>
           <span class="text-sm">by MysticArtByJose</span>
-
-        </div>
       </div>
       `
                 });
@@ -984,7 +1129,7 @@
 
             return `
         <div class="flex  items-center justify-start gap-2 ${directionValue === 'left' ? 'flex-row' : 'flex-row-reverse'}">
-              <span class="md:${directionValue === 'left' ? 'text-xs' : 'text-sm'} text-xs">${value}</span>
+              ${value !== null ? `<span class="md:${directionValue === 'left' ? 'text-xs' : 'text-sm'} text-xs">${value}</span>` : ''}
               <div class="flex items-center">
                 ${starsFilled.join(' ')}
                 ${starsUnfilled.join(' ')}
@@ -992,7 +1137,6 @@
             </div>
         `
         }
-
 
         const initStars = () => {
             document.querySelectorAll('[data-stars]').forEach(e => {
@@ -1002,7 +1146,6 @@
 
         initStars()
     </script>
-
 
     <script>
         const setSelectedItem = (itemSelected) => {
