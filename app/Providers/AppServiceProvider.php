@@ -11,17 +11,17 @@ use BezhanSalleh\PanelSwitch\PanelSwitch;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
+      /**
      * Register any application services.
      *
      * @return void
      */
     public function register()
     {
-        //
+          //
     }
 
-    /**
+      /**
      * Bootstrap any application services.
      *
      * @return void
@@ -30,13 +30,30 @@ class AppServiceProvider extends ServiceProvider
     {
         Model::unguard();
 
-        PanelSwitch::configureUsing(function (PanelSwitch $panelSwitch) {
-            $panelSwitch->modalWidth('sm')->slideOver()->excludes([
-                'seller', 'service', 'administrador'
-            ]);
+        PanelSwitch::configureUsing(function (PanelSwitch $panelSwitch)
+        {
+            $panelSwitch
+                ->modalWidth('sm')
+                ->slideOver()
+                ->excludes([
+                    'seller', 
+                    'service', 
+                    'administrador'
+                ])
+                ->icons([
+                    'admin'            => 'eos-admin',
+                    'seller-request'   => 'fas-sheet-plastic',
+                    'customer-service' => 'ri-customer-service-2-fill',
+                ], $asImage = false)
+                ->labels([
+                'admin'            => 'Admin',
+                'seller-request'   => 'Solicitudes',
+                'customer-service' => 'Servicio al Cliente'
+                ]);
         });
 
-        if (app()->environment('production')) {
+        if (app()->environment('production'))
+        {
             URL::forceScheme('https');
         }
     }
