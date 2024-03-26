@@ -113,7 +113,11 @@ class User extends Authenticatable implements FilamentUser, HasTenants, MustVeri
 
         if ($panel->getId() === 'app')
         {
+            return $this->role === 'admin' && $this->status;
+        }
 
+        if ($panel->getId() === 'seller-request')
+        {
             return $this->role === 'admin' && $this->status;
         }
         return true;

@@ -17,6 +17,7 @@ class VendorFactory extends Factory
         return [
             'nit' => $this->faker->unique()->numerify('########-#'),
             'cui' => $this->faker->unique()->numerify('##########'),
+            'full_name' => $this->faker->firstName() . ' ' . $this->faker->lastName(),
             'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
             'address' => $this->faker->address,
