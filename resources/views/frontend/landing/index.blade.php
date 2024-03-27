@@ -35,7 +35,7 @@
                 class="nav-links md:static absolute bg-[#050027] md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
                 <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                     <li class="text-gray-200 font-medium text-lg"><a class="hover:text-white" href="#">Por que
-                            Buhogt</a></li>
+                            Mombii.com</a></li>
                     <li class="text-gray-200 font-medium text-lg"><a class="hover:text-white"
                             href="#">Beneficios</a></li>
                     <li class="text-gray-200 font-medium text-lg"><a class="hover:text-white"
